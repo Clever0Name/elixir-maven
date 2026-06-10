@@ -1,0 +1,102 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import cocktailsData from '../../../elixir_maven_cocktails.json';
+import { slugify, formatAmount } from '../../utils/helpers';
+
+export async function getStaticPaths() {
+  return cocktailsData.cocktails.map((cocktail) => ({
+    params: { id: cocktail.id },
+    props: { cocktail },
+  }));
+}
+
+const { cocktail } = Astro.props;
+
+const title = `${cocktail.name} Recipe — Elixir Maven`;
+const description = `${cocktail.name} — ${cocktail.family}. ${cocktail.method} in a ${cocktail.glassware}. Full recipe with ingredients and measures.`;
+---
+
+<Layout title={title} description={description}>
+  <div class="container">
+    <a href="/" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 5l-7 7 7 7" />
+      </svg>
+      All Cocktails
+    </a>
+
+    <header class="page-header">
+      <span class="card-badge">{cocktail.category}</span>
+      <h1>{cocktail.name}</h1>
+      <p class="subtitle">{cocktail.family}</p>
+    </header>
+
+    <div class="recipe-grid">
+      <!-- Ingredients -->
+      <section class="recipe-section" aria-labelledby="ingredients-heading">
+        <h2 class="recipe-section-title" id="ingredients-heading">Ingredients</h2>
+        <ul class="ingredients-list">
+          {
+            cocktail.ingredients.map((ing) => (
+              <li class="ingredient-row">
+                <div>
+                  <div class="ingredient-name">
+                    <a href={`/ingredients/${slugify(ing.name)}`}>{ing.name}</a>
+                  </div>
+                  {ing.spec && ing.spec !== ing.name && (
+                    <div class="ingredient-spec">{ing.spec}</div>
+                  )}
+                </div>
+                <span class="ingredient-amount">
+                  {formatAmount(ing.amount, ing.unit)}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <!-- Spec / How to make -->
+      <section class="recipe-section" aria-labelledby="spec-heading">
+        <h2 class="recipe-section-title" id="spec-heading">Spec</h2>
+        <div class="spec-grid">
+          <div class="spec-row">
+            <span class="spec-label">Method</span>
+            <span class="spec-value">{cocktail.method}</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Glass</span>
+            <span class="spec-value">{cocktail.glassware}</span>
+          </div>
+          {cocktail.ice && cocktail.ice !== 'None' && (
+            <div class="spec-row">
+              <span class="spec-label">Ice</span>
+              <span class="spec-value">{cocktail.ice}</span>
+            </div>
+          )}
+          {cocktail.garnish && cocktail.garnish !== 'None' && (
+            <div class="spec-row">
+              <span class="spec-label">Garnish</span>
+              <span class="spec-value">{cocktail.garnish}</span>
+            </div>
+          )}
+          {cocktail.base_spirit && (
+            <div class="spec-row">
+              <span class="spec-label">Base Spirit</span>
+              <span class="spec-value">{cocktail.base_spirit}</span>
+            </div>
+          )}
+        </div>
+
+        {
+          cocktail.notes && (
+            <div class="notes-box">
+              <strong>Note</strong>
+              {cocktail.notes}
+            </div>
+          )
+        }
+      </section>
+    </div>
+  </div>
+</Layout>

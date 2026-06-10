@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalURL?: string;
+}
+
+const {
+  title,
+  description = 'Elixir Maven — browse 76 classic and modern cocktail recipes with ingredients, methods, glassware and garnish guides.',
+  canonicalURL = Astro.url.href,
+} = Astro.props;
+
+const siteName = 'Elixir Maven';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content={siteName} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav class="site-nav">
+      <div class="container">
+        <a href="/" class="site-logo">{siteName}</a>
+        <div class="nav-links">
+          <a href="/">Cocktails</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span class="footer-logo">{siteName}</span>
+        <span class="footer-text">76 recipes &mdash; from classics to modern favourites</span>
+      </div>
+    </footer>
+  </body>
+</html>

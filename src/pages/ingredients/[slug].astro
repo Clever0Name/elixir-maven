@@ -1,0 +1,65 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CocktailCard from '../../components/CocktailCard.astro';
+import cocktailsData from '../../../elixir_maven_cocktails.json';
+import { slugify } from '../../utils/helpers';
+
+export async function getStaticPaths() {
+  const cocktails = cocktailsData.cocktails;
+
+  // Build a map: slug → { displayName, cocktails[] }
+  const ingredientMap = new Map<string, { name: string; cocktails: typeof cocktails }>();
+
+  for (const cocktail of cocktails) {
+    for (const ingredient of cocktail.ingredients) {
+      const slug = slugify(ingredient.name);
+      if (!ingredientMap.has(slug)) {
+        ingredientMap.set(slug, { name: ingredient.name, cocktails: [] });
+      }
+      const entry = ingredientMap.get(slug)!;
+      if (!entry.cocktails.find((c) => c.id === cocktail.id)) {
+        entry.cocktails.push(cocktail);
+      }
+    }
+  }
+
+  return Array.from(ingredientMap.entries()).map(([slug, data]) => ({
+    params: { slug },
+    props: {
+      ingredientName: data.name,
+      cocktails: data.cocktails,
+    },
+  }));
+}
+
+interface Props {
+  ingredientName: string;
+  cocktails: typeof cocktailsData.cocktails;
+}
+
+const { ingredientName, cocktails } = Astro.props;
+const count = cocktails.length;
+
+const title = `${ingredientName} Cocktails — Elixir Maven`;
+const description = `${count} cocktail recipe${count !== 1 ? 's' : ''} using ${ingredientName}. Browse full recipes with ingredients, methods and glassware.`;
+---
+
+<Layout title={title} description={description}>
+  <div class="container">
+    <a href="/" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 5l-7 7 7 7" />
+      </svg>
+      All Cocktails
+    </a>
+
+    <section class="ingredient-hero">
+      <h1>{ingredientName}</h1>
+      <p>{count} cocktail{count !== 1 ? 's' : ''} use this ingredient</p>
+    </section>
+
+    <div class="cocktail-grid">
+      {cocktails.map((cocktail) => <CocktailCard cocktail={cocktail} />)}
+    </div>
+  </div>
+</Layout>

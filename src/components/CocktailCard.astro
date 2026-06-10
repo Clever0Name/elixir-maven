@@ -1,0 +1,53 @@
+---
+interface Ingredient {
+  name: string;
+  role: string;
+  amount?: number;
+  unit?: string;
+  spec: string;
+  required: boolean;
+}
+
+interface Cocktail {
+  id: string;
+  name: string;
+  family: string;
+  category: string;
+  base_spirit: string;
+  method: string;
+  glassware: string;
+  garnish: string;
+  ingredients: Ingredient[];
+}
+
+interface Props {
+  cocktail: Cocktail;
+}
+
+const { cocktail } = Astro.props;
+const ingredientNames = cocktail.ingredients.map((i) => i.name.toLowerCase()).join(' ');
+---
+
+<a
+  href={`/cocktails/${cocktail.id}`}
+  class="cocktail-card"
+  data-name={cocktail.name.toLowerCase()}
+  data-category={cocktail.category}
+  data-ingredients={ingredientNames}
+>
+  <div>
+    <span class="card-badge">{cocktail.category}</span>
+    <h3 class="card-name">{cocktail.name}</h3>
+    <p class="card-family">{cocktail.family}</p>
+  </div>
+  <div class="card-meta">
+    <div class="card-meta-row">
+      <span class="card-meta-label">Glass</span>
+      <span class="card-meta-value">{cocktail.glassware}</span>
+    </div>
+    <div class="card-meta-row">
+      <span class="card-meta-label">Method</span>
+      <span class="card-meta-value">{cocktail.method}</span>
+    </div>
+  </div>
+</a>

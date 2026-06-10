@@ -1,0 +1,3420 @@
+{
+  "meta": {
+    "source": "Elixir Maven",
+    "cocktail_count": 76,
+    "version": "1.0"
+  },
+  "cocktails": [
+    {
+      "id": "alexander",
+      "name": "Alexander",
+      "family": "Cream / Dessert",
+      "category": "Gin",
+      "base_spirit": "Gin",
+      "spirit_type": "Single",
+      "method": "Shake & Double Strain",
+      "glassware": "Nick & Nora",
+      "ice": "None",
+      "garnish": "None",
+      "notes": "Brandy Alexander: replace Gin with Hennessy VS.",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "role": "Base Spirit",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Bombay Sapphire",
+          "required": true
+        },
+        {
+          "name": "Dark Crème de Cacao",
+          "role": "Liqueur",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Crème de Cacao Dark",
+          "required": true
+        },
+        {
+          "name": "Double Cream",
+          "role": "Cream",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Double Cream",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "brandy-alexander",
+      "name": "Brandy Alexander",
+      "family": "Cream / Dessert",
+      "category": "Cognac",
+      "base_spirit": "Cognac",
+      "spirit_type": "Single",
+      "method": "Shake & Double Strain",
+      "glassware": "Nick & Nora",
+      "ice": "None",
+      "garnish": "None",
+      "notes": "Variant from Alexander: replace gin with Hennessy VS.",
+      "ingredients": [
+        {
+          "name": "Cognac",
+          "role": "Base Spirit",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Hennessy VS",
+          "required": true
+        },
+        {
+          "name": "Dark Crème de Cacao",
+          "role": "Liqueur",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Crème de Cacao Dark",
+          "required": true
+        },
+        {
+          "name": "Double Cream",
+          "role": "Cream",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Double Cream",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "americano",
+      "name": "Americano",
+      "family": "Aperitif Highball",
+      "category": "Aperitif",
+      "base_spirit": "Campari/Vermouth",
+      "spirit_type": "Blend",
+      "method": "Build",
+      "glassware": "Riedel Rocks",
+      "ice": "Cubed",
+      "garnish": "Orange Slice",
+      "ingredients": [
+        {
+          "name": "Sweet Vermouth",
+          "role": "Aperitif",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Regal Rogue Red",
+          "required": true
+        },
+        {
+          "name": "Campari",
+          "role": "Aperitif",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Campari",
+          "required": true,
+          "flavour_tags": [
+            "Orange",
+            "Herbal",
+            "Strong Bitter",
+            "Negroni"
+          ]
+        },
+        {
+          "name": "Soda Water",
+          "role": "Mixer",
+          "amount": 120,
+          "unit": "ml",
+          "spec": "Soda Water",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "aviation",
+      "name": "Aviation",
+      "family": "Sour / Daisy",
+      "category": "Gin",
+      "base_spirit": "Gin",
+      "spirit_type": "Single",
+      "method": "Shake & Double Strain",
+      "glassware": "Nick & Nora",
+      "ice": "None",
+      "garnish": "Cherry",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Bombay Sapphire",
+          "required": true
+        },
+        {
+          "name": "Maraschino Liqueur",
+          "role": "Liqueur",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Luxardo Maraschino",
+          "required": true
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Citrus",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Lemon Juice",
+          "required": true
+        },
+        {
+          "name": "Violet Liqueur",
+          "role": "Liqueur",
+          "amount": 5,
+          "unit": "ml",
+          "spec": "Violet Liqueur",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "bahama-mama",
+      "name": "Bahama Mama",
+      "family": "Tropical / Punch",
+      "category": "Rum",
+      "base_spirit": "Rum",
+      "spirit_type": "Blend",
+      "method": "Shake & Double Strain",
+      "glassware": "Riedel Highball",
+      "ice": "Cubed",
+      "garnish": "Cherry",
+      "ingredients": [
+        {
+          "name": "White Rum",
+          "role": "Base Spirit",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Bacardi Carta Blanca",
+          "required": true
+        },
+        {
+          "name": "Aged Rum",
+          "role": "Base Spirit",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Mount Gay Black Barrel",
+          "required": true
+        },
+        {
+          "name": "Coconut Rum",
+          "role": "Base Spirit",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Bacardi Coconut",
+          "required": true
+        },
+        {
+          "name": "Pineapple Juice",
+          "role": "Juice",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Pineapple Juice",
+          "required": true
+        },
+        {
+          "name": "Orange Juice",
+          "role": "Juice",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "Orange Juice",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Angostura",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "between-the-sheets",
+      "name": "Between The Sheets",
+      "family": "Daisy / Sidecar",
+      "category": "Blend",
+      "base_spirit": "Rum/Cognac",
+      "spirit_type": "Multi",
+      "method": "Shake & Double Strain",
+      "glassware": "Nick & Nora",
+      "ice": "None",
+      "garnish": "Lemon Peel",
+      "ingredients": [
+        {
+          "name": "White Rum",
+          "role": "Base Spirit",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Bacardi Carta Blanca",
+          "required": true
+        },
+        {
+          "name": "Cognac",
+          "role": "Base Spirit",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Hennessy VS",
+          "required": true
+        },
+        {
+          "name": "Cointreau",
+          "role": "Liqueur",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Cointreau",
+          "required": true,
+          "flavour_tags": [
+            "Orange",
+            "Triple Sec"
+          ]
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lemon Juice",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "amaretto-sour",
+      "name": "Amaretto Sour",
+      "family": "Sour",
+      "category": "Liqueur",
+      "base_spirit": "Amaretto",
+      "spirit_type": "Single",
+      "method": "Dry Shake, Shake & Double Strain",
+      "glassware": "Riedel Rocks",
+      "ice": "Cubed",
+      "garnish": "Lemon Peel & Cherry",
+      "ingredients": [
+        {
+          "name": "Amaretto",
+          "role": "Liqueur",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "Amaretto Disaronno",
+          "required": true
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lemon Juice",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Gomme",
+          "required": true
+        },
+        {
+          "name": "Foamer Dilution",
+          "role": "Foamer",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Foamer Dilution",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Angostura",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "aperol-spritz",
+      "name": "Aperol Spritz",
+      "family": "Spritz",
+      "category": "Aperitif",
+      "base_spirit": "Aperol",
+      "spirit_type": "Blend",
+      "method": "Build",
+      "glassware": "Malbec",
+      "ice": "Cubed",
+      "garnish": "Orange Slice",
+      "ingredients": [
+        {
+          "name": "Aperol",
+          "role": "Aperitif",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Aperol",
+          "required": true,
+          "flavour_tags": [
+            "Orange",
+            "Bitter Orange",
+            "Rhubarb",
+            "Light Bitter",
+            "Spritz"
+          ]
+        },
+        {
+          "name": "Sparkling Wine",
+          "role": "Sparkling Wine",
+          "amount": 100,
+          "unit": "ml",
+          "spec": "Chandon",
+          "required": true
+        },
+        {
+          "name": "Soda Water",
+          "role": "Mixer",
+          "amount": 100,
+          "unit": "ml",
+          "spec": "Soda Water",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "baby-guinness",
+      "name": "Baby Guinness",
+      "family": "Shot",
+      "category": "Shot",
+      "base_spirit": "Coffee Liqueur",
+      "spirit_type": "Blend",
+      "method": "Build",
+      "glassware": "Shot",
+      "ice": "None",
+      "garnish": "None",
+      "ingredients": [
+        {
+          "name": "Coffee Liqueur",
+          "role": "Liqueur",
+          "amount": 35,
+          "unit": "ml",
+          "spec": "Blend Coffee Liqueur",
+          "required": true,
+          "flavour_tags": [
+            "Coffee",
+            "Chocolate"
+          ]
+        },
+        {
+          "name": "Irish Cream Liqueur",
+          "role": "Liqueur",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Baileys",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "bellini",
+      "name": "Bellini",
+      "family": "Sparkling",
+      "category": "Sparkling Wine",
+      "base_spirit": "Prosecco",
+      "spirit_type": "Blend",
+      "method": "Stir",
+      "glassware": "Flute",
+      "ice": "None",
+      "garnish": "None",
+      "ingredients": [
+        {
+          "name": "Peach Puree",
+          "role": "Puree",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Peach Puree",
+          "required": true
+        },
+        {
+          "name": "Sparkling Wine",
+          "role": "Sparkling Wine",
+          "amount": 125,
+          "unit": "ml",
+          "spec": "Chandon",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "black-russian",
+      "name": "Black Russian",
+      "family": "Duo",
+      "category": "Vodka",
+      "base_spirit": "Vodka",
+      "spirit_type": "Blend",
+      "method": "Build",
+      "glassware": "Riedel Rocks",
+      "ice": "Cubed",
+      "garnish": "2x Coffee Beans",
+      "notes": "White Russian: top with 30ml shaken double cream.",
+      "ingredients": [
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "42 Below",
+          "required": true
+        },
+        {
+          "name": "Coffee Liqueur",
+          "role": "Liqueur",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Blend Coffee Liqueur",
+          "required": true,
+          "flavour_tags": [
+            "Coffee",
+            "Chocolate"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "white-russian",
+      "name": "White Russian",
+      "family": "Cream / Dessert",
+      "category": "Vodka",
+      "base_spirit": "Vodka",
+      "spirit_type": "Blend",
+      "method": "Build",
+      "glassware": "Riedel Rocks",
+      "ice": "Cubed",
+      "garnish": "2x Coffee Beans",
+      "notes": "Black Russian topped with shaken double cream.",
+      "ingredients": [
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "42 Below",
+          "required": true
+        },
+        {
+          "name": "Coffee Liqueur",
+          "role": "Liqueur",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Blend Coffee Liqueur",
+          "required": true,
+          "flavour_tags": [
+            "Coffee",
+            "Chocolate"
+          ]
+        },
+        {
+          "name": "Double Cream",
+          "role": "Cream",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Double Cream",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "blue-lagoon",
+      "name": "Blue Lagoon",
+      "family": "Long Drink",
+      "category": "Vodka",
+      "base_spirit": "Vodka",
+      "spirit_type": "Blend",
+      "method": "Shake & Double Strain",
+      "glassware": "Riedel Highball",
+      "ice": "Cubed",
+      "garnish": "Cherry & Lemon Wedge",
+      "ingredients": [
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "42 Below",
+          "required": true
+        },
+        {
+          "name": "Blue Curaçao",
+          "role": "Liqueur",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Blue Curaçao",
+          "required": true
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lemon Juice",
+          "required": true
+        },
+        {
+          "name": "Lemonade",
+          "role": "Mixer",
+          "unit": "Top up",
+          "spec": "Lemonade",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "bramble",
+      "name": "Bramble",
+      "family": "Sour",
+      "category": "Gin",
+      "base_spirit": "Gin",
+      "spirit_type": "Single",
+      "method": "Shake & Double Strain",
+      "glassware": "Riedel Rocks",
+      "ice": "Cubed & Crushed",
+      "garnish": "Lemon Slice",
+      "notes": "Shake all ingredients. Top with mure.",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "role": "Base Spirit",
+          "amount": 35,
+          "unit": "ml",
+          "spec": "Bombay Sapphire",
+          "required": true
+        },
+        {
+          "name": "Crème de Mûre",
+          "role": "Liqueur",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Crème de Mure",
+          "required": true
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Citrus",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Lemon Juice",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Gomme Syrup",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "champagne-cocktail",
+      "name": "Champagne Cocktail",
+      "family": "Sparkling",
+      "category": "Cognac",
+      "base_spirit": "Champagne",
+      "spirit_type": "Blend",
+      "method": "Build",
+      "glassware": "Flute",
+      "ice": "None",
+      "garnish": "Orange Peel",
+      "notes": "Soak sugar cube with Angostura and build.",
+      "ingredients": [
+        {
+          "name": "Cognac",
+          "role": "Base Spirit",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Hennessy VS",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 3,
+          "unit": "dash",
+          "spec": "Angostura",
+          "required": true
+        },
+        {
+          "name": "Brown Sugar",
+          "role": "Sweetener",
+          "amount": 1,
+          "unit": "cube",
+          "spec": "Brown Sugar",
+          "required": true
+        },
+        {
+          "name": "Sparkling Wine",
+          "role": "Sparkling Wine",
+          "amount": 80,
+          "unit": "ml",
+          "spec": "Pommery Brut",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "cuba-libre",
+      "name": "Cuba Libre",
+      "family": "Highball",
+      "category": "Rum",
+      "base_spirit": "Rum",
+      "spirit_type": "Single",
+      "method": "Muddle & Build",
+      "glassware": "Riedel Highball",
+      "ice": "Cubed",
+      "garnish": "Lime Wedge",
+      "notes": "Muddle limes in glass. Add ice, rum and top with coke.",
+      "ingredients": [
+        {
+          "name": "White Rum",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Bacardi Carta Blanca",
+          "required": true
+        },
+        {
+          "name": "Lime Wedges",
+          "role": "Citrus",
+          "amount": 6,
+          "unit": "wedges",
+          "spec": "Lime",
+          "required": true
+        },
+        {
+          "name": "Cola",
+          "role": "Mixer",
+          "unit": "Top up",
+          "spec": "Coke",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "strawberry-daiquiri",
+      "name": "Strawberry Daiquiri",
+      "family": "Sour",
+      "category": "Rum",
+      "base_spirit": "White Rum",
+      "spirit_type": "Single",
+      "method": "Shake & Double Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "Lime Wedge",
+      "notes": "For other flavours, replace strawberry with other puree.",
+      "ingredients": [
+        {
+          "name": "White Rum",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "Bacardi Carta Blanca",
+          "required": true
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lime Juice",
+          "required": true
+        },
+        {
+          "name": "Sugar Syrup",
+          "role": "Sweetener",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Sugar Syrup",
+          "required": true
+        },
+        {
+          "name": "Strawberry Puree",
+          "role": "Puree",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Ponthier Strawberry",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "bloody-mary",
+      "name": "Bloody Mary",
+      "family": "Savoury",
+      "category": "Vodka",
+      "base_spirit": "Vodka",
+      "spirit_type": "Single",
+      "method": "Roll or Build",
+      "glassware": "Riedel Highball",
+      "ice": "Cubed",
+      "garnish": "Cucumber Roll & Salt Rim",
+      "notes": "With Bombay Sapphire: Red Snapper. With Cazadores Blanco: Bloody Maria.",
+      "ingredients": [
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "42 Below",
+          "required": true
+        },
+        {
+          "name": "Bloody Mary Mix",
+          "role": "Mixer",
+          "amount": 200,
+          "unit": "ml",
+          "spec": "Bloody/Virgin Mary Mix",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "bloody-maria",
+      "name": "Bloody Maria",
+      "family": "Savoury",
+      "category": "Tequila",
+      "base_spirit": "Tequila",
+      "spirit_type": "Single",
+      "method": "Roll or Build",
+      "glassware": "Riedel Highball",
+      "ice": "Cubed",
+      "garnish": "Cucumber Roll & Salt Rim",
+      "notes": "Bloody Mary variation using tequila.",
+      "ingredients": [
+        {
+          "name": "Blanco Tequila",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "Cazadores Blanco",
+          "required": true
+        },
+        {
+          "name": "Bloody Mary Mix",
+          "role": "Mixer",
+          "amount": 200,
+          "unit": "ml",
+          "spec": "Bloody/Virgin Mary Mix",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "red-snapper",
+      "name": "Red Snapper",
+      "family": "Savoury",
+      "category": "Gin",
+      "method": "Roll or Build",
+      "glassware": "Riedel Highball",
+      "ice": "Cubed",
+      "garnish": "Cucumber Roll & Salt Rim",
+      "notes": "Bloody Mary variation using gin.",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "Bombay Sapphire",
+          "required": true
+        },
+        {
+          "name": "Bloody Mary Mix",
+          "role": "Mixer",
+          "amount": 200,
+          "unit": "ml",
+          "spec": "Bloody/Virgin Mary Mix",
+          "required": true
+        }
+      ],
+      "base_spirit": "Gin",
+      "spirit_type": "Single"
+    },
+    {
+      "id": "boulevardier",
+      "name": "Boulevardier",
+      "family": "Negroni Family",
+      "category": "Whiskey",
+      "base_spirit": "Bourbon",
+      "spirit_type": "Blend",
+      "method": "Stir",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "Orange Peel",
+      "ingredients": [
+        {
+          "name": "Bourbon",
+          "role": "Base Spirit",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Maker's Mark",
+          "required": true
+        },
+        {
+          "name": "Campari",
+          "role": "Aperitif",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Campari",
+          "required": true,
+          "flavour_tags": [
+            "Orange",
+            "Herbal",
+            "Strong Bitter",
+            "Negroni"
+          ]
+        },
+        {
+          "name": "Sweet Vermouth",
+          "role": "Aperitif",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Regal Rogue Red",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "caipirinha",
+      "name": "Caipirinha",
+      "family": "Caipirinha Family",
+      "category": "Cachaça",
+      "base_spirit": "Cachaca",
+      "spirit_type": "Single",
+      "method": "Muddle & Churn",
+      "glassware": "Riedel Rocks",
+      "ice": "Crushed",
+      "garnish": "Lime Wedge",
+      "notes": "Caipiroska uses vodka. Caipirissima uses white rum.",
+      "ingredients": [
+        {
+          "name": "Cachaça",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Leblon Cachaça",
+          "required": true
+        },
+        {
+          "name": "Lime Wedges",
+          "role": "Citrus",
+          "amount": 6,
+          "unit": "wedges",
+          "spec": "Lime Wedges",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Gomme",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "caipiroska",
+      "name": "Caipiroska",
+      "family": "Caipirinha Family",
+      "category": "Vodka",
+      "base_spirit": "Vodka",
+      "spirit_type": "Single",
+      "method": "Muddle & Churn",
+      "glassware": "Riedel Rocks",
+      "ice": "Crushed",
+      "garnish": "Lime Wedge",
+      "notes": "Caipirinha variation using vodka.",
+      "ingredients": [
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "42 Below",
+          "required": true
+        },
+        {
+          "name": "Lime Wedges",
+          "role": "Citrus",
+          "amount": 6,
+          "unit": "wedges",
+          "spec": "Lime Wedges",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Gomme",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "caipirissima",
+      "name": "Caipirissima",
+      "family": "Caipirinha Family",
+      "category": "Rum",
+      "base_spirit": "Rum",
+      "spirit_type": "Single",
+      "method": "Muddle & Churn",
+      "glassware": "Riedel Rocks",
+      "ice": "Crushed",
+      "garnish": "Lime Wedge",
+      "notes": "Caipirinha variation using white rum.",
+      "ingredients": [
+        {
+          "name": "White Rum",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Bacardi Carta Blanca",
+          "required": true
+        },
+        {
+          "name": "Lime Wedges",
+          "role": "Citrus",
+          "amount": 6,
+          "unit": "wedges",
+          "spec": "Lime Wedges",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Gomme",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "cosmopolitan",
+      "name": "Cosmopolitan",
+      "family": "Sour / Daisy",
+      "category": "Vodka",
+      "base_spirit": "Vodka",
+      "spirit_type": "Blend",
+      "method": "Shake & Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "Orange Peel",
+      "ingredients": [
+        {
+          "name": "Citrus Vodka",
+          "role": "Base Spirit",
+          "amount": 35,
+          "unit": "ml",
+          "spec": "Ketel One Citroen",
+          "required": true
+        },
+        {
+          "name": "Cointreau",
+          "role": "Liqueur",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Cointreau",
+          "required": true,
+          "flavour_tags": [
+            "Orange",
+            "Triple Sec"
+          ]
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Citrus",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Lime Juice",
+          "required": true
+        },
+        {
+          "name": "Cranberry Juice",
+          "role": "Juice",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Cranberry Juice",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "daiquiri",
+      "name": "Daiquiri",
+      "family": "Sour",
+      "category": "Rum",
+      "base_spirit": "White Rum",
+      "spirit_type": "Single",
+      "method": "Shake & Double Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "Lime Wedge",
+      "ingredients": [
+        {
+          "name": "White Rum",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "Bacardi Carta Blanca",
+          "required": true
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lime Juice",
+          "required": true
+        },
+        {
+          "name": "Sugar Syrup",
+          "role": "Sweetener",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Sugar Syrup",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "espresso-martini",
+      "name": "Espresso Martini",
+      "family": "Coffee / Modern Classic",
+      "category": "Vodka",
+      "base_spirit": "Vodka",
+      "spirit_type": "Blend",
+      "method": "Shake & Double Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "3x Coffee Beans",
+      "ingredients": [
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 35,
+          "unit": "ml",
+          "spec": "42 Below",
+          "required": true
+        },
+        {
+          "name": "Coffee Liqueur",
+          "role": "Liqueur",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Blend Coffee Liqueur",
+          "required": true,
+          "flavour_tags": [
+            "Coffee",
+            "Chocolate"
+          ]
+        },
+        {
+          "name": "Coffee Dilution",
+          "role": "Coffee",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Solo Coffee Dilution",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Gomme Syrup",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "french-connection",
+      "name": "French Connection",
+      "family": "Duo",
+      "category": "Cognac",
+      "base_spirit": "Cognac",
+      "spirit_type": "Blend",
+      "method": "Stir in glass",
+      "glassware": "Riedel Rocks",
+      "ice": "Cubed",
+      "garnish": "Lemon Peel",
+      "ingredients": [
+        {
+          "name": "Cognac",
+          "role": "Base Spirit",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Hennessy VS",
+          "required": true
+        },
+        {
+          "name": "Amaretto",
+          "role": "Liqueur",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Disaronno",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "godfather",
+      "name": "Godfather",
+      "family": "Duo",
+      "category": "Whiskey",
+      "base_spirit": "Scotch",
+      "spirit_type": "Blend",
+      "method": "Stir",
+      "glassware": "Riedel Rocks",
+      "ice": "Cubed",
+      "garnish": "None",
+      "notes": "Godmother: replace whiskey with vodka.",
+      "ingredients": [
+        {
+          "name": "Scotch Whisky",
+          "role": "Base Spirit",
+          "amount": 35,
+          "unit": "ml",
+          "spec": "JW Black",
+          "required": true
+        },
+        {
+          "name": "Amaretto",
+          "role": "Liqueur",
+          "amount": 35,
+          "unit": "ml",
+          "spec": "Disaronno",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "godmother",
+      "name": "Godmother",
+      "family": "Duo",
+      "category": "Vodka",
+      "base_spirit": "Vodka",
+      "spirit_type": "Blend",
+      "method": "Stir",
+      "glassware": "Riedel Rocks",
+      "ice": "Cubed",
+      "garnish": "None",
+      "notes": "Vodka variation of Godfather.",
+      "ingredients": [
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 35,
+          "unit": "ml",
+          "spec": "42 Below",
+          "required": true
+        },
+        {
+          "name": "Amaretto",
+          "role": "Liqueur",
+          "amount": 35,
+          "unit": "ml",
+          "spec": "Disaronno",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "hugo-spritz",
+      "name": "Hugo Spritz",
+      "family": "Spritz",
+      "category": "Aperitif",
+      "base_spirit": "Elderflower",
+      "spirit_type": "Blend",
+      "method": "Build",
+      "glassware": "Malbec",
+      "ice": "None",
+      "garnish": "Mint Sprig",
+      "ingredients": [
+        {
+          "name": "Elderflower Liqueur",
+          "role": "Liqueur",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "St Germain",
+          "required": true
+        },
+        {
+          "name": "Sparkling Wine",
+          "role": "Sparkling Wine",
+          "amount": 100,
+          "unit": "ml",
+          "spec": "Chandon",
+          "required": true
+        },
+        {
+          "name": "Soda Water",
+          "role": "Mixer",
+          "amount": 100,
+          "unit": "ml",
+          "spec": "Soda Water",
+          "required": true
+        },
+        {
+          "name": "Mint Leaves",
+          "role": "Herb",
+          "amount": 6,
+          "unit": "leaves",
+          "spec": "Mint Leaves",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "john-collins",
+      "name": "John Collins",
+      "family": "Collins",
+      "category": "Whiskey",
+      "base_spirit": "Whiskey",
+      "spirit_type": "Single",
+      "method": "Shake, Strain & Top",
+      "glassware": "Riedel Highball",
+      "ice": "Cubed",
+      "garnish": "Lemon Slice & Cherry",
+      "ingredients": [
+        {
+          "name": "Scotch Whisky",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "JW Black",
+          "required": true
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lemon Juice",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Gomme Syrup",
+          "required": true
+        },
+        {
+          "name": "Soda Water",
+          "role": "Mixer",
+          "amount": 120,
+          "unit": "ml",
+          "spec": "Soda Top up",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "dark-stormy",
+      "name": "Dark & Stormy",
+      "family": "Highball",
+      "category": "Rum",
+      "base_spirit": "Dark Rum",
+      "spirit_type": "Single",
+      "method": "Build",
+      "glassware": "Riedel Highball",
+      "ice": "Cubed",
+      "garnish": "Lime Wedge",
+      "ingredients": [
+        {
+          "name": "Aged Rum",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "Mount Gay Black Barrel",
+          "required": true
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lime Juice",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 3,
+          "unit": "dash",
+          "spec": "Angostura Bitters",
+          "required": true
+        },
+        {
+          "name": "Ginger Beer",
+          "role": "Mixer",
+          "amount": 150,
+          "unit": "ml",
+          "spec": "Ginger Beer",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "french-75",
+      "name": "French 75",
+      "family": "Sparkling Sour",
+      "category": "Gin",
+      "base_spirit": "Gin",
+      "spirit_type": "Blend",
+      "method": "Shake, Strain, Top",
+      "glassware": "Flute",
+      "ice": "None",
+      "garnish": "Lemon Peel",
+      "notes": "With Cazadores Blanco: Mexican 88.",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "role": "Base Spirit",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Bombay Sapphire",
+          "required": true
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Citrus",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Lemon Juice",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Gomme Syrup",
+          "required": true
+        },
+        {
+          "name": "Sparkling Wine",
+          "role": "Sparkling Wine",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Pommery Brut",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "french-martini",
+      "name": "French Martini",
+      "family": "Modern Classic",
+      "category": "Vodka",
+      "base_spirit": "Vodka",
+      "spirit_type": "Blend",
+      "method": "Shake & Double Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "1 Raspberry",
+      "ingredients": [
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "42 Below",
+          "required": true
+        },
+        {
+          "name": "Raspberry Liqueur",
+          "role": "Liqueur",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Chambord",
+          "required": true
+        },
+        {
+          "name": "Pineapple Juice",
+          "role": "Juice",
+          "amount": 60,
+          "unit": "ml",
+          "spec": "Pineapple Juice",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "hanky-panky",
+      "name": "Hanky Panky",
+      "family": "Martini / Aromatic",
+      "category": "Gin",
+      "base_spirit": "Gin",
+      "spirit_type": "Blend",
+      "method": "Stir & Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "Orange Peel",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "role": "Base Spirit",
+          "amount": 35,
+          "unit": "ml",
+          "spec": "Bombay Sapphire",
+          "required": true
+        },
+        {
+          "name": "Sweet Vermouth",
+          "role": "Aperitif",
+          "amount": 35,
+          "unit": "ml",
+          "spec": "Regal Rogue Red",
+          "required": true
+        },
+        {
+          "name": "Fernet Branca",
+          "role": "Amaro",
+          "amount": 5,
+          "unit": "ml",
+          "spec": "Fernet Branca",
+          "required": true,
+          "flavour_tags": [
+            "Mint",
+            "Herbal",
+            "Bitter"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "irish-coffee",
+      "name": "Irish Coffee",
+      "family": "Coffee / Hot Drink",
+      "category": "Whiskey",
+      "base_spirit": "Irish Whiskey",
+      "spirit_type": "Single",
+      "method": "Build & Float",
+      "glassware": "Latte",
+      "ice": "None",
+      "garnish": "3x Coffee Beans",
+      "notes": "Build the drink, float cream.",
+      "ingredients": [
+        {
+          "name": "Irish Whiskey",
+          "role": "Base Spirit",
+          "amount": 35,
+          "unit": "ml",
+          "spec": "Slane's Whiskey",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Gomme Syrup",
+          "required": true
+        },
+        {
+          "name": "Espresso",
+          "role": "Coffee",
+          "amount": 60,
+          "unit": "ml",
+          "spec": "Espresso",
+          "required": true
+        },
+        {
+          "name": "Double Cream",
+          "role": "Cream",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Double Cream",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "sidecar",
+      "name": "Sidecar",
+      "family": "Daisy / Sidecar",
+      "category": "Cognac",
+      "base_spirit": "Cognac",
+      "spirit_type": "Blend",
+      "method": "Shake & Double Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "Sugar Rim & Lemon Zest",
+      "notes": "Rim glass with sugar.",
+      "ingredients": [
+        {
+          "name": "Cognac",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Hennessy VS",
+          "required": true
+        },
+        {
+          "name": "Cointreau",
+          "role": "Liqueur",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Cointreau",
+          "required": true,
+          "flavour_tags": [
+            "Orange",
+            "Triple Sec"
+          ]
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lemon Juice",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "tequila-sunrise",
+      "name": "Tequila Sunrise",
+      "family": "Long Drink",
+      "category": "Tequila",
+      "base_spirit": "Tequila",
+      "spirit_type": "Single",
+      "method": "Build",
+      "glassware": "Riedel Highball",
+      "ice": "Cubed",
+      "garnish": "Orange Slice",
+      "notes": "Slowly pour grenadine on top.",
+      "ingredients": [
+        {
+          "name": "Blanco Tequila",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Cazadores Blanco",
+          "required": true
+        },
+        {
+          "name": "Orange Juice",
+          "role": "Juice",
+          "amount": 150,
+          "unit": "ml",
+          "spec": "Orange Juice",
+          "required": true
+        },
+        {
+          "name": "Grenadine",
+          "role": "Syrup",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Grenadine",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "vesper-martini",
+      "name": "Vesper Martini",
+      "family": "Martini",
+      "category": "Blend",
+      "base_spirit": "Gin/Vodka",
+      "spirit_type": "Multi",
+      "method": "Shake & Double Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "Lemon Zest",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Roku",
+          "required": true
+        },
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "42 Below",
+          "required": true
+        },
+        {
+          "name": "Lillet Blanc",
+          "role": "Aperitif",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Lillet Blanc",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "white-lady",
+      "name": "White Lady",
+      "family": "Sour / Daisy",
+      "category": "Gin",
+      "base_spirit": "Gin",
+      "spirit_type": "Blend",
+      "method": "Shake & Double Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "Lemon Peel",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Bombay Sapphire",
+          "required": true
+        },
+        {
+          "name": "Cointreau",
+          "role": "Liqueur",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Cointreau",
+          "required": true,
+          "flavour_tags": [
+            "Orange",
+            "Triple Sec"
+          ]
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Citrus",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Lemon Juice",
+          "required": true
+        },
+        {
+          "name": "Foamer Dilution",
+          "role": "Foamer",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Foamer Dilution",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "zombie",
+      "name": "Zombie",
+      "family": "Tropical / Tiki",
+      "category": "Rum",
+      "base_spirit": "Rum Blend",
+      "spirit_type": "Multi",
+      "method": "Shake & Strain",
+      "glassware": "Tiki Joker Glass",
+      "ice": "Cubed & Crushed",
+      "garnish": "Mint Sprig, 1/4 Passion Fruit",
+      "ingredients": [
+        {
+          "name": "White Rum",
+          "role": "Base Spirit",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Bacardi Carta Blanca",
+          "required": true
+        },
+        {
+          "name": "Aged Rum",
+          "role": "Base Spirit",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Mount Gay Black Barrel",
+          "required": true
+        },
+        {
+          "name": "Overproof Rum",
+          "role": "Base Spirit",
+          "amount": 5,
+          "unit": "ml",
+          "spec": "Wray & Nephew",
+          "required": true
+        },
+        {
+          "name": "Pineapple Juice",
+          "role": "Juice",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "Pineapple Juice",
+          "required": true
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Citrus",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Lime Juice",
+          "required": true
+        },
+        {
+          "name": "Falernum",
+          "role": "Syrup",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Bristol Falernum",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Angostura Bitters",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "sex-on-the-beach",
+      "name": "Sex on the Beach",
+      "family": "Long Drink",
+      "category": "Vodka",
+      "base_spirit": "Vodka",
+      "spirit_type": "Blend",
+      "method": "Build",
+      "glassware": "Riedel Highball",
+      "ice": "Cubed",
+      "garnish": "Orange Slice",
+      "ingredients": [
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "42 Below",
+          "required": true
+        },
+        {
+          "name": "Peach Liqueur",
+          "role": "Liqueur",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Briottet Peach Liqueur",
+          "required": true
+        },
+        {
+          "name": "Cranberry Juice",
+          "role": "Juice",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "Cranberry Juice",
+          "required": true
+        },
+        {
+          "name": "Orange Juice",
+          "role": "Juice",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "Orange Juice",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "singapore-sling",
+      "name": "Singapore Sling",
+      "family": "Tropical / Sling",
+      "category": "Gin",
+      "base_spirit": "Gin",
+      "spirit_type": "Blend",
+      "method": "Shake & Strain",
+      "glassware": "Draft Stemmed Beer (38cl)",
+      "ice": "Cubed & Crushed",
+      "garnish": "Cherry & Mint Sprig",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "role": "Base Spirit",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Bombay Sapphire",
+          "required": true
+        },
+        {
+          "name": "Cherry Liqueur",
+          "role": "Liqueur",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Cherry Heering",
+          "required": true
+        },
+        {
+          "name": "Cointreau",
+          "role": "Liqueur",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Cointreau",
+          "required": true,
+          "flavour_tags": [
+            "Orange",
+            "Triple Sec"
+          ]
+        },
+        {
+          "name": "Bénédictine",
+          "role": "Liqueur",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Dom Benedictine",
+          "required": true
+        },
+        {
+          "name": "Pineapple Juice",
+          "role": "Juice",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Pineapple Juice",
+          "required": true
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Citrus",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Lime Juice",
+          "required": true
+        },
+        {
+          "name": "Grenadine",
+          "role": "Syrup",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Grenadine",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Angostura",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "tom-collins",
+      "name": "Tom Collins",
+      "family": "Collins",
+      "category": "Gin",
+      "base_spirit": "Gin",
+      "spirit_type": "Single",
+      "method": "Shake & Strain",
+      "glassware": "Riedel Highball",
+      "ice": "Cubed",
+      "garnish": "Lemon Slice & Cherry",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "Bombay Sapphire",
+          "required": true
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lemon Juice",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Gomme Syrup",
+          "required": true
+        },
+        {
+          "name": "Soda Water",
+          "role": "Mixer",
+          "amount": 120,
+          "unit": "ml",
+          "spec": "Top up Soda Water",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "whiskey-sour",
+      "name": "Whiskey Sour",
+      "family": "Sour",
+      "category": "Whiskey",
+      "base_spirit": "Bourbon",
+      "spirit_type": "Single",
+      "method": "Dry Shake, Strain",
+      "glassware": "Riedel Rocks",
+      "ice": "Cubed",
+      "garnish": "Lemon Peel & Cherry",
+      "ingredients": [
+        {
+          "name": "Bourbon",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "Maker's Mark",
+          "required": true
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lemon Juice",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Gomme",
+          "required": true
+        },
+        {
+          "name": "Foamer Dilution",
+          "role": "Foamer",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Foamer Dilution",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Angostura",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "vieux-carr",
+      "name": "Vieux Carré",
+      "family": "Aromatic / Spirit Forward",
+      "category": "Blend",
+      "base_spirit": "Whiskey/Cognac",
+      "spirit_type": "Multi",
+      "method": "Stir & Strain",
+      "glassware": "Riedel Rocks",
+      "ice": "Cubed",
+      "garnish": "Lemon Peel",
+      "ingredients": [
+        {
+          "name": "Bourbon",
+          "role": "Base Spirit",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Maker's Mark",
+          "required": true
+        },
+        {
+          "name": "Cognac",
+          "role": "Base Spirit",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Hennessy VS",
+          "required": true
+        },
+        {
+          "name": "Sweet Vermouth",
+          "role": "Aperitif",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Regal Rogue Red",
+          "required": true
+        },
+        {
+          "name": "Bénédictine",
+          "role": "Liqueur",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Dom Benedictine",
+          "required": true
+        },
+        {
+          "name": "Peychaud's Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Peychaud's Bitters",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Angostura Bitters",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "dirty-martini",
+      "name": "Dirty Martini",
+      "family": "Martini",
+      "category": "Gin/Vodka",
+      "base_spirit": "Gin",
+      "spirit_type": "Single",
+      "method": "Stir & Double Strain",
+      "glassware": "Nick & Nora",
+      "ice": "None",
+      "garnish": "3 Olives on Stick",
+      "notes": "Uses 42 Below or Roku.",
+      "ingredients": [
+        {
+          "name": "Gin or Vodka",
+          "role": "Base Spirit",
+          "amount": 60,
+          "unit": "ml",
+          "spec": "42 Below/Roku",
+          "required": true
+        },
+        {
+          "name": "Dry Vermouth",
+          "role": "Aperitif",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Regal Rogue Dry",
+          "required": true
+        },
+        {
+          "name": "Olive Brine",
+          "role": "Brine",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Olive Brine",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "mimosa",
+      "name": "Mimosa",
+      "family": "Sparkling",
+      "category": "Sparkling Wine",
+      "base_spirit": "Prosecco",
+      "spirit_type": "Blend",
+      "method": "Build",
+      "glassware": "Flute",
+      "ice": "None",
+      "garnish": "None",
+      "ingredients": [
+        {
+          "name": "Orange Juice",
+          "role": "Juice",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Orange Juice",
+          "required": true
+        },
+        {
+          "name": "Sparkling Wine",
+          "role": "Sparkling Wine",
+          "amount": 75,
+          "unit": "ml",
+          "spec": "Chandon",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "mojito",
+      "name": "Mojito",
+      "family": "Highball",
+      "category": "Rum",
+      "base_spirit": "White Rum",
+      "spirit_type": "Single",
+      "method": "Build & Churn",
+      "glassware": "Riedel Highball",
+      "ice": "Crushed",
+      "garnish": "Mint Sprig & Lime Wedge",
+      "ingredients": [
+        {
+          "name": "White Rum",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "Bacardi Carta Blanca",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Gomme Syrup",
+          "required": true
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lime Juice",
+          "required": true
+        },
+        {
+          "name": "Mint Leaves",
+          "role": "Herb",
+          "amount": 8,
+          "unit": "leaves",
+          "spec": "Mint Leaves",
+          "required": true
+        },
+        {
+          "name": "Soda Water",
+          "role": "Mixer",
+          "unit": "Top",
+          "spec": "Soda Water",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "negroni",
+      "name": "Negroni",
+      "family": "Negroni Family",
+      "category": "Gin",
+      "base_spirit": "Gin",
+      "spirit_type": "Blend",
+      "method": "Stir",
+      "glassware": "Riedel Rocks",
+      "ice": "Clear Cube",
+      "garnish": "Orange Slice",
+      "ingredients": [
+        {
+          "name": "Gin",
+          "role": "Base Spirit",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Bombay Sapphire",
+          "required": true
+        },
+        {
+          "name": "Sweet Vermouth",
+          "role": "Aperitif",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Regal Rogue Red",
+          "required": true
+        },
+        {
+          "name": "Campari",
+          "role": "Aperitif",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Campari",
+          "required": true,
+          "flavour_tags": [
+            "Orange",
+            "Herbal",
+            "Strong Bitter",
+            "Negroni"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tommy-s-margarita",
+      "name": "Tommy's Margarita",
+      "family": "Daisy / Margarita",
+      "category": "Tequila",
+      "base_spirit": "Tequila",
+      "spirit_type": "Blend",
+      "method": "Shake & Strain",
+      "glassware": "Riedel Rocks",
+      "ice": "Cubed",
+      "garnish": "Lime Wedge",
+      "ingredients": [
+        {
+          "name": "Blanco Tequila",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "Cazadores Blanco",
+          "required": true
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lime Juice",
+          "required": true
+        },
+        {
+          "name": "Agave Syrup",
+          "role": "Sweetener",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Agave Syrup",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "dry-martini",
+      "name": "Dry Martini",
+      "family": "Martini",
+      "category": "Gin/Vodka",
+      "base_spirit": "Gin",
+      "spirit_type": "Single",
+      "method": "Stir & Double Strain",
+      "glassware": "Nick & Nora",
+      "ice": "None",
+      "garnish": "Lemon Peel",
+      "notes": "Uses 42 Below or Roku.",
+      "ingredients": [
+        {
+          "name": "Gin or Vodka",
+          "role": "Base Spirit",
+          "amount": 60,
+          "unit": "ml",
+          "spec": "42 Below/Roku",
+          "required": true
+        },
+        {
+          "name": "Dry Vermouth",
+          "role": "Aperitif",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Regal Rogue Dry",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "mint-julep",
+      "name": "Mint Julep",
+      "family": "Julep",
+      "category": "Whiskey",
+      "base_spirit": "Bourbon",
+      "spirit_type": "Single",
+      "method": "Build & Churn",
+      "glassware": "Julep",
+      "ice": "Crushed",
+      "garnish": "Mint Sprig",
+      "ingredients": [
+        {
+          "name": "Bourbon",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Maker's Mark",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Gomme Syrup",
+          "required": true
+        },
+        {
+          "name": "Mint Leaves",
+          "role": "Herb",
+          "amount": 8,
+          "unit": "leaves",
+          "spec": "Mint Leaves",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Angostura",
+          "required": true
+        },
+        {
+          "name": "Mint Sprig",
+          "role": "Garnish",
+          "amount": 1,
+          "unit": "sprig",
+          "spec": "Mint Sprig",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "moscow-mule",
+      "name": "Moscow Mule",
+      "family": "Highball",
+      "category": "Vodka",
+      "base_spirit": "Vodka",
+      "spirit_type": "Single",
+      "method": "Build & Churn",
+      "glassware": "Julep",
+      "ice": "Cubed & Crushed",
+      "garnish": "Mint Sprig & Lime Wedge",
+      "notes": "With El Jimador Blanco Tequila: El Burro.",
+      "ingredients": [
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "42 Below",
+          "required": true
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lime Juice",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Angostura",
+          "required": true
+        },
+        {
+          "name": "Ginger Beer",
+          "role": "Mixer",
+          "unit": "Top",
+          "spec": "Ginger Beer",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "old-fashioned",
+      "name": "Old Fashioned",
+      "family": "Old Fashioned",
+      "category": "Whiskey",
+      "base_spirit": "Bourbon",
+      "spirit_type": "Single",
+      "method": "Stir",
+      "glassware": "Riedel Rocks",
+      "ice": "Clear Cube",
+      "garnish": "Orange Twist",
+      "ingredients": [
+        {
+          "name": "Bourbon",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Maker's Mark",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Gomme",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Angostura",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "pi-a-colada",
+      "name": "Piña Colada",
+      "family": "Tropical / Cream",
+      "category": "Rum",
+      "base_spirit": "Rum",
+      "spirit_type": "Blend",
+      "method": "Shake & Strain",
+      "glassware": "Draft Stemmed Beer (38cl)",
+      "ice": "Cubed & Crushed",
+      "garnish": "Mint Sprig",
+      "ingredients": [
+        {
+          "name": "Coconut Rum",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "Bacardi Coconut",
+          "required": true
+        },
+        {
+          "name": "Pineapple Juice",
+          "role": "Juice",
+          "amount": 80,
+          "unit": "ml",
+          "spec": "Pineapple Juice",
+          "required": true
+        },
+        {
+          "name": "Double Cream",
+          "role": "Cream",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Double Cream",
+          "required": true
+        },
+        {
+          "name": "Coconut Syrup",
+          "role": "Syrup",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Coconut Syrup",
+          "required": true,
+          "flavour_tags": [
+            "Coconut"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pisco-flower",
+      "name": "Pisco Flower",
+      "family": "Sour / Floral",
+      "category": "Pisco",
+      "base_spirit": "Pisco",
+      "spirit_type": "Single",
+      "method": "Shake & Double Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "Lemon Peel",
+      "ingredients": [
+        {
+          "name": "Pisco",
+          "role": "Base Spirit",
+          "amount": 35,
+          "unit": "ml",
+          "spec": "El Gobernador Pisco",
+          "required": true
+        },
+        {
+          "name": "Elderflower Liqueur",
+          "role": "Liqueur",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "St Germain",
+          "required": true
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Citrus",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Lime Juice",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Gomme Syrup",
+          "required": true
+        },
+        {
+          "name": "Foamer Dilution",
+          "role": "Foamer",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Foamer Dilution",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Angostura",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "pornstar-martini",
+      "name": "Pornstar Martini",
+      "family": "Modern Classic",
+      "category": "Vodka",
+      "base_spirit": "Vanilla Vodka",
+      "spirit_type": "Blend",
+      "method": "Shake & Double Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "1/4 Passion Fruit",
+      "notes": "25ml Fiol on the side.",
+      "ingredients": [
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "42 Below",
+          "required": true
+        },
+        {
+          "name": "Passion Fruit Liqueur",
+          "role": "Liqueur",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Passoa",
+          "required": true
+        },
+        {
+          "name": "Passion Fruit Puree",
+          "role": "Puree",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Ponthier Passion Fruit",
+          "required": true
+        },
+        {
+          "name": "Pineapple Juice",
+          "role": "Juice",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Pineapple Juice",
+          "required": true
+        },
+        {
+          "name": "Vanilla Syrup",
+          "role": "Syrup",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Vanilla Syrup",
+          "required": true,
+          "flavour_tags": [
+            "Vanilla"
+          ]
+        },
+        {
+          "name": "Sparkling Wine",
+          "role": "Side Serve",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Fiol",
+          "required": true,
+          "note": "25ml Fiol on the side."
+        }
+      ]
+    },
+    {
+      "id": "rusty-nail",
+      "name": "Rusty Nail",
+      "family": "Duo",
+      "category": "Whiskey",
+      "base_spirit": "Scotch",
+      "spirit_type": "Blend",
+      "method": "Build",
+      "glassware": "Riedel Rocks",
+      "ice": "Cubed",
+      "garnish": "Lemon Peel",
+      "ingredients": [
+        {
+          "name": "Scotch Whisky",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "JW Black",
+          "required": true
+        },
+        {
+          "name": "Drambuie",
+          "role": "Liqueur",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Drambuie",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "sea-breeze",
+      "name": "Sea Breeze",
+      "family": "Long Drink",
+      "category": "Vodka",
+      "base_spirit": "Vodka",
+      "spirit_type": "Blend",
+      "method": "Build",
+      "glassware": "Riedel Highball",
+      "ice": "Cubed",
+      "garnish": "Pink Grapefruit Slice",
+      "ingredients": [
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "42 Below",
+          "required": true
+        },
+        {
+          "name": "Pink Grapefruit Juice",
+          "role": "Juice",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Pink Grapefruit Juice",
+          "required": true
+        },
+        {
+          "name": "Cranberry Juice",
+          "role": "Juice",
+          "amount": 80,
+          "unit": "ml",
+          "spec": "Cranberry Juice",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "paloma",
+      "name": "Paloma",
+      "family": "Highball",
+      "category": "Tequila",
+      "base_spirit": "Tequila",
+      "spirit_type": "Single",
+      "method": "Build",
+      "glassware": "Riedel Highball",
+      "ice": "Cubed",
+      "garnish": "Rock Salt Rim & Grapefruit Slice",
+      "notes": "Replace Three Cents Grapefruit with Coke: Batanga.",
+      "ingredients": [
+        {
+          "name": "Blanco Tequila",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Cazadores Blanco",
+          "required": true
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Citrus",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Lime Juice",
+          "required": true
+        },
+        {
+          "name": "Grapefruit Soda",
+          "role": "Mixer",
+          "amount": 150,
+          "unit": "ml",
+          "spec": "Three Cents Grapefruit",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "pisco-sour",
+      "name": "Pisco Sour",
+      "family": "Sour",
+      "category": "Pisco",
+      "base_spirit": "Pisco",
+      "spirit_type": "Single",
+      "method": "Shake & Double Strain",
+      "glassware": "Sidra Tumbler Saucer (23cl)",
+      "ice": "None",
+      "garnish": "Angostura",
+      "ingredients": [
+        {
+          "name": "Pisco",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "El Gobernador Pisco",
+          "required": true
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Citrus",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Lemon Juice",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Gomme Syrup",
+          "required": true
+        },
+        {
+          "name": "Foamer Dilution",
+          "role": "Foamer",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Foamer Dilution",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Angostura Bitter",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "planter-s-punch",
+      "name": "Planter's Punch",
+      "family": "Tropical / Punch",
+      "category": "Rum",
+      "base_spirit": "Rum",
+      "spirit_type": "Blend",
+      "method": "Shake & Strain",
+      "glassware": "Riedel Highball",
+      "ice": "Cubed",
+      "garnish": "Orange Slice & Mint Sprig",
+      "ingredients": [
+        {
+          "name": "Aged Rum",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Mount Gay Black Barrel",
+          "required": true
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lime Juice",
+          "required": true
+        },
+        {
+          "name": "Orange Juice",
+          "role": "Juice",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Orange Juice",
+          "required": true
+        },
+        {
+          "name": "Pineapple Juice",
+          "role": "Juice",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Pineapple Juice",
+          "required": true
+        },
+        {
+          "name": "Grenadine",
+          "role": "Syrup",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Grenadine",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Angostura",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "russian-spring-punch",
+      "name": "Russian Spring Punch",
+      "family": "Sparkling Punch",
+      "category": "Vodka",
+      "base_spirit": "Vodka",
+      "spirit_type": "Blend",
+      "method": "Shake, Strain, Top",
+      "glassware": "Riedel Highball",
+      "ice": "Crushed",
+      "garnish": "Mint Sprig & Lemon Slice",
+      "notes": "Shake all, top with champagne.",
+      "ingredients": [
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 35,
+          "unit": "ml",
+          "spec": "42 Below",
+          "required": true
+        },
+        {
+          "name": "Crème de Cassis",
+          "role": "Liqueur",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Crème de Cassis",
+          "required": true,
+          "flavour_tags": [
+            "Blackcurrant"
+          ]
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lemon Juice",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Gomme Syrup",
+          "required": true
+        },
+        {
+          "name": "Sparkling Wine",
+          "role": "Sparkling Wine",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Pommery Brut",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "sazerac",
+      "name": "Sazerac",
+      "family": "Old Fashioned",
+      "category": "Cognac",
+      "method": "Stir",
+      "glassware": "Riedel Rocks",
+      "ice": "None",
+      "garnish": "Lemon Peel",
+      "notes": "Rinse glass with absinthe and discard it.",
+      "ingredients": [
+        {
+          "name": "Cognac",
+          "role": "Base Spirit",
+          "amount": 60,
+          "unit": "ml",
+          "spec": "Hennessy VS",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Gomme Syrup",
+          "required": true
+        },
+        {
+          "name": "Peychaud's Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Peychaud's Bitters",
+          "required": true
+        },
+        {
+          "name": "Absinthe",
+          "role": "Rinse",
+          "amount": 5,
+          "unit": "ml",
+          "spec": "Absinthe",
+          "required": true,
+          "note": "Rinse glass with absinthe and discard it."
+        }
+      ],
+      "base_spirit": "Cognac",
+      "spirit_type": "Single"
+    },
+    {
+      "id": "kir",
+      "name": "Kir",
+      "family": "Wine / Aperitif",
+      "category": "Wine",
+      "base_spirit": "White Wine",
+      "spirit_type": "Blend",
+      "method": "Build",
+      "glassware": "Malbec",
+      "ice": "None",
+      "garnish": "None",
+      "ingredients": [
+        {
+          "name": "Crème de Cassis",
+          "role": "Liqueur",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Briottet Cassis",
+          "required": true
+        },
+        {
+          "name": "White Wine",
+          "role": "Wine",
+          "amount": 125,
+          "unit": "ml",
+          "spec": "Humberto Canale S.B.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "lemon-drop-martini",
+      "name": "Lemon Drop Martini",
+      "family": "Sour / Martini",
+      "category": "Vodka",
+      "base_spirit": "Vodka",
+      "spirit_type": "Blend",
+      "method": "Shake & Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "Lemon Peel & Sugar Rim",
+      "ingredients": [
+        {
+          "name": "Citrus Vodka",
+          "role": "Base Spirit",
+          "amount": 35,
+          "unit": "ml",
+          "spec": "Ketel One Citron",
+          "required": true
+        },
+        {
+          "name": "Cointreau",
+          "role": "Liqueur",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Cointreau",
+          "required": true,
+          "flavour_tags": [
+            "Orange",
+            "Triple Sec"
+          ]
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lemon Juice",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "mai-tai",
+      "name": "Mai Tai",
+      "family": "Tropical / Tiki",
+      "category": "Rum",
+      "base_spirit": "Rum",
+      "spirit_type": "Blend",
+      "method": "Shake & Double Strain",
+      "glassware": "Riedel Rocks",
+      "ice": "Cubed & Crushed",
+      "garnish": "Mint Sprig & Lime Wedge",
+      "ingredients": [
+        {
+          "name": "Aged Rum",
+          "role": "Base Spirit",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Mount Gay Black Barrel",
+          "required": true
+        },
+        {
+          "name": "White Rum",
+          "role": "Base Spirit",
+          "amount": 30,
+          "unit": "ml",
+          "spec": "Bacardi Carta Blanca",
+          "required": true
+        },
+        {
+          "name": "Cointreau",
+          "role": "Liqueur",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Cointreau",
+          "required": true,
+          "flavour_tags": [
+            "Orange",
+            "Triple Sec"
+          ]
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lime Juice",
+          "required": true
+        },
+        {
+          "name": "Orgeat",
+          "role": "Syrup",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Orgeat",
+          "required": true,
+          "flavour_tags": [
+            "Almond"
+          ]
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Angostura",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "manhattan-dry",
+      "name": "Manhattan Dry",
+      "family": "Manhattan",
+      "category": "Whiskey",
+      "base_spirit": "Rye Whiskey",
+      "spirit_type": "Blend",
+      "method": "Stir & Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "Lemon Peel",
+      "ingredients": [
+        {
+          "name": "Rye Whiskey",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Whistle Pig 6yr",
+          "required": true
+        },
+        {
+          "name": "Dry Vermouth",
+          "role": "Aperitif",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Regal Rogue Dry",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Angostura",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "margarita",
+      "name": "Margarita",
+      "family": "Daisy / Margarita",
+      "category": "Tequila",
+      "base_spirit": "Tequila",
+      "spirit_type": "Blend",
+      "method": "Shake & Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "Salt Rim & Lime Wedge",
+      "ingredients": [
+        {
+          "name": "Blanco Tequila",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "Cazadores Blanco",
+          "required": true
+        },
+        {
+          "name": "Cointreau",
+          "role": "Liqueur",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Cointreau",
+          "required": true,
+          "flavour_tags": [
+            "Orange",
+            "Triple Sec"
+          ]
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lime Juice",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "kamikaze",
+      "name": "Kamikaze",
+      "family": "Daisy",
+      "category": "Vodka",
+      "base_spirit": "Vodka",
+      "spirit_type": "Blend",
+      "method": "Shake & Double Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "Lime Wedge",
+      "ingredients": [
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 40,
+          "unit": "ml",
+          "spec": "42 Below",
+          "required": true
+        },
+        {
+          "name": "Cointreau",
+          "role": "Liqueur",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Cointreau",
+          "required": true,
+          "flavour_tags": [
+            "Orange",
+            "Triple Sec"
+          ]
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lime Juice",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "kir-royal",
+      "name": "Kir Royal",
+      "family": "Sparkling",
+      "category": "Sparkling Wine",
+      "base_spirit": "Champagne",
+      "spirit_type": "Blend",
+      "method": "Build",
+      "glassware": "Flute",
+      "ice": "None",
+      "garnish": "None",
+      "ingredients": [
+        {
+          "name": "Crème de Cassis",
+          "role": "Liqueur",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Briottet Cassis",
+          "required": true
+        },
+        {
+          "name": "Sparkling Wine",
+          "role": "Sparkling Wine",
+          "amount": 115,
+          "unit": "ml",
+          "spec": "Pommery Brut",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "long-island-iced-tea",
+      "name": "Long Island Iced Tea",
+      "family": "Multi-Spirit Long Drink",
+      "category": "Blend",
+      "base_spirit": "Vodka/Gin/Rum/Tequila",
+      "spirit_type": "Multi",
+      "method": "Build & Top",
+      "glassware": "Riedel Highball",
+      "ice": "Cubed",
+      "garnish": "Lemon Wedge",
+      "ingredients": [
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "42 Below",
+          "required": true
+        },
+        {
+          "name": "Gin",
+          "role": "Base Spirit",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Bombay Sapphire",
+          "required": true
+        },
+        {
+          "name": "White Rum",
+          "role": "Base Spirit",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Bacardi Carta Blanca",
+          "required": true
+        },
+        {
+          "name": "Blanco Tequila",
+          "role": "Base Spirit",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Cazadores Blanco",
+          "required": true
+        },
+        {
+          "name": "Cointreau",
+          "role": "Liqueur",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Cointreau",
+          "required": true,
+          "flavour_tags": [
+            "Orange",
+            "Triple Sec"
+          ]
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Citrus",
+          "amount": 20,
+          "unit": "ml",
+          "spec": "Lemon Juice",
+          "required": true
+        },
+        {
+          "name": "Gomme Syrup",
+          "role": "Sweetener",
+          "amount": 10,
+          "unit": "ml",
+          "spec": "Gomme Syrup",
+          "required": true
+        },
+        {
+          "name": "Cola",
+          "role": "Mixer",
+          "amount": 100,
+          "unit": "ml",
+          "spec": "Coke",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "manhattan-sweet",
+      "name": "Manhattan Sweet",
+      "family": "Manhattan",
+      "category": "Whiskey",
+      "base_spirit": "Rye Whiskey",
+      "spirit_type": "Blend",
+      "method": "Stir & Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "Cherry",
+      "ingredients": [
+        {
+          "name": "Rye Whiskey",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Whistle Pig 6yr",
+          "required": true
+        },
+        {
+          "name": "Sweet Vermouth",
+          "role": "Aperitif",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Regal Rogue Red",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Angostura",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "manhattan-perfect",
+      "name": "Manhattan Perfect",
+      "family": "Manhattan",
+      "category": "Whiskey",
+      "base_spirit": "Rye Whiskey",
+      "spirit_type": "Blend",
+      "method": "Stir & Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "Cherry & Lemon Peel",
+      "ingredients": [
+        {
+          "name": "Rye Whiskey",
+          "role": "Base Spirit",
+          "amount": 50,
+          "unit": "ml",
+          "spec": "Whistle Pig 6yr",
+          "required": true
+        },
+        {
+          "name": "Sweet Vermouth",
+          "role": "Aperitif",
+          "amount": 12.5,
+          "unit": "ml",
+          "spec": "Regal Rogue Red",
+          "required": true
+        },
+        {
+          "name": "Dry Vermouth",
+          "role": "Aperitif",
+          "amount": 12.5,
+          "unit": "ml",
+          "spec": "Regal Rogue Dry",
+          "required": true
+        },
+        {
+          "name": "Angostura Bitters",
+          "role": "Bitters",
+          "amount": 2,
+          "unit": "dash",
+          "spec": "Angostura",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
