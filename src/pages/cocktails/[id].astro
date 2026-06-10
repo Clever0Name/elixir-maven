@@ -10,10 +10,76 @@ export async function getStaticPaths() {
   }));
 }
 
+interface Ingredient {
+  name: string;
+  role: string;
+  amount?: number;
+  unit?: string;
+  spec: string;
+  required: boolean;
+  note?: string;
+  flavour_tags?: string[];
+}
+
+interface Props {
+  cocktail: {
+    id: string;
+    name: string;
+    family?: string;
+    category: string;
+    base_spirit?: string;
+    spirit_type?: string;
+    method: string;
+    glassware: string;
+    ice?: string;
+    garnish?: string;
+    notes?: string;
+    ingredients: Ingredient[];
+  };
+}
+
 const { cocktail } = Astro.props;
 
+// ─── Proportions bar ────────────────────────────────────────────
+// Amber-gold palette from draft, darkest → lightest
+const POUR_COLORS = [
+  '#c9a14a', '#b08840', '#9b7035', '#8a6230',
+  '#7a5428', '#6d5228', '#5e4a28', '#4d3e25',
+  '#3f3a2c', '#d4b06a',
+];
+
+const mlIngredients = cocktail.ingredients.filter(
+  (ing) =>
+    ing.unit === 'ml' &&
+    typeof ing.amount === 'number' &&
+    ing.role !== 'Side Serve' &&
+    ing.role !== 'Rinse' &&
+    ing.role !== 'Garnish',
+);
+const totalMl = mlIngredients.reduce((sum, ing) => sum + (ing.amount ?? 0), 0);
+
+// ─── Side serves ────────────────────────────────────────────────
+const sideServes = cocktail.ingredients.filter((ing) => ing.role === 'Side Serve');
+
+// ─── Ice display ────────────────────────────────────────────────
+const ice = cocktail.ice ?? 'None';
+const servedUp =
+  ice === 'None' &&
+  ['Coupe', 'Nick & Nora', 'Flute'].some((g) => cocktail.glassware?.includes(g));
+const iceDisplay = servedUp ? 'None — served up' : ice;
+
+// ─── Notes for Full Serve view ──────────────────────────────────
+// Skip cocktail.notes if it exactly duplicates a side-serve ingredient's note
+const sideServeNotes = sideServes.map((s) => s.note).filter(Boolean);
+const showCocktailNote =
+  !!cocktail.notes && !sideServeNotes.includes(cocktail.notes);
+const isVariantNote =
+  showCocktailNote &&
+  (/^[A-Z][^.!?]+:/.test(cocktail.notes ?? '') ||
+    /\bWith\s+[A-Z]/.test(cocktail.notes ?? ''));
+
 const title = `${cocktail.name} Recipe — Elixir Maven`;
-const description = `${cocktail.name} — ${cocktail.family}. ${cocktail.method} in a ${cocktail.glassware}. Full recipe with ingredients and measures.`;
+const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category}. ${cocktail.method} in a ${cocktail.glassware}. Full recipe with ingredients and measures.`;
 ---
 
 <Layout title={title} description={description}>
@@ -25,78 +91,208 @@ const description = `${cocktail.name} — ${cocktail.family}. ${cocktail.method}
       All Cocktails
     </a>
 
-    <header class="page-header">
-      <span class="card-badge">{cocktail.category}</span>
-      <h1>{cocktail.name}</h1>
-      <p class="subtitle">{cocktail.family}</p>
-    </header>
+    <article id="cocktail-page" data-view="spec">
 
-    <div class="recipe-grid">
-      <!-- Ingredients -->
-      <section class="recipe-section" aria-labelledby="ingredients-heading">
-        <h2 class="recipe-section-title" id="ingredients-heading">Ingredients</h2>
-        <ul class="ingredients-list">
-          {
-            cocktail.ingredients.map((ing) => (
-              <li class="ingredient-row">
-                <div>
-                  <div class="ingredient-name">
-                    <a href={`/ingredients/${slugify(ing.name)}`}>{ing.name}</a>
+      <!-- ─── Header ─────────────────────────────────── -->
+      <header class="page-header">
+        <div class="eyebrow-row">
+          <span class="eyebrow">{cocktail.family ?? cocktail.category} · {cocktail.category}</span>
+          <div class="view-toggle" role="group" aria-label="View mode">
+            <button class="toggle-btn" data-mode="spec" aria-pressed="true">Spec</button>
+            <span class="toggle-sep" aria-hidden="true">|</span>
+            <button class="toggle-btn" data-mode="full" aria-pressed="false">Full Serve</button>
+          </div>
+        </div>
+        <h1>{cocktail.name}</h1>
+      </header>
+
+      <!-- ══════════════════════════════════════════════
+           SPEC VIEW  (compact default)
+      ══════════════════════════════════════════════ -->
+      <div class="view-spec">
+        <div class="recipe-grid">
+
+          <section class="recipe-section" aria-labelledby="ing-heading">
+            <h2 class="recipe-section-title" id="ing-heading">Ingredients</h2>
+            <ul class="ingredients-list">
+              {cocktail.ingredients.map((ing) => (
+                <li class="ingredient-row">
+                  <div>
+                    <div class="ingredient-name">
+                      <a href={`/ingredients/${slugify(ing.name)}`}>{ing.name}</a>
+                    </div>
+                    {ing.spec && ing.spec !== ing.name && (
+                      <div class="ingredient-spec">{ing.spec}</div>
+                    )}
                   </div>
-                  {ing.spec && ing.spec !== ing.name && (
-                    <div class="ingredient-spec">{ing.spec}</div>
-                  )}
-                </div>
-                <span class="ingredient-amount">
-                  {formatAmount(ing.amount, ing.unit)}
-                </span>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
+                  <span class="ingredient-amount">{formatAmount(ing.amount, ing.unit)}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
 
-      <!-- Spec / How to make -->
-      <section class="recipe-section" aria-labelledby="spec-heading">
-        <h2 class="recipe-section-title" id="spec-heading">Spec</h2>
-        <div class="spec-grid">
-          <div class="spec-row">
-            <span class="spec-label">Method</span>
-            <span class="spec-value">{cocktail.method}</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-label">Glass</span>
-            <span class="spec-value">{cocktail.glassware}</span>
-          </div>
-          {cocktail.ice && cocktail.ice !== 'None' && (
-            <div class="spec-row">
-              <span class="spec-label">Ice</span>
-              <span class="spec-value">{cocktail.ice}</span>
+          <section class="recipe-section" aria-labelledby="spec-heading">
+            <h2 class="recipe-section-title" id="spec-heading">Spec</h2>
+            <div class="spec-grid">
+              <div class="spec-row">
+                <span class="spec-label">Method</span>
+                <span class="spec-value">{cocktail.method}</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Glass</span>
+                <span class="spec-value">{cocktail.glassware}</span>
+              </div>
+              {cocktail.ice && cocktail.ice !== 'None' && (
+                <div class="spec-row">
+                  <span class="spec-label">Ice</span>
+                  <span class="spec-value">{cocktail.ice}</span>
+                </div>
+              )}
+              {cocktail.garnish && cocktail.garnish !== 'None' && (
+                <div class="spec-row">
+                  <span class="spec-label">Garnish</span>
+                  <span class="spec-value">{cocktail.garnish}</span>
+                </div>
+              )}
+              {cocktail.base_spirit && (
+                <div class="spec-row">
+                  <span class="spec-label">Base Spirit</span>
+                  <span class="spec-value">{cocktail.base_spirit}</span>
+                </div>
+              )}
             </div>
-          )}
-          {cocktail.garnish && cocktail.garnish !== 'None' && (
-            <div class="spec-row">
-              <span class="spec-label">Garnish</span>
-              <span class="spec-value">{cocktail.garnish}</span>
-            </div>
-          )}
-          {cocktail.base_spirit && (
-            <div class="spec-row">
-              <span class="spec-label">Base Spirit</span>
-              <span class="spec-value">{cocktail.base_spirit}</span>
-            </div>
-          )}
+            {cocktail.notes && (
+              <div class="notes-box">
+                <strong>Note</strong>
+                {cocktail.notes}
+              </div>
+            )}
+          </section>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════════
+           FULL SERVE VIEW
+      ══════════════════════════════════════════════ -->
+      <div class="view-full">
+
+        <!-- Spec heading -->
+        <div class="fs-spec-head">
+          <h2>Cocktail Specification</h2>
+          <small>1 serve</small>
         </div>
 
-        {
-          cocktail.notes && (
-            <div class="notes-box">
-              <strong>Note</strong>
-              {cocktail.notes}
+        <!-- Ingredient rows with dotted leaders -->
+        {cocktail.ingredients.map((ing) => (
+          <div class={`fs-row${ing.role === 'Side Serve' ? ' side' : ''}${ing.role === 'Rinse' ? ' rinse' : ''}`}>
+            <span class="fs-name">
+              <a href={`/ingredients/${slugify(ing.name)}`}>{ing.name}</a>
+              {ing.spec && ing.spec !== ing.name && (
+                <em>
+                  {ing.role === 'Side Serve'
+                    ? `${ing.spec} — served on the side`
+                    : ing.spec}
+                </em>
+              )}
+            </span>
+            <span class="fs-leader" aria-hidden="true"></span>
+            <span class="fs-amt">{formatAmount(ing.amount, ing.unit)}</span>
+          </div>
+        ))}
+
+        <!-- Build Proportions bar (ml ingredients only, ≥ 2 items) -->
+        {mlIngredients.length >= 2 && (
+          <div class="fs-pour">
+            <div class="fs-pour-label">Build Proportions</div>
+            <div class="fs-pour-bar" role="img" aria-label="Build proportions bar">
+              {mlIngredients.map((ing, i) => (
+                <i
+                  style={`width:${(((ing.amount ?? 0) / totalMl) * 100).toFixed(1)}%;background:${POUR_COLORS[i % POUR_COLORS.length]}`}
+                  title={`${ing.name}: ${ing.amount}ml`}
+                />
+              ))}
             </div>
-          )
-        }
-      </section>
-    </div>
+            <div class="fs-pour-key">
+              {mlIngredients.map((ing, i) => (
+                <span>
+                  <b style={`background:${POUR_COLORS[i % POUR_COLORS.length]}`}></b>
+                  {ing.name}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Service grid -->
+        <div class="fs-service">
+          <div class="fs-cell">
+            <small>Method</small>
+            <div class="fs-cell-value">{cocktail.method}</div>
+          </div>
+          <div class="fs-cell">
+            <small>Ice</small>
+            <div class="fs-cell-value">{iceDisplay}</div>
+          </div>
+          <div class="fs-cell">
+            <small>Glass</small>
+            <div class="fs-cell-value">{cocktail.glassware}</div>
+          </div>
+          <div class="fs-cell">
+            <small>Garnish</small>
+            <div class="fs-cell-value">
+              {cocktail.garnish && cocktail.garnish !== 'None' ? cocktail.garnish : '—'}
+            </div>
+          </div>
+        </div>
+
+        <!-- Side serve callout -->
+        {sideServes.map((ing) => (
+          <div class="fs-note">
+            <b>Side Serve:</b> {formatAmount(ing.amount, ing.unit)}{' '}
+            {ing.spec !== ing.name ? ing.spec : ing.name} on the side.
+          </div>
+        ))}
+
+        <!-- Cocktail note / variant callout -->
+        {showCocktailNote && (
+          <div class={`fs-note${isVariantNote ? ' variant' : ''}`}>
+            <b>{isVariantNote ? 'Variant:' : 'Note:'}</b> {cocktail.notes}
+          </div>
+        )}
+
+      </div>
+    </article>
   </div>
 </Layout>
+
+<script>
+  const STORAGE_KEY = 'elixir-view-mode';
+
+  const page = document.getElementById('cocktail-page') as HTMLElement | null;
+  const btns = document.querySelectorAll<HTMLButtonElement>('.toggle-btn');
+
+  function setMode(mode: string) {
+    if (!page) return;
+    page.dataset.view = mode;
+    btns.forEach((btn) => {
+      const active = btn.dataset.mode === mode;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', String(active));
+    });
+    try {
+      localStorage.setItem(STORAGE_KEY, mode);
+    } catch {}
+  }
+
+  // Restore saved preference
+  let saved: string | null = null;
+  try {
+    saved = localStorage.getItem(STORAGE_KEY);
+  } catch {}
+  setMode(saved === 'full' ? 'full' : 'spec');
+
+  btns.forEach((btn) => {
+    btn.addEventListener('click', () => setMode(btn.dataset.mode ?? 'spec'));
+  });
+</script>
