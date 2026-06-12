@@ -5,7 +5,6 @@ import cocktailsData from '../../elixir_maven_cocktails.json';
 
 const cocktails = cocktailsData.cocktails;
 
-// Unique categories for filter chips
 const categories = [...new Set(cocktails.map((c) => c.category))].sort();
 
 const totalCount = cocktails.length;
@@ -42,9 +41,27 @@ const totalCount = cocktails.length;
       </div>
     </section>
 
+    <!-- View controls -->
+    <div class="view-controls" aria-label="View options">
+      <div class="control-group">
+        <span class="control-label">Layout</span>
+        <div class="sq-toggle" role="group" aria-label="Layout">
+          <button class="sq-btn layout-btn" data-layout="classic">Classic</button>
+          <button class="sq-btn layout-btn" data-layout="grid">Grid</button>
+        </div>
+      </div>
+      <div class="control-group">
+        <span class="control-label">Group by</span>
+        <div class="sq-toggle" role="group" aria-label="Group by">
+          <button class="sq-btn group-btn" data-group="none">None</button>
+          <button class="sq-btn group-btn coming-soon" data-group="taste" disabled title="Coming soon">Taste</button>
+        </div>
+      </div>
+    </div>
+
     <p class="results-count" id="results-count" aria-live="polite"></p>
 
-    <div class="cocktail-grid" id="cocktail-grid">
+    <div class="cocktail-grid" id="cocktail-grid" data-layout="classic">
       {cocktails.map((cocktail) => <CocktailCard cocktail={cocktail} />)}
       <div class="no-results" id="no-results" style="display:none">
         <h3>No cocktails found</h3>
@@ -55,25 +72,46 @@ const totalCount = cocktails.length;
 </Layout>
 
 <script>
+  const LAYOUT_KEY = 'elixir-layout';
+  const GROUP_KEY  = 'elixir-group';
+
   const searchInput = document.getElementById('search') as HTMLInputElement;
-  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
-  const cards = document.querySelectorAll<HTMLAnchorElement>('.cocktail-card');
-  const countEl = document.getElementById('results-count');
-  const noResults = document.getElementById('no-results');
+  const filterBtns  = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const layoutBtns  = document.querySelectorAll<HTMLButtonElement>('.layout-btn');
+  const groupBtns   = document.querySelectorAll<HTMLButtonElement>('.group-btn');
+  const grid        = document.getElementById('cocktail-grid') as HTMLElement;
+  const cards       = document.querySelectorAll<HTMLAnchorElement>('.cocktail-card');
+  const countEl     = document.getElementById('results-count');
+  const noResults   = document.getElementById('no-results');
 
   let activeFilter = 'all';
+  let activeLayout = 'classic';
+  let activeGroup  = 'none';
+
+  function setLayout(layout: string) {
+    activeLayout = layout;
+    if (grid) grid.dataset.layout = layout;
+    layoutBtns.forEach((btn) => btn.classList.toggle('active', btn.dataset.layout === layout));
+    try { localStorage.setItem(LAYOUT_KEY, layout); } catch {}
+  }
+
+  function setGroup(group: string) {
+    activeGroup = group;
+    groupBtns.forEach((btn) => btn.classList.toggle('active', btn.dataset.group === group));
+    try { localStorage.setItem(GROUP_KEY, group); } catch {}
+    updateDisplay();
+  }
 
   function updateDisplay() {
-    const query = searchInput.value.toLowerCase().trim();
+    const query = searchInput?.value.toLowerCase().trim() ?? '';
     let visible = 0;
 
     cards.forEach((card) => {
-      const name = card.dataset.name ?? '';
-      const category = card.dataset.category ?? '';
+      const name        = card.dataset.name ?? '';
+      const category    = card.dataset.category ?? '';
       const ingredients = card.dataset.ingredients ?? '';
 
-      const matchesSearch =
-        !query || name.includes(query) || ingredients.includes(query);
+      const matchesSearch = !query || name.includes(query) || ingredients.includes(query);
       const matchesFilter = activeFilter === 'all' || category === activeFilter;
 
       if (matchesSearch && matchesFilter) {
@@ -84,13 +122,20 @@ const totalCount = cocktails.length;
       }
     });
 
-    if (countEl) {
-      countEl.textContent = `${visible} cocktail${visible !== 1 ? 's' : ''}`;
-    }
-    if (noResults) {
-      noResults.style.display = visible === 0 ? 'block' : 'none';
-    }
+    if (countEl)   countEl.textContent = `${visible} cocktail${visible !== 1 ? 's' : ''}`;
+    if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
   }
+
+  // Restore from localStorage
+  let savedLayout: string | null = null;
+  let savedGroup:  string | null = null;
+  try {
+    savedLayout = localStorage.getItem(LAYOUT_KEY);
+    savedGroup  = localStorage.getItem(GROUP_KEY);
+  } catch {}
+
+  setLayout(savedLayout === 'grid' ? 'grid' : 'classic');
+  setGroup('none'); // Taste disabled in Phase 1; ignore any saved 'taste'
 
   searchInput?.addEventListener('input', updateDisplay);
 
@@ -103,5 +148,13 @@ const totalCount = cocktails.length;
     });
   });
 
-  updateDisplay();
+  layoutBtns.forEach((btn) => {
+    btn.addEventListener('click', () => setLayout(btn.dataset.layout ?? 'classic'));
+  });
+
+  groupBtns.forEach((btn) => {
+    if (!btn.disabled) {
+      btn.addEventListener('click', () => setGroup(btn.dataset.group ?? 'none'));
+    }
+  });
 </script>

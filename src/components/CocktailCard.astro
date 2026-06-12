@@ -35,19 +35,37 @@ const ingredientNames = cocktail.ingredients.map((i) => i.name.toLowerCase()).jo
   data-category={cocktail.category}
   data-ingredients={ingredientNames}
 >
-  <div>
-    <span class="card-badge">{cocktail.category}</span>
-    <h3 class="card-name">{cocktail.name}</h3>
-    <p class="card-family">{cocktail.family}</p>
-  </div>
-  <div class="card-meta">
-    <div class="card-meta-row">
-      <span class="card-meta-label">Glass</span>
-      <span class="card-meta-value">{cocktail.glassware}</span>
+  <!-- Classic layout (default) -->
+  <div class="card-classic">
+    <div>
+      <span class="card-badge">{cocktail.category}</span>
+      <h3 class="card-name">{cocktail.name}</h3>
+      <p class="card-family">{cocktail.family}</p>
     </div>
-    <div class="card-meta-row">
-      <span class="card-meta-label">Method</span>
-      <span class="card-meta-value">{cocktail.method}</span>
+    <div class="card-meta">
+      <div class="card-meta-row">
+        <span class="card-meta-label">Glass</span>
+        <span class="card-meta-value">{cocktail.glassware}</span>
+      </div>
+      <div class="card-meta-row">
+        <span class="card-meta-label">Method</span>
+        <span class="card-meta-value">{cocktail.method}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grid tile layout (shown in grid mode) -->
+  <div class="card-tile">
+    <img
+      src={`/cocktails/${cocktail.id}.jpg`}
+      alt={cocktail.name}
+      class="tile-photo"
+      onload="this.style.display='block'"
+      onerror="this.remove()"
+    />
+    <div class="tile-info">
+      <h3 class="tile-name">{cocktail.name}</h3>
+      <span class="tile-glass">{cocktail.glassware}</span>
     </div>
   </div>
 </a>

@@ -40,8 +40,11 @@ interface Props {
 
 const { cocktail } = Astro.props;
 
+function displayIngName(name: string): string {
+  return name === 'Double Cream' ? 'Thick/Double Cream' : name;
+}
+
 // ─── Proportions bar ────────────────────────────────────────────
-// Amber-gold palette from draft, darkest → lightest
 const POUR_COLORS = [
   '#c9a14a', '#b08840', '#9b7035', '#8a6230',
   '#7a5428', '#6d5228', '#5e4a28', '#4d3e25',
@@ -63,13 +66,8 @@ const sideServes = cocktail.ingredients.filter((ing) => ing.role === 'Side Serve
 
 // ─── Ice display ────────────────────────────────────────────────
 const ice = cocktail.ice ?? 'None';
-const servedUp =
-  ice === 'None' &&
-  ['Coupe', 'Nick & Nora', 'Flute'].some((g) => cocktail.glassware?.includes(g));
-const iceDisplay = servedUp ? 'None — served up' : ice;
 
 // ─── Notes for Full Serve view ──────────────────────────────────
-// Skip cocktail.notes if it exactly duplicates a side-serve ingredient's note
 const sideServeNotes = sideServes.map((s) => s.note).filter(Boolean);
 const showCocktailNote =
   !!cocktail.notes && !sideServeNotes.includes(cocktail.notes);
@@ -119,11 +117,8 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
                 <li class="ingredient-row">
                   <div>
                     <div class="ingredient-name">
-                      <a href={`/ingredients/${slugify(ing.name)}`}>{ing.name}</a>
+                      <a href={`/ingredients/${slugify(ing.name)}`}>{displayIngName(ing.name)}</a>
                     </div>
-                    {ing.spec && ing.spec !== ing.name && (
-                      <div class="ingredient-spec">{ing.spec}</div>
-                    )}
                   </div>
                   <span class="ingredient-amount">{formatAmount(ing.amount, ing.unit)}</span>
                 </li>
@@ -142,12 +137,10 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
                 <span class="spec-label">Glass</span>
                 <span class="spec-value">{cocktail.glassware}</span>
               </div>
-              {cocktail.ice && cocktail.ice !== 'None' && (
-                <div class="spec-row">
-                  <span class="spec-label">Ice</span>
-                  <span class="spec-value">{cocktail.ice}</span>
-                </div>
-              )}
+              <div class="spec-row">
+                <span class="spec-label">Ice</span>
+                <span class="spec-value">{ice}</span>
+              </div>
               {cocktail.garnish && cocktail.garnish !== 'None' && (
                 <div class="spec-row">
                   <span class="spec-label">Garnish</span>
@@ -187,14 +180,7 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
         {cocktail.ingredients.map((ing) => (
           <div class={`fs-row${ing.role === 'Side Serve' ? ' side' : ''}${ing.role === 'Rinse' ? ' rinse' : ''}`}>
             <span class="fs-name">
-              <a href={`/ingredients/${slugify(ing.name)}`}>{ing.name}</a>
-              {ing.spec && ing.spec !== ing.name && (
-                <em>
-                  {ing.role === 'Side Serve'
-                    ? `${ing.spec} — served on the side`
-                    : ing.spec}
-                </em>
-              )}
+              <a href={`/ingredients/${slugify(ing.name)}`}>{displayIngName(ing.name)}</a>
             </span>
             <span class="fs-leader" aria-hidden="true"></span>
             <span class="fs-amt">{formatAmount(ing.amount, ing.unit)}</span>
@@ -209,7 +195,7 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
               {mlIngredients.map((ing, i) => (
                 <i
                   style={`width:${(((ing.amount ?? 0) / totalMl) * 100).toFixed(1)}%;background:${POUR_COLORS[i % POUR_COLORS.length]}`}
-                  title={`${ing.name}: ${ing.amount}ml`}
+                  title={`${displayIngName(ing.name)}: ${ing.amount}ml`}
                 />
               ))}
             </div>
@@ -217,7 +203,7 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
               {mlIngredients.map((ing, i) => (
                 <span>
                   <b style={`background:${POUR_COLORS[i % POUR_COLORS.length]}`}></b>
-                  {ing.name}
+                  {displayIngName(ing.name)}
                 </span>
               ))}
             </div>
@@ -232,7 +218,7 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
           </div>
           <div class="fs-cell">
             <small>Ice</small>
-            <div class="fs-cell-value">{iceDisplay}</div>
+            <div class="fs-cell-value">{ice}</div>
           </div>
           <div class="fs-cell">
             <small>Glass</small>
@@ -250,7 +236,7 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
         {sideServes.map((ing) => (
           <div class="fs-note">
             <b>Side Serve:</b> {formatAmount(ing.amount, ing.unit)}{' '}
-            {ing.spec !== ing.name ? ing.spec : ing.name} on the side.
+            {displayIngName(ing.name)} on the side.
           </div>
         ))}
 
@@ -285,7 +271,6 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
     } catch {}
   }
 
-  // Restore saved preference
   let saved: string | null = null;
   try {
     saved = localStorage.getItem(STORAGE_KEY);
