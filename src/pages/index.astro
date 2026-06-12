@@ -44,24 +44,17 @@ const totalCount = cocktails.length;
     <!-- View controls -->
     <div class="view-controls" aria-label="View options">
       <div class="control-group">
-        <span class="control-label">Layout</span>
-        <div class="sq-toggle" role="group" aria-label="Layout">
-          <button class="sq-btn layout-btn" data-layout="classic">Classic</button>
-          <button class="sq-btn layout-btn" data-layout="grid">Grid</button>
-        </div>
-      </div>
-      <div class="control-group">
         <span class="control-label">Group by</span>
         <div class="sq-toggle" role="group" aria-label="Group by">
-          <button class="sq-btn group-btn" data-group="none">None</button>
-          <button class="sq-btn group-btn coming-soon" data-group="taste" disabled title="Coming soon">Taste</button>
+          <button class="sq-btn group-btn active" data-group="none">None</button>
+          <button class="sq-btn group-btn" data-group="taste">Taste</button>
         </div>
       </div>
     </div>
 
     <p class="results-count" id="results-count" aria-live="polite"></p>
 
-    <div class="cocktail-grid" id="cocktail-grid" data-layout="classic">
+    <div class="cocktail-grid" id="cocktail-grid">
       {cocktails.map((cocktail) => <CocktailCard cocktail={cocktail} />)}
       <div class="no-results" id="no-results" style="display:none">
         <h3>No cocktails found</h3>
@@ -72,28 +65,21 @@ const totalCount = cocktails.length;
 </Layout>
 
 <script>
-  const LAYOUT_KEY = 'elixir-layout';
-  const GROUP_KEY  = 'elixir-group';
+  const GROUP_KEY = 'elixir-group';
+  const TASTE_ORDER = ['Sour', 'Bitter', 'Smooth', 'Sharp', 'Sweet', 'Delight'];
 
   const searchInput = document.getElementById('search') as HTMLInputElement;
   const filterBtns  = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
-  const layoutBtns  = document.querySelectorAll<HTMLButtonElement>('.layout-btn');
   const groupBtns   = document.querySelectorAll<HTMLButtonElement>('.group-btn');
   const grid        = document.getElementById('cocktail-grid') as HTMLElement;
   const cards       = document.querySelectorAll<HTMLAnchorElement>('.cocktail-card');
   const countEl     = document.getElementById('results-count');
-  const noResults   = document.getElementById('no-results');
+  const noResults   = document.getElementById('no-results') as HTMLElement;
 
   let activeFilter = 'all';
-  let activeLayout = 'classic';
   let activeGroup  = 'none';
 
-  function setLayout(layout: string) {
-    activeLayout = layout;
-    if (grid) grid.dataset.layout = layout;
-    layoutBtns.forEach((btn) => btn.classList.toggle('active', btn.dataset.layout === layout));
-    try { localStorage.setItem(LAYOUT_KEY, layout); } catch {}
-  }
+  const originalOrder = [...cards];
 
   function setGroup(group: string) {
     activeGroup = group;
@@ -106,6 +92,14 @@ const totalCount = cocktails.length;
     const query = searchInput?.value.toLowerCase().trim() ?? '';
     let visible = 0;
 
+    // Remove any existing group headers
+    grid.querySelectorAll('.taste-group-header').forEach((h) => h.remove());
+
+    // Restore original card order before re-grouping
+    originalOrder.forEach((card) => grid.insertBefore(card, noResults));
+
+    const visibleCards: HTMLAnchorElement[] = [];
+
     cards.forEach((card) => {
       const name        = card.dataset.name ?? '';
       const category    = card.dataset.category ?? '';
@@ -117,25 +111,41 @@ const totalCount = cocktails.length;
       if (matchesSearch && matchesFilter) {
         card.style.display = '';
         visible++;
+        visibleCards.push(card);
       } else {
         card.style.display = 'none';
       }
     });
 
+    if (activeGroup === 'taste') {
+      const sorted = [...visibleCards].sort((a, b) => {
+        const ta = TASTE_ORDER.indexOf(a.dataset.taste ?? '');
+        const tb = TASTE_ORDER.indexOf(b.dataset.taste ?? '');
+        return ta - tb;
+      });
+
+      let lastTaste = '';
+      sorted.forEach((card) => {
+        const taste = card.dataset.taste ?? '';
+        if (taste !== lastTaste) {
+          const header = document.createElement('div');
+          header.className = 'taste-group-header';
+          header.textContent = taste;
+          grid.insertBefore(header, noResults);
+          lastTaste = taste;
+        }
+        grid.insertBefore(card, noResults);
+      });
+    }
+
     if (countEl)   countEl.textContent = `${visible} cocktail${visible !== 1 ? 's' : ''}`;
     if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
   }
 
-  // Restore from localStorage
-  let savedLayout: string | null = null;
-  let savedGroup:  string | null = null;
-  try {
-    savedLayout = localStorage.getItem(LAYOUT_KEY);
-    savedGroup  = localStorage.getItem(GROUP_KEY);
-  } catch {}
+  let savedGroup: string | null = null;
+  try { savedGroup = localStorage.getItem(GROUP_KEY); } catch {}
 
-  setLayout(savedLayout === 'grid' ? 'grid' : 'classic');
-  setGroup('none'); // Taste disabled in Phase 1; ignore any saved 'taste'
+  setGroup(savedGroup === 'taste' ? 'taste' : 'none');
 
   searchInput?.addEventListener('input', updateDisplay);
 
@@ -148,13 +158,7 @@ const totalCount = cocktails.length;
     });
   });
 
-  layoutBtns.forEach((btn) => {
-    btn.addEventListener('click', () => setLayout(btn.dataset.layout ?? 'classic'));
-  });
-
   groupBtns.forEach((btn) => {
-    if (!btn.disabled) {
-      btn.addEventListener('click', () => setGroup(btn.dataset.group ?? 'none'));
-    }
+    btn.addEventListener('click', () => setGroup(btn.dataset.group ?? 'none'));
   });
 </script>

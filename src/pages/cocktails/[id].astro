@@ -41,7 +41,7 @@ interface Props {
 const { cocktail } = Astro.props;
 
 function displayIngName(name: string): string {
-  return name === 'Double Cream' ? 'Thick/Double Cream' : name;
+  return name === 'Double Cream' ? 'Thick|Double Cream' : name;
 }
 
 // ─── Proportions bar ────────────────────────────────────────────

@@ -628,10 +628,7 @@ a { color: inherit; text-decoration: none; }
 /* ─── VIEW CONTROLS ──────────────────────── */
 .view-controls {
   display: flex;
-  gap: 1.5rem;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
   margin: 1.25rem 0 0.25rem;
 }
 .control-group {
@@ -652,8 +649,6 @@ a { color: inherit; text-decoration: none; }
 
 /* Square toggle button */
 .sq-btn {
-  position: relative;
-  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -671,7 +666,7 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
   transition: border-color 0.15s, color 0.15s;
 }
-.sq-btn:hover:not(:disabled) {
+.sq-btn:hover {
   border-color: var(--accent);
   color: var(--text);
 }
@@ -679,109 +674,18 @@ a { color: inherit; text-decoration: none; }
   border-color: var(--accent);
   color: var(--accent);
   font-weight: 600;
-}
-.sq-btn:disabled {
-  opacity: 0.32;
-  cursor: not-allowed;
+  background: rgba(201, 161, 74, 0.08);
 }
 
-/* Straw decoration on active square button */
-.sq-btn.active::after {
-  content: '';
-  position: absolute;
-  width: 2.5px;
-  height: 58%;
-  background: var(--accent);
-  border-radius: 2px;
-  bottom: 3px;
-  right: 7px;
-  transform: rotate(-22deg);
-  transform-origin: bottom center;
-  opacity: 0.72;
-  pointer-events: none;
-}
-
-/* Coming-soon label on disabled Taste button */
-.sq-btn.coming-soon::before {
-  content: 'soon';
-  position: absolute;
-  bottom: 2px;
-  font-size: 0.42rem;
-  letter-spacing: 0.04em;
-  color: var(--brass);
-  text-transform: uppercase;
-}
-
-/* ─── COCKTAIL CARD — CLASSIC INNER ─────── */
-.card-classic {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.card-tile { display: none; }
-
-/* ─── GRID TILE MODE ─────────────────────── */
-#cocktail-grid[data-layout="grid"] .cocktail-card {
-  padding: 0;
-  border-color: var(--accent);
-  overflow: hidden;
-  aspect-ratio: 2 / 3;
-  position: relative;
-}
-#cocktail-grid[data-layout="grid"] .cocktail-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(201, 161, 74, 0.18);
-}
-#cocktail-grid[data-layout="grid"] .card-classic { display: none; }
-#cocktail-grid[data-layout="grid"] .card-tile {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 100%;
-  padding: 0.85rem 0.9rem;
-  position: relative;
-}
-
-/* Dark gradient so text is readable over future photos */
-#cocktail-grid[data-layout="grid"] .card-tile::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(13, 11, 9, 0.92) 38%,
-    rgba(13, 11, 9, 0.35) 68%,
-    transparent 100%
-  );
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Photo — hidden by default, JS onload reveals it */
-.tile-photo {
-  display: none;
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.tile-info {
-  position: relative;
-  z-index: 1;
-}
-.tile-name {
+/* ─── TASTE GROUP HEADERS ────────────────── */
+.taste-group-header {
+  grid-column: 1 / -1;
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 500;
-  color: var(--text);
-  line-height: 1.2;
-  margin-bottom: 0.2rem;
-}
-.tile-glass {
-  font-size: 0.58rem;
-  text-transform: uppercase;
-  letter-spacing: 0.13em;
-  color: var(--text-muted);
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  padding: 1.5rem 0 0.4rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.25rem;
 }

@@ -42,7 +42,8 @@
           "spec": "Double Cream",
           "required": true
         }
-      ]
+      ],
+      "taste": "Delight"
     },
     {
       "id": "brandy-alexander",
@@ -81,7 +82,8 @@
           "spec": "Double Cream",
           "required": true
         }
-      ]
+      ],
+      "taste": "Delight"
     },
     {
       "id": "americano",
@@ -125,7 +127,8 @@
           "spec": "Soda Water",
           "required": true
         }
-      ]
+      ],
+      "taste": "Bitter"
     },
     {
       "id": "aviation",
@@ -171,7 +174,8 @@
           "spec": "Violet Liqueur",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "bahama-mama",
@@ -233,7 +237,8 @@
           "spec": "Angostura",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sweet"
     },
     {
       "id": "between-the-sheets",
@@ -283,7 +288,8 @@
           "spec": "Lemon Juice",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "amaretto-sour",
@@ -300,7 +306,7 @@
         {
           "name": "Amaretto",
           "role": "Liqueur",
-          "amount": 40,
+          "amount": 45,
           "unit": "ml",
           "spec": "Amaretto Disaronno",
           "required": true
@@ -314,11 +320,11 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
           "amount": 20,
           "unit": "ml",
-          "spec": "Gomme",
+          "spec": "Sugar Syrup",
           "required": true
         },
         {
@@ -337,7 +343,8 @@
           "spec": "Angostura",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "aperol-spritz",
@@ -382,7 +389,8 @@
           "spec": "Soda Water",
           "required": true
         }
-      ]
+      ],
+      "taste": "Bitter"
     },
     {
       "id": "baby-guinness",
@@ -416,7 +424,8 @@
           "spec": "Baileys",
           "required": true
         }
-      ]
+      ],
+      "taste": "Delight"
     },
     {
       "id": "bellini",
@@ -446,7 +455,8 @@
           "spec": "Chandon",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sweet"
     },
     {
       "id": "black-russian",
@@ -481,7 +491,8 @@
             "Chocolate"
           ]
         }
-      ]
+      ],
+      "taste": "Sharp"
     },
     {
       "id": "white-russian",
@@ -524,7 +535,8 @@
           "spec": "Double Cream",
           "required": true
         }
-      ]
+      ],
+      "taste": "Delight"
     },
     {
       "id": "blue-lagoon",
@@ -569,7 +581,8 @@
           "spec": "Lemonade",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sweet"
     },
     {
       "id": "bramble",
@@ -609,14 +622,15 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
           "amount": 10,
           "unit": "ml",
-          "spec": "Gomme Syrup",
+          "spec": "Sugar Syrup",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "champagne-cocktail",
@@ -663,7 +677,8 @@
           "spec": "Pommery Brut",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sharp"
     },
     {
       "id": "cuba-libre",
@@ -701,7 +716,8 @@
           "spec": "Coke",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sweet"
     },
     {
       "id": "strawberry-daiquiri",
@@ -748,7 +764,8 @@
           "spec": "Ponthier Strawberry",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "bloody-mary",
@@ -779,7 +796,8 @@
           "spec": "Bloody/Virgin Mary Mix",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sharp"
     },
     {
       "id": "bloody-maria",
@@ -810,7 +828,8 @@
           "spec": "Bloody/Virgin Mary Mix",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sharp"
     },
     {
       "id": "red-snapper",
@@ -841,7 +860,8 @@
         }
       ],
       "base_spirit": "Gin",
-      "spirit_type": "Single"
+      "spirit_type": "Single",
+      "taste": "Sharp"
     },
     {
       "id": "boulevardier",
@@ -885,7 +905,8 @@
           "spec": "Regal Rogue Red",
           "required": true
         }
-      ]
+      ],
+      "taste": "Bitter"
     },
     {
       "id": "caipirinha",
@@ -911,20 +932,21 @@
         {
           "name": "Lime Wedges",
           "role": "Citrus",
-          "amount": 6,
+          "amount": 4,
           "unit": "wedges",
           "spec": "Lime Wedges",
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 15,
+          "amount": 20,
           "unit": "ml",
-          "spec": "Gomme",
+          "spec": "Sugar Syrup",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "caipiroska",
@@ -956,14 +978,15 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
           "amount": 15,
           "unit": "ml",
-          "spec": "Gomme",
+          "spec": "Sugar Syrup",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "caipirissima",
@@ -995,14 +1018,15 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
           "amount": 15,
           "unit": "ml",
-          "spec": "Gomme",
+          "spec": "Sugar Syrup",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "cosmopolitan",
@@ -1052,7 +1076,8 @@
           "spec": "Cranberry Juice",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "daiquiri",
@@ -1090,7 +1115,8 @@
           "spec": "Sugar Syrup",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "espresso-martini",
@@ -1133,14 +1159,15 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
           "amount": 10,
           "unit": "ml",
-          "spec": "Gomme Syrup",
+          "spec": "Sugar Syrup",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sharp"
     },
     {
       "id": "french-connection",
@@ -1170,7 +1197,8 @@
           "spec": "Disaronno",
           "required": true
         }
-      ]
+      ],
+      "taste": "Smooth"
     },
     {
       "id": "godfather",
@@ -1201,7 +1229,8 @@
           "spec": "Disaronno",
           "required": true
         }
-      ]
+      ],
+      "taste": "Smooth"
     },
     {
       "id": "godmother",
@@ -1232,7 +1261,8 @@
           "spec": "Disaronno",
           "required": true
         }
-      ]
+      ],
+      "taste": "Smooth"
     },
     {
       "id": "hugo-spritz",
@@ -1278,7 +1308,8 @@
           "spec": "Mint Leaves",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sweet"
     },
     {
       "id": "john-collins",
@@ -1309,11 +1340,11 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
           "amount": 10,
           "unit": "ml",
-          "spec": "Gomme Syrup",
+          "spec": "Sugar Syrup",
           "required": true
         },
         {
@@ -1324,7 +1355,8 @@
           "spec": "Soda Top up",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "dark-stormy",
@@ -1370,7 +1402,8 @@
           "spec": "Ginger Beer",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sharp"
     },
     {
       "id": "french-75",
@@ -1402,11 +1435,11 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
           "amount": 15,
           "unit": "ml",
-          "spec": "Gomme Syrup",
+          "spec": "Sugar Syrup",
           "required": true
         },
         {
@@ -1417,7 +1450,8 @@
           "spec": "Pommery Brut",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "french-martini",
@@ -1455,7 +1489,8 @@
           "spec": "Pineapple Juice",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sweet"
     },
     {
       "id": "hanky-panky",
@@ -1498,7 +1533,8 @@
             "Bitter"
           ]
         }
-      ]
+      ],
+      "taste": "Bitter"
     },
     {
       "id": "irish-coffee",
@@ -1522,11 +1558,11 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
           "amount": 10,
           "unit": "ml",
-          "spec": "Gomme Syrup",
+          "spec": "Sugar Syrup",
           "required": true
         },
         {
@@ -1545,7 +1581,8 @@
           "spec": "Double Cream",
           "required": true
         }
-      ]
+      ],
+      "taste": "Delight"
     },
     {
       "id": "sidecar",
@@ -1588,7 +1625,8 @@
           "spec": "Lemon Juice",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "tequila-sunrise",
@@ -1627,7 +1665,8 @@
           "spec": "Grenadine",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sweet"
     },
     {
       "id": "vesper-martini",
@@ -1665,7 +1704,8 @@
           "spec": "Lillet Blanc",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sharp"
     },
     {
       "id": "white-lady",
@@ -1715,7 +1755,8 @@
           "spec": "Foamer Dilution",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "zombie",
@@ -1785,7 +1826,8 @@
           "spec": "Angostura Bitters",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sharp"
     },
     {
       "id": "sex-on-the-beach",
@@ -1831,7 +1873,8 @@
           "spec": "Orange Juice",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sweet"
     },
     {
       "id": "singapore-sling",
@@ -1913,7 +1956,8 @@
           "spec": "Angostura",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "tom-collins",
@@ -1944,11 +1988,11 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
           "amount": 10,
           "unit": "ml",
-          "spec": "Gomme Syrup",
+          "spec": "Sugar Syrup",
           "required": true
         },
         {
@@ -1959,7 +2003,8 @@
           "spec": "Top up Soda Water",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "whiskey-sour",
@@ -1976,7 +2021,7 @@
         {
           "name": "Bourbon",
           "role": "Base Spirit",
-          "amount": 40,
+          "amount": 45,
           "unit": "ml",
           "spec": "Maker's Mark",
           "required": true
@@ -1990,11 +2035,11 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 20,
+          "amount": 25,
           "unit": "ml",
-          "spec": "Gomme",
+          "spec": "Sugar Syrup",
           "required": true
         },
         {
@@ -2013,7 +2058,8 @@
           "spec": "Angostura",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "vieux-carr",
@@ -2075,7 +2121,8 @@
           "spec": "Angostura Bitters",
           "required": true
         }
-      ]
+      ],
+      "taste": "Smooth"
     },
     {
       "id": "dirty-martini",
@@ -2087,7 +2134,7 @@
       "method": "Stir & Double Strain",
       "glassware": "Nick & Nora",
       "ice": "None",
-      "garnish": "3 Olives on Stick",
+      "garnish": "2x Olives on Cocktail Stick",
       "notes": "Uses 42 Below or Roku.",
       "ingredients": [
         {
@@ -2101,7 +2148,7 @@
         {
           "name": "Dry Vermouth",
           "role": "Aperitif",
-          "amount": 10,
+          "amount": 15,
           "unit": "ml",
           "spec": "Regal Rogue Dry",
           "required": true
@@ -2109,12 +2156,13 @@
         {
           "name": "Olive Brine",
           "role": "Brine",
-          "amount": 10,
+          "amount": 15,
           "unit": "ml",
           "spec": "Olive Brine",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sharp"
     },
     {
       "id": "mimosa",
@@ -2144,7 +2192,8 @@
           "spec": "Chandon",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sweet"
     },
     {
       "id": "mojito",
@@ -2161,17 +2210,17 @@
         {
           "name": "White Rum",
           "role": "Base Spirit",
-          "amount": 40,
+          "amount": 50,
           "unit": "ml",
           "spec": "Bacardi Carta Blanca",
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
           "amount": 20,
           "unit": "ml",
-          "spec": "Gomme Syrup",
+          "spec": "Sugar Syrup",
           "required": true
         },
         {
@@ -2197,7 +2246,8 @@
           "spec": "Soda Water",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "negroni",
@@ -2241,7 +2291,8 @@
             "Negroni"
           ]
         }
-      ]
+      ],
+      "taste": "Bitter"
     },
     {
       "id": "tommy-s-margarita",
@@ -2279,7 +2330,8 @@
           "spec": "Agave Syrup",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "dry-martini",
@@ -2305,12 +2357,13 @@
         {
           "name": "Dry Vermouth",
           "role": "Aperitif",
-          "amount": 10,
+          "amount": 15,
           "unit": "ml",
           "spec": "Regal Rogue Dry",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sharp"
     },
     {
       "id": "mint-julep",
@@ -2333,11 +2386,11 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
           "amount": 10,
           "unit": "ml",
-          "spec": "Gomme Syrup",
+          "spec": "Sugar Syrup",
           "required": true
         },
         {
@@ -2364,7 +2417,8 @@
           "spec": "Mint Sprig",
           "required": true
         }
-      ]
+      ],
+      "taste": "Smooth"
     },
     {
       "id": "moscow-mule",
@@ -2410,7 +2464,8 @@
           "spec": "Ginger Beer",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sharp"
     },
     {
       "id": "old-fashioned",
@@ -2433,11 +2488,11 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 10,
+          "amount": 20,
           "unit": "ml",
-          "spec": "Gomme",
+          "spec": "Sugar Syrup",
           "required": true
         },
         {
@@ -2448,7 +2503,8 @@
           "spec": "Angostura",
           "required": true
         }
-      ]
+      ],
+      "taste": "Smooth"
     },
     {
       "id": "pi-a-colada",
@@ -2497,7 +2553,8 @@
             "Coconut"
           ]
         }
-      ]
+      ],
+      "taste": "Delight"
     },
     {
       "id": "pisco-flower",
@@ -2536,11 +2593,11 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
           "amount": 15,
           "unit": "ml",
-          "spec": "Gomme Syrup",
+          "spec": "Sugar Syrup",
           "required": true
         },
         {
@@ -2559,7 +2616,8 @@
           "spec": "Angostura",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "pornstar-martini",
@@ -2626,7 +2684,8 @@
           "required": true,
           "note": "25ml Fiol on the side."
         }
-      ]
+      ],
+      "taste": "Sweet"
     },
     {
       "id": "rusty-nail",
@@ -2656,7 +2715,8 @@
           "spec": "Drambuie",
           "required": true
         }
-      ]
+      ],
+      "taste": "Smooth"
     },
     {
       "id": "sea-breeze",
@@ -2694,7 +2754,8 @@
           "spec": "Cranberry Juice",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "paloma",
@@ -2733,7 +2794,8 @@
           "spec": "Three Cents Grapefruit",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "pisco-sour",
@@ -2764,11 +2826,11 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 15,
+          "amount": 20,
           "unit": "ml",
-          "spec": "Gomme Syrup",
+          "spec": "Sugar Syrup",
           "required": true
         },
         {
@@ -2787,7 +2849,8 @@
           "spec": "Angostura Bitter",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "planter-s-punch",
@@ -2849,7 +2912,8 @@
           "spec": "Angostura",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sweet"
     },
     {
       "id": "russian-spring-punch",
@@ -2892,11 +2956,11 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
           "amount": 10,
           "unit": "ml",
-          "spec": "Gomme Syrup",
+          "spec": "Sugar Syrup",
           "required": true
         },
         {
@@ -2907,7 +2971,8 @@
           "spec": "Pommery Brut",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "sazerac",
@@ -2929,11 +2994,11 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
           "amount": 10,
           "unit": "ml",
-          "spec": "Gomme Syrup",
+          "spec": "Sugar Syrup",
           "required": true
         },
         {
@@ -2955,7 +3020,8 @@
         }
       ],
       "base_spirit": "Cognac",
-      "spirit_type": "Single"
+      "spirit_type": "Single",
+      "taste": "Sharp"
     },
     {
       "id": "kir",
@@ -2985,7 +3051,8 @@
           "spec": "Humberto Canale S.B.",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sweet"
     },
     {
       "id": "lemon-drop-martini",
@@ -3027,7 +3094,8 @@
           "spec": "Lemon Juice",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "mai-tai",
@@ -3096,7 +3164,8 @@
           "spec": "Angostura",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "manhattan-dry",
@@ -3134,7 +3203,8 @@
           "spec": "Angostura",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sharp"
     },
     {
       "id": "margarita",
@@ -3176,7 +3246,8 @@
           "spec": "Lime Juice",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "kamikaze",
@@ -3218,7 +3289,8 @@
           "spec": "Lime Juice",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sour"
     },
     {
       "id": "kir-royal",
@@ -3248,7 +3320,8 @@
           "spec": "Pommery Brut",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sweet"
     },
     {
       "id": "long-island-iced-tea",
@@ -3315,11 +3388,11 @@
           "required": true
         },
         {
-          "name": "Gomme Syrup",
+          "name": "Sugar Syrup",
           "role": "Sweetener",
           "amount": 10,
           "unit": "ml",
-          "spec": "Gomme Syrup",
+          "spec": "Sugar Syrup",
           "required": true
         },
         {
@@ -3330,7 +3403,8 @@
           "spec": "Coke",
           "required": true
         }
-      ]
+      ],
+      "taste": "Sharp"
     },
     {
       "id": "manhattan-sweet",
@@ -3368,7 +3442,8 @@
           "spec": "Angostura",
           "required": true
         }
-      ]
+      ],
+      "taste": "Smooth"
     },
     {
       "id": "manhattan-perfect",
@@ -3414,7 +3489,8 @@
           "spec": "Angostura",
           "required": true
         }
-      ]
+      ],
+      "taste": "Smooth"
     }
   ]
 }
