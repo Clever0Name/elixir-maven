@@ -14,6 +14,7 @@ const {
 } = Astro.props;
 
 const siteName = 'Elixir Maven';
+const year = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -59,9 +60,31 @@ const siteName = 'Elixir Maven';
 
     <footer class="site-footer">
       <div class="container">
-        <span class="footer-logo">{siteName}</span>
-        <span class="footer-text">76 recipes &mdash; from classics to modern favourites</span>
+        <div class="footer-brand">
+          <span class="footer-logo">{siteName}</span>
+          <span class="footer-tagline">Every classic. Every technique. One collection.</span>
+        </div>
+        <div class="footer-end">
+          <a href="#" class="footer-cta">Get the Collection &rarr;</a>
+          <span class="footer-copy">&copy; {year} {siteName}</span>
+        </div>
       </div>
     </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </button>
+
+    <script>
+      const topBtn = document.getElementById('back-to-top');
+      if (topBtn) {
+        window.addEventListener('scroll', () => {
+          topBtn.classList.toggle('visible', window.scrollY > 420);
+        }, { passive: true });
+        topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      }
+    </script>
   </body>
 </html>
