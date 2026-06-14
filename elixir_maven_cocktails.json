@@ -774,11 +774,11 @@
       "category": "Vodka",
       "base_spirit": "Vodka",
       "spirit_type": "Single",
-      "method": "Roll or Build",
+      "method": "Build",
       "glassware": "Highball",
       "ice": "Cubed",
-      "garnish": "Cucumber Roll & Salt Rim",
-      "notes": "With Bombay Sapphire: Red Snapper. With Cazadores Blanco: Bloody Maria.",
+      "garnish": "Cucumber Slice & Salt Rim",
+      "notes": "With Gin: Red Snapper. With Tequila: Bloody Maria.",
       "ingredients": [
         {
           "name": "Vodka",
@@ -789,7 +789,7 @@
           "required": true
         },
         {
-          "name": "Bloody Mary Mix",
+          "name": "Tomato Juice",
           "role": "Mixer",
           "amount": 200,
           "unit": "ml",
@@ -806,10 +806,10 @@
       "category": "Tequila",
       "base_spirit": "Tequila",
       "spirit_type": "Single",
-      "method": "Roll or Build",
+      "method": "Build",
       "glassware": "Highball",
       "ice": "Cubed",
-      "garnish": "Cucumber Roll & Salt Rim",
+      "garnish": "Cucumber Slice & Salt Rim",
       "notes": "Bloody Mary variation using tequila.",
       "ingredients": [
         {
@@ -821,7 +821,7 @@
           "required": true
         },
         {
-          "name": "Bloody Mary Mix",
+          "name": "Tomato Juice",
           "role": "Mixer",
           "amount": 200,
           "unit": "ml",
@@ -836,10 +836,10 @@
       "name": "Red Snapper",
       "family": "Savoury",
       "category": "Gin",
-      "method": "Roll or Build",
+      "method": "Build",
       "glassware": "Highball",
       "ice": "Cubed",
-      "garnish": "Cucumber Roll & Salt Rim",
+      "garnish": "Cucumber Slice & Salt Rim",
       "notes": "Bloody Mary variation using gin.",
       "ingredients": [
         {
@@ -851,7 +851,7 @@
           "required": true
         },
         {
-          "name": "Bloody Mary Mix",
+          "name": "Tomato Juice",
           "role": "Mixer",
           "amount": 200,
           "unit": "ml",
