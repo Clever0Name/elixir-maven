@@ -113,6 +113,11 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
             <span class="toggle-sep" aria-hidden="true">|</span>
             <button class="toggle-btn" data-mode="full" aria-pressed="false">Full Serve</button>
           </div>
+          <div class="unit-toggle" role="group" aria-label="Measurement units">
+            <button class="toggle-btn unit-btn active" data-unit="ml" aria-pressed="true">ml</button>
+            <span class="toggle-sep" aria-hidden="true">|</span>
+            <button class="toggle-btn unit-btn" data-unit="oz" aria-pressed="false">oz</button>
+          </div>
         </div>
         <h1>{cocktail.name}</h1>
       </header>
@@ -133,7 +138,7 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
                       <a href={`/ingredients/${slugify(ing.name)}`}>{displayIngName(ing.name)}</a>
                     </div>
                   </div>
-                  <span class="ingredient-amount">{formatAmount(ing.amount, ing.unit)}</span>
+                  <span class="ingredient-amount" data-ml={ing.unit === 'ml' && ing.amount != null ? ing.amount : undefined}>{formatAmount(ing.amount, ing.unit)}</span>
                 </li>
               ))}
             </ul>
@@ -200,7 +205,7 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
               <a href={`/ingredients/${slugify(ing.name)}`}>{displayIngName(ing.name)}</a>
             </span>
             <span class="fs-leader" aria-hidden="true"></span>
-            <span class="fs-amt">{formatAmount(ing.amount, ing.unit)}</span>
+            <span class="fs-amt" data-ml={ing.unit === 'ml' && ing.amount != null ? ing.amount : undefined}>{formatAmount(ing.amount, ing.unit)}</span>
           </div>
         ))}
 
@@ -275,10 +280,13 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
 
 <script>
   const STORAGE_KEY = 'elixir-view-mode';
+  const UNIT_KEY    = 'elixir-unit';
 
-  const page = document.getElementById('cocktail-page') as HTMLElement | null;
-  const btns = document.querySelectorAll<HTMLButtonElement>('.toggle-btn');
+  const page     = document.getElementById('cocktail-page') as HTMLElement | null;
+  const btns     = document.querySelectorAll<HTMLButtonElement>('.view-toggle .toggle-btn');
+  const unitBtns = document.querySelectorAll<HTMLButtonElement>('.unit-btn');
 
+  // ─── View mode ──────────────────────────────────────────────────
   function setMode(mode: string) {
     if (!page) return;
     page.dataset.view = mode;
@@ -287,18 +295,43 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
       btn.classList.toggle('active', active);
       btn.setAttribute('aria-pressed', String(active));
     });
-    try {
-      localStorage.setItem(STORAGE_KEY, mode);
-    } catch {}
+    try { localStorage.setItem(STORAGE_KEY, mode); } catch {}
   }
 
   let saved: string | null = null;
-  try {
-    saved = localStorage.getItem(STORAGE_KEY);
-  } catch {}
+  try { saved = localStorage.getItem(STORAGE_KEY); } catch {}
   setMode(saved === 'full' ? 'full' : 'spec');
 
   btns.forEach((btn) => {
     btn.addEventListener('click', () => setMode(btn.dataset.mode ?? 'spec'));
+  });
+
+  // ─── Unit toggle (ml ↔ oz) ──────────────────────────────────────
+  function toOz(ml: number): string {
+    const oz = ml / 29.5735;
+    const rounded = Math.round(oz * 4) / 4;
+    return (rounded % 1 === 0 ? rounded.toFixed(0) : rounded.toString()) + 'oz';
+  }
+
+  function setUnit(unit: string) {
+    unitBtns.forEach((btn) => {
+      const active = btn.dataset.unit === unit;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', String(active));
+    });
+    document.querySelectorAll<HTMLElement>('[data-ml]').forEach((el) => {
+      const ml = parseFloat(el.dataset.ml ?? '');
+      if (isNaN(ml)) return;
+      el.textContent = unit === 'oz' ? toOz(ml) : ml + 'ml';
+    });
+    try { localStorage.setItem(UNIT_KEY, unit); } catch {}
+  }
+
+  let savedUnit: string | null = null;
+  try { savedUnit = localStorage.getItem(UNIT_KEY); } catch {}
+  setUnit(savedUnit === 'oz' ? 'oz' : 'ml');
+
+  unitBtns.forEach((btn) => {
+    btn.addEventListener('click', () => setUnit(btn.dataset.unit ?? 'ml'));
   });
 </script>
