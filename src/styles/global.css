@@ -677,6 +677,102 @@ a { color: inherit; text-decoration: none; }
   background: rgba(201, 161, 74, 0.08);
 }
 
+/* ─── GLOSSARY PAGE ──────────────────────── */
+.glossary-hero {
+  padding: 3rem 0 2rem;
+  text-align: center;
+}
+.glossary-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  line-height: 1.1;
+}
+.glossary-sub {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.glossary-section {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+.glossary-section-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.6rem;
+  margin-bottom: 0;
+}
+.glossary-list {
+  display: flex;
+  flex-direction: column;
+}
+.glossary-entry {
+  border-left: 3px solid transparent;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  transition: border-left-color 0.2s, background 0.2s;
+}
+.glossary-entry:hover {
+  border-left-color: var(--accent);
+  background: var(--surface);
+}
+.glossary-term {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.35rem;
+}
+.glossary-body { margin: 0; }
+.glossary-def {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+.glossary-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+.glossary-tag {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.63rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.glossary-used {
+  margin-top: 0.55rem;
+  font-size: 0.78rem;
+  color: var(--brass);
+  letter-spacing: 0.03em;
+}
+
+/* ─── METHOD LINK ────────────────────────── */
+.method-link {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s, color 0.15s;
+}
+.method-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 /* ─── TASTE GROUP HEADERS ────────────────── */
 .taste-group-header {
   grid-column: 1 / -1;

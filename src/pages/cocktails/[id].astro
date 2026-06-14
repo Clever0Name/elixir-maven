@@ -76,6 +76,19 @@ const isVariantNote =
   (/^[A-Z][^.!?]+:/.test(cocktail.notes ?? '') ||
     /\bWith\s+[A-Z]/.test(cocktail.notes ?? ''));
 
+function methodGlossaryUrl(method: string): string | null {
+  const m = method.toLowerCase();
+  if (m.includes('dry shake')) return '/glossary#dry-shake';
+  if (m.includes('double strain')) return '/glossary#shake-double-strain';
+  if (m.includes('shake') && m.includes('strain')) return '/glossary#shake-strain';
+  if (m.includes('muddle')) return '/glossary#muddle';
+  if (m.includes('churn')) return '/glossary#churn';
+  if (m.startsWith('build')) return '/glossary#build';
+  return null;
+}
+
+const methodUrl = methodGlossaryUrl(cocktail.method);
+
 const title = `${cocktail.name} Recipe — Elixir Maven`;
 const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category}. ${cocktail.method} in a ${cocktail.glassware}. Full recipe with ingredients and measures.`;
 ---
@@ -131,7 +144,11 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
             <div class="spec-grid">
               <div class="spec-row">
                 <span class="spec-label">Method</span>
-                <span class="spec-value">{cocktail.method}</span>
+                <span class="spec-value">
+                  {methodUrl
+                    ? <a href={methodUrl} class="method-link">{cocktail.method}</a>
+                    : cocktail.method}
+                </span>
               </div>
               <div class="spec-row">
                 <span class="spec-label">Glass</span>
@@ -214,7 +231,11 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
         <div class="fs-service">
           <div class="fs-cell">
             <small>Method</small>
-            <div class="fs-cell-value">{cocktail.method}</div>
+            <div class="fs-cell-value">
+              {methodUrl
+                ? <a href={methodUrl} class="method-link">{cocktail.method}</a>
+                : cocktail.method}
+            </div>
           </div>
           <div class="fs-cell">
             <small>Ice</small>

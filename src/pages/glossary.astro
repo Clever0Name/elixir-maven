@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const methods = [
+  {
+    id: 'build',
+    term: 'Build',
+    definition: 'Make the drink directly in the serving glass — add ingredients one at a time over ice. No shaker, no strain.',
+    tags: [],
+    usedFor: ['Mojito', 'Aperol Spritz', 'Cuba Libre'],
+  },
+  {
+    id: 'churn',
+    term: 'Churn',
+    definition: 'Mix and lift the drink with a bar spoon through crushed ice.',
+    tags: [],
+    usedFor: ['Mojito', 'Mint Julep', 'Caipirinha'],
+  },
+  {
+    id: 'muddle',
+    term: 'Muddle',
+    definition: 'Gently press against fruits or herbs inside the glass to release juice and oils.',
+    tags: [],
+    usedFor: ['Caipirinha', 'Old Fashioned', 'Mojito'],
+  },
+  {
+    id: 'shake-strain',
+    term: 'Shake & Strain',
+    definition: 'Shake with cubed ice in a sealed tin until the outside frosts, then pour through a strainer over fresh ice or into a chilled glass.',
+    tags: [],
+    usedFor: ['Daiquiri', 'Margarita', 'Whiskey Sour'],
+  },
+  {
+    id: 'shake-double-strain',
+    term: 'Shake & Double Strain',
+    definition: 'Same as shake & strain, but poured through a second fine mesh strainer. Catches ice shards and pulp — gives the cleanest surface on a served-up drink.',
+    tags: ['served up', 'no ice in glass'],
+    usedFor: ['Espresso Martini', 'Cosmopolitan', 'Aviation'],
+  },
+  {
+    id: 'dry-shake',
+    term: 'Dry Shake',
+    definition: 'Shake all ingredients without ice first to build foam, then add ice and shake again to chill. Skip this and the foam will be thin.',
+    tags: ['required for foam'],
+    usedFor: ['Whiskey Sour', 'Amaretto Sour', 'Pisco Sour'],
+  },
+];
+---
+
+<Layout
+  title="Glossary — Elixir Maven"
+  description="Cocktail technique glossary — definitions for every method used in the Elixir Maven recipe collection."
+>
+  <div class="container">
+    <section class="glossary-hero">
+      <h1>Glossary</h1>
+      <p class="glossary-sub">The terms behind the techniques</p>
+    </section>
+
+    <section class="glossary-section" aria-labelledby="methods-heading">
+      <h2 class="glossary-section-title" id="methods-heading">Methods</h2>
+      <dl class="glossary-list">
+        {methods.map((method) => (
+          <div class="glossary-entry" id={method.id}>
+            <dt class="glossary-term">{method.term}</dt>
+            <dd class="glossary-body">
+              <p class="glossary-def">{method.definition}</p>
+              {method.tags.length > 0 && (
+                <div class="glossary-tags">
+                  {method.tags.map((tag) => (
+                    <span class="glossary-tag">{tag}</span>
+                  ))}
+                </div>
+              )}
+              <p class="glossary-used">Used for: {method.usedFor.join(' · ')}</p>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+  </div>
+</Layout>
