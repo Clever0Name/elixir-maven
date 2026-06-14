@@ -92,7 +92,7 @@ const totalCount = cocktails.length;
   const heroCount = document.getElementById('hero-count') as HTMLElement | null;
   if (heroCount) {
     const target = parseInt(heroCount.dataset.target ?? '0', 10);
-    const duration = 900;
+    const duration = 1800;
     const start = performance.now();
     const tick = (now: number) => {
       const t = Math.min((now - start) / duration, 1);
