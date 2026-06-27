@@ -914,3 +914,42 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid var(--border);
   margin-bottom: 0.25rem;
 }
+
+/* ─── COCKTAIL DESCRIPTION ───────────────── */
+.cocktail-description {
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0.25rem 0 0;
+  letter-spacing: 0.01em;
+}
+
+/* ─── METHOD STEPS ───────────────────────── */
+.spec-steps-list,
+.fs-steps-list {
+  margin: 0.4rem 0 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.spec-steps-list li,
+.fs-steps-list li {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+.fs-method-steps {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.fs-method-steps-label {
+  font-size: 0.63rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}

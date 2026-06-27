@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "Elixir Maven",
-    "cocktail_count": 76,
+    "cocktail_count": 74,
     "version": "1.0"
   },
   "cocktails": [
@@ -301,7 +301,7 @@
       "method": "Dry Shake, Shake & Double Strain",
       "glassware": "Rocks",
       "ice": "Cubed",
-      "garnish": "Lemon Peel & Cherry",
+      "garnish": "Lemon Peel",
       "ingredients": [
         {
           "name": "Amaretto",
@@ -330,7 +330,7 @@
         {
           "name": "Foamer Dilution",
           "role": "Foamer",
-          "amount": 10,
+          "amount": 5,
           "unit": "ml",
           "spec": "Foamer Dilution",
           "required": true
@@ -384,7 +384,7 @@
         {
           "name": "Soda Water",
           "role": "Mixer",
-          "amount": 100,
+          "amount": 120,
           "unit": "ml",
           "spec": "Soda Water",
           "required": true
@@ -712,60 +712,12 @@
         {
           "name": "Cola",
           "role": "Mixer",
-          "unit": "Top up",
+          "unit": "Top",
           "spec": "Coke",
           "required": true
         }
       ],
       "taste": "Sweet"
-    },
-    {
-      "id": "strawberry-daiquiri",
-      "name": "Strawberry Daiquiri",
-      "family": "Sour",
-      "category": "Rum",
-      "base_spirit": "White Rum",
-      "spirit_type": "Single",
-      "method": "Shake & Double Strain",
-      "glassware": "Coupe",
-      "ice": "None",
-      "garnish": "Lime Wedge",
-      "notes": "For other flavours, replace strawberry with other puree.",
-      "ingredients": [
-        {
-          "name": "White Rum",
-          "role": "Base Spirit",
-          "amount": 40,
-          "unit": "ml",
-          "spec": "Bacardi Carta Blanca",
-          "required": true
-        },
-        {
-          "name": "Lime Juice",
-          "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
-          "spec": "Lime Juice",
-          "required": true
-        },
-        {
-          "name": "Sugar Syrup",
-          "role": "Sweetener",
-          "amount": 20,
-          "unit": "ml",
-          "spec": "Sugar Syrup",
-          "required": true
-        },
-        {
-          "name": "Strawberry Puree",
-          "role": "Puree",
-          "amount": 20,
-          "unit": "ml",
-          "spec": "Ponthier Strawberry",
-          "required": true
-        }
-      ],
-      "taste": "Sour"
     },
     {
       "id": "bloody-mary",
@@ -1161,7 +1113,7 @@
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 10,
+          "amount": 15,
           "unit": "ml",
           "spec": "Sugar Syrup",
           "required": true
@@ -1273,7 +1225,7 @@
       "spirit_type": "Blend",
       "method": "Build",
       "glassware": "Wine Glass",
-      "ice": "None",
+      "ice": "Cubed",
       "garnish": "Mint Sprig",
       "ingredients": [
         {
@@ -1295,7 +1247,7 @@
         {
           "name": "Soda Water",
           "role": "Mixer",
-          "amount": 100,
+          "amount": 120,
           "unit": "ml",
           "spec": "Soda Water",
           "required": true
@@ -1309,7 +1261,14 @@
           "required": true
         }
       ],
-      "taste": "Sweet"
+      "taste": "Sweet",
+      "method_steps": [
+        "Fill the glass with cubed ice",
+        "Pour the elderflower liqueur over the ice",
+        "Add the soda water",
+        "Top with sparkling wine, it will layer naturally over the ice",
+        "Garnish with a mint sprig and serve"
+      ]
     },
     {
       "id": "john-collins",
@@ -1587,7 +1546,7 @@
     {
       "id": "sidecar",
       "name": "Sidecar",
-      "family": "Daisy / Sidecar",
+      "family": "Sidecar",
       "category": "Cognac",
       "base_spirit": "Cognac",
       "spirit_type": "Blend",
@@ -1750,7 +1709,7 @@
         {
           "name": "Foamer Dilution",
           "role": "Foamer",
-          "amount": 10,
+          "amount": 5,
           "unit": "ml",
           "spec": "Foamer Dilution",
           "required": true
@@ -2045,7 +2004,7 @@
         {
           "name": "Foamer Dilution",
           "role": "Foamer",
-          "amount": 10,
+          "amount": 5,
           "unit": "ml",
           "spec": "Foamer Dilution",
           "required": true
@@ -2135,7 +2094,7 @@
       "glassware": "Nick & Nora",
       "ice": "None",
       "garnish": "2x Olives on Cocktail Stick",
-      "notes": "Uses 42 Below or Roku.",
+      "notes": "For every scoop of ice added to the shaker, stir a while to gradually decrease the temperature.",
       "ingredients": [
         {
           "name": "Gin or Vodka",
@@ -2156,13 +2115,14 @@
         {
           "name": "Olive Brine",
           "role": "Brine",
-          "amount": 15,
+          "amount": 20,
           "unit": "ml",
           "spec": "Olive Brine",
           "required": true
         }
       ],
-      "taste": "Sharp"
+      "taste": "Sharp",
+      "description": "A Dry Martini that walked through the olive jar. Saline, savoury, serious."
     },
     {
       "id": "mimosa",
@@ -2258,7 +2218,7 @@
       "spirit_type": "Blend",
       "method": "Stir",
       "glassware": "Rocks",
-      "ice": "Clear Cube",
+      "ice": "Cubed",
       "garnish": "Orange Slice",
       "ingredients": [
         {
@@ -2292,7 +2252,9 @@
           ]
         }
       ],
-      "taste": "Bitter"
+      "taste": "Bitter",
+      "description": "Equal parts gin, red bitter and sweet vermouth. Bitter, perfect.",
+      "notes": "Count the stir: thirty seconds, then stop. Timing matters more than feel."
     },
     {
       "id": "tommy-s-margarita",
@@ -2344,7 +2306,7 @@
       "glassware": "Nick & Nora",
       "ice": "None",
       "garnish": "Lemon Peel",
-      "notes": "Uses 42 Below or Roku.",
+      "notes": "For every scoop of ice added to the shaker, stir a while to gradually decrease the temperature.",
       "ingredients": [
         {
           "name": "Gin or Vodka",
@@ -2408,14 +2370,6 @@
           "unit": "dash",
           "spec": "Angostura",
           "required": true
-        },
-        {
-          "name": "Mint Sprig",
-          "role": "Garnish",
-          "amount": 1,
-          "unit": "sprig",
-          "spec": "Mint Sprig",
-          "required": true
         }
       ],
       "taste": "Smooth"
@@ -2476,7 +2430,7 @@
       "spirit_type": "Single",
       "method": "Stir",
       "glassware": "Rocks",
-      "ice": "Clear Cube",
+      "ice": "Cubed",
       "garnish": "Orange Twist",
       "ingredients": [
         {
@@ -2504,7 +2458,8 @@
           "required": true
         }
       ],
-      "taste": "Smooth"
+      "taste": "Smooth",
+      "description": "Bourbon seasoned with sugar and bitters over cubed ice, the original cocktail."
     },
     {
       "id": "pi-a-colada",
@@ -2516,12 +2471,12 @@
       "method": "Shake & Strain",
       "glassware": "Hurricane",
       "ice": "Cubed & Crushed",
-      "garnish": "Mint Sprig",
+      "garnish": "Mint Sprig & Lemon Slice",
       "ingredients": [
         {
           "name": "Coconut Rum",
           "role": "Base Spirit",
-          "amount": 40,
+          "amount": 45,
           "unit": "ml",
           "spec": "Bacardi Coconut",
           "required": true
@@ -2529,7 +2484,7 @@
         {
           "name": "Pineapple Juice",
           "role": "Juice",
-          "amount": 80,
+          "amount": 85,
           "unit": "ml",
           "spec": "Pineapple Juice",
           "required": true
@@ -2545,7 +2500,7 @@
         {
           "name": "Coconut Syrup",
           "role": "Syrup",
-          "amount": 15,
+          "amount": 20,
           "unit": "ml",
           "spec": "Coconut Syrup",
           "required": true,
@@ -2554,7 +2509,8 @@
           ]
         }
       ],
-      "taste": "Delight"
+      "taste": "Delight",
+      "notes": "If preference is without double cream, adjust pineapple juice to 100ml."
     },
     {
       "id": "pisco-flower",
@@ -2603,7 +2559,7 @@
         {
           "name": "Foamer Dilution",
           "role": "Foamer",
-          "amount": 10,
+          "amount": 5,
           "unit": "ml",
           "spec": "Foamer Dilution",
           "required": true
@@ -2768,7 +2724,7 @@
       "glassware": "Highball",
       "ice": "Cubed",
       "garnish": "Rock Salt Rim & Grapefruit Slice",
-      "notes": "Replace Three Cents Grapefruit with Coke: Batanga.",
+      "notes": "Replace grapefruit soda with coke: Batanga.",
       "ingredients": [
         {
           "name": "Blanco Tequila",
@@ -2836,7 +2792,7 @@
         {
           "name": "Foamer Dilution",
           "role": "Foamer",
-          "amount": 10,
+          "amount": 5,
           "unit": "ml",
           "spec": "Foamer Dilution",
           "required": true
@@ -2973,55 +2929,6 @@
         }
       ],
       "taste": "Sour"
-    },
-    {
-      "id": "sazerac",
-      "name": "Sazerac",
-      "family": "Old Fashioned",
-      "category": "Cognac",
-      "method": "Stir",
-      "glassware": "Rocks",
-      "ice": "None",
-      "garnish": "Lemon Peel",
-      "notes": "Rinse glass with absinthe and discard it.",
-      "ingredients": [
-        {
-          "name": "Cognac",
-          "role": "Base Spirit",
-          "amount": 60,
-          "unit": "ml",
-          "spec": "Hennessy VS",
-          "required": true
-        },
-        {
-          "name": "Sugar Syrup",
-          "role": "Sweetener",
-          "amount": 10,
-          "unit": "ml",
-          "spec": "Sugar Syrup",
-          "required": true
-        },
-        {
-          "name": "Peychaud's Bitters",
-          "role": "Bitters",
-          "amount": 2,
-          "unit": "dash",
-          "spec": "Peychaud's Bitters",
-          "required": true
-        },
-        {
-          "name": "Absinthe",
-          "role": "Rinse",
-          "amount": 5,
-          "unit": "ml",
-          "spec": "Absinthe",
-          "required": true,
-          "note": "Rinse glass with absinthe and discard it."
-        }
-      ],
-      "base_spirit": "Cognac",
-      "spirit_type": "Single",
-      "taste": "Sharp"
     },
     {
       "id": "kir",
@@ -3209,7 +3116,7 @@
     {
       "id": "margarita",
       "name": "Margarita",
-      "family": "Daisy / Margarita",
+      "family": "Margarita",
       "category": "Tequila",
       "base_spirit": "Tequila",
       "spirit_type": "Blend",

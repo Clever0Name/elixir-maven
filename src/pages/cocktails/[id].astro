@@ -34,6 +34,8 @@ interface Props {
     ice?: string;
     garnish?: string;
     notes?: string;
+    description?: string;
+    method_steps?: string[];
     ingredients: Ingredient[];
   };
 }
@@ -120,6 +122,7 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
           </div>
         </div>
         <h1>{cocktail.name}</h1>
+        {cocktail.description && <p class="cocktail-description">{cocktail.description}</p>}
       </header>
 
       <!-- ══════════════════════════════════════════════
@@ -180,6 +183,16 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
               <div class="notes-box">
                 <strong>Note</strong>
                 {cocktail.notes}
+              </div>
+            )}
+            {cocktail.method_steps && cocktail.method_steps.length > 0 && (
+              <div class="notes-box">
+                <strong>Method</strong>
+                <ol class="spec-steps-list">
+                  {cocktail.method_steps.map((step) => (
+                    <li>{step}</li>
+                  ))}
+                </ol>
               </div>
             )}
           </section>
@@ -270,6 +283,18 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
         {showCocktailNote && (
           <div class={`fs-note${isVariantNote ? ' variant' : ''}`}>
             <b>{isVariantNote ? 'Variant:' : 'Note:'}</b> {cocktail.notes}
+          </div>
+        )}
+
+        <!-- Method steps -->
+        {cocktail.method_steps && cocktail.method_steps.length > 0 && (
+          <div class="fs-method-steps">
+            <div class="fs-method-steps-label">Method</div>
+            <ol class="fs-steps-list">
+              {cocktail.method_steps.map((step) => (
+                <li>{step}</li>
+              ))}
+            </ol>
           </div>
         )}
 
