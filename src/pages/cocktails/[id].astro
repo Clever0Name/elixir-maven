@@ -81,6 +81,9 @@ const isVariantNote =
 function methodGlossaryUrl(method: string): string | null {
   const m = method.toLowerCase();
   if (m.includes('dry shake')) return '/glossary#dry-shake';
+  if (m.startsWith('stir') && m.includes('double strain')) return '/glossary#stir-double-strain';
+  if (m.startsWith('stir') && m.includes('strain')) return '/glossary#stir-strain';
+  if (m.startsWith('stir')) return '/glossary#stir';
   if (m.includes('double strain')) return '/glossary#shake-double-strain';
   if (m.includes('shake') && m.includes('strain')) return '/glossary#shake-strain';
   if (m.includes('muddle')) return '/glossary#muddle';
