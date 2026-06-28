@@ -1,14 +1,16 @@
 :root {
   /* ─── Palette (matches elixir_maven_page_draft.html) ─ */
-  --bg: #131210;
-  --surface: #1c1a16;
-  --surface-2: #252218;
-  --border: #3a342a;
-  --accent: #c9a14a;
-  --accent-dim: rgba(201, 161, 74, 0.12);
+  --bg: #0E0E11;
+  --surface: #16161A;
+  --surface-2: #1D1D22;
+  --border: #2E2A32;
+  --accent: #E6B73D;
+  --accent-hover: #F2C75B;
+  --accent-active: #C49A2E;
+  --accent-dim: rgba(230, 183, 61, 0.13);
   --text: #f1e9d8;
   --text-muted: #a99f8c;
-  --brass: #8a7a55;
+  --brass: #9A8A65;
   --oxblood: #6e2c26;
   --radius: 10px;
   --radius-lg: 18px;
@@ -117,7 +119,7 @@ a { color: inherit; text-decoration: none; }
   outline: none;
   transition: border-color 0.2s;
 }
-.search-input:focus { border-color: var(--accent); }
+.search-input:focus { border-color: var(--accent-hover); }
 .search-input::placeholder { color: var(--text-muted); }
 
 /* ─── FILTERS ────────────────────────────── */
@@ -144,11 +146,11 @@ a { color: inherit; text-decoration: none; }
   transition: all 0.15s;
   white-space: nowrap;
 }
-.filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+.filter-btn:hover { border-color: var(--accent-hover); color: var(--accent-hover); }
 .filter-btn.active {
   background: var(--accent);
   border-color: var(--accent);
-  color: #131210;
+  color: #0E0E11;
   font-weight: 500;
 }
 
@@ -191,7 +193,7 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
 }
 .cocktail-card:hover {
-  border-color: var(--accent);
+  border-color: var(--accent-hover);
   transform: translateY(-2px);
 }
 .card-name {
@@ -317,7 +319,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 1.5rem;
   transition: color 0.15s;
 }
-.back-link:hover { color: var(--accent); }
+.back-link:hover { color: var(--accent-hover); }
 
 /* ─── SPEC VIEW — RECIPE LAYOUT ──────────── */
 .recipe-grid {
@@ -368,8 +370,8 @@ a { color: inherit; text-decoration: none; }
   transition: border-color 0.15s, color 0.15s;
 }
 .ingredient-name a:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--accent-hover);
+  border-color: var(--accent-hover);
 }
 .ingredient-spec {
   font-size: 0.72rem;
@@ -403,7 +405,7 @@ a { color: inherit; text-decoration: none; }
 /* ─── NOTES BOX ──────────────────────────── */
 .notes-box {
   background: var(--accent-dim);
-  border: 1px solid rgba(201, 161, 74, 0.22);
+  border: 1px solid rgba(230, 183, 61, 0.24);
   border-radius: var(--radius);
   padding: 1rem 1.25rem;
   font-size: 0.875rem;
@@ -471,8 +473,8 @@ a { color: inherit; text-decoration: none; }
   transition: border-color 0.15s, color 0.15s;
 }
 .fs-name a:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--accent-hover);
+  border-color: var(--accent-hover);
 }
 .fs-leader {
   flex: 1;
@@ -629,7 +631,7 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid transparent;
   transition: border-color 0.15s;
 }
-.footer-cta:hover { border-color: var(--accent); }
+.footer-cta:hover { border-color: var(--accent-hover); }
 .footer-copy {
   font-size: 0.65rem;
   letter-spacing: 0.06em;
@@ -645,7 +647,7 @@ a { color: inherit; text-decoration: none; }
   height: 2.4rem;
   border-radius: 50%;
   background: var(--accent);
-  color: #131210;
+  color: #0E0E11;
   border: none;
   cursor: pointer;
   display: flex;
@@ -662,7 +664,7 @@ a { color: inherit; text-decoration: none; }
   transform: translateY(0);
   pointer-events: auto;
 }
-.back-to-top:hover { background: #d4b06a; }
+.back-to-top:hover { background: var(--accent-hover); }
 
 /* ─── SURPRISE ME ────────────────────────── */
 .hero-actions {
@@ -688,8 +690,8 @@ a { color: inherit; text-decoration: none; }
   transition: background 0.15s, color 0.15s;
 }
 .surprise-btn:hover {
-  background: var(--accent);
-  color: #131210;
+  background: var(--accent-hover);
+  color: #0E0E11;
 }
 
 /* ─── VOLUMES BANNER ─────────────────────── */
@@ -732,8 +734,8 @@ a { color: inherit; text-decoration: none; }
   transition: border-color 0.15s, color 0.15s;
 }
 .volume-card:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent-hover);
+  color: var(--accent-hover);
 }
 @media (max-width: 480px) {
   .volumes-grid { grid-template-columns: repeat(2, 1fr); }
@@ -796,14 +798,14 @@ a { color: inherit; text-decoration: none; }
   transition: border-color 0.15s, color 0.15s;
 }
 .sq-btn:hover {
-  border-color: var(--accent);
+  border-color: var(--accent-hover);
   color: var(--text);
 }
 .sq-btn.active {
   border-color: var(--accent);
   color: var(--accent);
   font-weight: 600;
-  background: rgba(201, 161, 74, 0.08);
+  background: rgba(230, 183, 61, 0.09);
 }
 
 /* ─── GLOSSARY PAGE ──────────────────────── */
@@ -852,7 +854,7 @@ a { color: inherit; text-decoration: none; }
   transition: border-left-color 0.2s, background 0.2s;
 }
 .glossary-entry:hover {
-  border-left-color: var(--accent);
+  border-left-color: var(--accent-hover);
   background: var(--surface);
 }
 .glossary-term {
@@ -898,8 +900,8 @@ a { color: inherit; text-decoration: none; }
   transition: border-color 0.15s, color 0.15s;
 }
 .method-link:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--accent-hover);
+  border-color: var(--accent-hover);
 }
 
 /* ─── TASTE GROUP HEADERS ────────────────── */
