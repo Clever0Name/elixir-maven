@@ -955,3 +955,94 @@ a { color: inherit; text-decoration: none; }
   color: var(--text-muted);
   margin-bottom: 0.5rem;
 }
+
+/* ─── TASTE TAGS ─────────────────────────── */
+:root {
+  --sour-border: #9b59b6;    --sour-fill: #f5eeff;
+  --bitter-border: #e74c6e;  --bitter-fill: #fff0f3;
+  --smooth-border: #e67e22;  --smooth-fill: #fff5ee;
+  --sharp-border: #d4ac0d;   --sharp-fill: #fffce8;
+  --sweet-border: #2e86de;   --sweet-fill: #eef6ff;
+  --delight-border: #27ae74; --delight-fill: #edfff6;
+}
+
+.taste-tag {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding: 3px 10px 3px 14px;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  clip-path: polygon(8px 0%, 100% 0%, 100% 100%, 8px 100%, 0% 50%);
+  white-space: nowrap;
+  line-height: 1.3;
+}
+.taste-tag::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+.tag-sour    { background: var(--sour-fill);    border: 1.5px solid var(--sour-border); }
+.tag-sour::before    { background: #c8a0e0; }
+.tag-bitter  { background: var(--bitter-fill);  border: 1.5px solid var(--bitter-border); }
+.tag-bitter::before  { background: #e898b0; }
+.tag-smooth  { background: var(--smooth-fill);  border: 1.5px solid var(--smooth-border); }
+.tag-smooth::before  { background: #e8b888; }
+.tag-sharp   { background: var(--sharp-fill);   border: 1.5px solid var(--sharp-border); }
+.tag-sharp::before   { background: #d0c870; }
+.tag-sweet   { background: var(--sweet-fill);   border: 1.5px solid var(--sweet-border); }
+.tag-sweet::before   { background: #90b8e8; }
+.tag-delight { background: var(--delight-fill); border: 1.5px solid var(--delight-border); }
+.tag-delight::before { background: #7fd0a8; }
+
+/* ─── TASTE FILTER BUTTONS (homepage) ────── */
+.taste-filter-btn {
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  background: transparent;
+  color: var(--text-muted);
+}
+.taste-filter-btn::before { opacity: 0.35; }
+.taste-filter-btn.active { color: #1a1a1a; }
+.taste-filter-btn.active::before { opacity: 1; }
+.taste-filter-btn.active.tag-sour    { background: var(--sour-fill); }
+.taste-filter-btn.active.tag-bitter  { background: var(--bitter-fill); }
+.taste-filter-btn.active.tag-smooth  { background: var(--smooth-fill); }
+.taste-filter-btn.active.tag-sharp   { background: var(--sharp-fill); }
+.taste-filter-btn.active.tag-sweet   { background: var(--sweet-fill); }
+.taste-filter-btn.active.tag-delight { background: var(--delight-fill); }
+
+.taste-filter-row { margin-top: 0.5rem; }
+.taste-row-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  align-self: center;
+}
+
+/* ─── TASTE PROFILE ROW (Full Serve) ─────── */
+.fs-taste-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+  margin-top: 0.5rem;
+}
+.fs-taste-label {
+  font-size: 0.63rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  min-width: 80px;
+}

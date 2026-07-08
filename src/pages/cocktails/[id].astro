@@ -36,6 +36,7 @@ interface Props {
     notes?: string;
     description?: string;
     method_steps?: string[];
+    taste?: string;
     ingredients: Ingredient[];
   };
 }
@@ -181,6 +182,14 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
                   <span class="spec-value">{cocktail.base_spirit}</span>
                 </div>
               )}
+              {cocktail.taste && (
+                <div class="spec-row">
+                  <span class="spec-label">Taste</span>
+                  <span class="spec-value">
+                    <span class={`taste-tag tag-${cocktail.taste.toLowerCase()}`}>{cocktail.taste}</span>
+                  </span>
+                </div>
+              )}
             </div>
             {cocktail.notes && (
               <div class="notes-box">
@@ -273,6 +282,14 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
             </div>
           </div>
         </div>
+
+        <!-- Taste Profile -->
+        {cocktail.taste && (
+          <div class="fs-taste-row">
+            <span class="fs-taste-label">Taste Profile</span>
+            <span class={`taste-tag tag-${cocktail.taste.toLowerCase()}`}>{cocktail.taste}</span>
+          </div>
+        )}
 
         <!-- Side serve callout -->
         {sideServes.map((ing) => (

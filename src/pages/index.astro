@@ -6,6 +6,7 @@ import cocktailsData from '../../elixir_maven_cocktails.json';
 const cocktails = cocktailsData.cocktails;
 
 const categories = [...new Set(cocktails.map((c) => c.category))].sort();
+const TASTE_FILTERS = ['Sour', 'Bitter', 'Smooth', 'Sharp', 'Sweet', 'Delight'];
 
 const totalCount = cocktails.length;
 ---
@@ -40,6 +41,13 @@ const totalCount = cocktails.length;
       <div class="filter-row" role="group" aria-label="Filter by spirit">
         <button class="filter-btn active" data-filter="all">All</button>
         {categories.map((cat) => <button class="filter-btn" data-filter={cat}>{cat}</button>)}
+      </div>
+
+      <div class="filter-row taste-filter-row" role="group" aria-label="Filter by taste">
+        <span class="taste-row-label">Taste</span>
+        {TASTE_FILTERS.map((taste) => (
+          <button class={`taste-tag taste-filter-btn tag-${taste.toLowerCase()}`} data-taste={taste}>{taste}</button>
+        ))}
       </div>
 
       <div class="hero-actions">
@@ -119,6 +127,7 @@ const totalCount = cocktails.length;
 
   const searchInput = document.getElementById('search') as HTMLInputElement;
   const filterBtns  = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const tasteBtns   = document.querySelectorAll<HTMLButtonElement>('.taste-filter-btn');
   const groupBtns   = document.querySelectorAll<HTMLButtonElement>('.group-btn');
   const grid        = document.getElementById('cocktail-grid') as HTMLElement;
   const cards       = document.querySelectorAll<HTMLAnchorElement>('.cocktail-card');
@@ -126,6 +135,7 @@ const totalCount = cocktails.length;
   const noResults   = document.getElementById('no-results') as HTMLElement;
 
   let activeFilter = 'all';
+  let activeTaste  = 'all';
   let activeGroup  = 'none';
 
   const originalOrder = [...cards];
@@ -153,11 +163,13 @@ const totalCount = cocktails.length;
       const name        = card.dataset.name ?? '';
       const category    = card.dataset.category ?? '';
       const ingredients = card.dataset.ingredients ?? '';
+      const taste       = card.dataset.taste ?? '';
 
       const matchesSearch = !query || name.includes(query) || ingredients.includes(query);
       const matchesFilter = activeFilter === 'all' || category === activeFilter;
+      const matchesTaste  = activeTaste === 'all' || taste === activeTaste;
 
-      if (matchesSearch && matchesFilter) {
+      if (matchesSearch && matchesFilter && matchesTaste) {
         card.style.display = '';
         visible++;
         visibleCards.push(card);
@@ -203,6 +215,20 @@ const totalCount = cocktails.length;
       filterBtns.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
       activeFilter = btn.dataset.filter ?? 'all';
+      updateDisplay();
+    });
+  });
+
+  tasteBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const selected = btn.dataset.taste ?? '';
+      if (activeTaste === selected) {
+        activeTaste = 'all';
+        tasteBtns.forEach((b) => b.classList.remove('active'));
+      } else {
+        activeTaste = selected;
+        tasteBtns.forEach((b) => b.classList.toggle('active', b.dataset.taste === selected));
+      }
       updateDisplay();
     });
   });
