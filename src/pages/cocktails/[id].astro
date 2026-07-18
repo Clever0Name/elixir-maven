@@ -34,6 +34,7 @@ interface Props {
     ice?: string;
     garnish?: string;
     notes?: string;
+    variant_note?: string;
     description?: string;
     method_steps?: string[];
     taste?: string;
@@ -303,6 +304,11 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
         {showCocktailNote && (
           <div class={`fs-note${isVariantNote ? ' variant' : ''}`}>
             <b>{isVariantNote ? 'Variant:' : 'Note:'}</b> {cocktail.notes}
+          </div>
+        )}
+        {cocktail.variant_note && (
+          <div class="fs-note variant">
+            <b>Variant:</b> {cocktail.variant_note}
           </div>
         )}
 

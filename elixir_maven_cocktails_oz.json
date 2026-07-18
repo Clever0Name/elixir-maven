@@ -3411,7 +3411,8 @@
       "glassware": "Wine Glass",
       "ice": "Cubed",
       "garnish": "3 Strawberry Slices, 3 Orange Slices, 7 Mint Leaves",
-      "notes": "Cut fruits as small as possible for juices. Swap the fruit garnish to preference: strawberries, oranges, mint, apples, cherries, lime or lemon all work.",
+      "notes": "Cut fruits into quarters. The smaller the pieces, the more juice bleeds into the wine while it sits.",
+      "variant_note": "Swap fruits to what's in season or in the fridge. Strawberries, oranges, mint, apples, cherries, lime and lemon all work.",
       "ingredients": [
         {
           "name": "Orange Liqueur",
