@@ -1043,6 +1043,7 @@
       "glassware": "Coupe",
       "ice": "None",
       "garnish": "Lime Wedge",
+      "variant_note": "To change the flavour of the Daiquiri, add 30ml to 50ml of strawberry, mango or passion fruit purée.",
       "ingredients": [
         {
           "name": "White Rum",
@@ -2167,6 +2168,7 @@
       "glassware": "Highball",
       "ice": "Crushed",
       "garnish": "Mint Sprig & Lime Wedge",
+      "variant_note": "To change the flavour of the Mojito, add 30ml to 50ml of strawberry, mango or passion fruit purée.",
       "ingredients": [
         {
           "name": "White Rum",
