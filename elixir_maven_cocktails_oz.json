@@ -2,7 +2,8 @@
   "meta": {
     "source": "Elixir Maven",
     "cocktail_count": 75,
-    "version": "1.0"
+    "version": "1.0",
+    "units": "oz"
   },
   "cocktails": [
     {
@@ -21,24 +22,24 @@
         {
           "name": "Gin",
           "role": "Base Spirit",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Bombay Sapphire",
           "required": true
         },
         {
-          "name": "Dark Crème de Cacao",
+          "name": "Dark Cr\u00e8me de Cacao",
           "role": "Liqueur",
-          "amount": 30,
-          "unit": "ml",
-          "spec": "Crème de Cacao Dark",
+          "amount": 1,
+          "unit": "oz",
+          "spec": "Cr\u00e8me de Cacao Dark",
           "required": true
         },
         {
           "name": "Double Cream",
           "role": "Cream",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Double Cream",
           "required": true
         }
@@ -61,24 +62,24 @@
         {
           "name": "Cognac",
           "role": "Base Spirit",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Hennessy VS",
           "required": true
         },
         {
-          "name": "Dark Crème de Cacao",
+          "name": "Dark Cr\u00e8me de Cacao",
           "role": "Liqueur",
-          "amount": 30,
-          "unit": "ml",
-          "spec": "Crème de Cacao Dark",
+          "amount": 1,
+          "unit": "oz",
+          "spec": "Cr\u00e8me de Cacao Dark",
           "required": true
         },
         {
           "name": "Double Cream",
           "role": "Cream",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Double Cream",
           "required": true
         }
@@ -100,16 +101,16 @@
         {
           "name": "Sweet Vermouth",
           "role": "Aperitif",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Regal Rogue Red",
           "required": true
         },
         {
           "name": "Campari",
           "role": "Aperitif",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Campari",
           "required": true,
           "flavour_tags": [
@@ -122,8 +123,8 @@
         {
           "name": "Soda Water",
           "role": "Mixer",
-          "amount": 120,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "oz",
           "spec": "Soda Water",
           "required": true
         }
@@ -145,32 +146,32 @@
         {
           "name": "Gin",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Bombay Sapphire",
           "required": true
         },
         {
           "name": "Maraschino Liqueur",
           "role": "Liqueur",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Luxardo Maraschino",
           "required": true
         },
         {
           "name": "Lemon Juice",
           "role": "Citrus",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Lemon Juice",
           "required": true
         },
         {
           "name": "Violet Liqueur",
           "role": "Liqueur",
-          "amount": 5,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Violet Liqueur",
           "required": true
         }
@@ -192,40 +193,40 @@
         {
           "name": "White Rum",
           "role": "Base Spirit",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Bacardi Carta Blanca",
           "required": true
         },
         {
           "name": "Aged Rum",
           "role": "Base Spirit",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Mount Gay Black Barrel",
           "required": true
         },
         {
           "name": "Coconut Rum",
           "role": "Base Spirit",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Bacardi Coconut",
           "required": true
         },
         {
           "name": "Pineapple Juice",
           "role": "Juice",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Pineapple Juice",
           "required": true
         },
         {
           "name": "Orange Juice",
           "role": "Juice",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Orange Juice",
           "required": true
         },
@@ -255,24 +256,24 @@
         {
           "name": "White Rum",
           "role": "Base Spirit",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Bacardi Carta Blanca",
           "required": true
         },
         {
           "name": "Cognac",
           "role": "Base Spirit",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Hennessy VS",
           "required": true
         },
         {
           "name": "Cointreau",
           "role": "Liqueur",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Cointreau",
           "required": true,
           "flavour_tags": [
@@ -283,8 +284,8 @@
         {
           "name": "Lemon Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lemon Juice",
           "required": true
         }
@@ -306,32 +307,32 @@
         {
           "name": "Amaretto",
           "role": "Liqueur",
-          "amount": 45,
-          "unit": "ml",
+          "amount": 1.5,
+          "unit": "oz",
           "spec": "Amaretto Disaronno",
           "required": true
         },
         {
           "name": "Lemon Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lemon Juice",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         },
         {
           "name": "Foamer Dilution",
           "role": "Foamer",
-          "amount": 5,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Foamer Dilution",
           "required": true
         },
@@ -361,8 +362,8 @@
         {
           "name": "Aperol",
           "role": "Aperitif",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Aperol",
           "required": true,
           "flavour_tags": [
@@ -376,16 +377,16 @@
         {
           "name": "Sparkling Wine",
           "role": "Sparkling Wine",
-          "amount": 100,
-          "unit": "ml",
+          "amount": 3.5,
+          "unit": "oz",
           "spec": "Chandon",
           "required": true
         },
         {
           "name": "Soda Water",
           "role": "Mixer",
-          "amount": 120,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "oz",
           "spec": "Soda Water",
           "required": true
         }
@@ -407,8 +408,8 @@
         {
           "name": "Coffee Liqueur",
           "role": "Liqueur",
-          "amount": 35,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Blend Coffee Liqueur",
           "required": true,
           "flavour_tags": [
@@ -419,8 +420,8 @@
         {
           "name": "Irish Cream Liqueur",
           "role": "Liqueur",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Baileys",
           "required": true
         }
@@ -442,16 +443,16 @@
         {
           "name": "Peach Puree",
           "role": "Puree",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Peach Puree",
           "required": true
         },
         {
           "name": "Sparkling Wine",
           "role": "Sparkling Wine",
-          "amount": 125,
-          "unit": "ml",
+          "amount": 4.25,
+          "unit": "oz",
           "spec": "Chandon",
           "required": true
         }
@@ -474,16 +475,16 @@
         {
           "name": "Vodka",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "42 Below",
           "required": true
         },
         {
           "name": "Coffee Liqueur",
           "role": "Liqueur",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Blend Coffee Liqueur",
           "required": true,
           "flavour_tags": [
@@ -510,16 +511,16 @@
         {
           "name": "Vodka",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "42 Below",
           "required": true
         },
         {
           "name": "Coffee Liqueur",
           "role": "Liqueur",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Blend Coffee Liqueur",
           "required": true,
           "flavour_tags": [
@@ -530,8 +531,8 @@
         {
           "name": "Double Cream",
           "role": "Cream",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Double Cream",
           "required": true
         }
@@ -553,24 +554,24 @@
         {
           "name": "Vodka",
           "role": "Base Spirit",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "42 Below",
           "required": true
         },
         {
-          "name": "Blue Curaçao",
+          "name": "Blue Cura\u00e7ao",
           "role": "Liqueur",
-          "amount": 20,
-          "unit": "ml",
-          "spec": "Blue Curaçao",
+          "amount": 0.75,
+          "unit": "oz",
+          "spec": "Blue Cura\u00e7ao",
           "required": true
         },
         {
           "name": "Lemon Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lemon Juice",
           "required": true
         },
@@ -600,32 +601,32 @@
         {
           "name": "Gin",
           "role": "Base Spirit",
-          "amount": 35,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Bombay Sapphire",
           "required": true
         },
         {
-          "name": "Crème de Mûre",
+          "name": "Cr\u00e8me de M\u00fbre",
           "role": "Liqueur",
-          "amount": 15,
-          "unit": "ml",
-          "spec": "Crème de Mure",
+          "amount": 0.5,
+          "unit": "oz",
+          "spec": "Cr\u00e8me de Mure",
           "required": true
         },
         {
           "name": "Lemon Juice",
           "role": "Citrus",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lemon Juice",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         }
@@ -648,8 +649,8 @@
         {
           "name": "Cognac",
           "role": "Base Spirit",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Hennessy VS",
           "required": true
         },
@@ -672,8 +673,8 @@
         {
           "name": "Sparkling Wine",
           "role": "Sparkling Wine",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 2.75,
+          "unit": "oz",
           "spec": "Pommery Brut",
           "required": true
         }
@@ -696,8 +697,8 @@
         {
           "name": "White Rum",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Bacardi Carta Blanca",
           "required": true
         },
@@ -735,16 +736,16 @@
         {
           "name": "Vodka",
           "role": "Base Spirit",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "42 Below",
           "required": true
         },
         {
           "name": "Tomato Juice",
           "role": "Mixer",
-          "amount": 200,
-          "unit": "ml",
+          "amount": 6.75,
+          "unit": "oz",
           "spec": "Bloody/Virgin Mary Mix",
           "required": true
         }
@@ -767,16 +768,16 @@
         {
           "name": "Blanco Tequila",
           "role": "Base Spirit",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Cazadores Blanco",
           "required": true
         },
         {
           "name": "Tomato Juice",
           "role": "Mixer",
-          "amount": 200,
-          "unit": "ml",
+          "amount": 6.75,
+          "unit": "oz",
           "spec": "Bloody/Virgin Mary Mix",
           "required": true
         }
@@ -797,16 +798,16 @@
         {
           "name": "Gin",
           "role": "Base Spirit",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Bombay Sapphire",
           "required": true
         },
         {
           "name": "Tomato Juice",
           "role": "Mixer",
-          "amount": 200,
-          "unit": "ml",
+          "amount": 6.75,
+          "unit": "oz",
           "spec": "Bloody/Virgin Mary Mix",
           "required": true
         }
@@ -830,16 +831,16 @@
         {
           "name": "Bourbon",
           "role": "Base Spirit",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Maker's Mark",
           "required": true
         },
         {
           "name": "Campari",
           "role": "Aperitif",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Campari",
           "required": true,
           "flavour_tags": [
@@ -852,8 +853,8 @@
         {
           "name": "Sweet Vermouth",
           "role": "Aperitif",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Regal Rogue Red",
           "required": true
         }
@@ -864,7 +865,7 @@
       "id": "caipirinha",
       "name": "Caipirinha",
       "family": "Caipirinha Family",
-      "category": "Cachaça",
+      "category": "Cacha\u00e7a",
       "base_spirit": "Cachaca",
       "spirit_type": "Single",
       "method": "Muddle & Churn",
@@ -874,11 +875,11 @@
       "notes": "Caipiroska uses vodka. Caipirissima uses white rum.",
       "ingredients": [
         {
-          "name": "Cachaça",
+          "name": "Cacha\u00e7a",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
-          "spec": "Leblon Cachaça",
+          "amount": 1.75,
+          "unit": "oz",
+          "spec": "Leblon Cacha\u00e7a",
           "required": true
         },
         {
@@ -892,8 +893,8 @@
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         }
@@ -916,8 +917,8 @@
         {
           "name": "Vodka",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "42 Below",
           "required": true
         },
@@ -932,8 +933,8 @@
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         }
@@ -956,8 +957,8 @@
         {
           "name": "White Rum",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Bacardi Carta Blanca",
           "required": true
         },
@@ -972,8 +973,8 @@
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         }
@@ -995,16 +996,16 @@
         {
           "name": "Citrus Vodka",
           "role": "Base Spirit",
-          "amount": 35,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Ketel One Citroen",
           "required": true
         },
         {
           "name": "Cointreau",
           "role": "Liqueur",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Cointreau",
           "required": true,
           "flavour_tags": [
@@ -1015,16 +1016,16 @@
         {
           "name": "Lime Juice",
           "role": "Citrus",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Lime Juice",
           "required": true
         },
         {
           "name": "Cranberry Juice",
           "role": "Juice",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Cranberry Juice",
           "required": true
         }
@@ -1046,24 +1047,24 @@
         {
           "name": "White Rum",
           "role": "Base Spirit",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Bacardi Carta Blanca",
           "required": true
         },
         {
           "name": "Lime Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lime Juice",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         }
@@ -1085,16 +1086,16 @@
         {
           "name": "Vodka",
           "role": "Base Spirit",
-          "amount": 35,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "42 Below",
           "required": true
         },
         {
           "name": "Coffee Liqueur",
           "role": "Liqueur",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Blend Coffee Liqueur",
           "required": true,
           "flavour_tags": [
@@ -1105,16 +1106,16 @@
         {
           "name": "Coffee Dilution",
           "role": "Coffee",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Solo Coffee Dilution",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         }
@@ -1136,16 +1137,16 @@
         {
           "name": "Cognac",
           "role": "Base Spirit",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Hennessy VS",
           "required": true
         },
         {
           "name": "Amaretto",
           "role": "Liqueur",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Disaronno",
           "required": true
         }
@@ -1168,16 +1169,16 @@
         {
           "name": "Scotch Whisky",
           "role": "Base Spirit",
-          "amount": 35,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "JW Black",
           "required": true
         },
         {
           "name": "Amaretto",
           "role": "Liqueur",
-          "amount": 35,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Disaronno",
           "required": true
         }
@@ -1200,16 +1201,16 @@
         {
           "name": "Vodka",
           "role": "Base Spirit",
-          "amount": 35,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "42 Below",
           "required": true
         },
         {
           "name": "Amaretto",
           "role": "Liqueur",
-          "amount": 35,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Disaronno",
           "required": true
         }
@@ -1231,24 +1232,24 @@
         {
           "name": "Elderflower Liqueur",
           "role": "Liqueur",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "St Germain",
           "required": true
         },
         {
           "name": "Sparkling Wine",
           "role": "Sparkling Wine",
-          "amount": 100,
-          "unit": "ml",
+          "amount": 3.5,
+          "unit": "oz",
           "spec": "Chandon",
           "required": true
         },
         {
           "name": "Soda Water",
           "role": "Mixer",
-          "amount": 120,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "oz",
           "spec": "Soda Water",
           "required": true
         },
@@ -1285,32 +1286,32 @@
         {
           "name": "Scotch Whisky",
           "role": "Base Spirit",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "JW Black",
           "required": true
         },
         {
           "name": "Lemon Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lemon Juice",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         },
         {
           "name": "Soda Water",
           "role": "Mixer",
-          "amount": 120,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "oz",
           "spec": "Soda Top up",
           "required": true
         }
@@ -1332,16 +1333,16 @@
         {
           "name": "Aged Rum",
           "role": "Base Spirit",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Mount Gay Black Barrel",
           "required": true
         },
         {
           "name": "Lime Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lime Juice",
           "required": true
         },
@@ -1356,8 +1357,8 @@
         {
           "name": "Ginger Beer",
           "role": "Mixer",
-          "amount": 150,
-          "unit": "ml",
+          "amount": 5,
+          "unit": "oz",
           "spec": "Ginger Beer",
           "required": true
         }
@@ -1380,32 +1381,32 @@
         {
           "name": "Gin",
           "role": "Base Spirit",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Bombay Sapphire",
           "required": true
         },
         {
           "name": "Lemon Juice",
           "role": "Citrus",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Lemon Juice",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         },
         {
           "name": "Sparkling Wine",
           "role": "Sparkling Wine",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Pommery Brut",
           "required": true
         }
@@ -1427,24 +1428,24 @@
         {
           "name": "Vodka",
           "role": "Base Spirit",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "42 Below",
           "required": true
         },
         {
           "name": "Raspberry Liqueur",
           "role": "Liqueur",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Chambord",
           "required": true
         },
         {
           "name": "Pineapple Juice",
           "role": "Juice",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 2,
+          "unit": "oz",
           "spec": "Pineapple Juice",
           "required": true
         }
@@ -1466,24 +1467,24 @@
         {
           "name": "Gin",
           "role": "Base Spirit",
-          "amount": 35,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Bombay Sapphire",
           "required": true
         },
         {
           "name": "Sweet Vermouth",
           "role": "Aperitif",
-          "amount": 35,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Regal Rogue Red",
           "required": true
         },
         {
           "name": "Fernet Branca",
           "role": "Amaro",
-          "amount": 5,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Fernet Branca",
           "required": true,
           "flavour_tags": [
@@ -1511,32 +1512,32 @@
         {
           "name": "Irish Whiskey",
           "role": "Base Spirit",
-          "amount": 35,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Slane's Whiskey",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         },
         {
           "name": "Espresso",
           "role": "Coffee",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 2,
+          "unit": "oz",
           "spec": "Espresso",
           "required": true
         },
         {
           "name": "Double Cream",
           "role": "Cream",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Double Cream",
           "required": true
         }
@@ -1559,16 +1560,16 @@
         {
           "name": "Cognac",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Hennessy VS",
           "required": true
         },
         {
           "name": "Cointreau",
           "role": "Liqueur",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Cointreau",
           "required": true,
           "flavour_tags": [
@@ -1579,8 +1580,8 @@
         {
           "name": "Lemon Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lemon Juice",
           "required": true
         }
@@ -1603,24 +1604,24 @@
         {
           "name": "Blanco Tequila",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Cazadores Blanco",
           "required": true
         },
         {
           "name": "Orange Juice",
           "role": "Juice",
-          "amount": 150,
-          "unit": "ml",
+          "amount": 5,
+          "unit": "oz",
           "spec": "Orange Juice",
           "required": true
         },
         {
           "name": "Grenadine",
           "role": "Syrup",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Grenadine",
           "required": true
         }
@@ -1642,24 +1643,24 @@
         {
           "name": "Gin",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Roku",
           "required": true
         },
         {
           "name": "Vodka",
           "role": "Base Spirit",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "42 Below",
           "required": true
         },
         {
           "name": "Lillet Blanc",
           "role": "Aperitif",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Lillet Blanc",
           "required": true
         }
@@ -1681,16 +1682,16 @@
         {
           "name": "Gin",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Bombay Sapphire",
           "required": true
         },
         {
           "name": "Cointreau",
           "role": "Liqueur",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Cointreau",
           "required": true,
           "flavour_tags": [
@@ -1701,16 +1702,16 @@
         {
           "name": "Lemon Juice",
           "role": "Citrus",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lemon Juice",
           "required": true
         },
         {
           "name": "Foamer Dilution",
           "role": "Foamer",
-          "amount": 5,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Foamer Dilution",
           "required": true
         }
@@ -1732,48 +1733,48 @@
         {
           "name": "White Rum",
           "role": "Base Spirit",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Bacardi Carta Blanca",
           "required": true
         },
         {
           "name": "Aged Rum",
           "role": "Base Spirit",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Mount Gay Black Barrel",
           "required": true
         },
         {
           "name": "Overproof Rum",
           "role": "Base Spirit",
-          "amount": 5,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Wray & Nephew",
           "required": true
         },
         {
           "name": "Pineapple Juice",
           "role": "Juice",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Pineapple Juice",
           "required": true
         },
         {
           "name": "Lime Juice",
           "role": "Citrus",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Lime Juice",
           "required": true
         },
         {
           "name": "Falernum",
           "role": "Syrup",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Bristol Falernum",
           "required": true
         },
@@ -1803,32 +1804,32 @@
         {
           "name": "Vodka",
           "role": "Base Spirit",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "42 Below",
           "required": true
         },
         {
           "name": "Peach Liqueur",
           "role": "Liqueur",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Briottet Peach Liqueur",
           "required": true
         },
         {
           "name": "Cranberry Juice",
           "role": "Juice",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Cranberry Juice",
           "required": true
         },
         {
           "name": "Orange Juice",
           "role": "Juice",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Orange Juice",
           "required": true
         }
@@ -1850,24 +1851,24 @@
         {
           "name": "Gin",
           "role": "Base Spirit",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Bombay Sapphire",
           "required": true
         },
         {
           "name": "Cherry Liqueur",
           "role": "Liqueur",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Cherry Heering",
           "required": true
         },
         {
           "name": "Cointreau",
           "role": "Liqueur",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Cointreau",
           "required": true,
           "flavour_tags": [
@@ -1876,34 +1877,34 @@
           ]
         },
         {
-          "name": "Bénédictine",
+          "name": "B\u00e9n\u00e9dictine",
           "role": "Liqueur",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Dom Benedictine",
           "required": true
         },
         {
           "name": "Pineapple Juice",
           "role": "Juice",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Pineapple Juice",
           "required": true
         },
         {
           "name": "Lime Juice",
           "role": "Citrus",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Lime Juice",
           "required": true
         },
         {
           "name": "Grenadine",
           "role": "Syrup",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Grenadine",
           "required": true
         },
@@ -1933,32 +1934,32 @@
         {
           "name": "Gin",
           "role": "Base Spirit",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Bombay Sapphire",
           "required": true
         },
         {
           "name": "Lemon Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lemon Juice",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         },
         {
           "name": "Soda Water",
           "role": "Mixer",
-          "amount": 120,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "oz",
           "spec": "Top up Soda Water",
           "required": true
         }
@@ -1980,32 +1981,32 @@
         {
           "name": "Bourbon",
           "role": "Base Spirit",
-          "amount": 45,
-          "unit": "ml",
+          "amount": 1.5,
+          "unit": "oz",
           "spec": "Maker's Mark",
           "required": true
         },
         {
           "name": "Lemon Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lemon Juice",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         },
         {
           "name": "Foamer Dilution",
           "role": "Foamer",
-          "amount": 5,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Foamer Dilution",
           "required": true
         },
@@ -2022,7 +2023,7 @@
     },
     {
       "id": "vieux-carr",
-      "name": "Vieux Carré",
+      "name": "Vieux Carr\u00e9",
       "family": "Aromatic / Spirit Forward",
       "category": "Blend",
       "base_spirit": "Whiskey/Cognac",
@@ -2035,32 +2036,32 @@
         {
           "name": "Bourbon",
           "role": "Base Spirit",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Maker's Mark",
           "required": true
         },
         {
           "name": "Cognac",
           "role": "Base Spirit",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Hennessy VS",
           "required": true
         },
         {
           "name": "Sweet Vermouth",
           "role": "Aperitif",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Regal Rogue Red",
           "required": true
         },
         {
-          "name": "Bénédictine",
+          "name": "B\u00e9n\u00e9dictine",
           "role": "Liqueur",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Dom Benedictine",
           "required": true
         },
@@ -2099,24 +2100,24 @@
         {
           "name": "Gin or Vodka",
           "role": "Base Spirit",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 2,
+          "unit": "oz",
           "spec": "42 Below/Roku",
           "required": true
         },
         {
           "name": "Dry Vermouth",
           "role": "Aperitif",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Regal Rogue Dry",
           "required": true
         },
         {
           "name": "Olive Brine",
           "role": "Brine",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Olive Brine",
           "required": true
         }
@@ -2139,16 +2140,16 @@
         {
           "name": "Orange Juice",
           "role": "Juice",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Orange Juice",
           "required": true
         },
         {
           "name": "Sparkling Wine",
           "role": "Sparkling Wine",
-          "amount": 75,
-          "unit": "ml",
+          "amount": 2.5,
+          "unit": "oz",
           "spec": "Chandon",
           "required": true
         }
@@ -2170,24 +2171,24 @@
         {
           "name": "White Rum",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Bacardi Carta Blanca",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         },
         {
           "name": "Lime Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lime Juice",
           "required": true
         },
@@ -2224,24 +2225,24 @@
         {
           "name": "Gin",
           "role": "Base Spirit",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Bombay Sapphire",
           "required": true
         },
         {
           "name": "Sweet Vermouth",
           "role": "Aperitif",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Regal Rogue Red",
           "required": true
         },
         {
           "name": "Campari",
           "role": "Aperitif",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Campari",
           "required": true,
           "flavour_tags": [
@@ -2271,24 +2272,24 @@
         {
           "name": "Blanco Tequila",
           "role": "Base Spirit",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Cazadores Blanco",
           "required": true
         },
         {
           "name": "Lime Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lime Juice",
           "required": true
         },
         {
           "name": "Agave Syrup",
           "role": "Sweetener",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Agave Syrup",
           "required": true
         }
@@ -2311,16 +2312,16 @@
         {
           "name": "Gin or Vodka",
           "role": "Base Spirit",
-          "amount": 60,
-          "unit": "ml",
+          "amount": 2,
+          "unit": "oz",
           "spec": "42 Below/Roku",
           "required": true
         },
         {
           "name": "Dry Vermouth",
           "role": "Aperitif",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Regal Rogue Dry",
           "required": true
         }
@@ -2342,16 +2343,16 @@
         {
           "name": "Bourbon",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Maker's Mark",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         },
@@ -2390,16 +2391,16 @@
         {
           "name": "Vodka",
           "role": "Base Spirit",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "42 Below",
           "required": true
         },
         {
           "name": "Lime Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lime Juice",
           "required": true
         },
@@ -2436,16 +2437,16 @@
         {
           "name": "Bourbon",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Maker's Mark",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         },
@@ -2463,7 +2464,7 @@
     },
     {
       "id": "pi-a-colada",
-      "name": "Piña Colada",
+      "name": "Pi\u00f1a Colada",
       "family": "Tropical / Cream",
       "category": "Rum",
       "base_spirit": "Rum",
@@ -2476,32 +2477,32 @@
         {
           "name": "Coconut Rum",
           "role": "Base Spirit",
-          "amount": 45,
-          "unit": "ml",
+          "amount": 1.5,
+          "unit": "oz",
           "spec": "Bacardi Coconut",
           "required": true
         },
         {
           "name": "Pineapple Juice",
           "role": "Juice",
-          "amount": 85,
-          "unit": "ml",
+          "amount": 2.75,
+          "unit": "oz",
           "spec": "Pineapple Juice",
           "required": true
         },
         {
           "name": "Double Cream",
           "role": "Cream",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Double Cream",
           "required": true
         },
         {
           "name": "Coconut Syrup",
           "role": "Syrup",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Coconut Syrup",
           "required": true,
           "flavour_tags": [
@@ -2527,40 +2528,40 @@
         {
           "name": "Pisco",
           "role": "Base Spirit",
-          "amount": 35,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "El Gobernador Pisco",
           "required": true
         },
         {
           "name": "Elderflower Liqueur",
           "role": "Liqueur",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "St Germain",
           "required": true
         },
         {
           "name": "Lime Juice",
           "role": "Citrus",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lime Juice",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         },
         {
           "name": "Foamer Dilution",
           "role": "Foamer",
-          "amount": 5,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Foamer Dilution",
           "required": true
         },
@@ -2591,40 +2592,40 @@
         {
           "name": "Vodka",
           "role": "Base Spirit",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "42 Below",
           "required": true
         },
         {
           "name": "Passion Fruit Liqueur",
           "role": "Liqueur",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Passoa",
           "required": true
         },
         {
           "name": "Passion Fruit Puree",
           "role": "Puree",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Ponthier Passion Fruit",
           "required": true
         },
         {
           "name": "Pineapple Juice",
           "role": "Juice",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Pineapple Juice",
           "required": true
         },
         {
           "name": "Vanilla Syrup",
           "role": "Syrup",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Vanilla Syrup",
           "required": true,
           "flavour_tags": [
@@ -2634,8 +2635,8 @@
         {
           "name": "Sparkling Wine",
           "role": "Side Serve",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Fiol",
           "required": true,
           "note": "25ml Fiol on the side."
@@ -2658,16 +2659,16 @@
         {
           "name": "Scotch Whisky",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "JW Black",
           "required": true
         },
         {
           "name": "Drambuie",
           "role": "Liqueur",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Drambuie",
           "required": true
         }
@@ -2689,24 +2690,24 @@
         {
           "name": "Vodka",
           "role": "Base Spirit",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "42 Below",
           "required": true
         },
         {
           "name": "Pink Grapefruit Juice",
           "role": "Juice",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Pink Grapefruit Juice",
           "required": true
         },
         {
           "name": "Cranberry Juice",
           "role": "Juice",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 2.75,
+          "unit": "oz",
           "spec": "Cranberry Juice",
           "required": true
         }
@@ -2729,24 +2730,24 @@
         {
           "name": "Blanco Tequila",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Cazadores Blanco",
           "required": true
         },
         {
           "name": "Lime Juice",
           "role": "Citrus",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Lime Juice",
           "required": true
         },
         {
           "name": "Grapefruit Soda",
           "role": "Mixer",
-          "amount": 150,
-          "unit": "ml",
+          "amount": 5,
+          "unit": "oz",
           "spec": "Three Cents Grapefruit",
           "required": true
         }
@@ -2768,32 +2769,32 @@
         {
           "name": "Pisco",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "El Gobernador Pisco",
           "required": true
         },
         {
           "name": "Lemon Juice",
           "role": "Citrus",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lemon Juice",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         },
         {
           "name": "Foamer Dilution",
           "role": "Foamer",
-          "amount": 5,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Foamer Dilution",
           "required": true
         },
@@ -2823,40 +2824,40 @@
         {
           "name": "Aged Rum",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Mount Gay Black Barrel",
           "required": true
         },
         {
           "name": "Lime Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lime Juice",
           "required": true
         },
         {
           "name": "Orange Juice",
           "role": "Juice",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Orange Juice",
           "required": true
         },
         {
           "name": "Pineapple Juice",
           "role": "Juice",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Pineapple Juice",
           "required": true
         },
         {
           "name": "Grenadine",
           "role": "Syrup",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Grenadine",
           "required": true
         },
@@ -2887,17 +2888,17 @@
         {
           "name": "Vodka",
           "role": "Base Spirit",
-          "amount": 35,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "42 Below",
           "required": true
         },
         {
-          "name": "Crème de Cassis",
+          "name": "Cr\u00e8me de Cassis",
           "role": "Liqueur",
-          "amount": 15,
-          "unit": "ml",
-          "spec": "Crème de Cassis",
+          "amount": 0.5,
+          "unit": "oz",
+          "spec": "Cr\u00e8me de Cassis",
           "required": true,
           "flavour_tags": [
             "Blackcurrant"
@@ -2906,24 +2907,24 @@
         {
           "name": "Lemon Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lemon Juice",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         },
         {
           "name": "Sparkling Wine",
           "role": "Sparkling Wine",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Pommery Brut",
           "required": true
         }
@@ -2943,18 +2944,18 @@
       "garnish": "None",
       "ingredients": [
         {
-          "name": "Crème de Cassis",
+          "name": "Cr\u00e8me de Cassis",
           "role": "Liqueur",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Briottet Cassis",
           "required": true
         },
         {
           "name": "White Wine",
           "role": "Wine",
-          "amount": 125,
-          "unit": "ml",
+          "amount": 4.25,
+          "unit": "oz",
           "spec": "Humberto Canale S.B.",
           "required": true
         }
@@ -2976,16 +2977,16 @@
         {
           "name": "Citrus Vodka",
           "role": "Base Spirit",
-          "amount": 35,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Ketel One Citron",
           "required": true
         },
         {
           "name": "Cointreau",
           "role": "Liqueur",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Cointreau",
           "required": true,
           "flavour_tags": [
@@ -2996,8 +2997,8 @@
         {
           "name": "Lemon Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lemon Juice",
           "required": true
         }
@@ -3019,24 +3020,24 @@
         {
           "name": "Aged Rum",
           "role": "Base Spirit",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Mount Gay Black Barrel",
           "required": true
         },
         {
           "name": "White Rum",
           "role": "Base Spirit",
-          "amount": 30,
-          "unit": "ml",
+          "amount": 1,
+          "unit": "oz",
           "spec": "Bacardi Carta Blanca",
           "required": true
         },
         {
           "name": "Cointreau",
           "role": "Liqueur",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Cointreau",
           "required": true,
           "flavour_tags": [
@@ -3047,16 +3048,16 @@
         {
           "name": "Lime Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lime Juice",
           "required": true
         },
         {
           "name": "Orgeat",
           "role": "Syrup",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Orgeat",
           "required": true,
           "flavour_tags": [
@@ -3089,16 +3090,16 @@
         {
           "name": "Rye Whiskey",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Whistle Pig 6yr",
           "required": true
         },
         {
           "name": "Dry Vermouth",
           "role": "Aperitif",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Regal Rogue Dry",
           "required": true
         },
@@ -3128,16 +3129,16 @@
         {
           "name": "Blanco Tequila",
           "role": "Base Spirit",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "Cazadores Blanco",
           "required": true
         },
         {
           "name": "Cointreau",
           "role": "Liqueur",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Cointreau",
           "required": true,
           "flavour_tags": [
@@ -3148,8 +3149,8 @@
         {
           "name": "Lime Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lime Juice",
           "required": true
         }
@@ -3171,16 +3172,16 @@
         {
           "name": "Vodka",
           "role": "Base Spirit",
-          "amount": 40,
-          "unit": "ml",
+          "amount": 1.25,
+          "unit": "oz",
           "spec": "42 Below",
           "required": true
         },
         {
           "name": "Cointreau",
           "role": "Liqueur",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Cointreau",
           "required": true,
           "flavour_tags": [
@@ -3191,8 +3192,8 @@
         {
           "name": "Lime Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lime Juice",
           "required": true
         }
@@ -3212,18 +3213,18 @@
       "garnish": "None",
       "ingredients": [
         {
-          "name": "Crème de Cassis",
+          "name": "Cr\u00e8me de Cassis",
           "role": "Liqueur",
-          "amount": 15,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Briottet Cassis",
           "required": true
         },
         {
           "name": "Sparkling Wine",
           "role": "Sparkling Wine",
-          "amount": 115,
-          "unit": "ml",
+          "amount": 4,
+          "unit": "oz",
           "spec": "Pommery Brut",
           "required": true
         }
@@ -3245,40 +3246,40 @@
         {
           "name": "Vodka",
           "role": "Base Spirit",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "42 Below",
           "required": true
         },
         {
           "name": "Gin",
           "role": "Base Spirit",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Bombay Sapphire",
           "required": true
         },
         {
           "name": "White Rum",
           "role": "Base Spirit",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Bacardi Carta Blanca",
           "required": true
         },
         {
           "name": "Blanco Tequila",
           "role": "Base Spirit",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Cazadores Blanco",
           "required": true
         },
         {
           "name": "Cointreau",
           "role": "Liqueur",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Cointreau",
           "required": true,
           "flavour_tags": [
@@ -3289,24 +3290,24 @@
         {
           "name": "Lemon Juice",
           "role": "Citrus",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Lemon Juice",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Sweetener",
-          "amount": 10,
-          "unit": "ml",
+          "amount": 0.25,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         },
         {
           "name": "Cola",
           "role": "Mixer",
-          "amount": 100,
-          "unit": "ml",
+          "amount": 3.5,
+          "unit": "oz",
           "spec": "Coke",
           "required": true
         }
@@ -3328,16 +3329,16 @@
         {
           "name": "Rye Whiskey",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Whistle Pig 6yr",
           "required": true
         },
         {
           "name": "Sweet Vermouth",
           "role": "Aperitif",
-          "amount": 25,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Regal Rogue Red",
           "required": true
         },
@@ -3367,24 +3368,24 @@
         {
           "name": "Rye Whiskey",
           "role": "Base Spirit",
-          "amount": 50,
-          "unit": "ml",
+          "amount": 1.75,
+          "unit": "oz",
           "spec": "Whistle Pig 6yr",
           "required": true
         },
         {
           "name": "Sweet Vermouth",
           "role": "Aperitif",
-          "amount": 12.5,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Regal Rogue Red",
           "required": true
         },
         {
           "name": "Dry Vermouth",
           "role": "Aperitif",
-          "amount": 12.5,
-          "unit": "ml",
+          "amount": 0.5,
+          "unit": "oz",
           "spec": "Regal Rogue Dry",
           "required": true
         },
@@ -3415,32 +3416,32 @@
         {
           "name": "Orange Liqueur",
           "role": "Liqueur",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Orange Liqueur",
           "required": true
         },
         {
           "name": "Sugar Syrup",
           "role": "Syrup",
-          "amount": 20,
-          "unit": "ml",
+          "amount": 0.75,
+          "unit": "oz",
           "spec": "Sugar Syrup",
           "required": true
         },
         {
           "name": "Soda",
           "role": "Mixer",
-          "amount": 200,
-          "unit": "ml",
+          "amount": 6.75,
+          "unit": "oz",
           "spec": "Soda Water",
           "required": true
         },
         {
           "name": "Red Wine",
           "role": "Wine",
-          "amount": 80,
-          "unit": "ml",
+          "amount": 2.75,
+          "unit": "oz",
           "spec": "Red Wine",
           "required": true
         }
