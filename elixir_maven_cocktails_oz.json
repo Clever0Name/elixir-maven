@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "Elixir Maven",
-    "cocktail_count": 75,
+    "cocktail_count": 76,
     "version": "1.0",
     "units": "oz"
   },
@@ -2329,6 +2329,46 @@
         }
       ],
       "taste": "Sharp"
+    },
+    {
+      "id": "gimlet",
+      "name": "Gimlet",
+      "family": "Sour",
+      "category": "Gin/Vodka",
+      "base_spirit": "Vodka/Gin",
+      "spirit_type": "Single",
+      "method": "Shake & Double Strain",
+      "glassware": "Coupe",
+      "ice": "None",
+      "garnish": "Lime Wedge",
+      "notes": "Reach for fresh lime juice over bottled here. It cuts through cleaner and hits the taste buds harder, making the drink noticeably brighter every time.",
+      "ingredients": [
+        {
+          "name": "Vodka/Gin",
+          "role": "Base Spirit",
+          "amount": 2,
+          "unit": "oz",
+          "spec": "Vodka or Gin",
+          "required": true
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Juice",
+          "amount": 0.75,
+          "unit": "oz",
+          "spec": "Fresh Lime Juice",
+          "required": true
+        },
+        {
+          "name": "Sugar Syrup",
+          "role": "Syrup",
+          "amount": 0.75,
+          "unit": "oz",
+          "spec": "Sugar Syrup",
+          "required": true
+        }
+      ],
+      "taste": "Sour"
     },
     {
       "id": "mint-julep",
