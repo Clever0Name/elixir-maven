@@ -681,8 +681,7 @@
           "required": true
         }
       ],
-      "taste": "Sharp",
-      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
+      "taste": "Sharp"
     },
     {
       "id": "cuba-libre",
@@ -3133,8 +3132,7 @@
           "required": true
         }
       ],
-      "taste": "Sour",
-      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
+      "taste": "Sour"
     },
     {
       "id": "manhattan-dry",
