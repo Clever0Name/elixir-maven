@@ -413,6 +413,9 @@ a { color: inherit; text-decoration: none; }
   margin-top: 1.5rem;
   line-height: 1.55;
 }
+.notes-box.substitution {
+  border-color: #8f6ae6;
+}
 .notes-box strong {
   color: var(--accent);
   font-size: 0.65rem;
@@ -570,6 +573,7 @@ a { color: inherit; text-decoration: none; }
 }
 .fs-note b { color: var(--text); font-weight: 500; }
 .fs-note.variant { border-left-color: var(--oxblood); }
+.fs-note.substitution { border-left-color: #8f6ae6; }
 .fs-note .vname { color: var(--accent); letter-spacing: 0.06em; }
 
 /* ─── INGREDIENT PAGE ────────────────────── */

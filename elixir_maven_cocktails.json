@@ -344,7 +344,8 @@
           "required": true
         }
       ],
-      "taste": "Sour"
+      "taste": "Sour",
+      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available."
     },
     {
       "id": "aperol-spritz",
@@ -1716,7 +1717,8 @@
           "required": true
         }
       ],
-      "taste": "Sour"
+      "taste": "Sour",
+      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available."
     },
     {
       "id": "zombie",
@@ -2019,7 +2021,8 @@
           "required": true
         }
       ],
-      "taste": "Sour"
+      "taste": "Sour",
+      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available."
     },
     {
       "id": "vieux-carr",
@@ -2615,7 +2618,8 @@
           "required": true
         }
       ],
-      "taste": "Sour"
+      "taste": "Sour",
+      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available."
     },
     {
       "id": "pornstar-martini",
@@ -2848,7 +2852,8 @@
           "required": true
         }
       ],
-      "taste": "Sour"
+      "taste": "Sour",
+      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available."
     },
     {
       "id": "planter-s-punch",

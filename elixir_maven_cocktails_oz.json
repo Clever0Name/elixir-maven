@@ -28,11 +28,11 @@
           "required": true
         },
         {
-          "name": "Dark Cr\u00e8me de Cacao",
+          "name": "Dark Crème de Cacao",
           "role": "Liqueur",
           "amount": 1,
           "unit": "oz",
-          "spec": "Cr\u00e8me de Cacao Dark",
+          "spec": "Crème de Cacao Dark",
           "required": true
         },
         {
@@ -68,11 +68,11 @@
           "required": true
         },
         {
-          "name": "Dark Cr\u00e8me de Cacao",
+          "name": "Dark Crème de Cacao",
           "role": "Liqueur",
           "amount": 1,
           "unit": "oz",
-          "spec": "Cr\u00e8me de Cacao Dark",
+          "spec": "Crème de Cacao Dark",
           "required": true
         },
         {
@@ -345,7 +345,8 @@
           "required": true
         }
       ],
-      "taste": "Sour"
+      "taste": "Sour",
+      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available."
     },
     {
       "id": "aperol-spritz",
@@ -560,11 +561,11 @@
           "required": true
         },
         {
-          "name": "Blue Cura\u00e7ao",
+          "name": "Blue Curaçao",
           "role": "Liqueur",
           "amount": 0.75,
           "unit": "oz",
-          "spec": "Blue Cura\u00e7ao",
+          "spec": "Blue Curaçao",
           "required": true
         },
         {
@@ -607,11 +608,11 @@
           "required": true
         },
         {
-          "name": "Cr\u00e8me de M\u00fbre",
+          "name": "Crème de Mûre",
           "role": "Liqueur",
           "amount": 0.5,
           "unit": "oz",
-          "spec": "Cr\u00e8me de Mure",
+          "spec": "Crème de Mure",
           "required": true
         },
         {
@@ -865,7 +866,7 @@
       "id": "caipirinha",
       "name": "Caipirinha",
       "family": "Caipirinha Family",
-      "category": "Cacha\u00e7a",
+      "category": "Cachaça",
       "base_spirit": "Cachaca",
       "spirit_type": "Single",
       "method": "Muddle & Churn",
@@ -875,11 +876,11 @@
       "notes": "Caipiroska uses vodka. Caipirissima uses white rum.",
       "ingredients": [
         {
-          "name": "Cacha\u00e7a",
+          "name": "Cachaça",
           "role": "Base Spirit",
           "amount": 1.75,
           "unit": "oz",
-          "spec": "Leblon Cacha\u00e7a",
+          "spec": "Leblon Cachaça",
           "required": true
         },
         {
@@ -1717,7 +1718,8 @@
           "required": true
         }
       ],
-      "taste": "Sour"
+      "taste": "Sour",
+      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available."
     },
     {
       "id": "zombie",
@@ -1878,7 +1880,7 @@
           ]
         },
         {
-          "name": "B\u00e9n\u00e9dictine",
+          "name": "Bénédictine",
           "role": "Liqueur",
           "amount": 0.25,
           "unit": "oz",
@@ -2020,11 +2022,12 @@
           "required": true
         }
       ],
-      "taste": "Sour"
+      "taste": "Sour",
+      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available."
     },
     {
       "id": "vieux-carr",
-      "name": "Vieux Carr\u00e9",
+      "name": "Vieux Carré",
       "family": "Aromatic / Spirit Forward",
       "category": "Blend",
       "base_spirit": "Whiskey/Cognac",
@@ -2059,7 +2062,7 @@
           "required": true
         },
         {
-          "name": "B\u00e9n\u00e9dictine",
+          "name": "Bénédictine",
           "role": "Liqueur",
           "amount": 0.25,
           "unit": "oz",
@@ -2506,7 +2509,7 @@
     },
     {
       "id": "pi-a-colada",
-      "name": "Pi\u00f1a Colada",
+      "name": "Piña Colada",
       "family": "Tropical / Cream",
       "category": "Rum",
       "base_spirit": "Rum",
@@ -2616,7 +2619,8 @@
           "required": true
         }
       ],
-      "taste": "Sour"
+      "taste": "Sour",
+      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available."
     },
     {
       "id": "pornstar-martini",
@@ -2849,7 +2853,8 @@
           "required": true
         }
       ],
-      "taste": "Sour"
+      "taste": "Sour",
+      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available."
     },
     {
       "id": "planter-s-punch",
@@ -2936,11 +2941,11 @@
           "required": true
         },
         {
-          "name": "Cr\u00e8me de Cassis",
+          "name": "Crème de Cassis",
           "role": "Liqueur",
           "amount": 0.5,
           "unit": "oz",
-          "spec": "Cr\u00e8me de Cassis",
+          "spec": "Crème de Cassis",
           "required": true,
           "flavour_tags": [
             "Blackcurrant"
@@ -2986,7 +2991,7 @@
       "garnish": "None",
       "ingredients": [
         {
-          "name": "Cr\u00e8me de Cassis",
+          "name": "Crème de Cassis",
           "role": "Liqueur",
           "amount": 0.5,
           "unit": "oz",
@@ -3255,7 +3260,7 @@
       "garnish": "None",
       "ingredients": [
         {
-          "name": "Cr\u00e8me de Cassis",
+          "name": "Crème de Cassis",
           "role": "Liqueur",
           "amount": 0.5,
           "unit": "oz",

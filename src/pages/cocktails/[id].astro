@@ -35,6 +35,7 @@ interface Props {
     garnish?: string;
     notes?: string;
     variant_note?: string;
+    substitution_note?: string;
     description?: string;
     method_steps?: string[];
     taste?: string;
@@ -98,6 +99,13 @@ const methodUrl = methodGlossaryUrl(cocktail.method);
 
 const title = `${cocktail.name} Recipe — Elixir Maven`;
 const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category}. ${cocktail.method} in a ${cocktail.glassware}. Full recipe with ingredients and measures.`;
+const defaultFoamerSubstitution =
+  "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available.";
+const substitutionNote =
+  cocktail.substitution_note ||
+  (cocktail.ingredients.some((ing) => ing.name === 'Foamer Dilution')
+    ? defaultFoamerSubstitution
+    : undefined);
 ---
 
 <Layout title={title} description={description}>
@@ -196,6 +204,18 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
               <div class="notes-box">
                 <strong>Note</strong>
                 {cocktail.notes}
+              </div>
+            )}
+            {cocktail.variant_note && (
+              <div class="notes-box">
+                <strong>Variant</strong>
+                {cocktail.variant_note}
+              </div>
+            )}
+            {substitutionNote && (
+              <div class="notes-box substitution">
+                <strong>Substitution</strong>
+                {substitutionNote}
               </div>
             )}
             {cocktail.method_steps && cocktail.method_steps.length > 0 && (
@@ -309,6 +329,11 @@ const description = `${cocktail.name} — ${cocktail.family ?? cocktail.category
         {cocktail.variant_note && (
           <div class="fs-note variant">
             <b>Variant:</b> {cocktail.variant_note}
+          </div>
+        )}
+        {substitutionNote && (
+          <div class="fs-note substitution">
+            <b>Substitution:</b> {substitutionNote}
           </div>
         )}
 
