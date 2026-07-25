@@ -239,7 +239,8 @@
           "required": true
         }
       ],
-      "taste": "Sweet"
+      "taste": "Sweet",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "between-the-sheets",
@@ -346,7 +347,8 @@
         }
       ],
       "taste": "Sour",
-      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available."
+      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available.",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "aperol-spritz",
@@ -680,7 +682,8 @@
           "required": true
         }
       ],
-      "taste": "Sharp"
+      "taste": "Sharp",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "cuba-libre",
@@ -1365,7 +1368,8 @@
           "required": true
         }
       ],
-      "taste": "Sharp"
+      "taste": "Sharp",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "french-75",
@@ -1790,7 +1794,8 @@
           "required": true
         }
       ],
-      "taste": "Sharp"
+      "taste": "Sharp",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "sex-on-the-beach",
@@ -1920,7 +1925,8 @@
           "required": true
         }
       ],
-      "taste": "Sour"
+      "taste": "Sour",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "tom-collins",
@@ -2023,7 +2029,8 @@
         }
       ],
       "taste": "Sour",
-      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available."
+      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available.",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "vieux-carr",
@@ -2086,7 +2093,8 @@
           "required": true
         }
       ],
-      "taste": "Smooth"
+      "taste": "Smooth",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "dirty-martini",
@@ -2418,7 +2426,8 @@
           "required": true
         }
       ],
-      "taste": "Smooth"
+      "taste": "Smooth",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "moscow-mule",
@@ -2465,7 +2474,8 @@
           "required": true
         }
       ],
-      "taste": "Sharp"
+      "taste": "Sharp",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "old-fashioned",
@@ -2505,7 +2515,8 @@
         }
       ],
       "taste": "Smooth",
-      "description": "Bourbon seasoned with sugar and bitters over cubed ice, the original cocktail."
+      "description": "Bourbon seasoned with sugar and bitters over cubed ice, the original cocktail.",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "pi-a-colada",
@@ -2620,7 +2631,8 @@
         }
       ],
       "taste": "Sour",
-      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available."
+      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available.",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "pornstar-martini",
@@ -2854,7 +2866,8 @@
         }
       ],
       "taste": "Sour",
-      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available."
+      "substitution_note": "Egg white gives the most natural, organic result and is the recommended choice. Foamer works as an easy second option when it isn't available.",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "planter-s-punch",
@@ -2917,7 +2930,8 @@
           "required": true
         }
       ],
-      "taste": "Sweet"
+      "taste": "Sweet",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "russian-spring-punch",
@@ -3120,7 +3134,8 @@
           "required": true
         }
       ],
-      "taste": "Sour"
+      "taste": "Sour",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "manhattan-dry",
@@ -3159,7 +3174,8 @@
           "required": true
         }
       ],
-      "taste": "Sharp"
+      "taste": "Sharp",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "margarita",
@@ -3398,7 +3414,8 @@
           "required": true
         }
       ],
-      "taste": "Smooth"
+      "taste": "Smooth",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "manhattan-perfect",
@@ -3445,7 +3462,8 @@
           "required": true
         }
       ],
-      "taste": "Smooth"
+      "taste": "Smooth",
+      "preference_note": "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over."
     },
     {
       "id": "sangria",

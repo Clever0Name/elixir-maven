@@ -416,6 +416,9 @@ a { color: inherit; text-decoration: none; }
 .notes-box.substitution {
   border-color: #8f6ae6;
 }
+.notes-box.preference {
+  border-color: #3f8fd1;
+}
 .notes-box strong {
   color: var(--accent);
   font-size: 0.65rem;

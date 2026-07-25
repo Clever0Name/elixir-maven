@@ -36,6 +36,7 @@ interface Props {
     notes?: string;
     variant_note?: string;
     substitution_note?: string;
+    preference_note?: string;
     description?: string;
     method_steps?: string[];
     taste?: string;
@@ -106,6 +107,25 @@ const substitutionNote =
   (cocktail.ingredients.some((ing) => ing.name === 'Foamer Dilution')
     ? defaultFoamerSubstitution
     : undefined);
+const defaultAngosturaPreference =
+  "Use Angostura as a garnish rather than a dash in the drink. A dash or two can easily overpower a cocktail. Angostura gives the same aromatic lift without taking over.";
+const preferenceNote =
+  cocktail.preference_note ||
+  (cocktail.ingredients.some((ing) => ing.name === 'Angostura Bitters')
+    ? defaultAngosturaPreference
+    : undefined);
+const specNote =
+  cocktail.notes || cocktail.variant_note || substitutionNote || preferenceNote;
+const specNoteLabel =
+  cocktail.notes
+    ? 'Note'
+    : cocktail.variant_note
+    ? 'Variant'
+    : substitutionNote
+    ? 'Substitution'
+    : preferenceNote
+    ? 'Preference'
+    : undefined;
 ---
 
 <Layout title={title} description={description}>
@@ -200,22 +220,10 @@ const substitutionNote =
                 </div>
               )}
             </div>
-            {cocktail.notes && (
-              <div class="notes-box">
-                <strong>Note</strong>
-                {cocktail.notes}
-              </div>
-            )}
-            {cocktail.variant_note && (
-              <div class="notes-box">
-                <strong>Variant</strong>
-                {cocktail.variant_note}
-              </div>
-            )}
-            {substitutionNote && (
-              <div class="notes-box substitution">
-                <strong>Substitution</strong>
-                {substitutionNote}
+            {specNote && (
+              <div class={`notes-box${specNoteLabel && specNoteLabel !== 'Note' ? ` ${specNoteLabel.toLowerCase()}` : ''}`}>
+                <strong>{specNoteLabel}</strong>
+                {specNote}
               </div>
             )}
             {cocktail.method_steps && cocktail.method_steps.length > 0 && (
@@ -334,6 +342,11 @@ const substitutionNote =
         {substitutionNote && (
           <div class="fs-note substitution">
             <b>Substitution:</b> {substitutionNote}
+          </div>
+        )}
+        {preferenceNote && (
+          <div class="fs-note preference">
+            <b>Preference:</b> {preferenceNote}
           </div>
         )}
 
