@@ -388,7 +388,7 @@
         {
           "name": "Soda Water",
           "role": "Mixer",
-          "amount": 4,
+          "amount": 4.5,
           "unit": "oz",
           "spec": "Soda Water",
           "required": true
@@ -1236,7 +1236,7 @@
         {
           "name": "Elderflower Liqueur",
           "role": "Liqueur",
-          "amount": 1.25,
+          "amount": 2.5,
           "unit": "oz",
           "spec": "St Germain",
           "required": true
@@ -1252,7 +1252,7 @@
         {
           "name": "Soda Water",
           "role": "Mixer",
-          "amount": 4,
+          "amount": 4.5,
           "unit": "oz",
           "spec": "Soda Water",
           "required": true

@@ -387,7 +387,7 @@
         {
           "name": "Soda Water",
           "role": "Mixer",
-          "amount": 120,
+          "amount": 140,
           "unit": "ml",
           "spec": "Soda Water",
           "required": true
@@ -1235,7 +1235,7 @@
         {
           "name": "Elderflower Liqueur",
           "role": "Liqueur",
-          "amount": 40,
+          "amount": 70,
           "unit": "ml",
           "spec": "St Germain",
           "required": true
@@ -1251,7 +1251,7 @@
         {
           "name": "Soda Water",
           "role": "Mixer",
-          "amount": 120,
+          "amount": 140,
           "unit": "ml",
           "spec": "Soda Water",
           "required": true
