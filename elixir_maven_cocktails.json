@@ -364,7 +364,7 @@
         {
           "name": "Aperol",
           "role": "Aperitif",
-          "amount": 50,
+          "amount": 60,
           "unit": "ml",
           "spec": "Aperol",
           "required": true,
@@ -379,15 +379,14 @@
         {
           "name": "Sparkling Wine",
           "role": "Sparkling Wine",
-          "amount": 100,
-          "unit": "ml",
+          "unit": "Top",
           "spec": "Chandon",
           "required": true
         },
         {
           "name": "Soda Water",
           "role": "Mixer",
-          "amount": 140,
+          "amount": 120,
           "unit": "ml",
           "spec": "Soda Water",
           "required": true
@@ -1235,7 +1234,7 @@
         {
           "name": "Elderflower Liqueur",
           "role": "Liqueur",
-          "amount": 70,
+          "amount": 60,
           "unit": "ml",
           "spec": "St Germain",
           "required": true
@@ -1243,15 +1242,14 @@
         {
           "name": "Sparkling Wine",
           "role": "Sparkling Wine",
-          "amount": 100,
-          "unit": "ml",
+          "unit": "Top",
           "spec": "Chandon",
           "required": true
         },
         {
           "name": "Soda Water",
           "role": "Mixer",
-          "amount": 140,
+          "amount": 120,
           "unit": "ml",
           "spec": "Soda Water",
           "required": true
