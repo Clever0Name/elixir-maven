@@ -1044,7 +1044,7 @@
       "glassware": "Coupe",
       "ice": "None",
       "garnish": "Lime Wedge",
-      "variant_note": "To change the flavour of the Daiquiri, add 30ml to 50ml of strawberry, mango or passion fruit purée.",
+      "variant_note": "Adjust the base Daiquiri's flavour by adding 30ml/1oz to 50ml/1.7oz of purée. Mango, passion fruit and strawberry all work well.",
       "ingredients": [
         {
           "name": "White Rum",
@@ -2175,7 +2175,7 @@
       "glassware": "Highball",
       "ice": "Crushed",
       "garnish": "Mint Sprig & Lime Wedge",
-      "variant_note": "To change the flavour of the Mojito, add 30ml to 50ml of strawberry, mango or passion fruit purée.",
+      "variant_note": "Adjust the base Mojito's flavour by adding 30ml/1oz to 50ml/1.7oz of purée. Blueberry, mango, passion fruit and strawberry all work well.",
       "ingredients": [
         {
           "name": "White Rum",
@@ -3472,7 +3472,7 @@
       "ice": "Cubed",
       "garnish": "3 Strawberry Slices, 3 Orange Slices, 7 Mint Leaves",
       "notes": "Cut fruits into quarters. The smaller the pieces, the more juice bleeds into the wine while it sits.",
-      "variant_note": "Swap fruits to what's in season or in the fridge. Strawberries, oranges, mint, apples, cherries, lime and lemon all work.",
+      "variant_note": "Swap fruits to what's in season or in the fridge. Strawberries, oranges, mint and apples all work.",
       "ingredients": [
         {
           "name": "Orange Liqueur",
