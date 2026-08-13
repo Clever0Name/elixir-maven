@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "Elixir Maven",
-    "cocktail_count": 76,
+    "cocktail_count": 81,
     "version": "1.0",
     "units": "oz"
   },
@@ -3509,6 +3509,105 @@
         }
       ],
       "taste": "Delight"
+    },
+    {
+      "id": "sour-maple",
+      "name": "Sour Maple",
+      "family": "Sour",
+      "category": "Bourbon",
+      "base_spirit": "Bourbon",
+      "spirit_type": "Single",
+      "method": "Shake & Double Strain",
+      "glassware": "Rocks",
+      "ice": "Cubed",
+      "garnish": "Orange Peel",
+      "ingredients": [
+        { "name": "Bourbon", "role": "Base Spirit", "amount": 2, "unit": "oz", "spec": "Bourbon", "required": true },
+        { "name": "Maple Syrup", "role": "Syrup", "amount": 0.5, "unit": "oz", "spec": "Maple Syrup", "required": true },
+        { "name": "Lemon Juice", "role": "Juice", "amount": 0.75, "unit": "oz", "spec": "Fresh Lemon Juice", "required": true },
+        { "name": "Orange Juice", "role": "Juice", "amount": 0.5, "unit": "oz", "spec": "Fresh Orange Juice", "required": true },
+        { "name": "Aromatic Bitters", "role": "Bitters", "amount": 1, "unit": "dash", "spec": "Aromatic Bitters", "required": true }
+      ],
+      "taste": "Sour"
+    },
+    {
+      "id": "jungle-bird",
+      "name": "Jungle Bird",
+      "family": "Tiki",
+      "category": "Rum",
+      "base_spirit": "Dark Rum",
+      "spirit_type": "Single",
+      "method": "Shake & Strain",
+      "glassware": "Highball",
+      "ice": "Cubed",
+      "garnish": "Pineapple Slice",
+      "notes": "Top with a scoop of crushed ice after building. It melts fast and keeps the drink cold without watering down the shake underneath.",
+      "ingredients": [
+        { "name": "Dark Rum", "role": "Base Spirit", "amount": 1.5, "unit": "oz", "spec": "Dark Rum", "required": true },
+        { "name": "Italian Red Bitter", "role": "Bitter Liqueur", "amount": 0.75, "unit": "oz", "spec": "Italian Red Bitter", "required": true },
+        { "name": "Pineapple Juice", "role": "Juice", "amount": 1.5, "unit": "oz", "spec": "Fresh Pineapple Juice", "required": true },
+        { "name": "Lime Juice", "role": "Juice", "amount": 0.5, "unit": "oz", "spec": "Fresh Lime Juice", "required": true },
+        { "name": "Sugar Syrup", "role": "Syrup", "amount": 0.5, "unit": "oz", "spec": "Sugar Syrup", "required": true }
+      ],
+      "taste": "Bitter"
+    },
+    {
+      "id": "penicillin",
+      "name": "Penicillin",
+      "family": "Sour",
+      "category": "Whisky",
+      "base_spirit": "Blended Scotch Whisky",
+      "spirit_type": "Blend",
+      "method": "Shake & Double Strain",
+      "glassware": "Rocks",
+      "ice": "Cubed",
+      "garnish": "Lemon Twist",
+      "notes": "Shake and double strain the Scotch, lemon and honey ginger syrup first, then float the Peated Scotch on top. The smoke hits your nose before the drink hits your mouth.",
+      "ingredients": [
+        { "name": "Blended Scotch Whisky", "role": "Base Spirit", "amount": 2, "unit": "oz", "spec": "Blended Scotch Whisky", "required": true },
+        { "name": "Lemon Juice", "role": "Juice", "amount": 0.75, "unit": "oz", "spec": "Fresh Lemon Juice", "required": true },
+        { "name": "Honey and Ginger Syrup", "role": "Syrup", "amount": 0.75, "unit": "oz", "spec": "Honey and Ginger Syrup", "required": true },
+        { "name": "Peated Scotch", "role": "Float", "amount": 0.25, "unit": "oz", "spec": "Peated Scotch", "required": true, "technique": "Float on top after straining" }
+      ],
+      "taste": null
+    },
+    {
+      "id": "screwdriver",
+      "name": "Screwdriver",
+      "family": "Highball",
+      "category": "Vodka",
+      "base_spirit": "Vodka",
+      "spirit_type": "Single",
+      "method": "Build",
+      "glassware": "Highball",
+      "ice": "Cubed",
+      "garnish": "Orange Slice",
+      "ingredients": [
+        { "name": "Vodka", "role": "Base Spirit", "amount": 2, "unit": "oz", "spec": "Vodka", "required": true },
+        { "name": "Orange Juice", "role": "Juice", "amount": 4, "unit": "oz", "spec": "Fresh Orange Juice", "required": true }
+      ],
+      "taste": "Sweet"
+    },
+    {
+      "id": "basil-smash",
+      "name": "Basil Smash",
+      "family": "Sour",
+      "category": "Gin",
+      "base_spirit": "Gin",
+      "spirit_type": "Single",
+      "method": "Muddle, Shake & Double Strain",
+      "glassware": "Rocks",
+      "ice": "Cubed",
+      "garnish": "None",
+      "ingredients": [
+        { "name": "Gin", "role": "Base Spirit", "amount": 2, "unit": "oz", "spec": "Gin", "required": true },
+        { "name": "Lemon Juice", "role": "Juice", "amount": 0.75, "unit": "oz", "spec": "Fresh Lemon Juice", "required": true },
+        { "name": "Sugar Syrup", "role": "Syrup", "amount": 0.75, "unit": "oz", "spec": "Sugar Syrup", "required": true },
+        { "name": "Fresh Basil Leaves", "role": "Garnish/Muddle", "amount": 8, "unit": "leaves", "spec": "Fresh Basil Leaves", "required": true }
+      ],
+      "taste": "Sour"
     }
+  ]
+}
   ]
 }
