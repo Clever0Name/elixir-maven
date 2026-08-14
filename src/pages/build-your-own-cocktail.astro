@@ -1,0 +1,914 @@
+---
+import Layout from '../layouts/Layout.astro';
+import cocktailsData from '../../elixir_maven_cocktails.json';
+
+// Extract ingredient categories from the JSON
+const extractIngredients = () => {
+  const categories = {
+    spirits: new Set<string>(),
+    citrus: new Set<string>(),
+    juice: new Set<string>(),
+    syrup: new Set<string>(),
+    mixer: new Set<string>()
+  };
+
+  const spiritNormalization: Record<string, string> = {
+    'Aged Rum': 'Rum',
+    'Blanco Tequila': 'Tequila',
+    'Blended Scotch Whisky': 'Whiskey',
+    'Bourbon': 'Whiskey',
+    'Cachaça': 'Cachaça',
+    'Citrus Vodka': 'Vodka',
+    'Coconut Rum': 'Rum',
+    'Cognac': 'Cognac',
+    'Dark Rum': 'Rum',
+    'Gin': 'Gin',
+    'Gin or Vodka': 'Gin',
+    'Irish Whiskey': 'Whiskey',
+    'Overproof Rum': 'Rum',
+    'Pisco': 'Pisco',
+    'Rye Whiskey': 'Whiskey',
+    'Scotch Whisky': 'Whiskey',
+    'Vodka': 'Vodka',
+    'Vodka/Gin': 'Vodka',
+    'White Rum': 'Rum'
+  };
+
+  const citrusNormalization: Record<string, string> = {
+    'Lemon Juice': 'Lemon',
+    'Lime Juice': 'Lime',
+    'Lime Wedges': 'Lime'
+  };
+
+  const juiceNormalization: Record<string, string> = {
+    'Cranberry Juice': 'Cranberry',
+    'Lemon Juice': 'Lemon',
+    'Lime Juice': 'Lime',
+    'Orange Juice': 'Orange',
+    'Pineapple Juice': 'Pineapple',
+    'Pink Grapefruit Juice': 'Grapefruit'
+  };
+
+  const syrupNormalization: Record<string, string> = {
+    'Coconut Syrup': 'Coconut',
+    'Falernum': 'Falernum',
+    'Grenadine': 'Grenadine',
+    'Honey and Ginger Syrup': 'Honey',
+    'Maple Syrup': 'Maple',
+    'Orgeat': 'Orgeat',
+    'Sugar Syrup': 'Sugar syrup',
+    'Vanilla Syrup': 'Vanilla'
+  };
+
+  const mixerNormalization: Record<string, string> = {
+    'Cola': 'Cola',
+    'Ginger Beer': 'Ginger Beer',
+    'Grapefruit Soda': 'Soda',
+    'Lemonade': 'Lemonade',
+    'Soda': 'Soda',
+    'Soda Water': 'Soda',
+    'Tomato Juice': 'Tomato Juice'
+  };
+
+  cocktailsData.cocktails.forEach(cocktail => {
+    cocktail.ingredients.forEach(ing => {
+      const role = ing.role.toLowerCase();
+      if (role.includes('spirit')) {
+        categories.spirits.add(spiritNormalization[ing.name] || ing.name);
+      } else if (role.includes('citrus')) {
+        categories.citrus.add(citrusNormalization[ing.name] || ing.name);
+      } else if (role.includes('juice')) {
+        categories.juice.add(juiceNormalization[ing.name] || ing.name);
+      } else if (role.includes('syrup')) {
+        categories.syrup.add(syrupNormalization[ing.name] || ing.name);
+      } else if (role.includes('mixer')) {
+        categories.mixer.add(mixerNormalization[ing.name] || ing.name);
+      }
+    });
+  });
+
+  return {
+    spirits: Array.from(categories.spirits).sort(),
+    citrus: ['None', ...Array.from(categories.citrus).sort()],
+    juice: ['None', ...Array.from(categories.juice).sort()],
+    syrup: Array.from(categories.syrup).sort(),
+    mixer: ['None', ...Array.from(categories.mixer).sort()]
+  };
+};
+
+const ingredients = extractIngredients();
+---
+
+<Layout
+  title="Build Your Own Cocktail — Elixir Maven"
+  description="Create your own custom cocktail with our interactive builder. Mix spirits, citrus, juices, and syrups to craft the perfect drink."
+>
+  <style is:global define:vars={{ '--holo-pink': '#F4C6DD', '--holo-purple': '#C9AEEF', '--holo-blue': '#9FC6F0', '--holo-cyan': '#9CE7EA', '--holo-gold': '#E9C98A' }}>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,600&family=Jost:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+    :root {
+      --bg: #0F0B0C;
+      --panel: #1A1113;
+      --cream: #F2E6D8;
+      --brass: #C99A6B;
+      --muted: #8a7a72;
+      --border: #2a1e20;
+    }
+
+    /* ─── Holographic gradient ─── */
+    @keyframes shimmer {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 300% 50%; }
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .byoc-page {
+      background: var(--bg);
+      color: var(--cream);
+      padding: 40px 32px 100px;
+    }
+
+    .byoc-wrap {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    /* ─── Header ─── */
+    .byoc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .byoc-wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 34px;
+      margin: 0;
+    }
+
+    .byoc-wordmark .elixir {
+      color: var(--brass);
+    }
+
+    .byoc-wordmark .maven {
+      background: linear-gradient(90deg, #F4C6DD, #C9AEEF, #9FC6F0, #9CE7EA, #E9C98A, #F4C6DD);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 16s linear infinite;
+    }
+
+    .byoc-title {
+      font-size: 26px;
+      font-weight: 500;
+      margin: 18px 0 30px;
+    }
+
+    /* ─── Toggle ─── */
+    .byoc-toggle {
+      display: inline-flex;
+      background: var(--panel);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 2px;
+    }
+
+    .byoc-toggle button {
+      padding: 6px 16px;
+      font-size: 12px;
+      font-family: 'IBM Plex Mono', monospace;
+      border-radius: 999px;
+      color: var(--muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .byoc-toggle .active {
+      padding: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #F4C6DD, #C9AEEF, #9FC6F0, #9CE7EA, #E9C98A, #F4C6DD);
+      background-size: 300% 100%;
+    }
+
+    .byoc-toggle .active button {
+      background: var(--bg);
+      color: var(--cream);
+      display: block;
+    }
+
+    /* ─── Layout ─── */
+    .byoc-grid {
+      display: flex;
+      gap: 34px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .byoc-filters {
+      flex: 1 1 380px;
+      min-width: 320px;
+    }
+
+    .byoc-result-col {
+      flex: 1 1 300px;
+      min-width: 280px;
+      position: sticky;
+      top: 30px;
+    }
+
+    /* ─── Filter Group ─── */
+    .byoc-group {
+      margin-bottom: 30px;
+    }
+
+    .byoc-label {
+      font-size: 15px;
+      font-weight: 500;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 2px;
+      margin-bottom: 14px;
+    }
+
+    .byoc-label::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1.5px;
+      background: linear-gradient(90deg, #F4C6DD, #C9AEEF, #9FC6F0, #9CE7EA, #E9C98A, #F4C6DD);
+      box-shadow: 0 0 6px 0.5px rgba(201, 174, 239, 0.45);
+    }
+
+    .byoc-help {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: var(--brass);
+      margin: 8px 0 0;
+      min-height: 14px;
+    }
+
+    .byoc-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .byoc-chip {
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      background: var(--panel);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      transition: opacity 0.15s;
+    }
+
+    .byoc-chip.selected {
+      color: #1A1113;
+      font-weight: 500;
+      border: none;
+      background: linear-gradient(90deg, #F4C6DD, #C9AEEF, #9FC6F0, #9CE7EA, #E9C98A, #F4C6DD);
+      background-size: 300% 100%;
+      background-position: 30% 50%;
+    }
+
+    .byoc-chip.disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    /* ─── Ring Buttons ─── */
+    .byoc-ring {
+      display: inline-flex;
+      background: linear-gradient(90deg, #F4C6DD, #C9AEEF, #9FC6F0, #9CE7EA, #E9C98A, #F4C6DD);
+      background-size: 300% 100%;
+      animation: shimmer 6s linear infinite;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+    }
+
+    .byoc-ring-inner {
+      background: var(--bg);
+      margin: 1px;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cream);
+      font-size: 14px;
+    }
+
+    /* ─── Slider ─── */
+    .byoc-slider-wrap {
+      width: 100%;
+      max-width: 260px;
+    }
+
+    .byoc-slider-track {
+      height: 3px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #F4C6DD, #C9AEEF, #9FC6F0, #9CE7EA, #E9C98A);
+      position: relative;
+      margin: 14px 0;
+    }
+
+    .byoc-slider-track .thumb {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--cream);
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 0 3px var(--bg);
+    }
+
+    .byoc-slider-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--muted);
+    }
+
+    .byoc-slider-note {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* ─── Result Card ─── */
+    .byoc-card {
+      width: 100%;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .byoc-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 26px;
+      margin: 0 0 4px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .byoc-card .sub {
+      font-size: 11px;
+      color: var(--muted);
+      font-family: 'IBM Plex Mono', monospace;
+      position: relative;
+      z-index: 3;
+      margin-bottom: 18px;
+    }
+
+    .byoc-martini {
+      position: absolute;
+    }
+
+    .byoc-martini.top-corner {
+      top: -12px;
+      right: -12px;
+      width: 70px;
+      height: 70px;
+      animation: spin 9s linear infinite;
+      opacity: 0.6;
+      z-index: 2;
+    }
+
+    .byoc-martini.bottom-cut {
+      bottom: -40px;
+      left: 40%;
+      width: 70px;
+      height: 70px;
+      animation: spin 13s linear infinite;
+      opacity: 0.5;
+      z-index: 1;
+    }
+
+    .byoc-martini.behind-title {
+      top: -4px;
+      left: 6px;
+      width: 80px;
+      height: 80px;
+      animation: spin 16s linear infinite;
+      opacity: 0.5;
+      z-index: 1;
+    }
+
+    .byoc-spec-list {
+      position: relative;
+      z-index: 3;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      line-height: 2;
+      margin: 0 0 16px;
+    }
+
+    .byoc-spec-list .amt {
+      color: var(--brass);
+    }
+
+    .byoc-meta-row {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--muted);
+      font-family: 'IBM Plex Mono', monospace;
+      margin-bottom: 18px;
+    }
+
+    .byoc-version-toggle {
+      position: relative;
+      z-index: 3;
+      margin-bottom: 16px;
+    }
+
+    .byoc-version-help {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: var(--brass);
+      margin-top: 6px;
+    }
+
+    .byoc-garnish-box {
+      position: relative;
+      z-index: 3;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+
+    .byoc-garnish-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 8px;
+    }
+
+    .byoc-garnish-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .byoc-garnish-text {
+      font-size: 13px;
+      color: var(--cream);
+      flex: 1;
+    }
+
+    .byoc-note {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+
+    .byoc-ring-button {
+      padding: 0;
+      background: linear-gradient(90deg, #F4C6DD, #C9AEEF, #9FC6F0, #9CE7EA, #E9C98A, #F4C6DD);
+      background-size: 300% 100%;
+      animation: shimmer 6s linear infinite;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+    }
+
+    /* ─── Main button (CTA) ─── */
+    .byoc-ring-button.pill {
+      border-radius: 999px;
+      padding: 1px;
+    }
+
+    .byoc-ring-button.pill .inner {
+      background: var(--bg);
+      border-radius: 999px;
+      padding: 10px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cream);
+      font-size: 14px;
+      white-space: nowrap;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      background: none;
+    }
+
+    /* Responsive ─── */
+    @media (max-width: 768px) {
+      .byoc-grid {
+        flex-direction: column;
+      }
+
+      .byoc-result-col {
+        position: static;
+      }
+
+      .byoc-wordmark {
+        font-size: 28px;
+      }
+
+      .byoc-title {
+        font-size: 20px;
+        margin: 14px 0 24px;
+      }
+    }
+  </style>
+
+  <div class="byoc-page">
+    <div class="byoc-wrap">
+      <svg width="0" height="0" style="position:absolute;">
+        <defs>
+          <linearGradient id="holo" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#F4C6DD"/>
+            <stop offset="20%" stop-color="#C9AEEF"/>
+            <stop offset="40%" stop-color="#9FC6F0"/>
+            <stop offset="60%" stop-color="#9CE7EA"/>
+            <stop offset="80%" stop-color="#E9C98A"/>
+            <stop offset="100%" stop-color="#F4C6DD"/>
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <div class="byoc-header">
+        <h1 class="byoc-wordmark"><span class="elixir">Elixir</span> <span class="maven">Maven</span></h1>
+        <div class="byoc-toggle" id="unitToggle">
+          <div class="active" id="mlBtn"><button>ml</button></div>
+          <button id="ozBtn">oz</button>
+        </div>
+      </div>
+
+      <h2 class="byoc-title">Build your own cocktail</h2>
+
+      <div class="byoc-grid">
+        <div class="byoc-filters">
+          <!-- Base spirit -->
+          <div class="byoc-group">
+            <div class="byoc-label">Base spirit — pick 1, or 2 to split</div>
+            <div class="byoc-chips" id="spiritChips"></div>
+            <div class="byoc-help" id="spiritHelp"></div>
+          </div>
+
+          <!-- Citrus -->
+          <div class="byoc-group">
+            <div class="byoc-label">Citrus</div>
+            <div class="byoc-chips" id="citrusChips"></div>
+            <div class="byoc-help" id="citrusHelp"></div>
+          </div>
+
+          <!-- Juice -->
+          <div class="byoc-group">
+            <div class="byoc-label">Juice</div>
+            <div class="byoc-chips" id="juiceChips"></div>
+            <div class="byoc-help" id="juiceHelp"></div>
+          </div>
+
+          <!-- Syrup -->
+          <div class="byoc-group">
+            <div class="byoc-label">Syrup</div>
+            <div class="byoc-chips" id="syrupChips"></div>
+          </div>
+
+          <!-- Top -->
+          <div class="byoc-group">
+            <div class="byoc-label">Top</div>
+            <div class="byoc-chips" id="topChips"></div>
+          </div>
+
+          <!-- Slider -->
+          <div class="byoc-group">
+            <div class="byoc-label">Sweet — Bitter</div>
+            <div class="byoc-slider-wrap">
+              <div class="byoc-slider-track"><div class="thumb"></div></div>
+              <div class="byoc-slider-labels"><span>Sweet</span><span>Bitter</span></div>
+            </div>
+            <div class="byoc-slider-note">Fixed centre — the ratio is balanced by construction, not by feel.</div>
+          </div>
+        </div>
+
+        <div class="byoc-result-col">
+          <div class="byoc-card">
+            <!-- Martini decorations -->
+            <div class="byoc-martini behind-title"><svg viewBox="0 0 100 100" fill="none"><path d="M20 22 L80 22 L50 58 Z" stroke="url(#holo)" stroke-width="3" stroke-linejoin="round"/><line x1="50" y1="58" x2="50" y2="88" stroke="url(#holo)" stroke-width="3"/><line x1="35" y1="88" x2="65" y2="88" stroke="url(#holo)" stroke-width="3"/></svg></div>
+            <div class="byoc-martini top-corner"><svg viewBox="0 0 100 100" fill="none"><path d="M20 22 L80 22 L50 58 Z" stroke="url(#holo)" stroke-width="3" stroke-linejoin="round"/><line x1="50" y1="58" x2="50" y2="88" stroke="url(#holo)" stroke-width="3"/><line x1="35" y1="88" x2="65" y2="88" stroke="url(#holo)" stroke-width="3"/></svg></div>
+            <div class="byoc-martini bottom-cut"><svg viewBox="0 0 100 100" fill="none"><path d="M20 22 L80 22 L50 58 Z" stroke="url(#holo)" stroke-width="3" stroke-linejoin="round"/><line x1="50" y1="58" x2="50" y2="88" stroke="url(#holo)" stroke-width="3"/><line x1="35" y1="88" x2="65" y2="88" stroke="url(#holo)" stroke-width="3"/></svg></div>
+
+            <!-- Cocktail name and built from -->
+            <h3 id="cocktailName">Lime Fizz</h3>
+            <div class="sub" id="cocktailBuilt">Built from your selections</div>
+
+            <!-- Version toggle (Classic/Adjusted) -->
+            <div id="versionToggle" style="display:none;" class="byoc-version-toggle">
+              <div class="byoc-toggle">
+                <div class="active" id="classicBtn"><button>Classic</button></div>
+                <button id="adjustedBtn">Adjusted</button>
+              </div>
+              <div class="byoc-version-help" id="versionHelp" style="margin-top:6px;"></div>
+            </div>
+
+            <!-- Spec list -->
+            <div class="byoc-spec-list" id="specList"></div>
+
+            <!-- Meta row (glass and ice) -->
+            <div class="byoc-meta-row">
+              <span id="glassLine">Glass: Highball</span>
+              <span>Cubed ice</span>
+            </div>
+
+            <!-- Garnish -->
+            <div class="byoc-garnish-box">
+              <div class="byoc-garnish-label">Garnish idea</div>
+              <div class="byoc-garnish-row">
+                <button class="byoc-ring-button" style="width: 30px; height: 30px;" onclick="cycleGarnish(-1)"><div class="byoc-ring-inner">&larr;</div></button>
+                <div class="byoc-garnish-text" id="garnishText"></div>
+                <button class="byoc-ring-button" style="width: 30px; height: 30px;" onclick="cycleGarnish(1)"><div class="byoc-ring-inner">&rarr;</div></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="byoc-note">Every build here follows the Sour template — roughly 50ml spirit : 20ml citrus/juice : 20ml syrup, topped after. Options that would break that balance are greyed out rather than offered. When a rich spirit (Whiskey, Cognac) meets juice or honey, a Classic / Adjusted toggle appears — full 50ml stays IBA-standard against pure citrus, Adjusted trims to 40ml and swaps the glass and garnish for a lighter build.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script define:vars={{ ingredients }}>
+  const SPIRITS = ingredients.spirits;
+  const CITRUS = ingredients.citrus;
+  const JUICE = ingredients.juice;
+  const SYRUP = ingredients.syrup;
+  const TOP = ingredients.mixer;
+  const RICH_SPIRITS = ['Whiskey', 'Cognac'];
+
+  const GARNISH = {
+    soda: ["A wheel of whatever citrus you used, or skip it entirely", "A few berries dropped in, echoing the juice", "Fresh mint, if you want a lift"],
+    tonic: ["A twist of citrus peel", "A single juniper berry or two", "Cucumber ribbon for something cooler"],
+    sparkling: ["A raspberry or two dropped in", "A lemon twist along the rim", "Edible flower, if you're feeling it"],
+    foamer: ["A few drops of bitters across the foam", "Dehydrated citrus wheel", "Nothing at all — let the foam speak"],
+    none: ["A twist of citrus peel", "Single olive or cherry, spirit-dependent", "No garnish — keep it clean"]
+  };
+
+  const GARNISH_ADJUSTED = ["A single wide citrus twist, expressed over the glass and dropped in", "A few dashes of aromatic bitters across the top", "No garnish — let the trimmed spirit lead"];
+
+  let state = {
+    spirits: [],
+    citrus: CITRUS[0],
+    juice: JUICE[0],
+    syrup: SYRUP[0],
+    top: TOP[0],
+    unit: 'ml',
+    garnishIndex: 0,
+    version: 'classic'
+  };
+
+  function richSpiritSelected() {
+    return state.spirits.some(s => RICH_SPIRITS.includes(s));
+  }
+
+  function needsVersions() {
+    return richSpiritSelected() && (state.juice !== 'None' || state.syrup === 'Honey');
+  }
+
+  function chip(label, selected, disabled, onClick) {
+    const el = document.createElement('div');
+    el.className = 'byoc-chip' + (selected ? ' selected' : '') + (disabled ? ' disabled' : '');
+    el.textContent = label;
+    if (!disabled) el.onclick = onClick;
+    return el;
+  }
+
+  function renderSpirits() {
+    const box = document.getElementById('spiritChips');
+    box.innerHTML = '';
+    SPIRITS.forEach(s => {
+      const selected = state.spirits.includes(s);
+      const atCap = state.spirits.length >= 2 && !selected;
+      box.appendChild(chip(s, selected, atCap, () => {
+        if (selected) {
+          state.spirits = state.spirits.filter(x => x !== s);
+        } else if (state.spirits.length < 2) {
+          state.spirits.push(s);
+        }
+        render();
+      }));
+    });
+    document.getElementById('spiritHelp').textContent =
+      state.spirits.length >= 2 ? 'Slot full — deselect one to swap it out.' : '';
+  }
+
+  function renderCitrus() {
+    const box = document.getElementById('citrusChips');
+    box.innerHTML = '';
+    CITRUS.forEach(c => {
+      const selected = state.citrus === c;
+      const disabled = c === 'None' && state.juice === 'None';
+      box.appendChild(chip(c, selected, disabled, () => {
+        state.citrus = c;
+        render();
+      }));
+    });
+    document.getElementById('citrusHelp').textContent =
+      state.juice === 'None' ? 'Juice is set to None, so citrus can\'t be too — a sour needs one.' : '';
+  }
+
+  function renderJuice() {
+    const box = document.getElementById('juiceChips');
+    box.innerHTML = '';
+    JUICE.forEach(j => {
+      const selected = state.juice === j;
+      const disabled = j === 'None' && state.citrus === 'None';
+      box.appendChild(chip(j, selected, disabled, () => {
+        state.juice = j;
+        render();
+      }));
+    });
+    document.getElementById('juiceHelp').textContent =
+      state.citrus === 'None' ? 'Citrus is set to None, so juice can\'t be too — a sour needs one.' : '';
+  }
+
+  function renderSyrup() {
+    const box = document.getElementById('syrupChips');
+    box.innerHTML = '';
+    SYRUP.forEach(s => box.appendChild(chip(s, state.syrup === s, false, () => {
+      state.syrup = s;
+      render();
+    })));
+  }
+
+  function renderTop() {
+    const box = document.getElementById('topChips');
+    box.innerHTML = '';
+    TOP.forEach(t => box.appendChild(chip(t, state.top === t, false, () => {
+      state.top = t;
+      render();
+    })));
+  }
+
+  function fmt(ml) {
+    if (state.unit === 'ml') return Math.round(ml) + 'ml';
+    return (ml / 30).toFixed(1) + 'oz';
+  }
+
+  function computeSpec() {
+    const spiritTotal = state.version === 'adjusted' ? 40 : 50;
+    const perSpirit = spiritTotal / state.spirits.length;
+    const sourTotal = 20;
+    const hasCitrus = state.citrus !== 'None';
+    const hasJuice = state.juice !== 'None';
+    let citrusAmt = 0, juiceAmt = 0;
+    if (hasCitrus && hasJuice) {
+      citrusAmt = sourTotal / 2;
+      juiceAmt = sourTotal / 2;
+    } else if (hasCitrus) {
+      citrusAmt = sourTotal;
+    } else if (hasJuice) {
+      juiceAmt = sourTotal;
+    }
+    return { spiritTotal, perSpirit, citrusAmt, juiceAmt, syrupAmt: 20 };
+  }
+
+  function glassFor() {
+    if (state.version === 'adjusted') return 'Coupe';
+    if (state.top === 'Soda' || state.top === 'Tonic') return 'Highball';
+    if (state.top === 'Sparkling wine') return 'Flute';
+    if (state.top === 'Foamer') return 'Coupe';
+    if (state.top === 'Cola' || state.top === 'Ginger Beer' || state.top === 'Lemonade') return 'Highball';
+    return 'Nick and Nora';
+  }
+
+  function nameFor() {
+    const flavor = state.juice !== 'None' ? state.juice : state.citrus;
+    let suffix = 'Sour';
+    if (state.top === 'Soda') suffix = 'Fizz';
+    else if (state.top === 'Tonic') suffix = 'Tonic';
+    else if (state.top === 'Sparkling wine') suffix = 'Spritz';
+    else if (state.top === 'Cola') suffix = 'Cola';
+    else if (state.top === 'Ginger Beer') suffix = 'Buck';
+    return flavor + ' ' + suffix + (state.version === 'adjusted' ? ' (trimmed)' : '');
+  }
+
+  function garnishKeyFor() {
+    if (state.top === 'Soda') return 'soda';
+    if (state.top === 'Tonic') return 'tonic';
+    if (state.top === 'Sparkling wine') return 'sparkling';
+    if (state.top === 'Foamer') return 'foamer';
+    return 'none';
+  }
+
+  function currentGarnishList() {
+    return state.version === 'adjusted' ? GARNISH_ADJUSTED : GARNISH[garnishKeyFor()] || GARNISH.none;
+  }
+
+  function cycleGarnish(dir) {
+    const list = currentGarnishList();
+    state.garnishIndex = (state.garnishIndex + dir + list.length) % list.length;
+    document.getElementById('garnishText').textContent = list[state.garnishIndex];
+  }
+
+  function setVersion(v) {
+    state.version = v;
+    document.getElementById('classicBtn').className = v === 'classic' ? 'active' : '';
+    document.getElementById('adjustedBtn').className = v === 'adjusted' ? 'active' : '';
+    state.garnishIndex = 0;
+    renderResult(false);
+  }
+
+  function renderResult(resetVersion) {
+    if (resetVersion !== false) {
+      state.version = 'classic';
+      document.getElementById('classicBtn').className = 'active';
+      document.getElementById('adjustedBtn').className = '';
+    }
+
+    const showToggle = needsVersions();
+    document.getElementById('versionToggle').style.display = showToggle ? 'block' : 'none';
+    document.getElementById('versionHelp').textContent = showToggle
+      ? 'Rich spirit + juice/honey — trim the spirit or keep it full-bodied.'
+      : '';
+
+    if (!state.spirits.length) {
+      document.getElementById('cocktailName').textContent = 'Select a spirit to begin';
+      document.getElementById('cocktailBuilt').textContent = '';
+      document.getElementById('specList').innerHTML = '';
+      document.getElementById('glassLine').textContent = 'Glass: —';
+      document.getElementById('garnishText').textContent = '';
+      return;
+    }
+
+    const spec = computeSpec();
+    document.getElementById('cocktailName').textContent = nameFor();
+
+    const builtFrom = [...state.spirits, state.citrus !== 'None' ? state.citrus : null, state.juice !== 'None' ? state.juice : null]
+      .filter(Boolean).join(' · ');
+    document.getElementById('cocktailBuilt').textContent = 'Built from: ' + builtFrom;
+
+    const lines = [];
+    state.spirits.forEach(s => lines.push(`${s} <span class="amt">${fmt(spec.perSpirit)}</span>`));
+    if (spec.citrusAmt > 0) lines.push(`${state.citrus} juice <span class="amt">${fmt(spec.citrusAmt)}</span>`);
+    if (spec.juiceAmt > 0) lines.push(`${state.juice} juice <span class="amt">${fmt(spec.juiceAmt)}</span>`);
+    lines.push(`${state.syrup} <span class="amt">${fmt(spec.syrupAmt)}</span>`);
+    if (state.top !== 'None') lines.push(`Top ${state.top.toLowerCase()}`);
+    document.getElementById('specList').innerHTML = lines.join('<br>');
+
+    document.getElementById('glassLine').textContent = 'Glass: ' + glassFor();
+
+    state.garnishIndex = 0;
+    document.getElementById('garnishText').textContent = currentGarnishList()[0];
+  }
+
+  function render() {
+    renderSpirits();
+    renderCitrus();
+    renderJuice();
+    renderSyrup();
+    renderTop();
+    renderResult(true);
+  }
+
+  // Event listeners
+  document.getElementById('classicBtn').onclick = () => setVersion('classic');
+  document.getElementById('adjustedBtn').onclick = () => setVersion('adjusted');
+
+  document.getElementById('mlBtn').onclick = () => setUnit('ml');
+  document.getElementById('ozBtn').onclick = () => setUnit('oz');
+
+  function setUnit(u) {
+    state.unit = u;
+    document.getElementById('mlBtn').className = u === 'ml' ? 'active' : '';
+    document.getElementById('ozBtn').className = u === 'oz' ? 'active' : '';
+    renderResult(false);
+  }
+
+  // Initial render
+  render();
+</script>
