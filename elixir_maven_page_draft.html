@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elixir Maven — Cocktail Page Draft</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=Jost:wght@300;400;500&display=swap');
+
+:root{
+  --ink:#131210;          /* near-black charcoal */
+  --panel:#1c1a16;        /* raised panel */
+  --line:#3a342a;         /* hairline */
+  --gold:#c9a14a;         /* aged gold */
+  --brass:#8a7a55;        /* muted brass */
+  --ivory:#f1e9d8;        /* parchment text */
+  --dim:#a99f8c;          /* secondary text */
+  --oxblood:#6e2c26;      /* variant callout */
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--ivory);font-family:'Jost',system-ui,sans-serif;font-weight:300;line-height:1.6}
+a{color:var(--gold);text-decoration:none}
+
+/* ───────── nav ───────── */
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 48px;border-bottom:1px solid var(--line)}
+.wordmark{font-family:'Cormorant Garamond',serif;font-size:24px;letter-spacing:.12em;color:var(--gold)}
+.wordmark span{color:var(--ivory)}
+nav ul{display:flex;gap:32px;list-style:none;font-size:13px;letter-spacing:.18em;text-transform:uppercase}
+nav ul a{color:var(--dim)}
+nav ul a.active{color:var(--gold)}
+
+/* ───────── layout ───────── */
+.page{max-width:1100px;margin:0 auto;padding:56px 48px 80px}
+.crumb{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:28px}
+.crumb b{color:var(--gold);font-weight:500}
+.grid{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start}
+
+/* ───────── identity column ───────── */
+.eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:58px;line-height:1.02;margin-bottom:18px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.lede{color:var(--dim);font-size:16px;max-width:42ch;margin-bottom:28px}
+.photo{aspect-ratio:4/5;border:1px solid var(--line);background:
+  radial-gradient(ellipse at 50% 30%, #2b2117 0%, var(--panel) 65%);
+  display:flex;align-items:center;justify-content:center;color:var(--brass);
+  font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+
+/* ───────── spec column ───────── */
+.spec-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--gold);padding-bottom:10px;margin-bottom:6px}
+.spec-head h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:24px;letter-spacing:.04em}
+.spec-head small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+
+.row{display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px dotted var(--line)}
+.row .name{white-space:nowrap}
+.row .name em{font-style:normal;color:var(--brass);font-size:13px;display:block}
+.row .leader{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-5px)}
+.row .amt{font-family:'IBM Plex Mono',monospace;font-size:15px;color:var(--gold);white-space:nowrap}
+.row.side .name,.row.side .amt{color:var(--dim)}
+.row.side .amt{color:var(--brass)}
+
+/* signature: pour scale */
+.pour{margin:22px 0 30px}
+.pour-label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:8px}
+.pour-bar{display:flex;height:18px;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.pour-bar i{display:block;height:100%}
+.pour-key{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;font-size:12px;color:var(--dim)}
+.pour-key b{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;transform:translateY(1px)}
+
+/* service grid */
+.service{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-bottom:24px}
+.cell{padding:16px 18px;border-bottom:1px solid var(--line)}
+.cell:nth-child(odd){border-right:1px solid var(--line)}
+.cell:nth-last-child(-n+2){border-bottom:none}
+.cell small{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:5px}
+.cell .v{font-size:16px}
+.cell .v a{border-bottom:1px dotted var(--gold)}
+
+/* variant + serve notes */
+.note{border-left:2px solid var(--gold);background:var(--panel);padding:14px 18px;font-size:14.5px;color:var(--dim);margin-bottom:14px}
+.note b{color:var(--ivory);font-weight:500}
+.note.variant{border-left-color:var(--oxblood)}
+.note.variant .vname{color:var(--gold);letter-spacing:.06em}
+
+/* footer strip */
+.foot{display:flex;justify-content:space-between;margin-top:64px;padding-top:22px;border-top:1px solid var(--line);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.foot a{color:var(--dim)}
+.foot a b{color:var(--gold);font-weight:500}
+
+@media(max-width:840px){
+  .grid{grid-template-columns:1fr;gap:40px}
+  .page{padding:40px 22px 60px}
+  nav{padding:16px 22px}
+  nav ul{display:none}
+  h1{font-size:44px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wordmark">ELIXIR <span>MAVEN</span></div>
+  <ul>
+    <li><a class="active" href="#">Cocktails</a></li>
+    <li><a href="#">Ingredients</a></li>
+    <li><a href="#">My Bar</a></li>
+    <li><a href="#">Glossary</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="crumb">Cocktails / V / <b>Pornstar Martini</b></div>
+
+  <div class="grid">
+
+    <!-- identity -->
+    <section>
+      <div class="eyebrow">Modern Classic · Vodka</div>
+      <h1>Pornstar Martini</h1>
+      <div class="tags">
+        <span class="tag">Passion Fruit</span><span class="tag">Vanilla</span>
+        <span class="tag">Tropical</span><span class="tag">Side Serve</span>
+      </div>
+      <p class="lede">Douglas Ankrah's modern icon — sharp passion fruit and soft
+      vanilla over vodka, with a chilled shot of sparkling wine served alongside.</p>
+      <div class="photo">Cocktail Photograph</div>
+    </section>
+
+    <!-- spec -->
+    <section>
+      <div class="spec-head"><h2>The Spec</h2><small>1 serve</small></div>
+
+      <div class="row"><span class="name">Vodka <em>42 Below</em></span><span class="leader"></span><span class="amt">25 ml</span></div>
+      <div class="row"><span class="name">Passion Fruit Liqueur <em>Passoã</em></span><span class="leader"></span><span class="amt">20 ml</span></div>
+      <div class="row"><span class="name">Passion Fruit Purée <em>Ponthier</em></span><span class="leader"></span><span class="amt">25 ml</span></div>
+      <div class="row"><span class="name">Pineapple Juice</span><span class="leader"></span><span class="amt">30 ml</span></div>
+      <div class="row"><span class="name">Vanilla Syrup</span><span class="leader"></span><span class="amt">10 ml</span></div>
+      <div class="row side"><span class="name">Sparkling Wine <em>Fiol — served on the side</em></span><span class="leader"></span><span class="amt">25 ml</span></div>
+
+      <div class="pour">
+        <div class="pour-label">Build Proportions</div>
+        <div class="pour-bar">
+          <i style="width:22.7%;background:#c9a14a"></i>
+          <i style="width:18.2%;background:#a97f3c"></i>
+          <i style="width:22.7%;background:#8a6230"></i>
+          <i style="width:27.3%;background:#5e4a28"></i>
+          <i style="width:9.1%;background:#3f3a2c"></i>
+        </div>
+        <div class="pour-key">
+          <span><b style="background:#c9a14a"></b>Vodka</span>
+          <span><b style="background:#a97f3c"></b>Passoã</span>
+          <span><b style="background:#8a6230"></b>Purée</span>
+          <span><b style="background:#5e4a28"></b>Pineapple</span>
+          <span><b style="background:#3f3a2c"></b>Vanilla</span>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="cell"><small>Method</small><div class="v"><a href="#">Shake &amp; Double Strain</a></div></div>
+        <div class="cell"><small>Ice</small><div class="v"><a href="#">None — served up</a></div></div>
+        <div class="cell"><small>Glass</small><div class="v">Coupe</div></div>
+        <div class="cell"><small>Garnish</small><div class="v">¼ Passion Fruit</div></div>
+      </div>
+
+      <div class="note"><b>Serve:</b> 25 ml chilled Fiol in a shot glass on the side — sip or pour, drinker's choice.</div>
+      <div class="note variant"><b>Variant — <span class="vname">Passion Fruit Spritz</span>:</b> example variant slot. Yellow-highlight notes from your spec sheets live here.</div>
+    </section>
+  </div>
+
+  <div class="foot">
+    <a href="#">← Planter's Punch</a>
+    <a href="#">Glossary: what do these terms mean?</a>
+    <a href="#"><b>Rusty Nail</b> →</a>
+  </div>
+</div>
+
+</body>
+</html>

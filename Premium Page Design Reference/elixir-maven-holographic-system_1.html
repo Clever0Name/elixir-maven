@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Elixir Maven — Holographic System (Locked)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,600&family=Jost:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root{
+    --bg: #0F0B0C;
+    --panel: #1A1113;
+    --cream: #F2E6D8;
+    --brass: #C99A6B;
+    --muted: #8a7a72;
+  }
+  * { box-sizing: border-box; }
+  body{
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    margin: 0;
+    padding: 56px 40px 120px;
+    max-width: 900px;
+  }
+
+  h1.wordmark{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 46px;
+    margin: 0 0 4px;
+  }
+  h1.wordmark .elixir{ color: var(--brass); }
+  h1.wordmark .maven{
+    background: linear-gradient(90deg,#F4C6DD,#C9AEEF,#9FC6F0,#9CE7EA,#E9C98A,#F4C6DD);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 16s linear infinite;
+  }
+  p.top-lede{ color: var(--muted); font-size: 13px; max-width: 560px; line-height: 1.6; margin: 0 0 60px; }
+
+  section{ margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid #241a1c; }
+  section:last-child{ border-bottom: none; }
+  h2.section-title{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 0 0 8px;
+  }
+  p.note{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    margin: 0 0 22px;
+    line-height: 1.6;
+  }
+  .row{ display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-end; }
+  .cell{ display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .cell .label{ font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); text-align: center; max-width: 150px; }
+
+  @keyframes shimmer{ 0%{ background-position: 0% 50%; } 100%{ background-position: 300% 50%; } }
+  @keyframes spin{ to{ transform: rotate(360deg); } }
+
+  /* ring — buttons + arrows, 1px, default shimmer */
+  .ring{
+    display: inline-flex;
+    background: linear-gradient(90deg,#F4C6DD,#C9AEEF,#9FC6F0,#9CE7EA,#E9C98A,#F4C6DD);
+    background-size: 300% 100%;
+    animation: shimmer 6s linear infinite;
+  }
+  .ring.pill{ border-radius: 999px; }
+  .ring.circle{ border-radius: 50%; }
+  .ring-inner{
+    background: var(--bg);
+    margin: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cream);
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .pill .ring-inner{ border-radius: 999px; padding: 10px 22px; }
+  .circle .ring-inner{ border-radius: 50%; width: 46px; height: 46px; font-size: 18px; }
+
+  /* filter chip — full fill, static */
+  .chip-fill{
+    font-size: 13px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    color: #1A1113;
+    font-weight: 500;
+    background: linear-gradient(90deg,#F4C6DD,#C9AEEF,#9FC6F0,#9CE7EA,#E9C98A,#F4C6DD);
+    background-size: 300% 100%;
+    background-position: 30% 50%;
+  }
+  .chip-off{
+    font-size: 13px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    color: var(--muted);
+    background: var(--panel);
+    border: 1px solid #2a1e20;
+  }
+
+  /* ml/oz toggle — static */
+  .toggle{
+    display: inline-flex;
+    background: var(--panel);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+  .toggle span{
+    padding: 6px 16px;
+    font-size: 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    border-radius: 999px;
+    color: var(--muted);
+  }
+  .toggle .active-ring{
+    padding: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg,#F4C6DD,#C9AEEF,#9FC6F0,#9CE7EA,#E9C98A,#F4C6DD);
+  }
+  .toggle .active-ring span{ background: var(--bg); color: var(--cream); display: block; }
+
+  /* underline — 1.5px, tight, static glow */
+  .u{
+    font-size: 17px;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+  }
+  .u::after{
+    content:'';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+    height: 1.5px;
+    background: linear-gradient(90deg,#F4C6DD,#C9AEEF,#9FC6F0,#9CE7EA,#E9C98A,#F4C6DD);
+    box-shadow: 0 0 6px 0.5px rgba(201,174,239,0.45);
+  }
+
+  /* tabs — animated underline */
+  .tabs{ display: flex; gap: 26px; border-bottom: 1px solid #2a1e20; }
+  .tabs .tab{ font-size: 13px; color: var(--muted); padding-bottom: 12px; }
+  .tabs .tab.active{ color: var(--cream); position: relative; }
+  .tabs .tab.active::after{
+    content:'';
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 2px;
+    background: linear-gradient(90deg,#F4C6DD,#C9AEEF,#9FC6F0,#9CE7EA,#E9C98A,#F4C6DD);
+    background-size: 300% 100%;
+    animation: shimmer 5s linear infinite;
+  }
+
+  /* badges — animated, ring + text variant */
+  .badge-ring{
+    display: inline-flex;
+    padding: 1.5px;
+    border-radius: 6px;
+    background: linear-gradient(90deg,#F4C6DD,#C9AEEF,#9FC6F0,#9CE7EA,#E9C98A,#F4C6DD);
+    background-size: 300% 100%;
+    animation: shimmer 5s linear infinite;
+  }
+  .badge-ring span{
+    background: var(--bg);
+    border-radius: 4.5px;
+    padding: 4px 10px;
+    font-size: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.06em;
+  }
+  .badge-text{
+    font-size: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.06em;
+    background: linear-gradient(90deg,#F4C6DD,#C9AEEF,#9FC6F0,#9CE7EA,#E9C98A,#F4C6DD);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 5s linear infinite;
+    border: 1px solid #2a1e20;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  /* sweet/bitter slider — static */
+  .slider-wrap{ width: 220px; }
+  .slider-track{
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg,#F4C6DD,#C9AEEF,#9FC6F0,#9CE7EA,#E9C98A);
+    position: relative;
+    margin: 14px 0;
+  }
+  .slider-track .thumb{
+    position: absolute;
+    top: 50%; left: 45%;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--cream);
+    transform: translate(-50%,-50%);
+    box-shadow: 0 0 0 3px var(--bg);
+  }
+  .slider-labels{ display: flex; justify-content: space-between; font-size: 10px; font-family: 'IBM Plex Mono', monospace; color: var(--muted); }
+
+  /* result card — triple martini corner treatment */
+  .card-triple{
+    width: 210px;
+    background: var(--panel);
+    border: 1px solid #2a1e20;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-triple h3{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 4px;
+    position: relative;
+    z-index: 3;
+  }
+  .card-triple p{
+    font-size: 11px;
+    color: var(--muted);
+    margin: 0;
+    font-family: 'IBM Plex Mono', monospace;
+    position: relative;
+    z-index: 3;
+  }
+  .martini{ position: absolute; }
+  .martini.top-corner{
+    top: -10px; right: -10px;
+    width: 64px; height: 64px;
+    animation: spin 9s linear infinite;
+    opacity: 0.6;
+    z-index: 2;
+  }
+  .martini.bottom-cut{
+    bottom: -40px; left: 40%;
+    width: 64px; height: 64px;
+    animation: spin 13s linear infinite;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  .martini.behind-title{
+    top: -4px; left: 6px;
+    width: 74px; height: 74px;
+    animation: spin 16s linear infinite;
+    opacity: 0.5;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute;">
+    <defs>
+      <linearGradient id="holo" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#F4C6DD"/>
+        <stop offset="20%" stop-color="#C9AEEF"/>
+        <stop offset="40%" stop-color="#9FC6F0"/>
+        <stop offset="60%" stop-color="#9CE7EA"/>
+        <stop offset="80%" stop-color="#E9C98A"/>
+        <stop offset="100%" stop-color="#F4C6DD"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <h1 class="wordmark"><span class="elixir">Elixir</span> <span class="maven">Maven</span></h1>
+  <p class="top-lede">Holographic system — every locked decision from this design pass in one place. Palette throughout: pink &rarr; purple &rarr; blue &rarr; cyan &rarr; gold &rarr; pink.</p>
+
+  <section>
+    <h2 class="section-title">Wordmark</h2>
+    <p class="note">Elixir stays solid brand gold. Maven carries the shimmer, kept slow and minimal — not a fast loop.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Button ring</h2>
+    <p class="note">1px, barely-there edge. Default shimmer speed (6s).</p>
+    <div class="row">
+      <div class="cell"><div class="ring pill"><div class="ring-inner">Build your own cocktail</div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Nav arrows</h2>
+    <p class="note">Same 1px ring as the button, same shimmer speed.</p>
+    <div class="row">
+      <div class="cell"><div class="ring circle"><div class="ring-inner">&larr;</div></div></div>
+      <div class="cell"><div class="ring circle"><div class="ring-inner">&rarr;</div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Filter chip — selected state</h2>
+    <p class="note">Full holographic fill, gradient frozen in place, no shimmer.</p>
+    <div class="row">
+      <div class="cell"><div class="chip-off">Rum</div><div class="label">Unselected, for reference</div></div>
+      <div class="cell"><div class="chip-fill">Vodka</div><div class="label">Selected</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">ml / oz toggle</h2>
+    <p class="note">Static gradient on the active state, no movement.</p>
+    <div class="row">
+      <div class="cell"><div class="toggle"><div class="active-ring"><span>ml</span></div><span>oz</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Subheading underline</h2>
+    <p class="note">1.5px, sitting close to the text, soft static glow, no shimmer.</p>
+    <div class="row">
+      <div class="cell"><div class="u">Base spirit</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Tab navigation</h2>
+    <p class="note">Active tab underline keeps the shimmer.</p>
+    <div class="row">
+      <div class="cell">
+        <div class="tabs">
+          <span class="tab active">Spec</span>
+          <span class="tab">Full serve</span>
+          <span class="tab">Notes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Badges</h2>
+    <p class="note">Both variants keep the shimmer — ring edge and text fill.</p>
+    <div class="row">
+      <div class="cell"><div class="badge-ring"><span>New build</span></div><div class="label">Ring edge</div></div>
+      <div class="cell"><div class="badge-text">Premium</div><div class="label">Text shimmer</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Sweet / bitter slider</h2>
+    <p class="note">Fully static — it's a scale, not a decoration.</p>
+    <div class="row">
+      <div class="cell">
+        <div class="slider-wrap">
+          <div class="slider-track"><div class="thumb"></div></div>
+          <div class="slider-labels"><span>Sweet</span><span>Bitter</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Result card — martini corner treatment</h2>
+    <p class="note">Three martinis, one card. Top right = fastest (9s), bottom = middle (13s, clipped by the card edge), top left behind the title = slowest (16s).</p>
+    <div class="row">
+      <div class="cell">
+        <div class="card-triple">
+          <div class="martini behind-title">
+            <svg viewBox="0 0 100 100" fill="none">
+              <path d="M20 22 L80 22 L50 58 Z" stroke="url(#holo)" stroke-width="3" stroke-linejoin="round"/>
+              <line x1="50" y1="58" x2="50" y2="88" stroke="url(#holo)" stroke-width="3"/>
+              <line x1="35" y1="88" x2="65" y2="88" stroke="url(#holo)" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="martini top-corner">
+            <svg viewBox="0 0 100 100" fill="none">
+              <path d="M20 22 L80 22 L50 58 Z" stroke="url(#holo)" stroke-width="3" stroke-linejoin="round"/>
+              <line x1="50" y1="58" x2="50" y2="88" stroke="url(#holo)" stroke-width="3"/>
+              <line x1="35" y1="88" x2="65" y2="88" stroke="url(#holo)" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="martini bottom-cut">
+            <svg viewBox="0 0 100 100" fill="none">
+              <path d="M20 22 L80 22 L50 58 Z" stroke="url(#holo)" stroke-width="3" stroke-linejoin="round"/>
+              <line x1="50" y1="58" x2="50" y2="88" stroke="url(#holo)" stroke-width="3"/>
+              <line x1="35" y1="88" x2="65" y2="88" stroke="url(#holo)" stroke-width="3"/>
+            </svg>
+          </div>
+          <h3>Watermelon fizz</h3>
+          <p>Matches: Vodka &middot; Lime &middot; Grenadine</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Parked for later</h2>
+    <p class="note">Glass-shape background watermarks (rocks, highball, coupe, wine, nick and nora, flute) — concept liked, execution not settled. Revisit separately, not part of this lock.</p>
+  </section>
+
+</body>
+</html>

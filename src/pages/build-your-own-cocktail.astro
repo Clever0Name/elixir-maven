@@ -113,6 +113,7 @@ const ingredients = extractIngredients();
       --brass: #C99A6B;
       --muted: #8a7a72;
       --border: #2a1e20;
+      --chip-text: #E3D6C9;
     }
 
     /* ─── Holographic gradient ─── */
@@ -132,7 +133,7 @@ const ingredients = extractIngredients();
     }
 
     .byoc-wrap {
-      max-width: 980px;
+      max-width: 1280px;
       margin: 0 auto;
     }
 
@@ -141,15 +142,23 @@ const ingredients = extractIngredients();
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 8px;
+      margin-bottom: 30px;
+      gap: 20px;
+    }
+
+    .byoc-header-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
     }
 
     .byoc-wordmark {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-weight: 600;
-      font-size: 34px;
+      font-size: 46px;
       margin: 0;
+      letter-spacing: 0.5px;
     }
 
     .byoc-wordmark .elixir {
@@ -166,9 +175,11 @@ const ingredients = extractIngredients();
     }
 
     .byoc-title {
-      font-size: 26px;
-      font-weight: 500;
-      margin: 18px 0 30px;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--muted);
+      margin: 0;
+      letter-spacing: 0.5px;
     }
 
     /* ─── Toggle ─── */
@@ -196,7 +207,8 @@ const ingredients = extractIngredients();
       padding: 2px;
       border-radius: 999px;
       background: linear-gradient(90deg, #F4C6DD, #C9AEEF, #9FC6F0, #9CE7EA, #E9C98A, #F4C6DD);
-      background-size: 300% 100%;
+      background-size: 400% 100%;
+      background-position: 60% 50%;
     }
 
     .byoc-toggle .active button {
@@ -205,12 +217,95 @@ const ingredients = extractIngredients();
       display: block;
     }
 
+    .byoc-toggle > div {
+      border-radius: 999px;
+    }
+
+    .byoc-toggle > div:not(.active) {
+      padding: 3px;
+    }
+
+    .byoc-toggle > div:not(.active) button {
+      display: block;
+      padding: 6px 16px;
+    }
+
+    /* ─── Category Groups ─── */
+    .byoc-category-group {
+      margin-bottom: 18px;
+    }
+
+    .byoc-category-header {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      background: var(--panel2);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--chip-text);
+      transition: all 0.15s;
+      user-select: none;
+    }
+
+    .byoc-category-header:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .byoc-category-header-toggle {
+      display: inline-flex;
+      align-items: center;
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+      font-size: 10px;
+      color: var(--brass);
+    }
+
+    .byoc-category-header.open .byoc-category-header-toggle::before {
+      content: '▼';
+    }
+
+    .byoc-category-header:not(.open) .byoc-category-header-toggle::before {
+      content: '▶';
+    }
+
+    .byoc-category-header-label {
+      flex: 1;
+    }
+
+    .byoc-category-indicator {
+      font-size: 11px;
+      color: var(--brass);
+      white-space: nowrap;
+      margin-left: 8px;
+    }
+
+    .byoc-category-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 12px 12px 0;
+      max-height: 500px;
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+
+    .byoc-category-chips.collapsed {
+      max-height: 0;
+      padding: 0 12px;
+    }
+
     /* ─── Layout ─── */
     .byoc-grid {
       display: flex;
       gap: 34px;
       align-items: flex-start;
       flex-wrap: wrap;
+      margin-top: 30px;
     }
 
     .byoc-filters {
@@ -247,7 +342,7 @@ const ingredients = extractIngredients();
       width: 100%;
       height: 1.5px;
       background: linear-gradient(90deg, #F4C6DD, #C9AEEF, #9FC6F0, #9CE7EA, #E9C98A, #F4C6DD);
-      box-shadow: 0 0 6px 0.5px rgba(201, 174, 239, 0.45);
+      box-shadow: 0 0 3px 0.2px rgba(201, 174, 239, 0.25);
     }
 
     .byoc-help {
@@ -270,7 +365,7 @@ const ingredients = extractIngredients();
       border-radius: 999px;
       cursor: pointer;
       background: var(--panel);
-      color: var(--muted);
+      color: var(--chip-text);
       border: 1px solid var(--border);
       transition: opacity 0.15s;
     }
@@ -280,8 +375,8 @@ const ingredients = extractIngredients();
       font-weight: 500;
       border: none;
       background: linear-gradient(90deg, #F4C6DD, #C9AEEF, #9FC6F0, #9CE7EA, #E9C98A, #F4C6DD);
-      background-size: 300% 100%;
-      background-position: 30% 50%;
+      background-size: 400% 100%;
+      background-position: 20% 50%;
     }
 
     .byoc-chip.disabled {
@@ -494,7 +589,8 @@ const ingredients = extractIngredients();
     .byoc-ring-button {
       padding: 0;
       background: linear-gradient(90deg, #F4C6DD, #C9AEEF, #9FC6F0, #9CE7EA, #E9C98A, #F4C6DD);
-      background-size: 300% 100%;
+      background-size: 400% 100%;
+      background-position: 80% 50%;
       animation: shimmer 6s linear infinite;
       border-radius: 50%;
       cursor: pointer;
@@ -560,14 +656,15 @@ const ingredients = extractIngredients();
       </svg>
 
       <div class="byoc-header">
-        <h1 class="byoc-wordmark"><span class="elixir">Elixir</span> <span class="maven">Maven</span></h1>
+        <div class="byoc-header-block">
+          <h1 class="byoc-wordmark"><span class="elixir">Elixir</span> <span class="maven">Maven</span></h1>
+          <h2 class="byoc-title">Build your own cocktail</h2>
+        </div>
         <div class="byoc-toggle" id="unitToggle">
           <div class="active" id="mlBtn"><button>ml</button></div>
-          <button id="ozBtn">oz</button>
+          <div id="ozBtn"><button>oz</button></div>
         </div>
       </div>
-
-      <h2 class="byoc-title">Build your own cocktail</h2>
 
       <div class="byoc-grid">
         <div class="byoc-filters">
@@ -595,7 +692,7 @@ const ingredients = extractIngredients();
           <!-- Syrup -->
           <div class="byoc-group">
             <div class="byoc-label">Syrup</div>
-            <div class="byoc-chips" id="syrupChips"></div>
+            <div id="syrupCategories"></div>
           </div>
 
           <!-- Top -->
@@ -611,7 +708,6 @@ const ingredients = extractIngredients();
               <div class="byoc-slider-track"><div class="thumb"></div></div>
               <div class="byoc-slider-labels"><span>Sweet</span><span>Bitter</span></div>
             </div>
-            <div class="byoc-slider-note">Fixed centre — the ratio is balanced by construction, not by feel.</div>
           </div>
         </div>
 
@@ -630,7 +726,7 @@ const ingredients = extractIngredients();
             <div id="versionToggle" style="display:none;" class="byoc-version-toggle">
               <div class="byoc-toggle">
                 <div class="active" id="classicBtn"><button>Classic</button></div>
-                <button id="adjustedBtn">Adjusted</button>
+                <div id="adjustedBtn"><button>Adjusted</button></div>
               </div>
               <div class="byoc-version-help" id="versionHelp" style="margin-top:6px;"></div>
             </div>
@@ -654,8 +750,6 @@ const ingredients = extractIngredients();
               </div>
             </div>
           </div>
-
-          <div class="byoc-note">Every build here follows the Sour template — roughly 50ml spirit : 20ml citrus/juice : 20ml syrup, topped after. Options that would break that balance are greyed out rather than offered. When a rich spirit (Whiskey, Cognac) meets juice or honey, a Classic / Adjusted toggle appears — full 50ml stays IBA-standard against pure citrus, Adjusted trims to 40ml and swaps the glass and garnish for a lighter build.</div>
         </div>
       </div>
     </div>
@@ -669,6 +763,13 @@ const ingredients = extractIngredients();
   const SYRUP = ingredients.syrup;
   const TOP = ingredients.mixer;
   const RICH_SPIRITS = ['Whiskey', 'Cognac'];
+
+  // Syrup categories
+  const SYRUP_CATEGORIES = {
+    'Natural Sugar': ['Sugar syrup', 'Honey'],
+    'Fruit & Citrus Syrups': ['Grenadine'],
+    'Spice, Nut & Floral Syrups': ['Orgeat', 'Vanilla', 'Coconut', 'Falernum', 'Maple']
+  };
 
   const GARNISH = {
     soda: ["A wheel of whatever citrus you used, or skip it entirely", "A few berries dropped in, echoing the juice", "Fresh mint, if you want a lift"],
@@ -688,8 +789,14 @@ const ingredients = extractIngredients();
     top: TOP[0],
     unit: 'ml',
     garnishIndex: 0,
-    version: 'classic'
+    version: 'classic',
+    openSyrupCategories: {} // Track which categories are open
   };
+
+  // Initialize all categories as open
+  Object.keys(SYRUP_CATEGORIES).forEach(cat => {
+    state.openSyrupCategories[cat] = true;
+  });
 
   function richSpiritSelected() {
     return state.spirits.some(s => RICH_SPIRITS.includes(s));
@@ -756,13 +863,65 @@ const ingredients = extractIngredients();
       state.citrus === 'None' ? 'Citrus is set to None, so juice can\'t be too — a sour needs one.' : '';
   }
 
-  function renderSyrup() {
-    const box = document.getElementById('syrupChips');
-    box.innerHTML = '';
-    SYRUP.forEach(s => box.appendChild(chip(s, state.syrup === s, false, () => {
-      state.syrup = s;
-      render();
-    })));
+  function renderSyrupCategories() {
+    const container = document.getElementById('syrupCategories');
+    container.innerHTML = '';
+
+    Object.entries(SYRUP_CATEGORIES).forEach(([categoryName, options]) => {
+      const categoryDiv = document.createElement('div');
+      categoryDiv.className = 'byoc-category-group';
+
+      // Find which items in this category are actually available
+      const availableOptions = options.filter(opt => SYRUP.includes(opt));
+      if (availableOptions.length === 0) return; // Skip empty categories
+
+      // Check if any option in this category is selected
+      const selectedInCategory = availableOptions.find(opt => state.syrup === opt);
+
+      // Create category header
+      const header = document.createElement('div');
+      header.className = 'byoc-category-header' + (state.openSyrupCategories[categoryName] ? ' open' : '');
+      
+      const toggle = document.createElement('span');
+      toggle.className = 'byoc-category-header-toggle';
+      
+      const label = document.createElement('span');
+      label.className = 'byoc-category-header-label';
+      label.textContent = categoryName;
+      
+      const indicator = document.createElement('span');
+      indicator.className = 'byoc-category-indicator';
+      if (selectedInCategory && !state.openSyrupCategories[categoryName]) {
+        indicator.textContent = '✓ ' + selectedInCategory;
+      }
+
+      header.appendChild(toggle);
+      header.appendChild(label);
+      if (indicator.textContent) header.appendChild(indicator);
+      
+      header.onclick = () => {
+        state.openSyrupCategories[categoryName] = !state.openSyrupCategories[categoryName];
+        renderSyrupCategories();
+      };
+
+      categoryDiv.appendChild(header);
+
+      // Create chips container
+      const chipsDiv = document.createElement('div');
+      chipsDiv.className = 'byoc-category-chips' + (!state.openSyrupCategories[categoryName] ? ' collapsed' : '');
+
+      availableOptions.forEach(option => {
+        const selected = state.syrup === option;
+        const chipEl = chip(option, selected, false, () => {
+          state.syrup = option;
+          render();
+        });
+        chipsDiv.appendChild(chipEl);
+      });
+
+      categoryDiv.appendChild(chipsDiv);
+      container.appendChild(categoryDiv);
+    });
   }
 
   function renderTop() {
@@ -853,7 +1012,7 @@ const ingredients = extractIngredients();
     const showToggle = needsVersions();
     document.getElementById('versionToggle').style.display = showToggle ? 'block' : 'none';
     document.getElementById('versionHelp').textContent = showToggle
-      ? 'Rich spirit + juice/honey — trim the spirit or keep it full-bodied.'
+      ? 'Choose your preferred style — Classic or Adjusted.'
       : '';
 
     if (!state.spirits.length) {
@@ -890,7 +1049,7 @@ const ingredients = extractIngredients();
     renderSpirits();
     renderCitrus();
     renderJuice();
-    renderSyrup();
+    renderSyrupCategories();
     renderTop();
     renderResult(true);
   }
