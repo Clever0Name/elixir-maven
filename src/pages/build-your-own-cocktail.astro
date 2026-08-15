@@ -156,9 +156,10 @@ const ingredients = extractIngredients();
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-weight: 600;
-      font-size: 46px;
+      font-size: 72px;
       margin: 0;
       letter-spacing: 0.5px;
+      line-height: 1.1;
     }
 
     .byoc-wordmark .elixir {
@@ -174,11 +175,19 @@ const ingredients = extractIngredients();
       animation: shimmer 16s linear infinite;
     }
 
+    .byoc-membership {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--cream);
+      margin: 2px 0 0 0;
+      letter-spacing: 0.3px;
+    }
+
     .byoc-title {
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 400;
       color: var(--muted);
-      margin: 0;
+      margin: 18px 0 0 0;
       letter-spacing: 0.5px;
     }
 
@@ -208,7 +217,7 @@ const ingredients = extractIngredients();
       border-radius: 999px;
       background: linear-gradient(90deg, #F4C6DD, #C9AEEF, #9FC6F0, #9CE7EA, #E9C98A, #F4C6DD);
       background-size: 400% 100%;
-      background-position: 60% 50%;
+      background-position: 50% 50%;
     }
 
     .byoc-toggle .active button {
@@ -323,6 +332,11 @@ const ingredients = extractIngredients();
     /* ─── Filter Group ─── */
     .byoc-group {
       margin-bottom: 30px;
+      margin-top: 0;
+    }
+
+    .byoc-filters .byoc-group:first-child {
+      margin-top: 0;
     }
 
     .byoc-label {
@@ -658,6 +672,7 @@ const ingredients = extractIngredients();
       <div class="byoc-header">
         <div class="byoc-header-block">
           <h1 class="byoc-wordmark"><span class="elixir">Elixir</span> <span class="maven">Maven</span></h1>
+          <p class="byoc-membership">Premium Membership</p>
           <h2 class="byoc-title">Build your own cocktail</h2>
         </div>
         <div class="byoc-toggle" id="unitToggle">
