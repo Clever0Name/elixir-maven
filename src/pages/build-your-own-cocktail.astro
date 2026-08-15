@@ -409,6 +409,36 @@ const ingredients = extractIngredients();
       background-position: 20% 50%;
     }
 
+    /* Category-specific selected chip colors */
+    #spiritChips .byoc-chip.selected {
+      background-position: 0% 50%;
+    }
+
+    #citrusChips .byoc-chip.selected {
+      background-position: 25% 50%;
+    }
+
+    #juiceChips .byoc-chip.selected {
+      background-position: 50% 50%;
+    }
+
+    /* Syrup chips use category-specific positioning */
+    .byoc-category-group:nth-child(1) .byoc-chip.selected {
+      background-position: 65% 50%;
+    }
+
+    .byoc-category-group:nth-child(2) .byoc-chip.selected {
+      background-position: 75% 50%;
+    }
+
+    .byoc-category-group:nth-child(3) .byoc-chip.selected {
+      background-position: 85% 50%;
+    }
+
+    #topChips .byoc-chip.selected {
+      background-position: 100% 50%;
+    }
+
     .byoc-chip.disabled {
       opacity: 0.3;
       cursor: not-allowed;
