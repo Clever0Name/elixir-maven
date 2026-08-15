@@ -213,7 +213,7 @@ const ingredients = extractIngredients();
     }
 
     .byoc-toggle .active {
-      padding: 2px;
+      padding: 3px;
       border-radius: 999px;
       background: linear-gradient(90deg, #F4C6DD, #C9AEEF, #9FC6F0, #9CE7EA, #E9C98A, #F4C6DD);
       background-size: 400% 100%;
@@ -262,6 +262,22 @@ const ingredients = extractIngredients();
 
     .byoc-category-header:hover {
       background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Prism color variety for each category */
+    .byoc-category-group:nth-child(1) .byoc-category-header {
+      border: 1px solid rgba(244, 198, 221, 0.3);
+      background: linear-gradient(135deg, rgba(244, 198, 221, 0.05), rgba(201, 174, 239, 0.04));
+    }
+
+    .byoc-category-group:nth-child(2) .byoc-category-header {
+      border: 1px solid rgba(159, 198, 240, 0.3);
+      background: linear-gradient(135deg, rgba(159, 198, 240, 0.05), rgba(156, 231, 234, 0.04));
+    }
+
+    .byoc-category-group:nth-child(3) .byoc-category-header {
+      border: 1px solid rgba(233, 201, 138, 0.3);
+      background: linear-gradient(135deg, rgba(156, 231, 234, 0.05), rgba(233, 201, 138, 0.04));
     }
 
     .byoc-category-header-toggle {
