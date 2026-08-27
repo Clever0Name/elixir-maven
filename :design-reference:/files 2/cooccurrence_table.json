@@ -1,0 +1,4765 @@
+{
+  "total_cocktails": 539,
+  "pairs": [
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 60
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 46
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 40
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 30
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 28
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 24
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 21
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 20
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 18
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 18
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "pineapple juice",
+      "count": 17
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 16
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "elderflower liqueur",
+      "count": 16
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 14
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 13
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 12
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 11
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 11
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 11
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 11
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "elderflower liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 10
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "elderflower liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 10
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "aperol",
+      "count": 10
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "honey syrup",
+      "count": 9
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "triple sec",
+      "count": 9
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "elderflower liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 8
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "cointreau liqueur",
+      "count": 8
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Juice",
+      "b_ingredient": "pineapple juice",
+      "count": 8
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cointreau liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 8
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "white chocolate liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 8
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "elderflower liqueur",
+      "count": 7
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 7
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "aperol",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 7
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "triple sec",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 7
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cranberry juice",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 7
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "triple sec",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 7
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 7
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Spirit",
+      "b_ingredient": "cognac",
+      "count": 6
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "whiskey",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 6
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "sweet vermouth",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 6
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "orange liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 6
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "orange liqueur",
+      "count": 6
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 6
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "ginger liqueur",
+      "count": 6
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "ginger liqueur",
+      "count": 6
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "cranberry juice",
+      "count": 6
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "honey syrup",
+      "count": 5
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "cointreau liqueur",
+      "count": 5
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "kahlua",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 5
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 5
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "amaretto",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 5
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cranberry juice",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 5
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "coffee liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 5
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "campari",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 5
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Spirit",
+      "b_ingredient": "mezcal",
+      "count": 5
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 5
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "lavender simple syrup\u2060",
+      "count": 5
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 5
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "triple sec",
+      "count": 5
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 4
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 4
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Spirit",
+      "b_ingredient": "brandy",
+      "count": 4
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "dry vermouth",
+      "count": 4
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Juice",
+      "b_ingredient": "cranberry juice",
+      "count": 4
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Liqueur",
+      "b_ingredient": "aperol",
+      "count": 4
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "maple syrup",
+      "count": 4
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "elderflower liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 4
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "strawberry simple syrup",
+      "count": 4
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 4
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "lavender simple syrup\u2060",
+      "count": 4
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "orange juice",
+      "count": 4
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 4
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "maraschino liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 4
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "ginger liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 4
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "ginger liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 4
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "honey simple syrup\u2060",
+      "count": 4
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "triple sec",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 4
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "creme de cacao",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 4
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "bourbon",
+      "b_category": "Syrup",
+      "b_ingredient": "maple syrup",
+      "count": 4
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cranberry juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "orange liqueur",
+      "count": 4
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "bourbon",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 4
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "cinnamon simple syrup",
+      "count": 4
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "cr\u00e8me de violette",
+      "count": 3
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "benedictine liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 3
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "sweet vermouth",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 3
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "baileys strawberries & cream",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 3
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 3
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "blood orange juice",
+      "count": 3
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "orange liqueur",
+      "count": 3
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "campari",
+      "count": 3
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "pomegranate juice",
+      "count": 3
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "orange juice",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 3
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "banana liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 3
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "chocolate liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 3
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "blue curacao",
+      "count": 3
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "blue curacao",
+      "count": 3
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "blue curacao",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 3
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "midori liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 3
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "aperol",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 3
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 3
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "dry vermouth",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 3
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "blood orange juice",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 3
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "peach liqueur",
+      "count": 3
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "strawberry simple syrup",
+      "count": 3
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "orange juice",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 3
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "prickly pear syrup",
+      "count": 3
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "aperol",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 3
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "orange juice",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 3
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "triple sec",
+      "count": 3
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "vanilla simple syrup",
+      "count": 3
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cointreau liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 3
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Juice",
+      "b_ingredient": "orange juice",
+      "count": 3
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Liqueur",
+      "b_ingredient": "triple sec",
+      "count": 3
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "dry vermouth",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 3
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "grand marnier",
+      "count": 3
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "triple sec",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 3
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "lavender syrup",
+      "count": 3
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "lavender syrup",
+      "count": 3
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Spirit",
+      "b_ingredient": "scotch",
+      "count": 3
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "bourbon",
+      "b_category": "Syrup",
+      "b_ingredient": "honey syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Spirit",
+      "b_ingredient": "pisco",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "watermelon juice",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Syrup",
+      "b_ingredient": "honey syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "allspice dram",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "allspice dram",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "allspice dram",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "benedictine liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "rye",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "sweet vermouth",
+      "b_category": "Spirit",
+      "b_ingredient": "cognac",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "lychee simple syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "dry vermouth",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "rosemary simple syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "aperol",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "orange liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "cognac",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "coffee liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 2
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pomegranate juice",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "campari",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "campari",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "campari",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "coffee liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 2
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "midori liqueur",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "dark chocolate liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 2
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "orange juice",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "sonoma syrup co",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "amaretto",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "amaretto",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "peach liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "lavender simple syrup\u2060",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "mango juice",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "amaretto",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "amaretto",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "prickly pear syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cointreau liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "cognac",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Liqueur",
+      "b_ingredient": "elderflower liqueur",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "honey simple syrup\u2060",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "ginger liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "ginger liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cr\u00e8me de violette",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "blue curacao",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "bourbon",
+      "b_category": "Syrup",
+      "b_ingredient": "lemon thyme simple syrup\u2060",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "triple sec",
+      "b_category": "Syrup",
+      "b_ingredient": "vanilla simple syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "aperol",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Liqueur",
+      "b_ingredient": "ginger liqueur",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "raspberry syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "chambord",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 2
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "orange juice",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "baileys",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "midori liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "sour apple schnapps",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 2
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "sour apple schnapps",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "bourbon",
+      "b_category": "Syrup",
+      "b_ingredient": "honey simple syrup\u2060",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "raspberry syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "carrot juice\u2060",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Juice",
+      "b_ingredient": "carrot juice\u2060",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "grand marnier",
+      "b_category": "Spirit",
+      "b_ingredient": "cognac",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "pecan syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "whiskey",
+      "b_category": "Syrup",
+      "b_ingredient": "pecan syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "gingerbread syrup\u2060",
+      "count": 2
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pomegranate juice",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 2
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cranberry juice",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "maraschino liqueur",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "luxardo cherry syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "grand marnier",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "lychee simple syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "lychee simple syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "grand marnier",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "vanilla simple syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "maraschino liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "yuzu syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "sweet vermouth",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "aperol",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "maraschino liqueur",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Juice",
+      "b_ingredient": "cranberry juice",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Liqueur",
+      "b_ingredient": "orange liqueur",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "orange liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "cognac",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "lavender simple syrup\u2060",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Juice",
+      "b_ingredient": "beet juice",
+      "count": 2
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Spirit",
+      "b_ingredient": "scotch",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "ginger liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "scotch",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cr\u00e8me de cacao",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cr\u00e8me de banana\u2060",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "cinnamon simple syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "butterfly pea flower syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "scotch",
+      "b_category": "Syrup",
+      "b_ingredient": "honey syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pom pomegranate juice",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "coconut liqueur",
+      "count": 2
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "aperol",
+      "count": 2
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "creme de violet",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "creme de violet",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "orange liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 2
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "triple sec",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 2
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "bourbon",
+      "b_category": "Syrup",
+      "b_ingredient": "blackberry cobbler syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cr\u00e8me de violette",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cr\u00e8me de violette",
+      "b_category": "Syrup",
+      "b_ingredient": "honey syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cointreau liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "pisco",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "watermelon juice",
+      "b_category": "Spirit",
+      "b_ingredient": "pisco",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "watermelon juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "cointreau liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Spirit",
+      "b_ingredient": "rye",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Spirit",
+      "b_ingredient": "rye",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rye",
+      "b_category": "Syrup",
+      "b_ingredient": "orgeat syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "orgeat syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "whiskey",
+      "b_category": "Syrup",
+      "b_ingredient": "orgeat syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Syrup",
+      "b_ingredient": "orgeat syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "aperol",
+      "b_category": "Syrup",
+      "b_ingredient": "strawberry rhubarb syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "strawberry rhubarb syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cointreau liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "allspice dram",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cointreau liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "brandy",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "bourbon",
+      "b_category": "Syrup",
+      "b_ingredient": "carrot cake simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "carrot cake simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "white creme de cacao",
+      "b_category": "Spirit",
+      "b_ingredient": "irish whiskey",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "white creme de cacao",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "white creme de cacao",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "white creme de cacao",
+      "b_category": "Syrup",
+      "b_ingredient": "malted milk syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "irish whiskey",
+      "b_category": "Syrup",
+      "b_ingredient": "malted milk syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "whiskey",
+      "b_category": "Syrup",
+      "b_ingredient": "malted milk syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "malted milk syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "carrot cake simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "kahlua",
+      "b_category": "Syrup",
+      "b_ingredient": "carrot cake simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "elderflower liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "citrus-vanilla simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "citrus-vanilla simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "citrus-vanilla simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "sweet vermouth",
+      "b_category": "Spirit",
+      "b_ingredient": "rye",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "benedictine liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "cognac",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "elderflower liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "lychee simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "lychee simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "dry vermouth",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "prickly pear syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "prickly pear syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "blood orange juice",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "grand marnier",
+      "b_category": "Syrup",
+      "b_ingredient": "chocolate syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "whiskey",
+      "b_category": "Syrup",
+      "b_ingredient": "honey syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "elderflower liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "spicy ginger syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "spicy ginger syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "rosemary simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "aperol",
+      "b_category": "Syrup",
+      "b_ingredient": "rosemary simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cranberry juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "aperol",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cranberry juice",
+      "b_category": "Syrup",
+      "b_ingredient": "rosemary simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "bourbon",
+      "b_category": "Syrup",
+      "b_ingredient": "maple cinnamon syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "vermouth",
+      "b_category": "Syrup",
+      "b_ingredient": "maple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rye",
+      "b_category": "Syrup",
+      "b_ingredient": "maple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "whiskey",
+      "b_category": "Syrup",
+      "b_ingredient": "maple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "vermouth",
+      "b_category": "Spirit",
+      "b_ingredient": "rye",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "vermouth",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "ginger simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "ginger simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "sweet vermouth",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "sweet vermouth",
+      "b_category": "Syrup",
+      "b_ingredient": "rosemary simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "rosemary simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "campari",
+      "b_category": "Syrup",
+      "b_ingredient": "rosemary simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "bourbon",
+      "b_category": "Syrup",
+      "b_ingredient": "spiced pear simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "apple brown sugar syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "apple brown sugar syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "brown sugar simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "brown sugar simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "blueberry syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Syrup",
+      "b_ingredient": "blueberry syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Liqueur",
+      "b_ingredient": "campari",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "hibiscus syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "hibiscus syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "watermelon juice",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "watermelon juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "campari",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "watermelon juice",
+      "b_category": "Spirit",
+      "b_ingredient": "mezcal",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "campari",
+      "b_category": "Spirit",
+      "b_ingredient": "mezcal",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "maple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cantaloupe juice",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "cantaloupe juice",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cantaloupe juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "cointreau liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "strawberry simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "aperol",
+      "b_category": "Syrup",
+      "b_ingredient": "strawberry simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "chocolate syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "mezcal",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pickle juice",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "pickle juice",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "midori liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "bourbon",
+      "b_category": "Syrup",
+      "b_ingredient": "cherry simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "cherry simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "aperol",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "aperol",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "cranberry simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "aperol",
+      "b_category": "Syrup",
+      "b_ingredient": "cranberry simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "cranberry simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "dry vermouth",
+      "b_category": "Syrup",
+      "b_ingredient": "cranberry simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pomegranate juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "empress elderflower rose gin",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Juice",
+      "b_ingredient": "pomegranate juice",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "empress elderflower rose gin",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "clementine juice",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "clementine juice",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "clementine juice",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "creme de menthe",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "baileys espresso",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "benedictine liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "pistachio cream liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Syrup",
+      "b_ingredient": "blueberry simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "blueberry simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "apple simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "white creme de cacao",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "bourbon",
+      "b_category": "Syrup",
+      "b_ingredient": "pumpkin spice syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cranberry liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "strawberry infused sweet vermouth",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "mango juice",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "orange juice",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "peach simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "orange liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "peach simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "peach liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "peach simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "peach simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "peach simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "blackberry liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "blackberry liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "blackberry liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "amaretto",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "bourbon",
+      "b_category": "Syrup",
+      "b_ingredient": "demerara syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cointreau liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "lavender simple syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "triple sec",
+      "b_category": "Syrup",
+      "b_ingredient": "prickly pear syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "orange juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "cointreau liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "honey simple syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Syrup",
+      "b_ingredient": "honey simple syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "lemon simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "lemon simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "blue curacao",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "almond syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "ginger liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Syrup",
+      "b_ingredient": "almond syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "ginger liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "almond syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "blue curacao",
+      "b_category": "Syrup",
+      "b_ingredient": "almond syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "almond syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "watermelon juice",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "watermelon juice",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "strawberry liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "strawberry liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "sour apple schnapps",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "sour apple schnapps",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "amaretto",
+      "b_category": "Syrup",
+      "b_ingredient": "lemon thyme simple syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "lemon thyme simple syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "cucumber juice",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cucumber juice",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "campari",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "campari",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "vanilla simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "honey simple syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cointreau liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "honey simple syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cranberry juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "dry cura\u00e7ao",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "dry cura\u00e7ao",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "orange juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "dry cura\u00e7ao",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "lemon thyme simple syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "ginger liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "lavender simple syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "ginger liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Syrup",
+      "b_ingredient": "raspberry syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "ginger liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "raspberry syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "elderflower liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "orange juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "ginger liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Spirit",
+      "b_ingredient": "mezcal",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "mezcal",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "sweet vermouth",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "suze liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "suze liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "suze liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "suze liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "hibiscus simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "hibiscus simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "brandy",
+      "b_category": "Syrup",
+      "b_ingredient": "hibiscus simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "baileys vanilla mint",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "midori liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "mango juice",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cointreau liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "tart cherry juice",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Juice",
+      "b_ingredient": "tart cherry juice",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "tart cherry juice",
+      "b_category": "Syrup",
+      "b_ingredient": "honey simple syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "orange juice",
+      "b_category": "Syrup",
+      "b_ingredient": "maple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "raspberry syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "blood orange juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "elderflower liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "pomegranate liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "disaronno velvet liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "blueberry lavender syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "blueberry lavender syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "pressed juice",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pressed juice",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "beet juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "campari",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "beet juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "sweet vermouth",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "beet juice",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "turmeric simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "triple sec",
+      "b_category": "Syrup",
+      "b_ingredient": "turmeric simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "orange juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "triple sec",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "orange juice",
+      "b_category": "Syrup",
+      "b_ingredient": "turmeric simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "aperol",
+      "b_category": "Syrup",
+      "b_ingredient": "cinnamon simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "orange liqueur garnish:",
+      "b_category": "Spirit",
+      "b_ingredient": "brandy",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "white creme de cacao",
+      "b_category": "Spirit",
+      "b_ingredient": "brandy",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "cognac",
+      "b_category": "Syrup",
+      "b_ingredient": "chamomile syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "chamomile syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "chamomile syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "peppermint schnapps",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "ginger liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "sage simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "elderflower liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "sage simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "sage simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cranberry juice",
+      "b_category": "Spirit",
+      "b_ingredient": "cognac",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "honey simple syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "cinnamon simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "blood orange liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "coffee liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "gingerbread syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "dark cr\u00e8me de cacao",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cinnamon schnapps",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "apple juice\u2060",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "whiskey",
+      "b_category": "Syrup",
+      "b_ingredient": "gingerbread syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cranberry juice",
+      "b_category": "Syrup",
+      "b_ingredient": "gingerbread syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "gingerbread syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pomegranate juice",
+      "b_category": "Syrup",
+      "b_ingredient": "gingerbread syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cranberry juice",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "coffee liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "horchata liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "pumpkin simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "pumpkin simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "white chocolate liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "pumpkin simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "horchata liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "sonoma syrup vanilla almond simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "sonoma syrup vanilla almond simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "whiskey",
+      "b_category": "Syrup",
+      "b_ingredient": "pumpkin simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "maraschino liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "luxardo cherry syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "luxardo cherry syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "blue curacao",
+      "b_category": "Spirit",
+      "b_ingredient": "mezcal",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "grand marnier",
+      "b_category": "Syrup",
+      "b_ingredient": "lychee simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "grand marnier",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "vanilla simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "vanilla simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cr\u00e8me de violette",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cr\u00e8me de violette",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "cr\u00e8me de violette",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "butterfly pea flower syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Spirit",
+      "b_ingredient": "brandy",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "butterfly pea flower syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "brandy",
+      "b_category": "Syrup",
+      "b_ingredient": "butterfly pea flower syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "lychee simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "maraschino liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "vanilla simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "jalapeno simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "jalapeno simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "jalapeno simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "peach schnapps",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "campari",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cointreau liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "yuzu syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "grand marnier",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "suze liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "dry vermouth",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "creme de cacao",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "grand marnier",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "campari",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "orange juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "campari",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "strawberry simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "elderflower liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "strawberry simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "white ginger simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "maraschino liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "maraschino liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "white ginger simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Syrup",
+      "b_ingredient": "white ginger simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "white ginger simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Liqueur",
+      "b_ingredient": "maraschino liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "dark chocolate liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "caf\u00e9 liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "caf\u00e9 liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "sweet vermouth",
+      "b_category": "Spirit",
+      "b_ingredient": "brandy",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "chamomile honey simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "whiskey",
+      "b_category": "Syrup",
+      "b_ingredient": "chamomile honey simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "banana coconut simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "lavender simple syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "strawberry simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "apple juice\u2060",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "beet juice",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Juice",
+      "b_ingredient": "apple juice\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "apple juice\u2060",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "apple juice\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "carrot juice\u2060",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "beet juice",
+      "b_category": "Syrup",
+      "b_ingredient": "agave syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "carrot juice\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "beet juice",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Liqueur",
+      "b_ingredient": "cointreau liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cranberry juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "cointreau liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "tangerine juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "campari",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Juice",
+      "b_ingredient": "tangerine juice",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "tangerine juice",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "brandy",
+      "b_category": "Syrup",
+      "b_ingredient": "cinnamon simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "gingerbread syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "peach liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "pecan syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "peach liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "pecan syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "creme de cacao",
+      "b_category": "Syrup",
+      "b_ingredient": "pecan syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "blue curacao",
+      "b_category": "Spirit",
+      "b_ingredient": "scotch",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cranberry juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "peppermint schnapps for rim -",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "peppermint schnapps for rim -",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "ginger liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "honey simple syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "scotch",
+      "b_category": "Syrup",
+      "b_ingredient": "honey simple syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "scotch",
+      "b_category": "Syrup",
+      "b_ingredient": "toasted marshmallow syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "kahlua",
+      "b_category": "Syrup",
+      "b_ingredient": "sonoma syrup co",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "whiskey",
+      "b_category": "Syrup",
+      "b_ingredient": "cinnamon simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "pumpkin pie syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "maple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Liqueur",
+      "b_ingredient": "drambuie",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "blackberry liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "bourbon",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "blackberry liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "blackberry liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "cinnamon simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "bourbon",
+      "b_category": "Syrup",
+      "b_ingredient": "pecan syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rye",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "blue agave syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "blue agave syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Syrup",
+      "b_ingredient": "blue agave syrup\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "butterfly pea flower syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "beet juice",
+      "b_category": "Spirit",
+      "b_ingredient": "scotch",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "chambord",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "chambord",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "chambord",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cranberry liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cranberry liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "cranberry liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "luxardo cherry syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "luxardo cherry syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cr\u00e8me de banana\u2060",
+      "b_category": "Syrup",
+      "b_ingredient": "luxardo cherry syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "cr\u00e8me de banana\u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cr\u00e8me de banana\u2060",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "sour apple pucker liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "benedictine liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "honey syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "benedictine liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "scotch",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "tangergine juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "benedictine liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "tangergine juice",
+      "b_category": "Syrup",
+      "b_ingredient": "honey syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "tangergine juice",
+      "b_category": "Spirit",
+      "b_ingredient": "scotch",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "pineapple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "pineapple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "natalie's blood orange juice",
+      "b_category": "Spirit",
+      "b_ingredient": "cognac",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "natalie's blood orange juice",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "creme de cacao",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "chocolate liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "butterscotch schnapps\u2060",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "campari",
+      "b_category": "Spirit",
+      "b_ingredient": "cognac",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "freshly squeezed orange juice",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Juice",
+      "b_ingredient": "pom pomegranate juice",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pom pomegranate juice",
+      "b_category": "Syrup",
+      "b_ingredient": "lychee simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "magdala orange liqueur \u2060",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pom pomegranate juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "chambord",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cranberry juice",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "rosemary infused campari",
+      "b_category": "Spirit",
+      "b_ingredient": "mezcal",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "sweet vermouth",
+      "b_category": "Spirit",
+      "b_ingredient": "mezcal",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "peppermint syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "white chocolate liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "white chocolate liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "peppermint syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "banana liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "banana liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "benedictine liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "benedictine liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "coconut liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "pineapple liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "pineapple liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "sonoma syrup vanilla almond simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "sonoma syrup vanilla almond simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Liqueur",
+      "b_ingredient": "pomegranate liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "pomegranate liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "pomegranate liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "grapefruit",
+      "b_category": "Syrup",
+      "b_ingredient": "lavender syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "elderflower liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "lavender syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cointreau liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "butterfly pea flower syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cointreau liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "bourbon",
+      "b_category": "Syrup",
+      "b_ingredient": "luxardo cherry syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "sweet vermouth",
+      "b_category": "Syrup",
+      "b_ingredient": "luxardo cherry syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cold pressed cucumber juice",
+      "b_category": "Syrup",
+      "b_ingredient": "mint simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "cold pressed cucumber juice",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cold pressed cucumber juice",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "mint simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "mint simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "creme de violet",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "creme de violet",
+      "b_category": "Syrup",
+      "b_ingredient": "lavender syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "irish whiskey",
+      "b_category": "Syrup",
+      "b_ingredient": "cane sugar syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "sweet vermouth",
+      "b_category": "Spirit",
+      "b_ingredient": "irish whiskey",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "sweet vermouth",
+      "b_category": "Syrup",
+      "b_ingredient": "cane sugar syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "whiskey",
+      "b_category": "Syrup",
+      "b_ingredient": "cane sugar syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "tequila",
+      "b_category": "Syrup",
+      "b_ingredient": "coconut-infused agave syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "coconut-infused agave syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "blood orange juice",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "blood orange juice",
+      "b_category": "Syrup",
+      "b_ingredient": "prickly pear syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "elderflower liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "banane du br\u00e9sil liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "cr\u00e8me de cacao",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "ginger liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "honey syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "bourbon",
+      "b_category": "Syrup",
+      "b_ingredient": "rosemary simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "coconut liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "pisco",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "coconut liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Spirit",
+      "b_ingredient": "pisco",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Spirit",
+      "b_ingredient": "pisco",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "ginger liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "prickly pear syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "mezcal",
+      "b_category": "Syrup",
+      "b_ingredient": "prickly pear syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "ginger liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "mezcal",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "grand marnier",
+      "b_category": "Syrup",
+      "b_ingredient": "saffron syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Syrup",
+      "b_ingredient": "saffron syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "cognac",
+      "b_category": "Syrup",
+      "b_ingredient": "saffron syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "saffron syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "grand marnier",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "white cranberry juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "orange liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "white cranberry juice",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "white cranberry juice",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "banane du br\u00e9sil liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "domaine de canton ginger liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "maraschino liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "whiskey",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "cr\u00e8me de cacao",
+      "b_category": "Spirit",
+      "b_ingredient": "cognac",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "maraschino liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "cognac",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "guava puree",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "guava puree",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "passionfruit pur\u00e9e",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "vodka",
+      "b_category": "Syrup",
+      "b_ingredient": "grenadine",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "limoncello",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "limoncello",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "limoncello",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "amaro nonino",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "amaro nonino",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "st-germain elderflower liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "st-germain elderflower liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "aperol",
+      "b_category": "Syrup",
+      "b_ingredient": "honey syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Syrup",
+      "b_ingredient": "honey syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "vanilla syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "vanilla syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "elderflower syrup liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lemon",
+      "b_category": "Liqueur",
+      "b_ingredient": "elderflower syrup liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "elderflower syrup liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "pear liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "grapefruit juice",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "grapefruit juice",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "grapefruit juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "st-germain",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "st-germain",
+      "b_category": "Syrup",
+      "b_ingredient": "simple syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "st-germain",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "lychee liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "rum",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "lychee juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "elderflower liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "lychee juice",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "pisco",
+      "b_category": "Syrup",
+      "b_ingredient": "rose petal syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "chareau aloe liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "pisco",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "lychee liqueur",
+      "b_category": "Spirit",
+      "b_ingredient": "pisco",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "chareau aloe liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "rose petal syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "lychee liqueur",
+      "b_category": "Syrup",
+      "b_ingredient": "rose petal syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "rose petal syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "chareau aloe liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "lychee liqueur",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "amaretto",
+      "b_category": "Spirit",
+      "b_ingredient": "tequila",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "orange juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "amaretto",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "cranberry juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "triple sec",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "rum",
+      "b_category": "Syrup",
+      "b_ingredient": "grenadine syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "orange juice",
+      "b_category": "Syrup",
+      "b_ingredient": "grenadine syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Syrup",
+      "b_ingredient": "grenadine syrup",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "white grapefruit juice",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "white grapefruit juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "blue cura\u00e7ao",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "pineapple juice",
+      "b_category": "Liqueur",
+      "b_ingredient": "blue cura\u00e7ao",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "blue cura\u00e7ao",
+      "b_category": "Spirit",
+      "b_ingredient": "vodka",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "green chartreuse",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "green chartreuse",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "passion fruit pur\u00e9e",
+      "b_category": "Syrup",
+      "b_ingredient": "orgeat",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "passion fruit pur\u00e9e",
+      "b_category": "Liqueur",
+      "b_ingredient": "falernum",
+      "count": 1
+    },
+    {
+      "a_category": "Juice",
+      "a_ingredient": "passion fruit pur\u00e9e",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Juice",
+      "b_ingredient": "passion fruit pur\u00e9e",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "falernum",
+      "b_category": "Syrup",
+      "b_ingredient": "orgeat",
+      "count": 1
+    },
+    {
+      "a_category": "Spirit",
+      "a_ingredient": "gin",
+      "b_category": "Syrup",
+      "b_ingredient": "orgeat",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Syrup",
+      "b_ingredient": "orgeat",
+      "count": 1
+    },
+    {
+      "a_category": "Liqueur",
+      "a_ingredient": "falernum",
+      "b_category": "Spirit",
+      "b_ingredient": "gin",
+      "count": 1
+    },
+    {
+      "a_category": "Citrus",
+      "a_ingredient": "lime",
+      "b_category": "Liqueur",
+      "b_ingredient": "falernum",
+      "count": 1
+    }
+  ]
+}

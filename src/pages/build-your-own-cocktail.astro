@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import cocktailsData from '../../elixir_maven_cocktails.json';
+import cooccurrenceData from '../../:design-reference:/files 2/cooccurrence_table.json';
 
 // Extract ingredient categories from the JSON
 const extractIngredients = () => {
@@ -9,14 +10,17 @@ const extractIngredients = () => {
     citrus: new Set<string>(),
     juice: new Set<string>(),
     syrup: new Set<string>(),
-    mixer: new Set<string>()
+    liqueur: new Set<string>(),
+    mixer: new Set<string>(),
+    bitters: new Set<string>(),
+    foamer: new Set<string>()
   };
 
   const spiritNormalization: Record<string, string> = {
     'Aged Rum': 'Rum',
     'Blanco Tequila': 'Tequila',
     'Blended Scotch Whisky': 'Whiskey',
-    'Bourbon': 'Whiskey',
+    'Bourbon': 'Bourbon',
     'Cachaça': 'Cachaça',
     'Citrus Vodka': 'Vodka',
     'Coconut Rum': 'Rum',
@@ -81,8 +85,14 @@ const extractIngredients = () => {
         categories.juice.add(juiceNormalization[ing.name] || ing.name);
       } else if (role.includes('syrup')) {
         categories.syrup.add(syrupNormalization[ing.name] || ing.name);
+      } else if (role.includes('liqueur')) {
+        categories.liqueur.add(ing.name);
       } else if (role.includes('mixer')) {
         categories.mixer.add(mixerNormalization[ing.name] || ing.name);
+      } else if (role.includes('bitters')) {
+        categories.bitters.add(ing.name);
+      } else if (role.includes('foamer')) {
+        categories.foamer.add(ing.name);
       }
     });
   });
@@ -90,13 +100,24 @@ const extractIngredients = () => {
   return {
     spirits: Array.from(categories.spirits).sort(),
     citrus: ['None', ...Array.from(categories.citrus).sort()],
-    juice: ['None', ...Array.from(categories.juice).sort()],
-    syrup: Array.from(categories.syrup).sort(),
-    mixer: ['None', ...Array.from(categories.mixer).sort()]
+    juice: ['None', ...Array.from(categories.juice).filter(item => !['Lemon', 'Lime'].includes(item)).sort()],
+    syrup: ['None', ...Array.from(categories.syrup).sort()],
+    liqueur: Array.from(categories.liqueur).sort(),
+    mixer: ['None', ...Array.from(categories.mixer).sort()],
+    bitters: Array.from(categories.bitters).sort(),
+    foamer: Array.from(categories.foamer).sort()
   };
 };
 
 const ingredients = extractIngredients();
+if (!ingredients.syrup.includes('Elderflower')) ingredients.syrup.push('Elderflower');
+if (!ingredients.foamer.includes('Egg White')) ingredients.foamer.unshift('Egg White');
+const evidencePairs = cooccurrenceData.pairs;
+const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
+  ...cocktail,
+  published: (cocktail as { published?: boolean }).published ?? true,
+  approved_for_suggestion: (cocktail as { approved_for_suggestion?: boolean }).approved_for_suggestion ?? false,
+}));
 ---
 
 <Layout
@@ -338,6 +359,127 @@ const ingredients = extractIngredients();
       min-width: 320px;
     }
 
+    .byoc-mode-toggle {
+      margin: 0 0 24px;
+    }
+
+    .byoc-freeform {
+      display: none;
+      margin-bottom: 30px;
+    }
+
+    .byoc-freeform.open {
+      display: block;
+    }
+
+    .freeform-active .byoc-result-col {
+      display: none;
+    }
+
+    .byoc-freeform-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .byoc-freeform-category {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .byoc-freeform-field {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 92px;
+      gap: 8px;
+    }
+
+    .byoc-freeform-field--single {
+      grid-template-columns: 1fr;
+    }
+
+    .byoc-freeform-field--choice {
+      grid-template-columns: minmax(0, 1fr) 120px;
+    }
+
+    .byoc-freeform-field--second {
+      margin-left: 18px;
+    }
+
+    .byoc-amount-field {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .byoc-amount-field input {
+      width: 100%;
+    }
+
+    .byoc-amount-unit {
+      color: var(--muted);
+      font: 10px 'IBM Plex Mono', monospace;
+    }
+
+    .byoc-freeform-field input,
+    .byoc-freeform-field select {
+      min-width: 0;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--panel);
+      color: var(--cream);
+      padding: 9px 10px;
+      font: 12px 'IBM Plex Mono', monospace;
+      /* Forces native dropdowns (datalist/select popups) to render light bg + dark text consistently across browsers. */
+      color-scheme: light;
+    }
+
+    .byoc-freeform-result {
+      margin-top: 18px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+
+    .byoc-freeform-result h3 {
+      margin: 0 0 8px;
+      font: 600 italic 25px 'Cormorant Garamond', serif;
+    }
+
+    .byoc-freeform-result p {
+      margin: 5px 0;
+      font: 11px 'IBM Plex Mono', monospace;
+      color: var(--muted);
+    }
+
+    .byoc-freeform-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .byoc-freeform-meta select {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--panel);
+      color: var(--cream);
+      padding: 9px 10px;
+      font: 12px 'IBM Plex Mono', monospace;
+      color-scheme: light;
+    }
+
+    .byoc-freeform-spec {
+      margin-top: 14px;
+      color: var(--cream) !important;
+      white-space: pre-line;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 600px) {
+      .byoc-freeform-grid { grid-template-columns: 1fr; }
+    }
+
     .byoc-result-col {
       flex: 1 1 300px;
       min-width: 280px;
@@ -485,7 +627,7 @@ const ingredients = extractIngredients();
     .byoc-slider-track .thumb {
       position: absolute;
       top: 50%;
-      left: 50%;
+      left: var(--slider-position, 50%);
       width: 14px;
       height: 14px;
       border-radius: 50%;
@@ -507,6 +649,14 @@ const ingredients = extractIngredients();
       font-size: 10px;
       color: var(--muted);
       margin-top: 6px;
+    }
+
+    .byoc-slider-pending {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.5;
     }
 
     /* ─── Result Card ─── */
@@ -586,6 +736,23 @@ const ingredients = extractIngredients();
       color: var(--brass);
     }
 
+    .byoc-spec-list .swap-note {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .byoc-change-list {
+      display: grid;
+      gap: 7px;
+      margin-top: 12px;
+      color: var(--cream);
+      font: 12px 'IBM Plex Mono', monospace;
+    }
+
+    .byoc-change-list.empty {
+      color: var(--muted);
+    }
+
     .byoc-meta-row {
       position: relative;
       z-index: 3;
@@ -646,6 +813,70 @@ const ingredients = extractIngredients();
       line-height: 1.6;
     }
 
+    .byoc-outcome-box {
+      position: relative;
+      z-index: 3;
+      border-top: 1px solid var(--border);
+      margin-top: 18px;
+      padding-top: 16px;
+    }
+
+    .byoc-outcome-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brass);
+    }
+
+    .byoc-outcome-read {
+      display: grid;
+      gap: 7px;
+      margin-top: 12px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+    }
+
+    .byoc-outcome-read span {
+      color: var(--muted);
+    }
+
+    .byoc-outcome-read strong {
+      color: var(--cream);
+      font-weight: 400;
+    }
+
+    .byoc-nudge {
+      margin-top: 14px;
+      color: var(--cream);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .byoc-five-options {
+      display: none;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .byoc-five-options.open {
+      display: flex;
+    }
+
+    .byoc-five-options span {
+      border: 1px solid var(--border);
+      background: var(--panel2);
+      color: var(--cream);
+      padding: 7px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+    }
+
     .byoc-ring-button {
       padding: 0;
       background: linear-gradient(90deg, #F4C6DD, #C9AEEF, #9FC6F0, #9CE7EA, #E9C98A, #F4C6DD);
@@ -658,25 +889,16 @@ const ingredients = extractIngredients();
     }
 
     /* ─── Main button (CTA) ─── */
-    .byoc-ring-button.pill {
-      border-radius: 999px;
-      padding: 1px;
-    }
-
-    .byoc-ring-button.pill .inner {
-      background: var(--bg);
-      border-radius: 999px;
-      padding: 10px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--cream);
-      font-size: 14px;
-      white-space: nowrap;
+    .byoc-similar-link {
+      border: 0;
+      border-bottom: 1px dotted var(--brass);
+      padding: 0;
+      background: transparent;
+      color: var(--brass);
       cursor: pointer;
-      border: none;
-      font-family: inherit;
-      background: none;
+      font: 11px 'IBM Plex Mono', monospace;
+      line-height: 1.4;
+      white-space: nowrap;
     }
 
     /* Responsive ─── */
@@ -700,7 +922,7 @@ const ingredients = extractIngredients();
     }
   </style>
 
-  <div class="byoc-page">
+  <div class="byoc-page" id="byocPage">
     <div class="byoc-wrap">
       <svg width="0" height="0" style="position:absolute;">
         <defs>
@@ -729,10 +951,28 @@ const ingredients = extractIngredients();
 
       <div class="byoc-grid">
         <div class="byoc-filters">
+          <div class="byoc-mode-toggle byoc-toggle">
+            <div class="active" id="guidedModeBtn"><button type="button">Guided</button></div>
+            <div id="freeformModeBtn"><button type="button">Build from scratch</button></div>
+          </div>
+
+          <div class="byoc-freeform" id="freeformPanel">
+            <div class="byoc-label">Build from scratch</div>
+            <div class="byoc-freeform-grid" id="freeformFields"></div>
+            <div class="byoc-freeform-meta">
+              <select id="freeformGlass" aria-label="Glass"><option>Nick and Nora</option><option>Coupe</option><option>Rocks</option><option>Highball</option><option>Flute</option><option>Tiki</option></select>
+              <select id="freeformIce" aria-label="Ice"><option>None</option><option>Cubed</option><option>Large cube</option><option>Crushed</option></select>
+              <select id="freeformMethod" aria-label="Method"><option>Shake &amp; Strain</option><option>Shake &amp; Double Strain</option><option>Stir</option><option>Build</option><option>Dry Shake → Shake &amp; Strain</option><option>Dry Shake → Shake &amp; Double Strain</option></select>
+            </div>
+            <div class="byoc-freeform-result" id="freeformResult"></div>
+          </div>
+
+          <div id="guidedPanel">
           <!-- Base spirit -->
           <div class="byoc-group">
             <div class="byoc-label">Base spirit — pick 1, or 2 to split</div>
             <div class="byoc-chips" id="spiritChips"></div>
+            <div id="spiritCategories"></div>
             <div class="byoc-help" id="spiritHelp"></div>
           </div>
 
@@ -766,9 +1006,11 @@ const ingredients = extractIngredients();
           <div class="byoc-group">
             <div class="byoc-label">Sweet — Bitter</div>
             <div class="byoc-slider-wrap">
-              <div class="byoc-slider-track"><div class="thumb"></div></div>
-              <div class="byoc-slider-labels"><span>Sweet</span><span>Bitter</span></div>
+              <div class="byoc-slider-track" id="flavorSlider"><div class="thumb"></div></div>
+                <div class="byoc-slider-labels"><span>Bitter</span><span>Sweet</span></div>
             </div>
+              <div class="byoc-slider-pending" id="sliderPending"></div>
+          </div>
           </div>
         </div>
 
@@ -779,27 +1021,11 @@ const ingredients = extractIngredients();
             <div class="byoc-martini top-corner"><svg viewBox="0 0 100 100" fill="none"><path d="M20 22 L80 22 L50 58 Z" stroke="url(#holo)" stroke-width="3" stroke-linejoin="round"/><line x1="50" y1="58" x2="50" y2="88" stroke="url(#holo)" stroke-width="3"/><line x1="35" y1="88" x2="65" y2="88" stroke="url(#holo)" stroke-width="3"/></svg></div>
             <div class="byoc-martini bottom-cut"><svg viewBox="0 0 100 100" fill="none"><path d="M20 22 L80 22 L50 58 Z" stroke="url(#holo)" stroke-width="3" stroke-linejoin="round"/><line x1="50" y1="58" x2="50" y2="88" stroke="url(#holo)" stroke-width="3"/><line x1="35" y1="88" x2="65" y2="88" stroke="url(#holo)" stroke-width="3"/></svg></div>
 
-            <!-- Cocktail name and built from -->
-            <h3 id="cocktailName">Lime Fizz</h3>
+            <!-- Original build -->
             <div class="sub" id="cocktailBuilt">Built from your selections</div>
-
-            <!-- Version toggle (Classic/Adjusted) -->
-            <div id="versionToggle" style="display:none;" class="byoc-version-toggle">
-              <div class="byoc-toggle">
-                <div class="active" id="classicBtn"><button>Classic</button></div>
-                <div id="adjustedBtn"><button>Adjusted</button></div>
-              </div>
-              <div class="byoc-version-help" id="versionHelp" style="margin-top:6px;"></div>
-            </div>
 
             <!-- Spec list -->
             <div class="byoc-spec-list" id="specList"></div>
-
-            <!-- Meta row (glass and ice) -->
-            <div class="byoc-meta-row">
-              <span id="glassLine">Glass: Highball</span>
-              <span>Cubed ice</span>
-            </div>
 
             <!-- Garnish -->
             <div class="byoc-garnish-box">
@@ -810,6 +1036,15 @@ const ingredients = extractIngredients();
                 <button class="byoc-ring-button" style="width: 30px; height: 30px;" onclick="cycleGarnish(1)"><div class="byoc-ring-inner">&rarr;</div></button>
               </div>
             </div>
+
+            <div class="byoc-outcome-box" id="outcomeBox">
+              <div class="byoc-outcome-heading">
+                <span>Undecided name change</span>
+                <button class="byoc-similar-link" id="fiveOptionsToggle" type="button">Show 5 Similar Classics</button>
+              </div>
+              <div class="byoc-change-list" id="changeList"></div>
+              <div class="byoc-five-options" id="fiveOptionsList"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -817,42 +1052,62 @@ const ingredients = extractIngredients();
   </div>
 </Layout>
 
-<script define:vars={{ ingredients }}>
+<script define:vars={{ ingredients, evidencePairs, suggestionCocktails }}>
   const SPIRITS = ingredients.spirits;
   const CITRUS = ingredients.citrus;
   const JUICE = ingredients.juice;
   const SYRUP = ingredients.syrup;
   const TOP = ingredients.mixer;
-  const RICH_SPIRITS = ['Whiskey', 'Cognac'];
+  const RICH_SPIRITS = ['Whiskey', 'Bourbon', 'Cognac'];
+  const LEAN_VALUES = {};
+  const LEAN_OPTIONS = [...new Set([...CITRUS, ...JUICE, ...SYRUP].filter(item => item !== 'None'))];
+  const aliases = { cranberry: 'cranberry juice', orange: 'orange juice', pineapple: 'pineapple juice', 'sugar syrup': 'simple syrup', honey: 'honey syrup', maple: 'maple syrup', orgeat: 'orgeat syrup', vanilla: 'vanilla syrup', coconut: 'coconut syrup', whiskey: 'whiskey', bourbon: 'bourbon', cognac: 'cognac', aperol: 'aperol', campari: 'campari', 'sweet vermouth': 'sweet vermouth', 'dry vermouth': 'dry vermouth', amaretto: 'amaretto' };
+  const normalize = value => aliases[value.toLowerCase().trim()] || value.toLowerCase().trim();
+  const evidence = new Map(evidencePairs.map(pair => [[`${pair.a_category.toLowerCase()}|${normalize(pair.a_ingredient)}`, `${pair.b_category.toLowerCase()}|${normalize(pair.b_ingredient)}`].sort().join('::'), pair.count]));
+  const evidenceLookup = (a, b) => evidence.get([`${a.category.toLowerCase()}|${normalize(a.ingredient)}`, `${b.category.toLowerCase()}|${normalize(b.ingredient)}`].sort().join('::')) || 0;
+
+  // Freeform matching only ever considers liquid ingredient roles; "Top" maps to the "Mixer" role in the data.
+  const MATCH_CATEGORY_TO_ROLE = { spirit: 'spirit', citrus: 'citrus', juice: 'juice', syrup: 'syrup', liqueur: 'liqueur', top: 'mixer' };
+
+  // Aperitif & Liqueur options
+  const APERITIF_LIQUEUR_OPTIONS = ['Aperol', 'Campari', 'Sweet Vermouth', 'Dry Vermouth', 'Amaretto'];
 
   // Syrup categories
   const SYRUP_CATEGORIES = {
-    'Natural Sugar': ['Sugar syrup', 'Honey'],
+    'Natural Sugar': ['None', 'Sugar syrup', 'Honey'],
     'Fruit & Citrus Syrups': ['Grenadine'],
-    'Spice, Nut & Floral Syrups': ['Orgeat', 'Vanilla', 'Coconut', 'Falernum', 'Maple']
+    'Spice, Nut & Floral Syrups': ['Orgeat', 'Vanilla', 'Coconut', 'Falernum', 'Maple', 'Elderflower']
   };
 
   const GARNISH = {
-    soda: ["A wheel of whatever citrus you used, or skip it entirely", "A few berries dropped in, echoing the juice", "Fresh mint, if you want a lift"],
-    tonic: ["A twist of citrus peel", "A single juniper berry or two", "Cucumber ribbon for something cooler"],
-    sparkling: ["A raspberry or two dropped in", "A lemon twist along the rim", "Edible flower, if you're feeling it"],
-    foamer: ["A few drops of bitters across the foam", "Dehydrated citrus wheel", "Nothing at all — let the foam speak"],
-    none: ["A twist of citrus peel", "Single olive or cherry, spirit-dependent", "No garnish — keep it clean"]
+    all: ['On a cocktail stick', 'Citrus peel, expressed and discarded', 'Citrus peel, expressed and kept in the glass', 'Fruit slice on the rim', 'Fresh herb sprig', 'Fruit wheel floated on top', 'Edible flower', 'A dusting over the foam or top', 'No garnish']
   };
-
-  const GARNISH_ADJUSTED = ["A single wide citrus twist, expressed over the glass and dropped in", "A few dashes of aromatic bitters across the top", "No garnish — let the trimmed spirit lead"];
 
   let state = {
     spirits: [],
-    citrus: CITRUS[0],
-    juice: JUICE[0],
-    syrup: SYRUP[0],
+    citrus: CITRUS.find(item => item !== 'None') || 'None',
+    juices: [JUICE.find(item => item !== 'None') || 'None'],
+    syrup: SYRUP.find(item => item !== 'None') || 'None',
     top: TOP[0],
     unit: 'ml',
     garnishIndex: 0,
     version: 'classic',
+    openSpiritCategories: { 'Aperitif & Liqueur': true },
     openSyrupCategories: {} // Track which categories are open
   };
+
+  let fiveOptionsOpen = false;
+  let builderMode = 'guided';
+  const freeformRows = [
+    { category: 'Spirit', label: 'Spirit', hasSecond: true },
+    { category: 'Citrus', label: 'Citrus', hasSecond: false },
+    { category: 'Juice', label: 'Juice', hasSecond: true },
+    { category: 'Syrup', label: 'Syrup', hasSecond: true },
+    { category: 'Liqueur', label: 'Liqueur', hasSecond: true },
+    { category: 'Top', label: 'Top', hasSecond: false, noAmount: true }
+  ];
+  const allSpiritOptions = [...new Set([...SPIRITS, ...APERITIF_LIQUEUR_OPTIONS])].sort();
+  const freeformOptions = { Spirit: allSpiritOptions, Citrus: CITRUS.filter(item => item !== 'None'), Juice: JUICE.filter(item => item !== 'None'), Syrup: SYRUP.filter(item => item !== 'None'), Liqueur: ingredients.liqueur, Top: TOP.filter(item => item !== 'None'), Bitters: ingredients.bitters, Foamer: ingredients.foamer };
 
   // Initialize all categories as open
   Object.keys(SYRUP_CATEGORIES).forEach(cat => {
@@ -861,10 +1116,6 @@ const ingredients = extractIngredients();
 
   function richSpiritSelected() {
     return state.spirits.some(s => RICH_SPIRITS.includes(s));
-  }
-
-  function needsVersions() {
-    return richSpiritSelected() && (state.juice !== 'None' || state.syrup === 'Honey');
   }
 
   function chip(label, selected, disabled, onClick) {
@@ -878,7 +1129,10 @@ const ingredients = extractIngredients();
   function renderSpirits() {
     const box = document.getElementById('spiritChips');
     box.innerHTML = '';
-    SPIRITS.forEach(s => {
+    const standaloneSpirits = SPIRITS.filter(s => !APERITIF_LIQUEUR_OPTIONS.includes(s));
+    const hasAperitifLiqueur = state.spirits.some(s => APERITIF_LIQUEUR_OPTIONS.includes(s));
+
+    standaloneSpirits.forEach(s => {
       const selected = state.spirits.includes(s);
       const atCap = state.spirits.length >= 2 && !selected;
       box.appendChild(chip(s, selected, atCap, () => {
@@ -890,8 +1144,67 @@ const ingredients = extractIngredients();
         render();
       }));
     });
+
+    const catContainer = document.getElementById('spiritCategories');
+    if (catContainer) {
+      catContainer.innerHTML = '';
+
+      const categoryDiv = document.createElement('div');
+      categoryDiv.className = 'byoc-category-group';
+
+      const selectedInCategory = APERITIF_LIQUEUR_OPTIONS.filter(opt => state.spirits.includes(opt));
+      const isOpen = state.openSpiritCategories['Aperitif & Liqueur'];
+
+      const header = document.createElement('div');
+      header.className = 'byoc-category-header' + (isOpen ? ' open' : '');
+
+      const toggle = document.createElement('span');
+      toggle.className = 'byoc-category-header-toggle';
+
+      const label = document.createElement('span');
+      label.className = 'byoc-category-header-label';
+      label.textContent = 'Aperitif & Liqueur';
+
+      const indicator = document.createElement('span');
+      indicator.className = 'byoc-category-indicator';
+      if (selectedInCategory.length > 0 && !isOpen) {
+        indicator.textContent = '✓ ' + selectedInCategory.join(', ');
+      }
+
+      header.appendChild(toggle);
+      header.appendChild(label);
+      if (indicator.textContent) header.appendChild(indicator);
+
+      header.onclick = () => {
+        state.openSpiritCategories['Aperitif & Liqueur'] = !state.openSpiritCategories['Aperitif & Liqueur'];
+        renderSpirits();
+      };
+
+      categoryDiv.appendChild(header);
+
+      const chipsDiv = document.createElement('div');
+      chipsDiv.className = 'byoc-category-chips' + (!isOpen ? ' collapsed' : '');
+
+      APERITIF_LIQUEUR_OPTIONS.forEach(option => {
+        const selected = state.spirits.includes(option);
+        const disabled = !selected && (state.spirits.length >= 2 || hasAperitifLiqueur);
+        const chipEl = chip(option, selected, disabled, () => {
+          if (selected) {
+            state.spirits = state.spirits.filter(x => x !== option);
+          } else if (state.spirits.length < 2 && !hasAperitifLiqueur) {
+            state.spirits.push(option);
+          }
+          render();
+        });
+        chipsDiv.appendChild(chipEl);
+      });
+
+      categoryDiv.appendChild(chipsDiv);
+      catContainer.appendChild(categoryDiv);
+    }
+
     document.getElementById('spiritHelp').textContent =
-      state.spirits.length >= 2 ? 'Slot full — deselect one to swap it out.' : '';
+      state.spirits.length >= 2 ? 'Slot full — deselect one to swap it out.' : (hasAperitifLiqueur ? 'At most 1 Aperitif/Liqueur allowed — pair it with a base spirit.' : '');
   }
 
   function renderCitrus() {
@@ -899,29 +1212,32 @@ const ingredients = extractIngredients();
     box.innerHTML = '';
     CITRUS.forEach(c => {
       const selected = state.citrus === c;
-      const disabled = c === 'None' && state.juice === 'None';
+      const disabled = c === 'None' && state.juices.includes('None');
       box.appendChild(chip(c, selected, disabled, () => {
         state.citrus = c;
         render();
       }));
     });
     document.getElementById('citrusHelp').textContent =
-      state.juice === 'None' ? 'Juice is set to None, so citrus can\'t be too — a sour needs one.' : '';
+      state.juices.includes('None') ? 'Juice is set to None, so citrus can\'t be too — a sour needs one.' : '';
   }
 
   function renderJuice() {
     const box = document.getElementById('juiceChips');
     box.innerHTML = '';
     JUICE.forEach(j => {
-      const selected = state.juice === j;
-      const disabled = j === 'None' && state.citrus === 'None';
+      const selected = state.juices.includes(j);
+      const atCap = state.juices.length >= 2 && !selected;
+      const disabled = atCap || (j === 'None' && state.citrus === 'None');
       box.appendChild(chip(j, selected, disabled, () => {
-        state.juice = j;
+        if (selected) state.juices = state.juices.filter(item => item !== j);
+        else if (j === 'None') state.juices = ['None'];
+        else state.juices = [...state.juices.filter(item => item !== 'None'), j];
         render();
       }));
     });
     document.getElementById('juiceHelp').textContent =
-      state.citrus === 'None' ? 'Citrus is set to None, so juice can\'t be too — a sour needs one.' : '';
+      state.juices.length >= 2 ? 'Slot full — deselect one to swap it out.' : (state.citrus === 'None' ? 'Citrus is set to None, so juice can\'t be too — a sour needs one.' : '');
   }
 
   function renderSyrupCategories() {
@@ -996,29 +1312,27 @@ const ingredients = extractIngredients();
 
   function fmt(ml) {
     if (state.unit === 'ml') return Math.round(ml) + 'ml';
-    return (ml / 30).toFixed(1) + 'oz';
+    return mlToOz(ml).toFixed(2).replace(/\.?0+$/, '') + 'oz';
+  }
+
+  // 30ml = 1oz. oz rounds up to the nearest quarter-ounce (a usable bar measure); ml stays precise.
+  function mlToOz(ml) {
+    return Math.ceil((ml / 30) * 4) / 4;
+  }
+
+  function ozToMl(oz) {
+    return Math.round(oz * 30);
   }
 
   function computeSpec() {
-    const spiritTotal = state.version === 'adjusted' ? 40 : 50;
+    const spiritTotal = state.spirits.length === 1 ? 45 : 50;
     const perSpirit = spiritTotal / state.spirits.length;
-    const sourTotal = 20;
     const hasCitrus = state.citrus !== 'None';
-    const hasJuice = state.juice !== 'None';
-    let citrusAmt = 0, juiceAmt = 0;
-    if (hasCitrus && hasJuice) {
-      citrusAmt = sourTotal / 2;
-      juiceAmt = sourTotal / 2;
-    } else if (hasCitrus) {
-      citrusAmt = sourTotal;
-    } else if (hasJuice) {
-      juiceAmt = sourTotal;
-    }
-    return { spiritTotal, perSpirit, citrusAmt, juiceAmt, syrupAmt: 20 };
+    const juices = state.juices.filter(item => item !== 'None');
+    return { spiritTotal, perSpirit, citrusAmt: hasCitrus ? 15 : 0, juiceAmt: juices.length ? 20 / juices.length : 0, syrupAmt: 20 };
   }
 
   function glassFor() {
-    if (state.version === 'adjusted') return 'Coupe';
     if (state.top === 'Soda' || state.top === 'Tonic') return 'Highball';
     if (state.top === 'Sparkling wine') return 'Flute';
     if (state.top === 'Foamer') return 'Coupe';
@@ -1026,27 +1340,237 @@ const ingredients = extractIngredients();
     return 'Nick and Nora';
   }
 
-  function nameFor() {
-    const flavor = state.juice !== 'None' ? state.juice : state.citrus;
-    let suffix = 'Sour';
-    if (state.top === 'Soda') suffix = 'Fizz';
-    else if (state.top === 'Tonic') suffix = 'Tonic';
-    else if (state.top === 'Sparkling wine') suffix = 'Spritz';
-    else if (state.top === 'Cola') suffix = 'Cola';
-    else if (state.top === 'Ginger Beer') suffix = 'Buck';
-    return flavor + ' ' + suffix + (state.version === 'adjusted' ? ' (trimmed)' : '');
+  function iceFor() {
+    const glass = glassFor();
+    if (glass === 'Coupe' || glass === 'Nick and Nora' || glass === 'Flute') return 'None';
+    if (glass === 'Tiki') return 'Crushed';
+    return 'Cubed';
   }
 
-  function garnishKeyFor() {
-    if (state.top === 'Soda') return 'soda';
-    if (state.top === 'Tonic') return 'tonic';
-    if (state.top === 'Sparkling wine') return 'sparkling';
-    if (state.top === 'Foamer') return 'foamer';
-    return 'none';
+  function methodFor() {
+    const glass = glassFor();
+    if (glass === 'Rocks' && state.citrus === 'None' && state.juices.includes('None')) return 'Stir';
+    if (glass === 'Highball') return 'Shake & Strain';
+    return 'Shake & Strain';
   }
 
   function currentGarnishList() {
-    return state.version === 'adjusted' ? GARNISH_ADJUSTED : GARNISH[garnishKeyFor()] || GARNISH.none;
+    return GARNISH.all;
+  }
+
+  function freeformIngredientField(category, label, entry, placeholder) {
+    const listId = `freeform-list-${category}-${entry}`.toLowerCase();
+    const options = (freeformOptions[category] || []).map(option => `<option value="${option}">`).join('');
+    return `<input list="${listId}" data-category="${category}" data-entry="${entry}" placeholder="${placeholder || label}" aria-label="${label}"><datalist id="${listId}">${options}</datalist>`;
+  }
+
+  function freeformAmountField(category, entry) {
+    return `<div class="byoc-amount-field"><input type="number" min="0" step="0.5" data-amount="${category}" data-entry="${entry}" placeholder="" aria-label="${category} amount"><span class="byoc-amount-unit">${state.unit}</span></div>`;
+  }
+
+  function renderFreeformFields() {
+    const fields = document.getElementById('freeformFields');
+    const categoryCells = freeformRows.map(row => {
+      const primary = `<div class="byoc-freeform-field${row.noAmount ? ' byoc-freeform-field--single' : ''}">${freeformIngredientField(row.category, row.label, '1')}${row.noAmount ? '' : freeformAmountField(row.category, '1')}</div>`;
+      const second = row.hasSecond
+        ? `<div class="byoc-freeform-field byoc-freeform-field--second">${freeformIngredientField(row.category, row.label, '2', `+ second ${row.label.toLowerCase()}`)}${freeformAmountField(row.category, '2')}</div>`
+        : '';
+      return `<div class="byoc-freeform-category">${primary}${second}</div>`;
+    });
+    // Bitters and Foamer are recipe-completion fields only — a discrete choice, never a measured amount, and never part of matching.
+    const bittersCell = `<div class="byoc-freeform-category"><div class="byoc-freeform-field byoc-freeform-field--choice">${freeformIngredientField('Bitters', 'Bitters', '1')}<select data-dash aria-label="Bitters dash"><option value="Single dash">Single dash</option><option value="Double dash">Double dash</option></select></div></div>`;
+    const foamerCell = `<div class="byoc-freeform-category"><div class="byoc-freeform-field byoc-freeform-field--choice">${freeformIngredientField('Foamer', 'Foamer', '1')}<select data-foamer-included aria-label="Foamer included"><option value="Not included">Not included</option><option value="Included">Included</option></select></div></div>`;
+
+    fields.innerHTML = categoryCells.join('') + bittersCell + foamerCell;
+    fields.querySelectorAll('input, select').forEach(el => el.addEventListener('input', renderFreeformResult));
+    document.querySelectorAll('#freeformGlass, #freeformIce, #freeformMethod').forEach(input => input.addEventListener('change', renderFreeformResult));
+  }
+
+  function freeformBuild() {
+    // Only liquid ingredient/amount fields feed matching — Bitters and Foamer never do.
+    return [...document.querySelectorAll('#freeformFields input[data-category]')]
+      .filter(input => input.dataset.category !== 'Bitters' && input.dataset.category !== 'Foamer')
+      .map(input => {
+        const category = input.dataset.category;
+        const entry = input.dataset.entry;
+        const amountInput = document.querySelector(`#freeformFields input[data-amount="${category}"][data-entry="${entry}"]`);
+        const rawAmount = amountInput ? parseFloat(amountInput.value) : NaN;
+        const amountMl = Number.isNaN(rawAmount) ? null : (state.unit === 'oz' ? ozToMl(rawAmount) : rawAmount);
+        return { category, ingredient: input.value.trim(), amountMl };
+      }).filter(item => item.ingredient);
+  }
+
+  function freeformSpecLines() {
+    const lines = [];
+    document.querySelectorAll('#freeformFields input[data-category]').forEach(input => {
+      const name = input.value.trim();
+      if (!name) return;
+      if (input.dataset.category === 'Bitters') {
+        const dash = document.querySelector('#freeformFields select[data-dash]').value;
+        lines.push(`${name} — ${dash}`);
+        return;
+      }
+      if (input.dataset.category === 'Foamer') {
+        if (document.querySelector('#freeformFields select[data-foamer-included]').value === 'Included') lines.push(name);
+        return;
+      }
+      const amountInput = document.querySelector(`#freeformFields input[data-amount="${input.dataset.category}"][data-entry="${input.dataset.entry}"]`);
+      const amount = amountInput ? amountInput.value : '';
+      lines.push(`${name}${amount ? ` ${amount}${state.unit}` : ''}`);
+    });
+    return lines;
+  }
+
+  function renderFreeformResult() {
+    const build = freeformBuild();
+    const anyFieldFilled = [...document.querySelectorAll('#freeformFields input[data-category]')].some(input => input.value.trim());
+    const result = document.getElementById('freeformResult');
+    if (!anyFieldFilled) { result.innerHTML = '<p>Enter ingredients to see the closest matches.</p>'; return; }
+    const suggestions = suggestionNames(build);
+    const spec = freeformSpecLines().join('\n');
+    result.innerHTML = `<h3>${suggestions.length ? suggestions[0] : 'No close match yet'}</h3>${suggestions.slice(1).map(name => `<p>${name}</p>`).join('')}<p class="byoc-freeform-spec">${spec}\nGlass: ${document.getElementById('freeformGlass').value}\nIce: ${document.getElementById('freeformIce').value}\nMethod: ${document.getElementById('freeformMethod').value}</p>`;
+  }
+
+  function setBuilderMode(mode) {
+    builderMode = mode;
+    document.getElementById('guidedPanel').style.display = mode === 'guided' ? 'block' : 'none';
+    document.getElementById('freeformPanel').classList.toggle('open', mode === 'freeform');
+    document.getElementById('byocPage').classList.toggle('freeform-active', mode === 'freeform');
+    document.getElementById('guidedModeBtn').className = mode === 'guided' ? 'active' : '';
+    document.getElementById('freeformModeBtn').className = mode === 'freeform' ? 'active' : '';
+    if (mode === 'freeform') renderFreeformResult();
+  }
+
+  function outcomeBuild() {
+    return [
+      ...state.spirits.map(ingredient => ({ category: 'Spirit', ingredient })),
+      { category: 'Citrus', ingredient: state.citrus },
+      ...state.juices.map(ingredient => ({ category: 'Juice', ingredient })),
+      { category: 'Syrup', ingredient: state.syrup }
+    ];
+  }
+
+  function computeFlavorLean() {
+    const selected = [state.syrup, state.citrus, ...state.juices].filter(item => item && item !== 'None');
+    const missing = LEAN_OPTIONS.filter(item => typeof LEAN_VALUES[item] !== 'number');
+    const total = missing.length ? 0 : selected.reduce((sum, item) => sum + LEAN_VALUES[item], 0);
+    return { total, missing, hasValues: selected.length > 0 && missing.length === 0 };
+  }
+
+  function renderFlavorLean() {
+    const lean = computeFlavorLean();
+    const knownValues = Object.values(LEAN_VALUES);
+    const maximumLean = knownValues.length ? Math.max(...knownValues.map(value => Math.abs(value))) : 0;
+    const magnitude = maximumLean ? Math.abs(lean.total) / maximumLean : 0;
+    const stop = magnitude === 0 ? 0 : magnitude <= 0.25 ? 0.5 : magnitude <= 0.5 ? 0.75 : magnitude <= 0.75 ? 0.8 : 1;
+    const position = !lean.hasValues || lean.total === 0 ? 50 : lean.total > 0 ? 50 + (50 * stop) : 50 - (50 * stop);
+    document.getElementById('flavorSlider').style.setProperty('--slider-position', `${position}%`);
+    document.getElementById('sliderPending').textContent = lean.missing.length
+      ? `Flavor lean values pending for: ${lean.missing.join(', ')}.`
+      : '';
+  }
+
+  function renderSpec(build) {
+    const spec = computeSpec();
+    const lines = [];
+    build.filter(item => item.category === 'Spirit').forEach(item => {
+      lines.push(`${item.ingredient} <span class="amt">${fmt(spec.perSpirit)}</span>`);
+    });
+    const citrus = build.find(item => item.category === 'Citrus' && item.ingredient !== 'None');
+    const juices = build.filter(item => item.category === 'Juice' && item.ingredient !== 'None');
+    if (citrus) {
+      lines.push(`${citrus.ingredient} juice <span class="amt">${fmt(spec.citrusAmt)}</span>`);
+    }
+    juices.forEach(juice => {
+      lines.push(`${juice.ingredient} juice <span class="amt">${fmt(spec.juiceAmt)}</span>`);
+    });
+    const syrup = build.find(item => item.category === 'Syrup' && item.ingredient !== 'None');
+    if (syrup) {
+      lines.push(`${syrup.ingredient} <span class="amt">${fmt(spec.syrupAmt)}</span>`);
+    }
+    if (state.top !== 'None') lines.push(`Top ${state.top.toLowerCase()}`);
+    document.getElementById('specList').innerHTML = lines.join('<br>');
+  }
+
+  function renderChanges(changes) {
+    const list = document.getElementById('changeList');
+    list.classList.toggle('empty', changes.length === 0);
+    list.innerHTML = changes.length
+      ? changes.map(change => `<div>${change.to}, swapped in for ${change.from}</div>`).join('')
+      : '<div>No changes suggested</div>';
+  }
+
+  function outcomeScores(build) {
+    const filled = build.filter(item => item.ingredient && item.ingredient !== 'None');
+    return filled.map((ingredient, index) => {
+      const others = filled.filter((_, otherIndex) => otherIndex !== index);
+      return { ingredient, average: others.length ? others.reduce((sum, other) => sum + evidenceLookup(ingredient, other), 0) / others.length : 0 };
+    });
+  }
+
+  function confidenceLabel(score) {
+    return score >= 4 ? 'Well-evidenced' : score > 0 ? 'Rare pairing' : 'No data yet';
+  }
+
+  function nudgeBuild(originalBuild, alternatives) {
+    const build = [...originalBuild];
+    const changes = [];
+    while (changes.length < 2) {
+      const scores = outcomeScores(build).sort((a, b) => a.average - b.average);
+      const weakest = scores.length > 1 && scores[0].average < scores.slice(1).map(score => score.average).sort((a, b) => a - b)[Math.floor((scores.length - 1) / 2)] ? scores[0] : null;
+      if (!weakest) break;
+      const index = build.findIndex(item => item === weakest.ingredient);
+      const candidates = (alternatives[weakest.ingredient.category] || []).filter(candidate => candidate !== 'None' && candidate !== weakest.ingredient.ingredient).map(candidate => {
+        const replacement = { category: weakest.ingredient.category, ingredient: candidate };
+        const rest = build.filter((_, buildIndex) => buildIndex !== index);
+        return { candidate, average: rest.length ? rest.reduce((sum, other) => sum + evidenceLookup(replacement, other), 0) / rest.length : 0 };
+      }).sort((a, b) => b.average - a.average);
+      if (!candidates.length || candidates[0].average <= weakest.average) break;
+      build[index] = { category: weakest.ingredient.category, ingredient: candidates[0].candidate };
+      changes.push({ from: weakest.ingredient.ingredient, to: candidates[0].candidate });
+    }
+    return { build, changes };
+  }
+
+  function suggestionNames(build) {
+    // Only liquid ingredients + their amounts count; ice, method, glassware, garnish, and unit are never part of the match.
+    const liquidRoles = Object.values(MATCH_CATEGORY_TO_ROLE);
+    return suggestionCocktails.filter(cocktail => cocktail.approved_for_suggestion === true).map(cocktail => {
+      const liquidIngredients = cocktail.ingredients.filter(ingredient => liquidRoles.some(role => ingredient.role.toLowerCase().includes(role)));
+      let score = 0;
+      build.forEach(item => {
+        if (!item.ingredient || item.ingredient === 'None') return;
+        const role = MATCH_CATEGORY_TO_ROLE[item.category.toLowerCase()];
+        if (!role) return;
+        const candidate = liquidIngredients.find(ingredient => ingredient.role.toLowerCase().includes(role) && normalize(ingredient.name) === normalize(item.ingredient));
+        if (!candidate) return;
+        score += 1;
+        if (item.amountMl && candidate.amount) {
+          const diff = Math.abs(item.amountMl - candidate.amount) / candidate.amount;
+          score += Math.max(0, 1 - diff);
+        }
+      });
+      return { name: cocktail.name, score };
+    }).sort((a, b) => b.score - a.score || a.name.localeCompare(b.name)).slice(0, 5).map(item => item.name);
+  }
+
+  function renderOutcome() {
+    const build = outcomeBuild();
+    const alternatives = {
+      Spirit: SPIRITS,
+      Citrus: CITRUS,
+      Juice: JUICE,
+      Syrup: SYRUP,
+      Liqueur: []
+    };
+    const nudge = nudgeBuild(build, alternatives);
+
+    const suggestions = suggestionNames(nudge.build);
+    const list = document.getElementById('fiveOptionsList');
+    list.innerHTML = suggestions.length
+      ? suggestions.map(suggestion => `<span>${suggestion}</span>`).join('')
+      : '<span>No suggestions are approved yet.</span>';
+    list.classList.toggle('open', fiveOptionsOpen);
   }
 
   function cycleGarnish(dir) {
@@ -1055,52 +1579,34 @@ const ingredients = extractIngredients();
     document.getElementById('garnishText').textContent = list[state.garnishIndex];
   }
 
-  function setVersion(v) {
-    state.version = v;
-    document.getElementById('classicBtn').className = v === 'classic' ? 'active' : '';
-    document.getElementById('adjustedBtn').className = v === 'adjusted' ? 'active' : '';
-    state.garnishIndex = 0;
-    renderResult(false);
-  }
-
   function renderResult(resetVersion) {
-    if (resetVersion !== false) {
-      state.version = 'classic';
-      document.getElementById('classicBtn').className = 'active';
-      document.getElementById('adjustedBtn').className = '';
-    }
-
-    const showToggle = needsVersions();
-    document.getElementById('versionToggle').style.display = showToggle ? 'block' : 'none';
-    document.getElementById('versionHelp').textContent = showToggle
-      ? 'Choose your preferred style — Classic or Adjusted.'
-      : '';
+    renderOutcome();
+    renderFlavorLean();
 
     if (!state.spirits.length) {
-      document.getElementById('cocktailName').textContent = 'Select a spirit to begin';
       document.getElementById('cocktailBuilt').textContent = '';
       document.getElementById('specList').innerHTML = '';
-      document.getElementById('glassLine').textContent = 'Glass: —';
+      renderChanges([]);
       document.getElementById('garnishText').textContent = '';
       return;
     }
 
-    const spec = computeSpec();
-    document.getElementById('cocktailName').textContent = nameFor();
-
-    const builtFrom = [...state.spirits, state.citrus !== 'None' ? state.citrus : null, state.juice !== 'None' ? state.juice : null]
+    const nudge = nudgeBuild(outcomeBuild(), {
+      Spirit: SPIRITS,
+      Citrus: CITRUS,
+      Juice: JUICE,
+      Syrup: SYRUP,
+      Liqueur: []
+    });
+    const originalBuild = outcomeBuild();
+    const originalJuices = originalBuild.filter(item => item.category === 'Juice' && item.ingredient !== 'None');
+    const originalCitrus = originalBuild.find(item => item.category === 'Citrus' && item.ingredient !== 'None');
+    const builtFrom = [...originalBuild.filter(item => item.category === 'Spirit').map(item => item.ingredient), originalCitrus?.ingredient, ...originalJuices.map(item => item.ingredient)]
       .filter(Boolean).join(' · ');
     document.getElementById('cocktailBuilt').textContent = 'Built from: ' + builtFrom;
 
-    const lines = [];
-    state.spirits.forEach(s => lines.push(`${s} <span class="amt">${fmt(spec.perSpirit)}</span>`));
-    if (spec.citrusAmt > 0) lines.push(`${state.citrus} juice <span class="amt">${fmt(spec.citrusAmt)}</span>`);
-    if (spec.juiceAmt > 0) lines.push(`${state.juice} juice <span class="amt">${fmt(spec.juiceAmt)}</span>`);
-    lines.push(`${state.syrup} <span class="amt">${fmt(spec.syrupAmt)}</span>`);
-    if (state.top !== 'None') lines.push(`Top ${state.top.toLowerCase()}`);
-    document.getElementById('specList').innerHTML = lines.join('<br>');
-
-    document.getElementById('glassLine').textContent = 'Glass: ' + glassFor();
+    renderSpec(originalBuild);
+    renderChanges(nudge.changes);
 
     state.garnishIndex = 0;
     document.getElementById('garnishText').textContent = currentGarnishList()[0];
@@ -1116,19 +1622,34 @@ const ingredients = extractIngredients();
   }
 
   // Event listeners
-  document.getElementById('classicBtn').onclick = () => setVersion('classic');
-  document.getElementById('adjustedBtn').onclick = () => setVersion('adjusted');
+  document.getElementById('fiveOptionsToggle').onclick = () => {
+    fiveOptionsOpen = !fiveOptionsOpen;
+    document.getElementById('fiveOptionsList').classList.toggle('open', fiveOptionsOpen);
+  };
+  document.getElementById('guidedModeBtn').onclick = () => setBuilderMode('guided');
+  document.getElementById('freeformModeBtn').onclick = () => setBuilderMode('freeform');
 
   document.getElementById('mlBtn').onclick = () => setUnit('ml');
   document.getElementById('ozBtn').onclick = () => setUnit('oz');
 
   function setUnit(u) {
+    const previousUnit = state.unit;
+    if (u !== previousUnit) {
+      document.querySelectorAll('#freeformFields input[data-amount]').forEach(input => {
+        const raw = parseFloat(input.value);
+        if (Number.isNaN(raw)) return;
+        input.value = previousUnit === 'ml' ? mlToOz(raw) : ozToMl(raw);
+      });
+    }
     state.unit = u;
     document.getElementById('mlBtn').className = u === 'ml' ? 'active' : '';
     document.getElementById('ozBtn').className = u === 'oz' ? 'active' : '';
+    document.querySelectorAll('.byoc-amount-unit').forEach(label => { label.textContent = u; });
     renderResult(false);
+    renderFreeformResult();
   }
 
   // Initial render
+  renderFreeformFields();
   render();
 </script>
