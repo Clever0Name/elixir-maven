@@ -946,18 +946,18 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
       line-height: 1.5;
     }
 
-    .byoc-five-options {
+    .byoc-similar-cocktails {
       display: none;
       gap: 8px;
       flex-wrap: wrap;
       margin-top: 12px;
     }
 
-    .byoc-five-options.open {
+    .byoc-similar-cocktails.open {
       display: flex;
     }
 
-    .byoc-five-options span {
+    .byoc-similar-cocktails span {
       border: 1px solid var(--border);
       background: var(--panel2);
       color: var(--cream);
@@ -1129,10 +1129,10 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
             <div class="byoc-outcome-box" id="outcomeBox">
               <div class="byoc-outcome-heading">
                 <span>Undecided name change</span>
-                <button class="byoc-similar-link" id="fiveOptionsToggle" type="button">Show 5 similar cocktails</button>
+                <button class="byoc-similar-link" id="similarCocktailsToggle" type="button">Show Similar Cocktails</button>
               </div>
               <div class="byoc-change-list" id="changeList"></div>
-              <div class="byoc-five-options" id="fiveOptionsList"></div>
+              <div class="byoc-similar-cocktails" id="similarCocktailsList"></div>
             </div>
           </div>
         </div>
@@ -1188,7 +1188,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
     openSyrupCategories: {} // Track which categories are open
   };
 
-  let fiveOptionsOpen = false;
+  let similarCocktailsOpen = false;
   let builderMode = 'guided';
   const freeformRows = [
     { category: 'Spirit', label: 'Spirit', hasSecond: true },
@@ -1588,7 +1588,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
     const anyFieldFilled = [...document.querySelectorAll('#freeformFields input[data-category]')].some(input => input.value.trim());
     const result = document.getElementById('freeformResult');
     if (!anyFieldFilled) { result.innerHTML = '<p>Enter ingredients to see the closest matches.</p>'; return; }
-    const suggestions = suggestionNames(build);
+    const suggestions = suggestionNames(build, document.getElementById('freeformMethod').value, document.getElementById('freeformGlass').value);
     const spec = freeformSpecLines().join('\n');
     result.innerHTML = `<h3>${suggestions.length ? suggestions[0] : 'No close match yet'}</h3>${suggestions.slice(1).map(name => `<p>${name}</p>`).join('')}<p class="byoc-freeform-spec">${spec}\nGlass: ${document.getElementById('freeformGlass').value}\nIce: ${document.getElementById('freeformIce').value}\nMethod: ${document.getElementById('freeformMethod').value}</p>`;
   }
@@ -1604,11 +1604,13 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
   }
 
   function outcomeBuild() {
+    const spec = computeSpec();
     return [
-      ...state.spirits.map(ingredient => ({ category: 'Spirit', ingredient })),
-      { category: 'Citrus', ingredient: state.citrus },
-      ...state.juices.map(ingredient => ({ category: 'Juice', ingredient })),
-      { category: 'Syrup', ingredient: state.syrup }
+      ...state.spirits.map(ingredient => ({ category: 'Spirit', ingredient, amountMl: spec.perSpirit })),
+      { category: 'Citrus', ingredient: state.citrus, amountMl: spec.citrusAmt },
+      ...state.juices.map(ingredient => ({ category: 'Juice', ingredient, amountMl: spec.juiceAmt })),
+      { category: 'Syrup', ingredient: state.syrup, amountMl: spec.syrupAmt },
+      ...(state.top !== 'None' ? [{ category: 'Top', ingredient: state.top, amountMl: null }] : [])
     ];
   }
 
@@ -1694,11 +1696,11 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
     return { build, changes };
   }
 
-  function suggestionNames(build) {
-    // Only liquid ingredients + their amounts count; ice, method, glassware, garnish, and unit are never part of the match.
+  function suggestionNames(build, method, glassware) {
     const liquidRoles = [...Object.values(MATCH_CATEGORY_TO_ROLE), 'aperitif'];
     const matchWeights = { Spirit: 3, Liqueur: 2, Citrus: 1, Juice: 1, Syrup: 1, Top: 1 };
     const aperitifNames = APERITIF_LIQUEUR_OPTIONS.map(normalize);
+    const selected = build.filter(item => item.ingredient && item.ingredient !== 'None');
     const matchesIngredient = (item, candidate) => {
       if (normalize(candidate.name) !== normalize(item.ingredient)) return false;
       const candidateRole = candidate.role.toLowerCase();
@@ -1708,22 +1710,44 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
       const role = MATCH_CATEGORY_TO_ROLE[item.category.toLowerCase()];
       return role ? candidateRole.includes(role) : false;
     };
-    return suggestionCocktails.filter(cocktail => cocktail.approved_for_suggestion === true).map(cocktail => {
+
+    const candidates = suggestionCocktails.filter(cocktail => cocktail.approved_for_suggestion === true).map(cocktail => {
       const liquidIngredients = cocktail.ingredients.filter(ingredient => liquidRoles.some(role => ingredient.role.toLowerCase().includes(role)));
-      let score = 0;
-      build.forEach(item => {
-        if (!item.ingredient || item.ingredient === 'None') return;
-        const candidate = liquidIngredients.find(ingredient => matchesIngredient(item, ingredient));
-        if (!candidate) return;
-        const weight = matchWeights[item.category] || 1;
-        score += weight;
-        if (item.amountMl && candidate.amount) {
-          const diff = Math.abs(item.amountMl - candidate.amount) / candidate.amount;
-          score += weight * Math.max(0, 1 - diff);
-        }
-      });
-      return { name: cocktail.name, score };
-    }).sort((a, b) => b.score - a.score || a.name.localeCompare(b.name)).filter((item, index, matches) => index === 0 || item.score >= Math.max(2, matches[0].score * 0.45)).slice(0, 5).map(item => item.name);
+      const matches = selected.map(item => ({ item, candidate: liquidIngredients.find(candidate => matchesIngredient(item, candidate)) })).filter(match => match.candidate);
+      const overlapScore = matches.reduce((score, match) => score + (matchWeights[match.item.category] || 1), 0);
+      const selectedTotal = selected.reduce((total, item) => total + (item.amountMl || 0), 0);
+      const cocktailTotal = liquidIngredients.reduce((total, ingredient) => total + (ingredient.amount || 0), 0);
+      const ratioScore = matches.reduce((score, match) => {
+        if (!match.item.amountMl || !match.candidate.amount || !selectedTotal || !cocktailTotal) return score;
+        const buildRatio = match.item.amountMl / selectedTotal;
+        const cocktailRatio = match.candidate.amount / cocktailTotal;
+        return score + Math.max(0, 1 - Math.abs(buildRatio - cocktailRatio));
+      }, 0);
+      return { cocktail, overlapScore, ratioScore };
+    });
+
+    // Tier 1: first shortlist using the established ingredient-overlap score, then refine only that shortlist by ratios.
+    const overlapCandidates = candidates.filter(candidate => candidate.overlapScore > 0).sort((a, b) => b.overlapScore - a.overlapScore || a.cocktail.name.localeCompare(b.cocktail.name));
+    const shortlist = overlapCandidates.filter((candidate, index) => index === 0 || candidate.overlapScore >= Math.max(2, overlapCandidates[0].overlapScore * 0.45));
+    const closest = [...shortlist].sort((a, b) => b.ratioScore - a.ratioScore || b.overlapScore - a.overlapScore || a.cocktail.name.localeCompare(b.cocktail.name))[0];
+    const selectedNames = new Set();
+    if (closest) selectedNames.add(closest.cocktail.name);
+
+    // Tier 2: infer the build's flavor family from its strongest approved overlap candidate, then choose a different cocktail with that taste tag.
+    const flavorFamily = closest?.cocktail.taste;
+    const sameFlavor = flavorFamily
+      ? candidates.filter(candidate => candidate.cocktail.taste === flavorFamily && !selectedNames.has(candidate.cocktail.name))
+        .sort((a, b) => b.overlapScore - a.overlapScore || a.cocktail.name.localeCompare(b.cocktail.name))[0]
+      : undefined;
+    if (sameFlavor) selectedNames.add(sameFlavor.cocktail.name);
+
+    // Tier 3: match the generated or user-selected structural shape exactly, after reserving higher-tier results.
+    const sameArchetype = method && glassware
+      ? candidates.filter(candidate => candidate.cocktail.method === method && candidate.cocktail.glassware === glassware && !selectedNames.has(candidate.cocktail.name))
+        .sort((a, b) => b.overlapScore - a.overlapScore || a.cocktail.name.localeCompare(b.cocktail.name))[0]
+      : undefined;
+
+    return [closest, sameFlavor, sameArchetype].filter(Boolean).map(candidate => candidate.cocktail.name);
   }
 
   function renderOutcome() {
@@ -1737,12 +1761,12 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
     };
     const nudge = nudgeBuild(build, alternatives);
 
-    const suggestions = suggestionNames(nudge.build);
-    const list = document.getElementById('fiveOptionsList');
+    const suggestions = suggestionNames(nudge.build, methodFor(), glassFor());
+    const list = document.getElementById('similarCocktailsList');
     list.innerHTML = suggestions.length
       ? suggestions.map(suggestion => `<span>${suggestion}</span>`).join('')
       : '<span>No suggestions are approved yet.</span>';
-    list.classList.toggle('open', fiveOptionsOpen);
+    list.classList.toggle('open', similarCocktailsOpen);
   }
 
   function cycleGarnish(dir) {
@@ -1794,9 +1818,9 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
   }
 
   // Event listeners
-  document.getElementById('fiveOptionsToggle').onclick = () => {
-    fiveOptionsOpen = !fiveOptionsOpen;
-    document.getElementById('fiveOptionsList').classList.toggle('open', fiveOptionsOpen);
+  document.getElementById('similarCocktailsToggle').onclick = () => {
+    similarCocktailsOpen = !similarCocktailsOpen;
+    document.getElementById('similarCocktailsList').classList.toggle('open', similarCocktailsOpen);
   };
   document.getElementById('guidedModeBtn').onclick = () => setBuilderMode('guided');
   document.getElementById('freeformModeBtn').onclick = () => setBuilderMode('freeform');
