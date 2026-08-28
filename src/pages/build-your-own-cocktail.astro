@@ -426,7 +426,8 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
     }
 
     .byoc-amount-field input {
-      width: 100%;
+      flex: 1 1 0;
+      width: 0;
     }
 
     .byoc-amount-unit {
@@ -449,6 +450,11 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
 
     .byoc-freeform-input-wrap {
       position: relative;
+      min-width: 0;
+    }
+
+    .byoc-freeform-input-wrap .byoc-freeform-input {
+      width: 100%;
     }
 
     .byoc-suggestion-list {
@@ -467,6 +473,10 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
       border-radius: 6px;
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
       padding: 4px;
+    }
+
+    .byoc-suggestion-list[hidden] {
+      display: none;
     }
 
     .byoc-suggestion-item {
