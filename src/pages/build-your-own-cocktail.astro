@@ -1329,6 +1329,15 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
     return Math.round(oz * 30);
   }
 
+  // Toggle-driven auto-conversion: mathematically accurate, rounded to 1 decimal — never snapped to the 0.5oz manual-entry grid.
+  function mlToOzExact(ml) {
+    return Math.round((ml / 30) * 10) / 10;
+  }
+
+  function ozToMlExact(oz) {
+    return Math.round(oz * 30 * 10) / 10;
+  }
+
   function computeSpec() {
     const spiritTotal = state.spirits.length === 1 ? 45 : 50;
     const perSpirit = spiritTotal / state.spirits.length;
@@ -1643,7 +1652,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
       document.querySelectorAll('#freeformFields input[data-amount]').forEach(input => {
         const raw = parseFloat(input.value);
         if (Number.isNaN(raw)) return;
-        input.value = previousUnit === 'ml' ? mlToOz(raw) : ozToMl(raw);
+        input.value = previousUnit === 'ml' ? mlToOzExact(raw) : ozToMlExact(raw);
       });
     }
     state.unit = u;
