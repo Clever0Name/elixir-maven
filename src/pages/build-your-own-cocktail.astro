@@ -1129,7 +1129,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
             <div class="byoc-outcome-box" id="outcomeBox">
               <div class="byoc-outcome-heading">
                 <span>Undecided name change</span>
-                <button class="byoc-similar-link" id="fiveOptionsToggle" type="button">Show 5 Similar Classics</button>
+                <button class="byoc-similar-link" id="fiveOptionsToggle" type="button">Show 5 similar cocktails</button>
               </div>
               <div class="byoc-change-list" id="changeList"></div>
               <div class="byoc-five-options" id="fiveOptionsList"></div>
@@ -1169,7 +1169,10 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
   };
 
   const GARNISH = {
-    all: ['On a cocktail stick', 'Citrus peel, expressed and discarded', 'Citrus peel, expressed and kept in the glass', 'Fruit slice on the rim', 'Fresh herb sprig', 'Fruit wheel floated on top', 'Edible flower', 'A dusting over the foam or top', 'No garnish']
+    citrus: ['Citrus peel, expressed and discarded', 'Citrus peel, expressed and kept in the glass'],
+    fruit: ['Fruit slice on the rim'],
+    top: ['Fruit wheel floated on top', 'A dusting over the foam or top'],
+    none: ['No garnish']
   };
 
   let state = {
@@ -1456,7 +1459,14 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
   }
 
   function currentGarnishList() {
-    return GARNISH.all;
+    const list = [];
+    const hasCitrus = state.citrus !== 'None' || state.juices.some(juice => juice !== 'None');
+    const hasTop = state.top !== 'None';
+    if (hasCitrus || !hasTop) list.push(...GARNISH.citrus);
+    if (hasCitrus) list.push(...GARNISH.fruit);
+    if (hasTop) list.push(...GARNISH.top);
+    list.push(...GARNISH.none);
+    return list;
   }
 
   function freeformIngredientField(category, label, entry, placeholder) {
@@ -1686,24 +1696,34 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
 
   function suggestionNames(build) {
     // Only liquid ingredients + their amounts count; ice, method, glassware, garnish, and unit are never part of the match.
-    const liquidRoles = Object.values(MATCH_CATEGORY_TO_ROLE);
+    const liquidRoles = [...Object.values(MATCH_CATEGORY_TO_ROLE), 'aperitif'];
+    const matchWeights = { Spirit: 3, Liqueur: 2, Citrus: 1, Juice: 1, Syrup: 1, Top: 1 };
+    const aperitifNames = APERITIF_LIQUEUR_OPTIONS.map(normalize);
+    const matchesIngredient = (item, candidate) => {
+      if (normalize(candidate.name) !== normalize(item.ingredient)) return false;
+      const candidateRole = candidate.role.toLowerCase();
+      if (item.category === 'Spirit' && aperitifNames.includes(normalize(item.ingredient))) {
+        return candidateRole.includes('aperitif') || candidateRole.includes('liqueur');
+      }
+      const role = MATCH_CATEGORY_TO_ROLE[item.category.toLowerCase()];
+      return role ? candidateRole.includes(role) : false;
+    };
     return suggestionCocktails.filter(cocktail => cocktail.approved_for_suggestion === true).map(cocktail => {
       const liquidIngredients = cocktail.ingredients.filter(ingredient => liquidRoles.some(role => ingredient.role.toLowerCase().includes(role)));
       let score = 0;
       build.forEach(item => {
         if (!item.ingredient || item.ingredient === 'None') return;
-        const role = MATCH_CATEGORY_TO_ROLE[item.category.toLowerCase()];
-        if (!role) return;
-        const candidate = liquidIngredients.find(ingredient => ingredient.role.toLowerCase().includes(role) && normalize(ingredient.name) === normalize(item.ingredient));
+        const candidate = liquidIngredients.find(ingredient => matchesIngredient(item, ingredient));
         if (!candidate) return;
-        score += 1;
+        const weight = matchWeights[item.category] || 1;
+        score += weight;
         if (item.amountMl && candidate.amount) {
           const diff = Math.abs(item.amountMl - candidate.amount) / candidate.amount;
-          score += Math.max(0, 1 - diff);
+          score += weight * Math.max(0, 1 - diff);
         }
       });
       return { name: cocktail.name, score };
-    }).sort((a, b) => b.score - a.score || a.name.localeCompare(b.name)).slice(0, 5).map(item => item.name);
+    }).sort((a, b) => b.score - a.score || a.name.localeCompare(b.name)).filter((item, index, matches) => index === 0 || item.score >= Math.max(2, matches[0].score * 0.45)).slice(0, 5).map(item => item.name);
   }
 
   function renderOutcome() {
