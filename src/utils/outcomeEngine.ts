@@ -185,7 +185,7 @@ export function rankSuggestions(
 ): SuggestionCocktail[] {
   const selected = filledBuild(build);
   return cocktails
-    .filter((cocktail) => cocktail.approved_for_suggestion === true)
+    .filter((cocktail) => cocktail.published === true || cocktail.approved_for_suggestion === true)
     .map((cocktail) => {
       const ingredients = cocktailIngredients(cocktail);
       const exactMatches = selected.reduce((matches, item) => matches + (ingredients.some((candidate) =>

@@ -119,12 +119,19 @@ const extractIngredients = () => {
 const ingredients = extractIngredients();
 if (!ingredients.syrup.includes('Elderflower')) ingredients.syrup.push('Elderflower');
 if (!ingredients.foamer.includes('Egg White')) ingredients.foamer.unshift('Egg White');
+if (!ingredients.juice.includes('Apple')) ingredients.juice.push('Apple');
+if (!ingredients.mixer.includes('Tonic Water')) ingredients.mixer.push('Tonic Water');
+if (!ingredients.mixer.includes('Prosecco')) ingredients.mixer.push('Prosecco');
 const evidencePairs = cooccurrenceData.pairs;
-const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
-  ...cocktail,
-  published: (cocktail as { published?: boolean }).published ?? true,
-  approved_for_suggestion: (cocktail as { approved_for_suggestion?: boolean }).approved_for_suggestion ?? false,
-}));
+const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
+  const published = (cocktail as { published?: boolean }).published ?? true;
+  const approvedForSuggestion = (cocktail as { approved_for_suggestion?: boolean }).approved_for_suggestion ?? false;
+  return {
+    ...cocktail,
+    published,
+    approved_for_suggestion: published || approvedForSuggestion,
+  };
+});
 ---
 
 <Layout
