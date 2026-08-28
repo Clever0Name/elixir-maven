@@ -218,6 +218,12 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.1em;
   margin-bottom: 0.9rem;
 }
+.card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.8rem;
+}
 .card-badge {
   display: inline-block;
   padding: 0.2rem 0.6rem;
@@ -228,7 +234,6 @@ a { color: inherit; text-decoration: none; }
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 0.8rem;
 }
 .card-meta {
   display: flex;
@@ -784,7 +789,7 @@ a { color: inherit; text-decoration: none; }
   gap: 0.55rem;
 }
 .control-label {
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--text-muted);
@@ -1038,7 +1043,7 @@ a { color: inherit; text-decoration: none; }
 
 .taste-filter-row { margin-top: 0.5rem; }
 .taste-row-label {
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);

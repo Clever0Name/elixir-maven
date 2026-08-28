@@ -45,12 +45,15 @@ const extractIngredients = () => {
   };
 
   const juiceNormalization: Record<string, string> = {
+    'Apple Juice': 'Apple',
+    'Blood Orange Juice': 'Blood Orange',
     'Cranberry Juice': 'Cranberry',
     'Lemon Juice': 'Lemon',
     'Lime Juice': 'Lime',
     'Orange Juice': 'Orange',
     'Pineapple Juice': 'Pineapple',
-    'Pink Grapefruit Juice': 'Grapefruit'
+    'Pink Grapefruit Juice': 'Grapefruit',
+    'Pomegranate Juice': 'Pomegranate'
   };
 
   const syrupNormalization: Record<string, string> = {
@@ -65,13 +68,17 @@ const extractIngredients = () => {
   };
 
   const mixerNormalization: Record<string, string> = {
+    'Club Soda': 'Soda',
     'Cola': 'Cola',
     'Ginger Beer': 'Ginger Beer',
     'Grapefruit Soda': 'Soda',
     'Lemonade': 'Lemonade',
+    'Prosecco': 'Prosecco',
     'Soda': 'Soda',
     'Soda Water': 'Soda',
-    'Tomato Juice': 'Tomato Juice'
+    'Tomato Juice': 'Tomato Juice',
+    'Tonic': 'Tonic Water',
+    'Tonic Water': 'Tonic Water'
   };
 
   cocktailsData.cocktails.forEach(cocktail => {
@@ -285,26 +292,25 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
       background: rgba(255, 255, 255, 0.05);
     }
 
-    /* Prism color variety for each category */
-    .byoc-category-group:nth-child(1) .byoc-category-header {
-      border: 1px solid rgba(244, 198, 221, 0.3);
-      background: linear-gradient(135deg, rgba(244, 198, 221, 0.05), rgba(201, 174, 239, 0.04));
+    /* Each ingredient category keeps its own related prism range. */
+    .byoc-category-group--aperitif .byoc-category-header {
+      border-color: rgba(233, 201, 138, 0.42);
+      background: linear-gradient(135deg, rgba(244, 198, 221, 0.10), rgba(223, 180, 239, 0.08), rgba(233, 201, 138, 0.10), rgba(244, 230, 166, 0.08));
     }
 
-    .byoc-category-group:nth-child(2) .byoc-category-header {
-      border: 1px solid rgba(159, 198, 240, 0.3);
-      background: linear-gradient(135deg, rgba(159, 198, 240, 0.05), rgba(156, 231, 234, 0.04));
+    .byoc-category-group--natural-sugar .byoc-category-header {
+      border-color: rgba(244, 198, 221, 0.42);
+      background: linear-gradient(135deg, rgba(244, 198, 221, 0.10), rgba(239, 181, 210, 0.08), rgba(222, 174, 218, 0.08), rgba(201, 174, 239, 0.08));
     }
 
-    .byoc-category-group:nth-child(3) .byoc-category-header {
-      border: 1px solid rgba(233, 201, 138, 0.3);
-      background: linear-gradient(135deg, rgba(156, 231, 234, 0.05), rgba(233, 201, 138, 0.04));
+    .byoc-category-group--fruit-citrus .byoc-category-header {
+      border-color: rgba(159, 198, 240, 0.42);
+      background: linear-gradient(135deg, rgba(159, 198, 240, 0.10), rgba(140, 207, 239, 0.08), rgba(156, 231, 234, 0.08), rgba(174, 233, 214, 0.08));
     }
 
-    /* Aperitif & Liqueur (#spiritCategories) — orange, same header treatment pattern as the syrup categories above */
-    #spiritCategories .byoc-category-header {
-      border: 1px solid rgba(226, 149, 74, 0.3);
-      background: linear-gradient(135deg, rgba(226, 149, 74, 0.05), rgba(242, 183, 122, 0.04));
+    .byoc-category-group--spice-nut-floral .byoc-category-header {
+      border-color: rgba(233, 201, 138, 0.42);
+      background: linear-gradient(135deg, rgba(233, 201, 138, 0.10), rgba(221, 216, 149, 0.08), rgba(190, 222, 166, 0.08), rgba(156, 231, 234, 0.08));
     }
 
     .byoc-category-header-toggle {
@@ -441,6 +447,46 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
       color-scheme: light;
     }
 
+    .byoc-freeform-input-wrap {
+      position: relative;
+    }
+
+    .byoc-suggestion-list {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(100% + 4px);
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      max-height: 200px;
+      overflow-y: auto;
+      background: rgba(17, 12, 14, 0.98);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+      padding: 4px;
+    }
+
+    .byoc-suggestion-item {
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: var(--cream);
+      text-align: left;
+      padding: 7px 8px;
+      border-radius: 4px;
+      font: 12px 'IBM Plex Mono', monospace;
+      cursor: pointer;
+    }
+
+    .byoc-suggestion-item:hover,
+    .byoc-suggestion-item:focus {
+      background: rgba(201, 154, 107, 0.12);
+      outline: none;
+    }
+
     .byoc-freeform-result {
       margin-top: 18px;
       border-top: 1px solid var(--border);
@@ -572,14 +618,22 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
     }
 
     #juiceChips .byoc-chip.selected {
-      background-position: 50% 50%;
+      background: linear-gradient(90deg, #DDEBB7, #CFE3AE, #B7DDB4, #9CE7EA);
     }
 
-    /* Aperitif & Liqueur (#spiritCategories) — orange, same gradient/position mechanism as the other selected chips, own palette so it won't drift if the shared shimmer gradient changes */
+    .byoc-group--juice .byoc-label::after,
+    .byoc-group--top .byoc-label::after {
+      background: linear-gradient(90deg, #DDEBB7, #CFE3AE, #B7DDB4, #9CE7EA);
+      box-shadow: 0 0 3px 0.2px rgba(207, 227, 174, 0.22);
+    }
+
+    #topChips .byoc-chip.selected {
+      background: linear-gradient(90deg, #DDEBB7, #CFE3AE, #B7DDB4, #9CE7EA);
+    }
+
+    /* Aperitif & Liqueur uses a warm yellow prism to distinguish it from base spirits. */
     #spiritCategories .byoc-chip.selected {
-      background: linear-gradient(90deg, #F2B77A, #E2954A, #C97730, #E2954A, #F2B77A);
-      background-size: 400% 100%;
-      background-position: 50% 50%;
+      background: linear-gradient(90deg, #F4C6DD, #E9C98A, #F4E6A6, #D6CF8B);
     }
 
     /* Syrup chips use category-specific positioning */
@@ -978,7 +1032,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
             <div class="byoc-label">Build from scratch</div>
             <div class="byoc-freeform-grid" id="freeformFields"></div>
             <div class="byoc-freeform-meta">
-              <select id="freeformGlass" aria-label="Glass"><option>Nick and Nora</option><option>Coupe</option><option>Rocks</option><option>Highball</option><option>Flute</option><option>Tiki</option></select>
+              <select id="freeformGlass" aria-label="Glass"><option>Nick and Nora</option><option>Coupe</option><option>Rocks</option><option>Highball</option><option>Flute</option><option>Wine</option><option>Tiki</option></select>
               <select id="freeformIce" aria-label="Ice"><option>None</option><option>Cubed</option><option>Large cube</option><option>Crushed</option></select>
               <select id="freeformMethod" aria-label="Method"><option>Shake &amp; Strain</option><option>Shake &amp; Double Strain</option><option>Stir</option><option>Build</option><option>Dry Shake → Shake &amp; Strain</option><option>Dry Shake → Shake &amp; Double Strain</option></select>
             </div>
@@ -1002,7 +1056,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
           </div>
 
           <!-- Juice -->
-          <div class="byoc-group">
+          <div class="byoc-group byoc-group--juice">
             <div class="byoc-label">Juice</div>
             <div class="byoc-chips" id="juiceChips"></div>
             <div class="byoc-help" id="juiceHelp"></div>
@@ -1015,7 +1069,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
           </div>
 
           <!-- Top -->
-          <div class="byoc-group">
+          <div class="byoc-group byoc-group--top">
             <div class="byoc-label">Top</div>
             <div class="byoc-chips" id="topChips"></div>
           </div>
@@ -1168,7 +1222,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
       catContainer.innerHTML = '';
 
       const categoryDiv = document.createElement('div');
-      categoryDiv.className = 'byoc-category-group';
+      categoryDiv.className = 'byoc-category-group byoc-category-group--aperitif';
 
       const selectedInCategory = APERITIF_LIQUEUR_OPTIONS.filter(opt => state.spirits.includes(opt));
       const isOpen = state.openSpiritCategories['Aperitif & Liqueur'];
@@ -1230,14 +1284,12 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
     box.innerHTML = '';
     CITRUS.forEach(c => {
       const selected = state.citrus === c;
-      const disabled = c === 'None' && state.juices.includes('None');
-      box.appendChild(chip(c, selected, disabled, () => {
+      box.appendChild(chip(c, selected, false, () => {
         state.citrus = c;
         render();
       }));
     });
-    document.getElementById('citrusHelp').textContent =
-      state.juices.includes('None') ? 'Juice is set to None, so citrus can\'t be too — a sour needs one.' : '';
+    document.getElementById('citrusHelp').textContent = '';
   }
 
   function renderJuice() {
@@ -1246,7 +1298,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
     JUICE.forEach(j => {
       const selected = state.juices.includes(j);
       const atCap = state.juices.length >= 2 && !selected;
-      const disabled = atCap || (j === 'None' && state.citrus === 'None');
+      const disabled = atCap;
       box.appendChild(chip(j, selected, disabled, () => {
         if (selected) state.juices = state.juices.filter(item => item !== j);
         else if (j === 'None') state.juices = ['None'];
@@ -1255,7 +1307,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
       }));
     });
     document.getElementById('juiceHelp').textContent =
-      state.juices.length >= 2 ? 'Slot full — deselect one to swap it out.' : (state.citrus === 'None' ? 'Citrus is set to None, so juice can\'t be too — a sour needs one.' : '');
+      state.juices.length >= 2 ? 'Slot full — deselect one to swap it out.' : '';
   }
 
   function renderSyrupCategories() {
@@ -1264,7 +1316,12 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
 
     Object.entries(SYRUP_CATEGORIES).forEach(([categoryName, options]) => {
       const categoryDiv = document.createElement('div');
-      categoryDiv.className = 'byoc-category-group';
+      const categoryTheme = {
+        'Natural Sugar': 'natural-sugar',
+        'Fruit & Citrus Syrups': 'fruit-citrus',
+        'Spice, Nut & Floral Syrups': 'spice-nut-floral'
+      }[categoryName];
+      categoryDiv.className = `byoc-category-group byoc-category-group--${categoryTheme}`;
 
       // Find which items in this category are actually available
       const availableOptions = options.filter(opt => SYRUP.includes(opt));
@@ -1388,7 +1445,45 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
   function freeformIngredientField(category, label, entry, placeholder) {
     const listId = `freeform-list-${category}-${entry}`.toLowerCase();
     const options = (freeformOptions[category] || []).map(option => `<option value="${option}">`).join('');
-    return `<input list="${listId}" data-category="${category}" data-entry="${entry}" placeholder="${placeholder || label}" aria-label="${label}"><datalist id="${listId}">${options}</datalist>`;
+    return `
+      <div class="byoc-freeform-input-wrap">
+        <input class="byoc-freeform-input" list="${listId}" data-category="${category}" data-entry="${entry}" placeholder="${placeholder || label}" aria-label="${label}" autocomplete="off">
+        <div class="byoc-suggestion-list" id="${listId}-suggestions" hidden></div>
+        <datalist id="${listId}">${options}</datalist>
+      </div>
+    `;
+  }
+
+  function updateFreeformSuggestions(input) {
+    const category = input.dataset.category;
+    const list = input.parentElement.querySelector('.byoc-suggestion-list');
+    const options = freeformOptions[category] || [];
+    const value = input.value.trim().toLowerCase();
+    const matches = (!value)
+      ? options.slice(0, 8)
+      : options.filter(option => option.toLowerCase().includes(value)).slice(0, 8);
+
+    if (!matches.length) {
+      list.hidden = true;
+      list.innerHTML = '';
+      return;
+    }
+
+    list.innerHTML = matches.map(option => `
+      <button type="button" class="byoc-suggestion-item" data-value="${option}">${option}</button>
+    `).join('');
+
+    list.querySelectorAll('.byoc-suggestion-item').forEach(item => {
+      item.addEventListener('mousedown', (event) => {
+        event.preventDefault();
+        input.value = item.dataset.value;
+        list.hidden = true;
+        renderFreeformResult();
+        input.focus();
+      });
+    });
+
+    list.hidden = false;
   }
 
   function freeformAmountField(category, entry) {
@@ -1409,7 +1504,20 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
     const foamerCell = `<div class="byoc-freeform-category"><div class="byoc-freeform-field byoc-freeform-field--choice">${freeformIngredientField('Foamer', 'Foamer', '1')}<select data-foamer-included aria-label="Foamer included"><option value="Not included">Not included</option><option value="Included">Included</option></select></div></div>`;
 
     fields.innerHTML = categoryCells.join('') + bittersCell + foamerCell;
-    fields.querySelectorAll('input, select').forEach(el => el.addEventListener('input', renderFreeformResult));
+    fields.querySelectorAll('.byoc-freeform-input').forEach(input => {
+      input.addEventListener('input', () => {
+        updateFreeformSuggestions(input);
+        renderFreeformResult();
+      });
+      input.addEventListener('focus', () => updateFreeformSuggestions(input));
+      input.addEventListener('blur', () => {
+        window.setTimeout(() => {
+          const list = input.parentElement?.querySelector('.byoc-suggestion-list');
+          if (list) list.hidden = true;
+        }, 120);
+      });
+    });
+    fields.querySelectorAll('select').forEach(el => el.addEventListener('change', renderFreeformResult));
     document.querySelectorAll('#freeformGlass, #freeformIce, #freeformMethod').forEach(input => input.addEventListener('change', renderFreeformResult));
   }
 

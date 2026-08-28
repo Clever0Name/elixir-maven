@@ -38,9 +38,11 @@ const ingredientNames = cocktail.ingredients.map((i) => i.name.toLowerCase()).jo
   data-taste={cocktail.taste ?? ''}
 >
   <div>
-    {cocktail.category.split(',').map((cat) => (
-      <span class="card-badge">{cat.trim()}</span>
-    ))}
+    <div class="card-badges">
+      {cocktail.category.split(',').map((cat, index) => (
+        <span class="card-badge" key={index}>{cat.trim()}</span>
+      ))}
+    </div>
     <h3 class="card-name">{cocktail.name}</h3>
     <p class="card-family">{cocktail.family}</p>
   </div>
