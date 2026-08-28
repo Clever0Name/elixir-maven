@@ -301,6 +301,12 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
       background: linear-gradient(135deg, rgba(156, 231, 234, 0.05), rgba(233, 201, 138, 0.04));
     }
 
+    /* Aperitif & Liqueur (#spiritCategories) — orange, same header treatment pattern as the syrup categories above */
+    #spiritCategories .byoc-category-header {
+      border: 1px solid rgba(226, 149, 74, 0.3);
+      background: linear-gradient(135deg, rgba(226, 149, 74, 0.05), rgba(242, 183, 122, 0.04));
+    }
+
     .byoc-category-header-toggle {
       display: inline-flex;
       align-items: center;
@@ -569,9 +575,11 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => ({
       background-position: 50% 50%;
     }
 
-    /* Aperitif & Liqueur lives in #spiritCategories and shares .byoc-category-group with syrup — pin it to Spirit's own hue so nth-child(1) below (meant for syrup) doesn't paint it gold/orange. */
+    /* Aperitif & Liqueur (#spiritCategories) — orange, same gradient/position mechanism as the other selected chips, own palette so it won't drift if the shared shimmer gradient changes */
     #spiritCategories .byoc-chip.selected {
-      background-position: 0% 50%;
+      background: linear-gradient(90deg, #F2B77A, #E2954A, #C97730, #E2954A, #F2B77A);
+      background-size: 400% 100%;
+      background-position: 50% 50%;
     }
 
     /* Syrup chips use category-specific positioning */
