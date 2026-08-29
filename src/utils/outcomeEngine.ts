@@ -45,7 +45,7 @@ const ALIASES: Record<string, string> = {
   cranberry: 'cranberry juice',
   orange: 'orange juice',
   pineapple: 'pineapple juice',
-  'passion fruit': 'passion fruit puree',
+  'passion fruit': 'passion fruit purée',
   'sugar syrup': 'simple syrup',
   honey: 'honey syrup',
   maple: 'maple syrup',
