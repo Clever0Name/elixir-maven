@@ -21,7 +21,7 @@ const totalCount = cocktails.length;
       <h1>Elixir Maven</h1>
       <p class="hero-tagline">Wins On Experience, Not Volume</p>
       <p class="hero-sub">
-        <span id="hero-count" class="hero-count" data-target={totalCount} aria-live="polite">0</span> cocktail recipes
+        <span id="hero-count" data-target={totalCount} aria-live="polite">0</span> cocktail recipes
       </p>
 
       <div class="search-wrap">
@@ -104,42 +104,15 @@ const totalCount = cocktails.length;
   const heroCount = document.getElementById('hero-count') as HTMLElement | null;
   if (heroCount) {
     const target = parseInt(heroCount.dataset.target ?? '0', 10);
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion) {
-      heroCount.textContent = String(target);
-    } else {
-      const duration = 5200;
-      const start = performance.now();
-      let nextMultiple = 10;
-
-      const flash = () => {
-        heroCount.classList.remove('flash');
-        void heroCount.offsetWidth;
-        heroCount.classList.add('flash');
-        window.setTimeout(() => heroCount.classList.remove('flash'), 600);
-      };
-
-      const tick = (now: number) => {
-        const t = Math.min((now - start) / duration, 1);
-        const ease = 1 - Math.pow(1 - t, 3);
-        const value = Math.round(ease * target);
-        heroCount.textContent = String(value);
-
-        while (nextMultiple <= target && value >= nextMultiple) {
-          flash();
-          nextMultiple += 10;
-        }
-
-        if (t < 1) {
-          requestAnimationFrame(tick);
-        } else if (value === target) {
-          heroCount.classList.add('flash');
-          window.setTimeout(() => heroCount.classList.remove('flash'), 900);
-        }
-      };
-
-      requestAnimationFrame(tick);
-    }
+    const duration = 3600;
+    const start = performance.now();
+    const tick = (now: number) => {
+      const t = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - t, 3);
+      heroCount.textContent = String(Math.round(ease * target));
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
   }
 
   // ─── Surprise Me ────────────────────────────────────────────────
