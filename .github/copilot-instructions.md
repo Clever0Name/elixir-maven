@@ -15,6 +15,7 @@ Before finishing any change, check whether it could affect any of these previous
 - The ml/oz toggle and per-field unit conversion
 - The Guided/Build from Scratch ingredient dropdowns (must render visibly in both Safari and Chrome)
 - The Variant/nudge swap display and the "Built from" spec line
+- The "Show Similar Cocktails" matching feature (tiered logic, garnish selection, approval-gate eligibility)
 - Existing category taxonomy (Aperitif & Liqueur, Syrup subcategories, etc.) — new additions must not silently overwrite or duplicate existing entries
 
 If a change plausibly touches any of the above, confirm it still works before reporting done, don't assume it's unaffected.
@@ -46,6 +47,10 @@ Filter option lists must always pull from the actual ingredient library/data sou
 ## H. Mobile responsiveness check
 
 For any change touching layout, spacing, or new UI components, verify it still renders usably at mobile viewport widths before reporting complete.
+
+## I. Verify against the live site, not just a successful build
+
+A successful build is not the same as a working feature. Before reporting any user-facing change as complete, confirm it's actually visible/functional on the real deployed site — not just that the code compiled without errors. Several confirmed additions this project (Prosecco, Tonic Water, ingredient additions) passed the build but never actually appeared live — this is the single most repeated failure pattern so far and the one this rule exists to close.
 
 ---
 
