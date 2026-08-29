@@ -11,32 +11,35 @@ const extractIngredients = () => {
     juice: new Set<string>(),
     syrup: new Set<string>(),
     puree: new Set<string>(),
+    botanicals: new Set<string>(),
     liqueur: new Set<string>(),
     mixer: new Set<string>(),
     bitters: new Set<string>(),
     foamer: new Set<string>()
   };
 
-  const spiritNormalization: Record<string, string> = {
-    'Aged Rum': 'Rum',
-    'Blanco Tequila': 'Tequila',
-    'Blended Scotch Whisky': 'Whiskey',
-    'Bourbon': 'Bourbon',
-    'Cachaça': 'Cachaça',
-    'Citrus Vodka': 'Vodka',
-    'Coconut Rum': 'Rum',
-    'Cognac': 'Cognac',
-    'Dark Rum': 'Rum',
-    'Gin': 'Gin',
-    'Gin or Vodka': 'Gin',
-    'Irish Whiskey': 'Whiskey',
-    'Overproof Rum': 'Rum',
-    'Pisco': 'Pisco',
-    'Rye Whiskey': 'Whiskey',
-    'Scotch Whisky': 'Whiskey',
-    'Vodka': 'Vodka',
-    'Vodka/Gin': 'Vodka',
-    'White Rum': 'Rum'
+  const spiritNormalization: Record<string, string[]> = {
+    'White Rum': ['White Rum'],
+    'Dark Rum': ['Dark Rum'],
+    'Aged Rum': ['Dark Rum'],
+    'Dark Aged Rum': ['Dark Rum'],
+    'Spiced Rum': ['Spiced Rum'],
+    'Overproof Rum': ['Overproof Rum'],
+    'Coconut Rum': ['Coconut Rum'],
+    'Blanco Tequila': ['Tequila'],
+    'Tequila': ['Tequila'],
+    'Gin': ['Gin'],
+    'Vodka': ['Vodka'],
+    'Citrus Vodka': ['Vodka'],
+    'Gin or Vodka': ['Gin', 'Vodka'],
+    'Vodka/Gin': ['Vodka', 'Gin'],
+    'Whiskey': ['Whiskey'],
+    'Rye Whiskey': ['Whiskey'],
+    'Scotch Whisky': ['Whiskey'],
+    'Irish Whiskey': ['Whiskey'],
+    'Blended Scotch Whisky': ['Whiskey'],
+    'Peated Scotch': ['Whiskey'],
+    'Bourbon': ['Bourbon']
   };
 
   const citrusNormalization: Record<string, string> = {
@@ -65,6 +68,7 @@ const extractIngredients = () => {
     'Falernum': 'Falernum',
     'Grenadine': 'Grenadine',
     'Honey and Ginger Syrup': 'Honey',
+    'Honey Syrup': 'Honey',
     'Maple Syrup': 'Maple',
     'Orgeat': 'Orgeat',
     'Sugar Syrup': 'Sugar syrup',
@@ -73,20 +77,32 @@ const extractIngredients = () => {
 
   const pureeNormalization: Record<string, string> = {
     'Mango Puree': 'Mango',
+    'Mango Purée': 'Mango',
+    'Peach Puree': 'Peach',
+    'Peach Purée': 'Peach',
     'Passion Fruit Puree': 'Passion Fruit',
-    'Strawberry Puree': 'Strawberry'
+    'Passion Fruit Purée': 'Passion Fruit',
+    'Strawberry Puree': 'Strawberry',
+    'Strawberry Purée': 'Strawberry'
+  };
+
+  const botanicalNormalization: Record<string, string> = {
+    'Fresh Ginger': 'Fresh Ginger',
+    'Mint Leaves': 'Mint Leaves',
+    'Fresh Basil Leaves': 'Fresh Basil Leaves'
   };
 
   const rejectedSyrups = new Set(['Butterfly Pea Flower Syrup', 'Strawberry Syrup']);
-  const allowedPurees = new Set(['Passion Fruit', 'Strawberry', 'Mango']);
+  const allowedPurees = new Set(['Passion Fruit', 'Strawberry', 'Mango', 'Peach']);
 
   const mixerNormalization: Record<string, string> = {
     'Club Soda': 'Soda',
     'Cola': 'Cola',
     'Ginger Beer': 'Ginger Beer',
-    'Grapefruit Soda': 'Soda',
+    'Grapefruit Soda': 'Grapefruit Soda',
     'Lemonade': 'Lemonade',
-    'Prosecco': 'Prosecco',
+    'Prosecco': 'Sparkling Wine',
+    'Sparkling Wine': 'Sparkling Wine',
     'Soda': 'Soda',
     'Soda Water': 'Soda',
     'Tomato Juice': 'Tomato Juice',
@@ -97,21 +113,32 @@ const extractIngredients = () => {
   cocktailsData.cocktails.forEach(cocktail => {
     cocktail.ingredients.forEach(ing => {
       const role = ing.role.toLowerCase();
+      if (role.includes('garnish')) {
+        return;
+      }
+
       if (role.includes('spirit')) {
-        categories.spirits.add(spiritNormalization[ing.name] || ing.name);
+        const mappedSpirits = spiritNormalization[ing.name] || [ing.name];
+        mappedSpirits.forEach(spirit => categories.spirits.add(spirit));
       } else if (role.includes('citrus')) {
         categories.citrus.add(citrusNormalization[ing.name] || ing.name);
       } else if (role.includes('juice')) {
         categories.juice.add(juiceNormalization[ing.name] || ing.name);
-      } else if (role.includes('syrup')) {
+      } else if (role.includes('syrup') || role.includes('sweetener')) {
         const syrupName = syrupNormalization[ing.name] || ing.name;
         if (!rejectedSyrups.has(syrupName)) categories.syrup.add(syrupName);
       } else if (role.includes('puree')) {
         const pureeName = pureeNormalization[ing.name] || ing.name;
         if (allowedPurees.has(pureeName)) categories.puree.add(pureeName);
-      } else if (role.includes('liqueur')) {
+      } else if (role.includes('herb')) {
+        const botanicalName = botanicalNormalization[ing.name] || ing.name;
+        if (botanicalNormalization[ing.name]) categories.botanicals.add(botanicalName);
+      } else if (role === 'ingredient') {
+        if (citrusNormalization[ing.name]) categories.citrus.add(citrusNormalization[ing.name]);
+        if (botanicalNormalization[ing.name]) categories.botanicals.add(botanicalNormalization[ing.name]);
+      } else if (role.includes('liqueur') || role.includes('aperitif') || role.includes('amaro') || role.includes('bitter liqueur')) {
         categories.liqueur.add(ing.name);
-      } else if (role.includes('mixer')) {
+      } else if (role.includes('mixer') || role.includes('sparkling wine')) {
         categories.mixer.add(mixerNormalization[ing.name] || ing.name);
       } else if (role.includes('bitters')) {
         categories.bitters.add(ing.name);
@@ -127,6 +154,7 @@ const extractIngredients = () => {
     juice: ['None', ...Array.from(categories.juice).filter(item => !['Lemon', 'Lime'].includes(item)).sort()],
     syrup: ['None', ...Array.from(categories.syrup).sort()],
     puree: ['None', ...Array.from(categories.puree).sort()],
+    botanicals: ['None', ...Array.from(categories.botanicals).sort()],
     liqueur: Array.from(categories.liqueur).sort(),
     mixer: ['None', ...Array.from(categories.mixer).sort()],
     bitters: Array.from(categories.bitters).sort(),
@@ -145,13 +173,18 @@ ingredients.syrup = ingredients.syrup.filter(item => !['Butterfly Pea Flower Syr
 if (!ingredients.foamer.includes('Egg White')) ingredients.foamer.unshift('Egg White');
 if (!ingredients.juice.includes('Apple')) ingredients.juice.push('Apple');
 if (!ingredients.mixer.includes('Tonic Water')) ingredients.mixer.push('Tonic Water');
-if (!ingredients.mixer.includes('Prosecco')) ingredients.mixer.push('Prosecco');
+if (!ingredients.mixer.includes('Sparkling Wine')) ingredients.mixer.push('Sparkling Wine');
+if (!ingredients.mixer.includes('Grapefruit Soda')) ingredients.mixer.push('Grapefruit Soda');
 if (!ingredients.bitters.includes('Orange Bitters')) ingredients.bitters.push('Orange Bitters');
 if (!ingredients.bitters.includes('Walnut Bitters')) ingredients.bitters.push('Walnut Bitters');
 if (!ingredients.puree.includes('Passion Fruit')) ingredients.puree.push('Passion Fruit');
 if (!ingredients.puree.includes('Strawberry')) ingredients.puree.push('Strawberry');
 if (!ingredients.puree.includes('Mango')) ingredients.puree.push('Mango');
-ingredients.puree = ingredients.puree.filter(item => ['None', 'Passion Fruit', 'Strawberry', 'Mango'].includes(item));
+if (!ingredients.puree.includes('Peach')) ingredients.puree.push('Peach');
+ingredients.puree = ingredients.puree.filter(item => ['None', 'Passion Fruit', 'Strawberry', 'Mango', 'Peach'].includes(item));
+if (!ingredients.botanicals.includes('Fresh Ginger')) ingredients.botanicals.push('Fresh Ginger');
+if (!ingredients.botanicals.includes('Mint Leaves')) ingredients.botanicals.push('Mint Leaves');
+if (!ingredients.botanicals.includes('Fresh Basil Leaves')) ingredients.botanicals.push('Fresh Basil Leaves');
 if (!ingredients.liqueur.includes('Elderflower Liqueur')) ingredients.liqueur.push('Elderflower Liqueur');
 if (!ingredients.liqueur.includes('Orange Liqueur')) ingredients.liqueur.push('Orange Liqueur');
 if (!ingredients.liqueur.includes('Midori')) ingredients.liqueur.push('Midori');
@@ -162,6 +195,7 @@ ingredients.juice = ['None', ...ingredients.juice.filter(item => item !== 'None'
 ingredients.syrup = ['None', ...ingredients.syrup.filter(item => item !== 'None').sort()];
 ingredients.mixer = ['None', ...ingredients.mixer.filter(item => item !== 'None').sort()];
 ingredients.puree = ['None', ...ingredients.puree.filter(item => item !== 'None').sort()];
+ingredients.botanicals = ['None', ...ingredients.botanicals.filter(item => item !== 'None').sort()];
 ingredients.bitters = ingredients.bitters.sort();
 ingredients.liqueur = ingredients.liqueur.sort();
 const evidencePairs = cooccurrenceData.pairs;
@@ -1135,6 +1169,12 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
             <div class="byoc-chips" id="pureeChips"></div>
           </div>
 
+          <!-- Botanicals -->
+          <div class="byoc-group">
+            <div class="byoc-label">Botanicals</div>
+            <div class="byoc-chips" id="botanicalChips"></div>
+          </div>
+
           <!-- Top -->
           <div class="byoc-group byoc-group--top">
             <div class="byoc-label">Top</div>
@@ -1197,18 +1237,53 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
   const JUICE = ingredients.juice;
   const SYRUP = ingredients.syrup;
   const PUREE = ingredients.puree;
+  const BOTANICALS = ingredients.botanicals;
   const TOP = ingredients.mixer;
   const RICH_SPIRITS = ['Whiskey', 'Bourbon', 'Cognac'];
   const LEAN_VALUES = {};
   const LEAN_OPTIONS = [...new Set([...CITRUS, ...JUICE, ...SYRUP, ...PUREE].filter(item => item !== 'None'))];
-  const aliases = { cranberry: 'cranberry juice', orange: 'orange juice', pineapple: 'pineapple juice', 'sugar syrup': 'simple syrup', honey: 'honey syrup', maple: 'maple syrup', orgeat: 'orgeat syrup', vanilla: 'vanilla syrup', coconut: 'coconut syrup', whiskey: 'whiskey', bourbon: 'bourbon', cognac: 'cognac', aperol: 'aperol', campari: 'campari', 'sweet vermouth': 'sweet vermouth', 'dry vermouth': 'dry vermouth', amaretto: 'amaretto' };
-  const normalize = value => aliases[value.toLowerCase().trim()] || value.toLowerCase().trim();
+  const aliases = {
+    'aged rum': 'dark rum',
+    'dark aged rum': 'dark rum',
+    'blanco tequila': 'tequila',
+    'citrus vodka': 'vodka',
+    'gin or vodka': 'vodka-gin',
+    'vodka/gin': 'vodka-gin',
+    'rye whiskey': 'whiskey',
+    'scotch whisky': 'whiskey',
+    'irish whiskey': 'whiskey',
+    'blended scotch whisky': 'whiskey',
+    'peated scotch': 'whiskey',
+    'lemon juice': 'lemon',
+    'lime juice': 'lime',
+    'lime wedges': 'lime',
+    'orange juice': 'orange',
+    'pineapple juice': 'pineapple',
+    'cranberry juice': 'cranberry',
+    'pink grapefruit juice': 'grapefruit',
+    'agave syrup': 'agave',
+    'coconut syrup': 'coconut',
+    'vanilla syrup': 'vanilla',
+    'maple syrup': 'maple',
+    'honey syrup': 'honey',
+    'honey and ginger syrup': 'honey',
+    'sugar syrup': 'sugar syrup',
+    'soda water': 'soda',
+    'club soda': 'soda',
+    tonic: 'tonic water',
+    prosecco: 'sparkling wine',
+    champagne: 'sparkling wine',
+    'passion fruit puree': 'passion fruit',
+    'peach puree': 'peach',
+    'mango puree': 'mango',
+    'strawberry puree': 'strawberry'
+  };
+  const normalize = value => {
+    const cleaned = value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+    return aliases[cleaned] || cleaned;
+  };
   const evidence = new Map(evidencePairs.map(pair => [[`${pair.a_category.toLowerCase()}|${normalize(pair.a_ingredient)}`, `${pair.b_category.toLowerCase()}|${normalize(pair.b_ingredient)}`].sort().join('::'), pair.count]));
   const evidenceLookup = (a, b) => evidence.get([`${a.category.toLowerCase()}|${normalize(a.ingredient)}`, `${b.category.toLowerCase()}|${normalize(b.ingredient)}`].sort().join('::')) || 0;
-
-  // Puree matching is intentionally deferred until scope is confirmed; keep it out of the locked matcher for now.
-  // Freeform matching only ever considers liquid ingredient roles; "Top" maps to the "Mixer" role in the data.
-  const MATCH_CATEGORY_TO_ROLE = { spirit: 'spirit', citrus: 'citrus', juice: 'juice', syrup: 'syrup', liqueur: 'liqueur', top: 'mixer' };
 
   // Aperitif & Liqueur options
   const APERITIF_LIQUEUR_OPTIONS = ['Aperol', 'Campari', 'Sweet Vermouth', 'Dry Vermouth', 'Amaretto', 'Elderflower Liqueur', 'Orange Liqueur', 'Midori', 'Crème de Cassis', 'Nectarine', 'RinQuinQuin'];
@@ -1233,6 +1308,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
     juices: [JUICE.find(item => item !== 'None') || 'None'],
     syrup: SYRUP.find(item => item !== 'None') || 'None',
     puree: 'None',
+    botanical: 'None',
     top: TOP[0],
     unit: 'ml',
     garnishIndex: 0,
@@ -1249,11 +1325,12 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
     { category: 'Juice', label: 'Juice', hasSecond: true },
     { category: 'Syrup', label: 'Syrup', hasSecond: true },
     { category: 'Puree', label: 'Purée', hasSecond: false },
+    { category: 'Botanical', label: 'Botanical', hasSecond: false, noAmount: true },
     { category: 'Liqueur', label: 'Liqueur', hasSecond: true },
     { category: 'Top', label: 'Top', hasSecond: false, noAmount: true }
   ];
   const freeformLiqueurOptions = [...new Set([...ingredients.liqueur, ...APERITIF_LIQUEUR_OPTIONS])].sort();
-  const freeformOptions = { Spirit: SPIRITS, Citrus: CITRUS.filter(item => item !== 'None'), Juice: JUICE.filter(item => item !== 'None'), Syrup: SYRUP.filter(item => item !== 'None'), Puree: PUREE.filter(item => item !== 'None'), Liqueur: freeformLiqueurOptions, Top: TOP.filter(item => item !== 'None'), Bitters: ingredients.bitters, Foamer: ingredients.foamer };
+  const freeformOptions = { Spirit: SPIRITS, Citrus: CITRUS.filter(item => item !== 'None'), Juice: JUICE.filter(item => item !== 'None'), Syrup: SYRUP.filter(item => item !== 'None'), Puree: PUREE.filter(item => item !== 'None'), Botanical: BOTANICALS.filter(item => item !== 'None'), Liqueur: freeformLiqueurOptions, Top: TOP.filter(item => item !== 'None'), Bitters: ingredients.bitters, Foamer: ingredients.foamer };
 
   // Initialize all categories as open
   Object.keys(SYRUP_CATEGORIES).forEach(cat => {
@@ -1468,6 +1545,15 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
     })));
   }
 
+  function renderBotanicals() {
+    const box = document.getElementById('botanicalChips');
+    box.innerHTML = '';
+    BOTANICALS.forEach(b => box.appendChild(chip(b, state.botanical === b, false, () => {
+      state.botanical = b;
+      render();
+    })));
+  }
+
   function fmt(ml) {
     if (state.unit === 'ml') return Math.round(ml) + 'ml';
     return mlToOz(ml).toFixed(2).replace(/\.?0+$/, '') + 'oz';
@@ -1508,8 +1594,8 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
   }
 
   function glassFor() {
-    if (state.top === 'Soda' || state.top === 'Tonic') return 'Highball';
-    if (state.top === 'Sparkling wine') return 'Flute';
+    if (state.top === 'Soda' || state.top === 'Tonic Water' || state.top === 'Grapefruit Soda') return 'Highball';
+    if (state.top === 'Sparkling Wine') return 'Flute';
     if (state.top === 'Foamer') return 'Coupe';
     if (state.top === 'Cola' || state.top === 'Ginger Beer' || state.top === 'Lemonade') return 'Highball';
     return 'Nick and Nora';
@@ -1725,6 +1811,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
       ...state.juices.map(ingredient => ({ category: 'Juice', ingredient, amountMl: spec.juiceAmt })),
       { category: 'Syrup', ingredient: state.syrup, amountMl: spec.syrupAmt },
       ...(state.puree !== 'None' ? [{ category: 'Puree', ingredient: state.puree, amountMl: spec.pureeAmt }] : []),
+      ...(state.botanical !== 'None' ? [{ category: 'Botanical', ingredient: state.botanical, amountMl: null }] : []),
       ...(state.top !== 'None' ? [{ category: 'Top', ingredient: state.top, amountMl: null }] : [])
     ];
   }
@@ -1770,6 +1857,10 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
     const puree = build.find(item => item.category === 'Puree' && item.ingredient !== 'None');
     if (puree) {
       lines.push(`${puree.ingredient} purée <span class="amt">${fmt(spec.pureeAmt)}</span>`);
+    }
+    const botanical = build.find(item => item.category === 'Botanical' && item.ingredient !== 'None');
+    if (botanical) {
+      lines.push(botanical.ingredient);
     }
     if (state.top !== 'None') lines.push(`Top ${state.top.toLowerCase()}`);
     document.getElementById('specList').innerHTML = lines.join('<br>');
@@ -1817,32 +1908,65 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
 
   function suggestionNames(build) {
     const aperitifNames = new Set(APERITIF_LIQUEUR_OPTIONS.map(normalize));
-    const roleFor = ingredient => {
+    const botanicalNames = new Set(BOTANICALS.filter(item => item !== 'None').map(normalize));
+    const citrusNames = new Set(CITRUS.filter(item => item !== 'None').map(normalize));
+    const juiceNames = new Set(JUICE.filter(item => item !== 'None').map(normalize));
+    const syrupNames = new Set(SYRUP.filter(item => item !== 'None').map(normalize));
+    const pureeNames = new Set(PUREE.filter(item => item !== 'None').map(normalize));
+    const topNames = new Set(TOP.filter(item => item !== 'None').map(normalize));
+
+    const roleBasedCategory = ingredient => {
       const role = ingredient.role.toLowerCase();
-      if (role.includes('base spirit')) return 'Spirit';
+      if (role.includes('garnish')) return null;
+      if (role.includes('base spirit') || role.includes('spirit')) return 'Spirit';
       if (role.includes('citrus')) return 'Citrus';
       if (role.includes('juice')) return 'Juice';
       if (role.includes('syrup') || role.includes('sweetener')) return 'Syrup';
       if (role.includes('puree')) return 'Puree';
+      if (role.includes('herb')) return 'Botanical';
+      if (role === 'ingredient') return null;
       if (role.includes('liqueur') || role.includes('aperitif') || role.includes('amaro') || role.includes('bitter liqueur')) return 'Liqueur';
-      if (role.includes('mixer')) return 'Top';
+      if (role.includes('mixer') || role.includes('sparkling wine')) return 'Top';
       if (role.includes('bitters')) return 'Bitters';
       if (role.includes('foamer')) return 'Foamer';
       return null;
     };
-    const canonicalSpirit = value => {
-      const spirit = normalize(value);
-      if (['bourbon', 'whiskey', 'rye whiskey', 'scotch whisky', 'blended scotch whisky', 'irish whiskey'].includes(spirit)) return 'whiskey';
-      if (spirit.includes('rum')) return 'rum';
-      if (spirit.includes('tequila')) return 'tequila';
-      if (spirit.includes('vodka')) return 'vodka';
-      return spirit;
+
+    const inferCategoryFromName = name => {
+      const normalizedName = normalize(name);
+      if (botanicalNames.has(normalizedName)) return 'Botanical';
+      if (citrusNames.has(normalizedName)) return 'Citrus';
+      if (juiceNames.has(normalizedName)) return 'Juice';
+      if (syrupNames.has(normalizedName)) return 'Syrup';
+      if (pureeNames.has(normalizedName)) return 'Puree';
+      if (topNames.has(normalizedName) || normalizedName === 'sparkling wine') return 'Top';
+      return null;
     };
+
+    const roleFor = ingredient => {
+      if (ingredient.role.toLowerCase().includes('garnish')) return 'Excluded';
+      const roleCategory = roleBasedCategory(ingredient);
+      if (roleCategory) return roleCategory;
+      return inferCategoryFromName(ingredient.name);
+    };
+
+    const spiritSet = value => {
+      const spirit = normalize(value);
+      if (spirit === 'vodka-gin') return new Set(['vodka', 'gin']);
+      return new Set([spirit]);
+    };
+
+    const spiritsMatch = (a, b) => {
+      const aSet = spiritSet(a);
+      const bSet = spiritSet(b);
+      return [...aSet].some(value => bSet.has(value));
+    };
+
     const buildCategory = item => item.category === 'Spirit' && aperitifNames.has(normalize(item.ingredient)) ? 'Liqueur' : item.category;
     const sameIngredient = (selection, ingredient) => {
       if (buildCategory(selection) !== roleFor(ingredient)) return false;
       return buildCategory(selection) === 'Spirit'
-        ? canonicalSpirit(selection.ingredient) === canonicalSpirit(ingredient.name)
+        ? spiritsMatch(selection.ingredient, ingredient.name)
         : normalize(selection.ingredient) === normalize(ingredient.name);
     };
     const selected = build.filter(item => item.ingredient).map(item => ({ ...item, category: buildCategory(item) }));
@@ -1850,7 +1974,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
     let candidates = suggestionCocktails.filter(cocktail => cocktail.approved_for_suggestion === true);
     let matchedAnyGate = false;
 
-    for (const category of ['Spirit', 'Citrus', 'Juice', 'Syrup', 'Liqueur', 'Puree', 'Top', 'Bitters', 'Foamer']) {
+    for (const category of ['Spirit', 'Citrus', 'Juice', 'Syrup', 'Liqueur', 'Puree', 'Botanical', 'Top', 'Bitters', 'Foamer']) {
       const selections = byCategory(category);
       if (!selections.length) continue;
       const hasNone = selections.some(item => item.ingredient === 'None');
@@ -1896,6 +2020,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
       Citrus: CITRUS,
       Juice: JUICE,
       Syrup: SYRUP,
+      Botanical: BOTANICALS,
       Liqueur: []
     };
     const nudge = nudgeBuild(build, alternatives);
@@ -1926,18 +2051,20 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
       return;
     }
 
-    const nudge = nudgeBuild(matchingBuild(outcomeBuild()), {
+    const nudge = nudgeBuild(outcomeBuild(), {
       Spirit: SPIRITS,
       Citrus: CITRUS,
       Juice: JUICE,
       Syrup: SYRUP,
+      Botanical: BOTANICALS,
       Liqueur: []
     });
     const originalBuild = outcomeBuild();
     const originalJuices = originalBuild.filter(item => item.category === 'Juice' && item.ingredient !== 'None');
     const originalCitrus = originalBuild.find(item => item.category === 'Citrus' && item.ingredient !== 'None');
     const originalPuree = originalBuild.find(item => item.category === 'Puree' && item.ingredient !== 'None');
-    const builtFrom = [...originalBuild.filter(item => item.category === 'Spirit').map(item => item.ingredient), originalCitrus?.ingredient, ...originalJuices.map(item => item.ingredient), originalPuree?.ingredient]
+    const originalBotanical = originalBuild.find(item => item.category === 'Botanical' && item.ingredient !== 'None');
+    const builtFrom = [...originalBuild.filter(item => item.category === 'Spirit').map(item => item.ingredient), originalCitrus?.ingredient, ...originalJuices.map(item => item.ingredient), originalPuree?.ingredient, originalBotanical?.ingredient]
       .filter(Boolean).join(' · ');
     document.getElementById('cocktailBuilt').textContent = 'Built from: ' + builtFrom;
 
@@ -1954,6 +2081,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
     renderJuice();
     renderSyrupCategories();
     renderPuree();
+    renderBotanicals();
     renderTop();
     renderResult(true);
   }

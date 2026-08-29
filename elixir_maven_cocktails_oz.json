@@ -3566,7 +3566,8 @@
       "ingredients": [
         { "name": "Blended Scotch Whisky", "role": "Base Spirit", "amount": 2, "unit": "oz", "spec": "Blended Scotch Whisky", "required": true },
         { "name": "Lemon Juice", "role": "Juice", "amount": 0.75, "unit": "oz", "spec": "Fresh Lemon Juice", "required": true },
-        { "name": "Honey and Ginger Syrup", "role": "Syrup", "amount": 0.75, "unit": "oz", "spec": "Honey and Ginger Syrup", "required": true },
+        { "name": "Honey Syrup", "role": "Syrup", "amount": 0.75, "unit": "oz", "spec": "Honey Syrup", "required": true },
+        { "name": "Fresh Ginger", "role": "Botanicals", "spec": "Fresh Ginger", "required": true },
         { "name": "Peated Scotch", "role": "Float", "amount": 0.25, "unit": "oz", "spec": "Peated Scotch", "required": true, "technique": "Float on top after straining" }
       ],
       "taste": null

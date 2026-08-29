@@ -182,7 +182,7 @@
       "name": "Bahama Mama",
       "family": "Tropical / Punch",
       "category": "Rum",
-      "base_spirit": "Rum",
+      "base_spirit": "White Rum/Aged Rum/Coconut Rum",
       "spirit_type": "Blend",
       "method": "Shake & Double Strain",
       "glassware": "Highball",
@@ -434,7 +434,7 @@
       "name": "Bellini",
       "family": "Sparkling",
       "category": "Sparkling Wine",
-      "base_spirit": "Prosecco",
+      "base_spirit": "Sparkling Wine",
       "spirit_type": "Blend",
       "method": "Stir",
       "glassware": "Flute",
@@ -639,7 +639,7 @@
       "name": "Champagne Cocktail",
       "family": "Sparkling",
       "category": "Cognac",
-      "base_spirit": "Champagne",
+      "base_spirit": "Cognac/Sparkling Wine",
       "spirit_type": "Blend",
       "method": "Build",
       "glassware": "Flute",
@@ -687,7 +687,7 @@
       "name": "Cuba Libre",
       "family": "Highball",
       "category": "Rum",
-      "base_spirit": "Rum",
+      "base_spirit": "White Rum",
       "spirit_type": "Single",
       "method": "Muddle & Build",
       "glassware": "Highball",
@@ -705,7 +705,7 @@
         },
         {
           "name": "Lime Wedges",
-          "role": "Citrus",
+          "role": "Garnish",
           "amount": 6,
           "unit": "wedges",
           "spec": "Lime",
@@ -758,7 +758,7 @@
       "name": "Bloody Maria",
       "family": "Savoury",
       "category": "Tequila",
-      "base_spirit": "Tequila",
+      "base_spirit": "Blanco Tequila",
       "spirit_type": "Single",
       "method": "Build",
       "glassware": "Highball",
@@ -885,7 +885,7 @@
         },
         {
           "name": "Lime Wedges",
-          "role": "Citrus",
+          "role": "Ingredient",
           "amount": 4,
           "unit": "wedges",
           "spec": "Lime Wedges",
@@ -925,7 +925,7 @@
         },
         {
           "name": "Lime Wedges",
-          "role": "Citrus",
+          "role": "Ingredient",
           "amount": 6,
           "unit": "wedges",
           "spec": "Lime Wedges",
@@ -947,7 +947,7 @@
       "name": "Caipirissima",
       "family": "Caipirinha Family",
       "category": "Rum",
-      "base_spirit": "Rum",
+      "base_spirit": "White Rum",
       "spirit_type": "Single",
       "method": "Muddle & Churn",
       "glassware": "Rocks",
@@ -965,7 +965,7 @@
         },
         {
           "name": "Lime Wedges",
-          "role": "Citrus",
+          "role": "Ingredient",
           "amount": 6,
           "unit": "wedges",
           "spec": "Lime Wedges",
@@ -987,7 +987,7 @@
       "name": "Cosmopolitan",
       "family": "Sour / Daisy",
       "category": "Vodka",
-      "base_spirit": "Vodka",
+      "base_spirit": "Citrus Vodka",
       "spirit_type": "Blend",
       "method": "Shake & Strain",
       "glassware": "Coupe",
@@ -1160,7 +1160,7 @@
       "name": "Godfather",
       "family": "Duo",
       "category": "Whiskey",
-      "base_spirit": "Scotch",
+      "base_spirit": "Scotch Whisky",
       "spirit_type": "Blend",
       "method": "Stir",
       "glassware": "Rocks",
@@ -1224,7 +1224,7 @@
       "name": "Hugo Spritz",
       "family": "Spritz",
       "category": "Aperitif",
-      "base_spirit": "Elderflower",
+      "base_spirit": "Elderflower Liqueur/Sparkling Wine",
       "spirit_type": "Blend",
       "method": "Build",
       "glassware": "Wine Glass",
@@ -1277,7 +1277,7 @@
       "name": "John Collins",
       "family": "Collins",
       "category": "Whiskey",
-      "base_spirit": "Whiskey",
+      "base_spirit": "Scotch Whisky",
       "spirit_type": "Single",
       "method": "Shake, Strain & Top",
       "glassware": "Highball",
@@ -1324,7 +1324,7 @@
       "name": "Dark & Stormy",
       "family": "Highball",
       "category": "Rum",
-      "base_spirit": "Dark Rum",
+      "base_spirit": "Aged Rum",
       "spirit_type": "Single",
       "method": "Build",
       "glassware": "Highball",
@@ -1595,7 +1595,7 @@
       "name": "Tequila Sunrise",
       "family": "Long Drink",
       "category": "Tequila",
-      "base_spirit": "Tequila",
+      "base_spirit": "Blanco Tequila",
       "spirit_type": "Single",
       "method": "Build",
       "glassware": "Highball",
@@ -1726,7 +1726,7 @@
       "name": "Zombie",
       "family": "Tropical / Tiki",
       "category": "Rum",
-      "base_spirit": "Rum Blend",
+      "base_spirit": "White Rum/Aged Rum/Overproof Rum",
       "spirit_type": "Multi",
       "method": "Shake & Strain",
       "glassware": "Tiki",
@@ -2097,7 +2097,7 @@
       "name": "Dirty Martini",
       "family": "Martini",
       "category": "Gin/Vodka",
-      "base_spirit": "Gin",
+      "base_spirit": "Gin or Vodka",
       "spirit_type": "Single",
       "method": "Stir & Double Strain",
       "glassware": "Nick & Nora",
@@ -2138,7 +2138,7 @@
       "name": "Mimosa",
       "family": "Sparkling",
       "category": "Sparkling Wine",
-      "base_spirit": "Prosecco",
+      "base_spirit": "Sparkling Wine",
       "spirit_type": "Blend",
       "method": "Build",
       "glassware": "Flute",
@@ -2271,7 +2271,7 @@
       "name": "Tommy's Margarita",
       "family": "Daisy / Margarita",
       "category": "Tequila",
-      "base_spirit": "Tequila",
+      "base_spirit": "Blanco Tequila",
       "spirit_type": "Blend",
       "method": "Shake & Strain",
       "glassware": "Rocks",
@@ -2310,7 +2310,7 @@
       "name": "Dry Martini",
       "family": "Martini",
       "category": "Gin/Vodka",
-      "base_spirit": "Gin",
+      "base_spirit": "Gin or Vodka",
       "spirit_type": "Single",
       "method": "Stir & Double Strain",
       "glassware": "Nick & Nora",
@@ -2519,7 +2519,7 @@
       "name": "Piña Colada",
       "family": "Tropical / Cream",
       "category": "Rum",
-      "base_spirit": "Rum",
+      "base_spirit": "Coconut Rum",
       "spirit_type": "Blend",
       "method": "Shake & Strain",
       "glassware": "Hurricane",
@@ -2635,7 +2635,7 @@
       "name": "Pornstar Martini",
       "family": "Modern Classic",
       "category": "Vodka",
-      "base_spirit": "Vanilla Vodka",
+      "base_spirit": "Vodka",
       "spirit_type": "Blend",
       "method": "Shake & Double Strain",
       "glassware": "Coupe",
@@ -2703,7 +2703,7 @@
       "name": "Rusty Nail",
       "family": "Duo",
       "category": "Whiskey",
-      "base_spirit": "Scotch",
+      "base_spirit": "Scotch Whisky",
       "spirit_type": "Blend",
       "method": "Build",
       "glassware": "Rocks",
@@ -2773,7 +2773,7 @@
       "name": "Paloma",
       "family": "Highball",
       "category": "Tequila",
-      "base_spirit": "Tequila",
+      "base_spirit": "Blanco Tequila",
       "spirit_type": "Single",
       "method": "Build",
       "glassware": "Highball",
@@ -2870,7 +2870,7 @@
       "name": "Planter's Punch",
       "family": "Tropical / Punch",
       "category": "Rum",
-      "base_spirit": "Rum",
+      "base_spirit": "Aged Rum",
       "spirit_type": "Blend",
       "method": "Shake & Strain",
       "glassware": "Highball",
@@ -3024,7 +3024,7 @@
       "name": "Lemon Drop Martini",
       "family": "Sour / Martini",
       "category": "Vodka",
-      "base_spirit": "Vodka",
+      "base_spirit": "Citrus Vodka",
       "spirit_type": "Blend",
       "method": "Shake & Strain",
       "glassware": "Coupe",
@@ -3067,7 +3067,7 @@
       "name": "Mai Tai",
       "family": "Tropical / Tiki",
       "category": "Rum",
-      "base_spirit": "Rum",
+      "base_spirit": "Aged Rum/White Rum",
       "spirit_type": "Blend",
       "method": "Shake & Double Strain",
       "glassware": "Rocks",
@@ -3177,7 +3177,7 @@
       "name": "Margarita",
       "family": "Margarita",
       "category": "Tequila",
-      "base_spirit": "Tequila",
+      "base_spirit": "Blanco Tequila",
       "spirit_type": "Blend",
       "method": "Shake & Strain",
       "glassware": "Coupe",
@@ -3263,7 +3263,7 @@
       "name": "Kir Royal",
       "family": "Sparkling",
       "category": "Sparkling Wine",
-      "base_spirit": "Champagne",
+      "base_spirit": "Sparkling Wine",
       "spirit_type": "Blend",
       "method": "Build",
       "glassware": "Flute",
@@ -3521,11 +3521,46 @@
       "ice": "Cubed",
       "garnish": "Orange Peel",
       "ingredients": [
-        { "name": "Bourbon", "role": "Base Spirit", "amount": 60, "unit": "ml", "spec": "Bourbon", "required": true },
-        { "name": "Maple Syrup", "role": "Syrup", "amount": 15, "unit": "ml", "spec": "Maple Syrup", "required": true },
-        { "name": "Lemon Juice", "role": "Juice", "amount": 25, "unit": "ml", "spec": "Fresh Lemon Juice", "required": true },
-        { "name": "Orange Juice", "role": "Juice", "amount": 15, "unit": "ml", "spec": "Fresh Orange Juice", "required": true },
-        { "name": "Aromatic Bitters", "role": "Bitters", "amount": 1, "unit": "dash", "spec": "Aromatic Bitters", "required": true }
+        {
+          "name": "Bourbon",
+          "role": "Base Spirit",
+          "amount": 60,
+          "unit": "ml",
+          "spec": "Bourbon",
+          "required": true
+        },
+        {
+          "name": "Maple Syrup",
+          "role": "Syrup",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Maple Syrup",
+          "required": true
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Juice",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Fresh Lemon Juice",
+          "required": true
+        },
+        {
+          "name": "Orange Juice",
+          "role": "Juice",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Fresh Orange Juice",
+          "required": true
+        },
+        {
+          "name": "Aromatic Bitters",
+          "role": "Bitters",
+          "amount": 1,
+          "unit": "dash",
+          "spec": "Aromatic Bitters",
+          "required": true
+        }
       ],
       "taste": "Sour"
     },
@@ -3542,11 +3577,46 @@
       "garnish": "Pineapple Slice",
       "notes": "Top with a scoop of crushed ice after building. It melts fast and keeps the drink cold without watering down the shake underneath.",
       "ingredients": [
-        { "name": "Dark Rum", "role": "Base Spirit", "amount": 45, "unit": "ml", "spec": "Dark Rum", "required": true },
-        { "name": "Italian Red Bitter", "role": "Bitter Liqueur", "amount": 25, "unit": "ml", "spec": "Italian Red Bitter", "required": true },
-        { "name": "Pineapple Juice", "role": "Juice", "amount": 45, "unit": "ml", "spec": "Fresh Pineapple Juice", "required": true },
-        { "name": "Lime Juice", "role": "Juice", "amount": 15, "unit": "ml", "spec": "Fresh Lime Juice", "required": true },
-        { "name": "Sugar Syrup", "role": "Syrup", "amount": 15, "unit": "ml", "spec": "Sugar Syrup", "required": true }
+        {
+          "name": "Dark Rum",
+          "role": "Base Spirit",
+          "amount": 45,
+          "unit": "ml",
+          "spec": "Dark Rum",
+          "required": true
+        },
+        {
+          "name": "Italian Red Bitter",
+          "role": "Bitter Liqueur",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Italian Red Bitter",
+          "required": true
+        },
+        {
+          "name": "Pineapple Juice",
+          "role": "Juice",
+          "amount": 45,
+          "unit": "ml",
+          "spec": "Fresh Pineapple Juice",
+          "required": true
+        },
+        {
+          "name": "Lime Juice",
+          "role": "Juice",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Fresh Lime Juice",
+          "required": true
+        },
+        {
+          "name": "Sugar Syrup",
+          "role": "Syrup",
+          "amount": 15,
+          "unit": "ml",
+          "spec": "Sugar Syrup",
+          "required": true
+        }
       ],
       "taste": "Bitter"
     },
@@ -3563,10 +3633,45 @@
       "garnish": "Lemon Twist",
       "notes": "Shake and double strain the Scotch, lemon and honey ginger syrup first, then float the Peated Scotch on top. The smoke hits your nose before the drink hits your mouth.",
       "ingredients": [
-        { "name": "Blended Scotch Whisky", "role": "Base Spirit", "amount": 60, "unit": "ml", "spec": "Blended Scotch Whisky", "required": true },
-        { "name": "Lemon Juice", "role": "Juice", "amount": 25, "unit": "ml", "spec": "Fresh Lemon Juice", "required": true },
-        { "name": "Honey and Ginger Syrup", "role": "Syrup", "amount": 25, "unit": "ml", "spec": "Honey and Ginger Syrup", "required": true },
-        { "name": "Peated Scotch", "role": "Float", "amount": 5, "unit": "ml", "spec": "Peated Scotch", "required": true, "technique": "Float on top after straining" }
+        {
+          "name": "Blended Scotch Whisky",
+          "role": "Base Spirit",
+          "amount": 60,
+          "unit": "ml",
+          "spec": "Blended Scotch Whisky",
+          "required": true
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Juice",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Fresh Lemon Juice",
+          "required": true
+        },
+        {
+          "name": "Honey Syrup",
+          "role": "Syrup",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Honey Syrup",
+          "required": true
+        },
+        {
+          "name": "Fresh Ginger",
+          "role": "Botanicals",
+          "spec": "Fresh Ginger",
+          "required": true
+        },
+        {
+          "name": "Peated Scotch",
+          "role": "Float",
+          "amount": 5,
+          "unit": "ml",
+          "spec": "Peated Scotch",
+          "required": true,
+          "technique": "Float on top after straining"
+        }
       ],
       "taste": null
     },
@@ -3582,8 +3687,22 @@
       "ice": "Cubed",
       "garnish": "Orange Slice",
       "ingredients": [
-        { "name": "Vodka", "role": "Base Spirit", "amount": 60, "unit": "ml", "spec": "Vodka", "required": true },
-        { "name": "Orange Juice", "role": "Juice", "amount": 120, "unit": "ml", "spec": "Fresh Orange Juice", "required": true }
+        {
+          "name": "Vodka",
+          "role": "Base Spirit",
+          "amount": 60,
+          "unit": "ml",
+          "spec": "Vodka",
+          "required": true
+        },
+        {
+          "name": "Orange Juice",
+          "role": "Juice",
+          "amount": 120,
+          "unit": "ml",
+          "spec": "Fresh Orange Juice",
+          "required": true
+        }
       ],
       "taste": "Sweet"
     },
@@ -3599,10 +3718,38 @@
       "ice": "Cubed",
       "garnish": "None",
       "ingredients": [
-        { "name": "Gin", "role": "Base Spirit", "amount": 60, "unit": "ml", "spec": "Gin", "required": true },
-        { "name": "Lemon Juice", "role": "Juice", "amount": 25, "unit": "ml", "spec": "Fresh Lemon Juice", "required": true },
-        { "name": "Sugar Syrup", "role": "Syrup", "amount": 25, "unit": "ml", "spec": "Sugar Syrup", "required": true },
-        { "name": "Fresh Basil Leaves", "role": "Garnish/Muddle", "amount": 8, "unit": "leaves", "spec": "Fresh Basil Leaves", "required": true }
+        {
+          "name": "Gin",
+          "role": "Base Spirit",
+          "amount": 60,
+          "unit": "ml",
+          "spec": "Gin",
+          "required": true
+        },
+        {
+          "name": "Lemon Juice",
+          "role": "Juice",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Fresh Lemon Juice",
+          "required": true
+        },
+        {
+          "name": "Sugar Syrup",
+          "role": "Syrup",
+          "amount": 25,
+          "unit": "ml",
+          "spec": "Sugar Syrup",
+          "required": true
+        },
+        {
+          "name": "Fresh Basil Leaves",
+          "role": "Garnish/Muddle",
+          "amount": 8,
+          "unit": "leaves",
+          "spec": "Fresh Basil Leaves",
+          "required": true
+        }
       ],
       "taste": "Sour"
     }
