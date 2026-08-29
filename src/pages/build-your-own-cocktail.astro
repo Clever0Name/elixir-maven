@@ -1253,7 +1253,8 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
     { category: 'Top', label: 'Top', hasSecond: false, noAmount: true }
   ];
   const allSpiritOptions = [...new Set([...SPIRITS, ...APERITIF_LIQUEUR_OPTIONS])].sort();
-  const freeformOptions = { Spirit: allSpiritOptions, Citrus: CITRUS.filter(item => item !== 'None'), Juice: JUICE.filter(item => item !== 'None'), Syrup: SYRUP.filter(item => item !== 'None'), Puree: PUREE.filter(item => item !== 'None'), Liqueur: ingredients.liqueur, Top: TOP.filter(item => item !== 'None'), Bitters: ingredients.bitters, Foamer: ingredients.foamer };
+  const freeformLiqueurOptions = [...new Set([...ingredients.liqueur, ...APERITIF_LIQUEUR_OPTIONS])].sort();
+  const freeformOptions = { Spirit: SPIRITS, Citrus: CITRUS.filter(item => item !== 'None'), Juice: JUICE.filter(item => item !== 'None'), Syrup: SYRUP.filter(item => item !== 'None'), Puree: PUREE.filter(item => item !== 'None'), Liqueur: freeformLiqueurOptions, Top: TOP.filter(item => item !== 'None'), Bitters: ingredients.bitters, Foamer: ingredients.foamer };
 
   // Initialize all categories as open
   Object.keys(SYRUP_CATEGORIES).forEach(cat => {
@@ -1542,12 +1543,10 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
 
   function freeformIngredientField(category, label, entry, placeholder) {
     const listId = `freeform-list-${category}-${entry}`.toLowerCase();
-    const options = (freeformOptions[category] || []).map(option => `<option value="${option}">`).join('');
     return `
       <div class="byoc-freeform-input-wrap">
-        <input class="byoc-freeform-input" list="${listId}" data-category="${category}" data-entry="${entry}" placeholder="${placeholder || label}" aria-label="${label}" autocomplete="off">
+        <input class="byoc-freeform-input" data-category="${category}" data-entry="${entry}" placeholder="${placeholder || label}" aria-label="${label}" autocomplete="off">
         <div class="byoc-suggestion-list" id="${listId}-suggestions" hidden></div>
-        <datalist id="${listId}">${options}</datalist>
       </div>
     `;
   }
