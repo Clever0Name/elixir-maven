@@ -1252,7 +1252,6 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
     { category: 'Liqueur', label: 'Liqueur', hasSecond: true },
     { category: 'Top', label: 'Top', hasSecond: false, noAmount: true }
   ];
-  const allSpiritOptions = [...new Set([...SPIRITS, ...APERITIF_LIQUEUR_OPTIONS])].sort();
   const freeformLiqueurOptions = [...new Set([...ingredients.liqueur, ...APERITIF_LIQUEUR_OPTIONS])].sort();
   const freeformOptions = { Spirit: SPIRITS, Citrus: CITRUS.filter(item => item !== 'None'), Juice: JUICE.filter(item => item !== 'None'), Syrup: SYRUP.filter(item => item !== 'None'), Puree: PUREE.filter(item => item !== 'None'), Liqueur: freeformLiqueurOptions, Top: TOP.filter(item => item !== 'None'), Bitters: ingredients.bitters, Foamer: ingredients.foamer };
 
@@ -1638,9 +1637,9 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
   }
 
   function freeformBuild() {
-    // Only liquid ingredient/amount fields feed matching — Bitters and Foamer never do.
     return [...document.querySelectorAll('#freeformFields input[data-category]')]
-      .filter(input => input.dataset.category !== 'Bitters' && input.dataset.category !== 'Foamer')
+      .filter(input => input.dataset.category !== 'Bitters' || input.value.trim())
+      .filter(input => input.dataset.category !== 'Foamer' || (input.value.trim() && document.querySelector('#freeformFields select[data-foamer-included]').value === 'Included'))
       .map(input => {
         const category = input.dataset.category;
         const entry = input.dataset.entry;
@@ -1673,7 +1672,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
   }
 
   function freeformRatioDescriptor(build) {
-    const measured = build.filter(item => item.amountMl && item.amountMl > 0);
+    const measured = build.filter(item => item.category !== 'Bitters' && item.category !== 'Foamer' && item.amountMl && item.amountMl > 0);
     if (!measured.length) return '';
 
     const total = measured.reduce((sum, item) => sum + item.amountMl, 0);
@@ -1697,7 +1696,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
     const result = document.getElementById('freeformResult');
     if (!anyFieldFilled) { result.innerHTML = '<p>Enter ingredients to see the closest matches.</p>'; return; }
 
-    const closestMatch = suggestionNames(build, document.getElementById('freeformMethod').value, document.getElementById('freeformGlass').value)[0] || null;
+    const closestMatch = suggestionNames(build)[0] || null;
     const descriptor = freeformRatioDescriptor(build);
     const spec = freeformSpecLines().join('\n');
 
@@ -1776,10 +1775,6 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
     document.getElementById('specList').innerHTML = lines.join('<br>');
   }
 
-  function matchingBuild(build) {
-    return build.filter(item => item.category !== 'Puree');
-  }
-
   function renderChanges(changes) {
     const list = document.getElementById('changeList');
     list.classList.toggle('empty', changes.length === 0);
@@ -1820,62 +1815,82 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
     return { build, changes };
   }
 
-  function suggestionNames(build, method, glassware) {
-    const liquidRoles = [...Object.values(MATCH_CATEGORY_TO_ROLE), 'aperitif'];
-    const matchWeights = { Spirit: 3, Liqueur: 2, Citrus: 1, Juice: 1, Syrup: 1, Top: 1 };
-    const aperitifNames = APERITIF_LIQUEUR_OPTIONS.map(normalize);
-    const selected = build.filter(item => item.ingredient && item.ingredient !== 'None' && item.category !== 'Puree');
-    const matchesIngredient = (item, candidate) => {
-      if (normalize(candidate.name) !== normalize(item.ingredient)) return false;
-      const candidateRole = candidate.role.toLowerCase();
-      if (item.category === 'Spirit' && aperitifNames.includes(normalize(item.ingredient))) {
-        return candidateRole.includes('aperitif') || candidateRole.includes('liqueur');
+  function suggestionNames(build) {
+    const aperitifNames = new Set(APERITIF_LIQUEUR_OPTIONS.map(normalize));
+    const roleFor = ingredient => {
+      const role = ingredient.role.toLowerCase();
+      if (role.includes('base spirit')) return 'Spirit';
+      if (role.includes('citrus')) return 'Citrus';
+      if (role.includes('juice')) return 'Juice';
+      if (role.includes('syrup') || role.includes('sweetener')) return 'Syrup';
+      if (role.includes('puree')) return 'Puree';
+      if (role.includes('liqueur') || role.includes('aperitif') || role.includes('amaro') || role.includes('bitter liqueur')) return 'Liqueur';
+      if (role.includes('mixer')) return 'Top';
+      if (role.includes('bitters')) return 'Bitters';
+      if (role.includes('foamer')) return 'Foamer';
+      return null;
+    };
+    const canonicalSpirit = value => {
+      const spirit = normalize(value);
+      if (['bourbon', 'whiskey', 'rye whiskey', 'scotch whisky', 'blended scotch whisky', 'irish whiskey'].includes(spirit)) return 'whiskey';
+      if (spirit.includes('rum')) return 'rum';
+      if (spirit.includes('tequila')) return 'tequila';
+      if (spirit.includes('vodka')) return 'vodka';
+      return spirit;
+    };
+    const buildCategory = item => item.category === 'Spirit' && aperitifNames.has(normalize(item.ingredient)) ? 'Liqueur' : item.category;
+    const sameIngredient = (selection, ingredient) => {
+      if (buildCategory(selection) !== roleFor(ingredient)) return false;
+      return buildCategory(selection) === 'Spirit'
+        ? canonicalSpirit(selection.ingredient) === canonicalSpirit(ingredient.name)
+        : normalize(selection.ingredient) === normalize(ingredient.name);
+    };
+    const selected = build.filter(item => item.ingredient).map(item => ({ ...item, category: buildCategory(item) }));
+    const byCategory = category => selected.filter(item => item.category === category);
+    let candidates = suggestionCocktails.filter(cocktail => cocktail.approved_for_suggestion === true);
+    let matchedAnyGate = false;
+
+    for (const category of ['Spirit', 'Citrus', 'Juice', 'Syrup', 'Liqueur', 'Puree', 'Top', 'Bitters', 'Foamer']) {
+      const selections = byCategory(category);
+      if (!selections.length) continue;
+      const hasNone = selections.some(item => item.ingredient === 'None');
+      const chosen = selections.filter(item => item.ingredient !== 'None');
+      const filtered = candidates.filter(cocktail => {
+        const ingredients = cocktail.ingredients.filter(ingredient => roleFor(ingredient) === category);
+        if (hasNone && ingredients.length) return false;
+        return chosen.every(selection => ingredients.some(ingredient => sameIngredient(selection, ingredient)));
+      });
+
+      if (filtered.length) {
+        candidates = filtered;
+        matchedAnyGate = true;
+      } else if (category === 'Spirit' && chosen.length === 1) {
+        return [];
       }
-      const role = MATCH_CATEGORY_TO_ROLE[item.category.toLowerCase()];
-      return role ? candidateRole.includes(role) : false;
+    }
+
+    if (!matchedAnyGate) return [];
+    const measured = selected.filter(item => item.amountMl && item.amountMl > 0 && item.ingredient !== 'None');
+    const buildTotal = measured.reduce((total, item) => total + item.amountMl, 0);
+    const ratioDistance = cocktail => {
+      const ingredients = cocktail.ingredients;
+      const cocktailTotal = ingredients.reduce((total, ingredient) => total + (ingredient.amount || 0), 0);
+      if (!buildTotal || !cocktailTotal) return 0;
+      return measured.reduce((distance, selection) => {
+        const ingredient = ingredients.find(candidate => sameIngredient(selection, candidate));
+        if (!ingredient?.amount) return distance;
+        return distance + Math.abs((selection.amountMl / buildTotal) - (ingredient.amount / cocktailTotal));
+      }, 0);
     };
 
-    const candidates = suggestionCocktails.filter(cocktail => cocktail.approved_for_suggestion === true).map(cocktail => {
-      const liquidIngredients = cocktail.ingredients.filter(ingredient => liquidRoles.some(role => ingredient.role.toLowerCase().includes(role)));
-      const matches = selected.map(item => ({ item, candidate: liquidIngredients.find(candidate => matchesIngredient(item, candidate)) })).filter(match => match.candidate);
-      const overlapScore = matches.reduce((score, match) => score + (matchWeights[match.item.category] || 1), 0);
-      const selectedTotal = selected.reduce((total, item) => total + (item.amountMl || 0), 0);
-      const cocktailTotal = liquidIngredients.reduce((total, ingredient) => total + (ingredient.amount || 0), 0);
-      const ratioScore = matches.reduce((score, match) => {
-        if (!match.item.amountMl || !match.candidate.amount || !selectedTotal || !cocktailTotal) return score;
-        const buildRatio = match.item.amountMl / selectedTotal;
-        const cocktailRatio = match.candidate.amount / cocktailTotal;
-        return score + Math.max(0, 1 - Math.abs(buildRatio - cocktailRatio));
-      }, 0);
-      return { cocktail, overlapScore, ratioScore };
-    });
-
-    // Tier 1: first shortlist using the established ingredient-overlap score, then refine only that shortlist by ratios.
-    const overlapCandidates = candidates.filter(candidate => candidate.overlapScore > 0).sort((a, b) => b.overlapScore - a.overlapScore || a.cocktail.name.localeCompare(b.cocktail.name));
-    const shortlist = overlapCandidates.filter((candidate, index) => index === 0 || candidate.overlapScore >= Math.max(2, overlapCandidates[0].overlapScore * 0.45));
-    const closest = [...shortlist].sort((a, b) => b.ratioScore - a.ratioScore || b.overlapScore - a.overlapScore || a.cocktail.name.localeCompare(b.cocktail.name))[0];
-    const selectedNames = new Set();
-    if (closest) selectedNames.add(closest.cocktail.name);
-
-    // Tier 2: infer the build's flavor family from its strongest approved overlap candidate, then choose a different cocktail with that taste tag.
-    const flavorFamily = closest?.cocktail.taste;
-    const sameFlavor = flavorFamily
-      ? candidates.filter(candidate => candidate.cocktail.taste === flavorFamily && !selectedNames.has(candidate.cocktail.name))
-        .sort((a, b) => b.overlapScore - a.overlapScore || a.cocktail.name.localeCompare(b.cocktail.name))[0]
-      : undefined;
-    if (sameFlavor) selectedNames.add(sameFlavor.cocktail.name);
-
-    // Tier 3: match the generated or user-selected structural shape exactly, after reserving higher-tier results.
-    const sameArchetype = method && glassware
-      ? candidates.filter(candidate => candidate.cocktail.method === method && candidate.cocktail.glassware === glassware && !selectedNames.has(candidate.cocktail.name))
-        .sort((a, b) => b.overlapScore - a.overlapScore || a.cocktail.name.localeCompare(b.cocktail.name))[0]
-      : undefined;
-
-    return [closest, sameFlavor, sameArchetype].filter(Boolean).map(candidate => candidate.cocktail.name);
+    return candidates
+      .sort((a, b) => ratioDistance(a) - ratioDistance(b) || a.name.localeCompare(b.name))
+      .slice(0, 1)
+      .map(cocktail => cocktail.name);
   }
 
   function renderOutcome() {
-    const build = matchingBuild(outcomeBuild());
+    const build = outcomeBuild();
     const alternatives = {
       Spirit: SPIRITS,
       Citrus: CITRUS,
@@ -1885,7 +1900,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
     };
     const nudge = nudgeBuild(build, alternatives);
 
-    const suggestions = suggestionNames(nudge.build, methodFor(), glassFor());
+    const suggestions = suggestionNames(nudge.build);
     const list = document.getElementById('similarCocktailsList');
     list.innerHTML = suggestions.length
       ? suggestions.map(suggestion => `<span>${suggestion}</span>`).join('')
