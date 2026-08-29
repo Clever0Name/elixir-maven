@@ -108,7 +108,7 @@ const totalCount = cocktails.length;
   const resultsCount = document.getElementById('results-count') as HTMLElement | null;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function animateCounter(el: HTMLElement | null, target: number, startTime: number, duration = 2200) {
+  function animateCounter(el: HTMLElement | null, target: number, startTime: number, duration = 3200) {
     if (!el) return;
     if (reduceMotion) {
       el.textContent = String(target);
