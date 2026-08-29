@@ -87,7 +87,9 @@ const totalCount = cocktails.length;
       </div>
     </div>
 
-    <p class="results-count" id="results-count" aria-live="polite"></p>
+    <p class="results-count" id="results-count" aria-live="polite">
+      <span id="results-count-value" data-target={totalCount}>0</span><span class="results-count-label"> cocktails</span>
+    </p>
 
     <div class="cocktail-grid" id="cocktail-grid">
       {cocktails.map((cocktail) => <CocktailCard cocktail={cocktail} />)}
@@ -100,19 +102,51 @@ const totalCount = cocktails.length;
 </Layout>
 
 <script>
-  // ─── Animated counter ───────────────────────────────────────────
+  // ─── Animated counters ──────────────────────────────────────────
   const heroCount = document.getElementById('hero-count') as HTMLElement | null;
-  if (heroCount) {
-    const target = parseInt(heroCount.dataset.target ?? '0', 10);
-    const duration = 3600;
-    const start = performance.now();
+  const resultsCountValue = document.getElementById('results-count-value') as HTMLElement | null;
+  const resultsCount = document.getElementById('results-count') as HTMLElement | null;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function animateCounter(el: HTMLElement | null, target: number, startTime: number, duration = 2200) {
+    if (!el) return;
+    if (reduceMotion) {
+      el.textContent = String(target);
+      return;
+    }
+
     const tick = (now: number) => {
-      const t = Math.min((now - start) / duration, 1);
+      const t = Math.min((now - startTime) / duration, 1);
       const ease = 1 - Math.pow(1 - t, 3);
-      heroCount.textContent = String(Math.round(ease * target));
+      el.textContent = String(Math.round(ease * target));
       if (t < 1) requestAnimationFrame(tick);
     };
+
     requestAnimationFrame(tick);
+  }
+
+  if (heroCount && resultsCountValue) {
+    const target = parseInt(heroCount.dataset.target ?? '0', 10);
+    const gridTarget = parseInt(resultsCountValue.dataset.target ?? String(target), 10);
+
+    const startTime = performance.now();
+    const startBoth = () => {
+      animateCounter(heroCount, target, startTime);
+      animateCounter(resultsCountValue, gridTarget, startTime);
+    };
+
+    if (resultsCount && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        const inView = entries.some((entry) => entry.isIntersecting);
+        if (inView) {
+          startBoth();
+          observer.disconnect();
+        }
+      }, { threshold: 0.2 });
+      observer.observe(resultsCount);
+    } else {
+      startBoth();
+    }
   }
 
   // ─── Surprise Me ────────────────────────────────────────────────
@@ -136,6 +170,8 @@ const totalCount = cocktails.length;
   const grid        = document.getElementById('cocktail-grid') as HTMLElement;
   const cards       = document.querySelectorAll<HTMLAnchorElement>('.cocktail-card');
   const countEl     = document.getElementById('results-count');
+  const countValueEl = document.getElementById('results-count-value') as HTMLElement | null;
+  const countLabelEl = countEl?.querySelector('.results-count-label') as HTMLElement | null;
   const noResults   = document.getElementById('no-results') as HTMLElement;
 
   let activeFilter = 'all';
@@ -203,7 +239,12 @@ const totalCount = cocktails.length;
       });
     }
 
-    if (countEl)   countEl.textContent = `${visible} cocktail${visible !== 1 ? 's' : ''}`;
+    if (countValueEl) {
+      const label = visible !== 1 ? 'cocktails' : 'cocktail';
+      countValueEl.textContent = String(visible);
+      countValueEl.dataset.target = String(visible);
+      if (countLabelEl) countLabelEl.textContent = ` ${label}`;
+    }
     if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
   }
 
