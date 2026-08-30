@@ -1,117 +1,123 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import cocktailsData from '../../elixir_maven_cocktails.json';
 
-const methods = [
-  {
-    id: 'build',
-    term: 'Build',
-    definition: 'Make the drink directly in the serving glass — add ingredients one at a time over ice. No shaker, no strain.',
-    tags: [],
-    usedFor: ['Aperol Spritz', 'Americano', 'Tequila Sunrise'],
-  },
-  {
-    id: 'churn',
-    term: 'Churn',
-    definition: 'Mix and lift the drink with a bar spoon through crushed ice.',
-    tags: [],
-    usedFor: ['Mojito', 'Mint Julep', 'Caipirinha'],
-  },
-  {
-    id: 'dry-shake',
-    term: 'Dry Shake',
-    definition: 'Shake all ingredients without ice first to build foam, then add ice and shake again to chill. Skip this and the foam will be thin.',
-    tags: ['required for foam'],
-    usedFor: ['Amaretto Sour', 'Whiskey Sour'],
-  },
-  {
-    id: 'foamer-dilution',
-    term: 'Foamer Dilution',
-    definition: 'Bitters/Foamer for cocktails can be diluted with water at a 2:13 ratio (100ml/3.4oz foamer to 650ml/22oz water) for a full 750ml/25.4oz bottle. Once diluted, 5ml of the mix is the standard measure used across any recipe calling for Foamer Dilution. This dissipates the overpowering taste of bitters/foamer.',
-    tags: [],
-    usedFor: ['Cocktails calling for Foamer Dilution'],
-  },
-  {
-    id: 'muddle',
-    term: 'Muddle',
-    definition: 'Gently press against fruits or herbs inside the glass to release juice and oils.',
-    tags: [],
-    usedFor: ['Caipirinha', 'Cuba Libre', 'Caipiroska'],
-  },
-  {
-    id: 'saline-solution',
-    term: 'Saline Solution',
-    definition: 'A seasoning solution made by dissolving Sea Salt Flakes into water at a ratio of 20 grams salt to 100 grams water. Salt suppresses bitterness and makes sweetness and fruit read brighter — the same reason a pinch of salt sharpens caramel or watermelon, without tasting salty itself. Whenever it is included in a cocktail specification, the standard amount is 2 drops.',
-    tags: [],
-    usedFor: ['[placeholder — leave as-is until real cocktail names are supplied]'],
-  },
-  {
-    id: 'shake-double-strain',
-    term: 'Shake & Double Strain',
-    definition: 'Same as shake & strain, but poured through a second fine mesh strainer. Catches ice shards and pulp — gives the cleanest surface on a served-up drink.',
-    tags: ['served up', 'no ice in glass'],
-    usedFor: ['Espresso Martini', 'Daiquiri', 'Sidecar'],
-  },
-  {
-    id: 'shake-strain',
-    term: 'Shake & Strain',
-    definition: 'Shake with cubed ice in a sealed tin until the outside frosts, then pour through a strainer over fresh ice or into a chilled glass.',
-    tags: [],
-    usedFor: ['Margarita', 'Cosmopolitan', 'Piña Colada'],
-  },
-  {
-    id: 'stir',
-    term: 'Stir',
-    definition: 'Combine ingredients in a mixing glass over ice and stir with a bar spoon until chilled and diluted. Preserves clarity and keeps spirit-forward drinks silky rather than aerated.',
-    tags: ['spirit-forward', 'no shaking'],
-    usedFor: ['Negroni', 'Old Fashioned', 'Boulevardier'],
-  },
-  {
-    id: 'stir-double-strain',
-    term: 'Stir & Double Strain',
-    definition: 'Stir in a mixing glass over ice, then pour through a Hawthorne strainer and a fine mesh strainer. The second pass removes ice chips for a completely clear, clean pour.',
-    tags: ['served up', 'no ice in glass'],
-    usedFor: ['Dirty Martini', 'Dry Martini'],
-  },
-  {
-    id: 'stir-strain',
-    term: 'Stir & Strain',
-    definition: 'Stir in a mixing glass over ice, then pour through a Hawthorne strainer into a chilled glass, leaving the ice behind.',
-    tags: ['served up'],
-    usedFor: ['Hanky Panky', 'Manhattan Sweet', 'Vieux Carré'],
-  },
+type GlossaryEntry = {
+  id: string;
+  term: string;
+  definition: string;
+  tags?: string[];
+  usedFor?: string[];
+};
+
+const cocktailByName = new Map(cocktailsData.cocktails.map((cocktail) => [cocktail.name, cocktail]));
+const cocktailNames = (names: string[]) => names.filter((name) => cocktailByName.has(name));
+const cocktailNamesByTaste = (taste: string) => cocktailsData.cocktails.filter((cocktail) => cocktail.taste === taste).map((cocktail) => cocktail.name).slice(0, 3);
+const cocktailsWithTwist = cocktailsData.cocktails.filter((cocktail) => /twist/i.test(cocktail.garnish ?? '')).map((cocktail) => cocktail.name);
+
+const techniques: GlossaryEntry[] = [
+  { id: 'build', term: 'Build', definition: 'Make the drink directly in the serving glass — add ingredients one at a time over ice. No shaker, no strain.', usedFor: cocktailNames(['Aperol Spritz', 'Americano', 'Tequila Sunrise']) },
+  { id: 'churn', term: 'Churn', definition: 'Mix and lift the drink with a bar spoon through crushed ice.', usedFor: cocktailNames(['Mojito', 'Mint Julep', 'Caipirinha']) },
+  { id: 'muddle', term: 'Muddle', definition: 'Gently press against fruits or herbs inside the glass to release juice and oils.', usedFor: cocktailNames(['Caipirinha', 'Cuba Libre', 'Caipiroska']) },
+  { id: 'float', term: 'Float', definition: 'Pouring an ingredient gently over the surface of a finished drink so it sits on top rather than mixing in. Usually done over the back of a bar spoon. The floated ingredient hits the nose first and the palate last.', usedFor: cocktailNames(['Penicillin', 'Tequila Sunrise']) },
+  { id: 'express', term: 'Express', definition: 'Squeezing a strip of citrus peel skin-side down over the drink to release its oils across the surface. The oils, not the juice, are the point — it changes the aroma without adding acidity. The peel is then either discarded or dropped in.', usedFor: cocktailsWithTwist },
+  { id: 'dry-shake', term: 'Dry Shake', definition: 'Shake all ingredients without ice first to build foam, then add ice and shake again to chill. Skip this and the foam will be thin.', tags: ['required for foam'], usedFor: cocktailNames(['Amaretto Sour', 'Whiskey Sour']) },
+  { id: 'shake-strain', term: 'Shake & Strain', definition: 'Shake with cubed ice in a sealed tin until the outside frosts, then pour through a strainer over fresh ice or into a chilled glass.', usedFor: cocktailNames(['Margarita', 'Cosmopolitan', 'Piña Colada']) },
+  { id: 'shake-double-strain', term: 'Shake & Double Strain', definition: 'Same as shake & strain, but poured through a second fine mesh strainer. Catches ice shards and pulp — gives the cleanest surface on a served-up drink.', tags: ['served up', 'no ice in glass'], usedFor: cocktailNames(['Espresso Martini', 'Daiquiri', 'Sidecar']) },
+  { id: 'stir', term: 'Stir', definition: 'Combine ingredients in a mixing glass over ice and stir with a bar spoon until chilled and diluted. Preserves clarity and keeps spirit-forward drinks silky rather than aerated.', tags: ['spirit-forward', 'no shaking'], usedFor: cocktailNames(['Negroni', 'Old Fashioned', 'Boulevardier']) },
+  { id: 'stir-strain', term: 'Stir & Strain', definition: 'Stir in a mixing glass over ice, then pour through a Hawthorne strainer into a chilled glass, leaving the ice behind.', tags: ['served up'], usedFor: cocktailNames(['Hanky Panky', 'Manhattan Sweet', 'Vieux Carré']) },
+  { id: 'stir-double-strain', term: 'Stir & Double Strain', definition: 'Stir in a mixing glass over ice, then pour through a Hawthorne strainer and a fine mesh strainer. The second pass removes ice chips for a completely clear, clean pour.', tags: ['served up', 'no ice in glass'], usedFor: cocktailNames(['Dirty Martini', 'Dry Martini']) },
+  { id: 'foamer-dilution', term: 'Foamer Dilution', definition: 'Bitters/Foamer for cocktails can be diluted with water at a 2:13 ratio (100ml/3.4oz foamer to 650ml/22oz water) for a full 750ml/25.4oz bottle. Once diluted, 5ml of the mix is the standard measure used across any recipe calling for Foamer Dilution. This dissipates the overpowering taste of bitters/foamer.' },
+  { id: 'saline-solution', term: 'Saline Solution', definition: 'A seasoning solution made by dissolving Sea Salt Flakes into water at a ratio of 20 grams salt to 100 grams water. Salt suppresses bitterness and makes sweetness and fruit read brighter — the same reason a pinch of salt sharpens caramel or watermelon, without tasting salty itself. Whenever it is included in a cocktail specification, the standard amount is 2 drops.' },
+];
+
+const measurements: GlossaryEntry[] = [
+  { id: 'bar-spoon', term: 'Bar Spoon', definition: 'A long-handled spoon used for stirring, layering and measuring small amounts. Roughly 5ml when used as a measure.' },
+  { id: 'dash', term: 'Dash', definition: 'A short, sharp shake from a bitters bottle — roughly 0.8ml, though it varies by bottle. Used where an ingredient is seasoning rather than volume.' },
+  { id: 'drop', term: 'Drop', definition: 'A single drop from a dropper or pipette. Smaller and more controlled than a dash, used for concentrated preparations.', usedFor: ['Saline Solution (2 drops standard)'] },
+  { id: 'free-pour', term: 'Free Pour', definition: 'Pouring without a jigger, judged by count or by eye. Faster in service, less consistent than measuring.' },
+  { id: 'ml-oz', term: 'ml / oz', definition: 'Elixir Maven specs are written in millilitres, with an ounce conversion available via the toggle. 1oz is approximately 30ml. Specs are starting points — adjust to taste.' },
+  { id: 'part', term: 'Part', definition: 'A ratio rather than a fixed amount. A drink built "2 parts spirit, 1 part citrus, 1 part syrup" scales to any glass size as long as the proportions hold.' },
+];
+
+const flavourTags: GlossaryEntry[] = [
+  { id: 'bitter', term: 'Bitter', definition: 'Built around bitter elements — aperitifs, amari, bitters — where that bitterness is the point rather than a background note.', usedFor: cocktailNamesByTaste('Bitter') },
+  { id: 'delight', term: 'Delight', definition: "Approachable and easy-drinking. Fruit-forward, low on bite, the drinks that suit someone who doesn't usually drink cocktails.", usedFor: cocktailNamesByTaste('Delight') },
+  { id: 'sharp', term: 'Sharp', definition: 'Clean and bracing, with acidity or dryness cutting through. Less about sugar, more about edge.', usedFor: cocktailNamesByTaste('Sharp') },
+  { id: 'smooth', term: 'Smooth', definition: 'Rich and rounded. Creamy, soft or spirit-forward without harshness — drinks that sip rather than refresh.', usedFor: cocktailNamesByTaste('Smooth') },
+  { id: 'sour', term: 'Sour', definition: 'The classic sour structure: spirit, citrus and a sweetener in balance. Tart, bright and the foundation of a large part of the cocktail canon.', usedFor: cocktailNamesByTaste('Sour') },
+  { id: 'sweet', term: 'Sweet', definition: 'Dessert-leaning or sugar-forward, where sweetness leads rather than balances.', usedFor: cocktailNamesByTaste('Sweet') },
+];
+
+const ingredientCategories: GlossaryEntry[] = [
+  { id: 'aperitif', term: 'Aperitif', definition: 'A low-alcohol, usually bitter drink built to be consumed before a meal. Includes bitter aperitivi (Aperol, Campari) and fortified wines (sweet and dry vermouth).', usedFor: cocktailNames(['Americano', 'Negroni', 'Aperol Spritz']) },
+  { id: 'bitters', term: 'Bitters', definition: 'Highly concentrated botanical extracts used in dashes. Seasoning rather than an ingredient — they adjust and sharpen a drink without contributing meaningful volume.', usedFor: cocktailNames(['Old Fashioned', 'Manhattan Sweet', 'Champagne Cocktail']) },
+  { id: 'botanicals', term: 'Botanicals', definition: 'Fresh herbs and roots muddled or churned into a drink — mint, basil, ginger. Distinct from a garnish: a botanical goes in the glass and flavours the drink, a sprig sits on top.', usedFor: cocktailNames(['Mojito', 'Basil Smash', 'Penicillin']) },
+  { id: 'citrus', term: 'Citrus', definition: 'Fresh lemon or lime juice, providing the acidity that balances sweetness. Almost always fresh — bottled citrus behaves differently.', usedFor: cocktailNames(['Daiquiri', 'Whiskey Sour', 'Margarita']) },
+  { id: 'foamer', term: 'Foamer', definition: 'An ingredient that creates texture rather than flavour — egg white or an equivalent. Requires a dry shake to build the foam before the drink is shaken with ice.', usedFor: cocktailNames(['Whiskey Sour', 'Pisco Sour', 'Amaretto Sour']) },
+  { id: 'juice', term: 'Juice', definition: 'Non-citrus fruit juices contributing body and sweetness — pineapple, cranberry, orange. Longer and softer than citrus.', usedFor: cocktailNames(['Sea Breeze', 'Piña Colada', 'Screwdriver']) },
+  { id: 'liqueur', term: 'Liqueur', definition: 'A sweetened, flavoured spirit. Lower in alcohol than a base spirit and used in smaller measures — it adds a specific flavour rather than forming the backbone.', usedFor: cocktailNames(['Cosmopolitan', 'Sidecar', 'Espresso Martini']) },
+  { id: 'puree', term: 'Purée', definition: 'Thick fruit pulp. Unlike a syrup it contributes body and fruit weight rather than sweetness, so it sits in the drink differently.', usedFor: cocktailNames(['Pornstar Martini', 'Bellini']) },
+  { id: 'spirit', term: 'Spirit', definition: 'The base of the drink — gin, rum, vodka, tequila, whiskey, cognac and their varieties. The ingredient that most defines what a cocktail is.' },
+  { id: 'syrup', term: 'Syrup', definition: 'Sugar dissolved in water, sometimes infused. Provides sweetness and balances acidity. Sugar Syrup is the default; others carry their own flavour alongside the sweetness.', usedFor: cocktailNames(['Daiquiri', 'Mojito', 'Tom Collins']) },
+  { id: 'top', term: 'Top', definition: 'An ingredient added last to lengthen a drink — soda, tonic, ginger beer, sparkling wine. No fixed measure: it fills the space left after everything else and the ice.', usedFor: cocktailNames(['Aperol Spritz', 'Mojito', 'Dark & Stormy']) },
+];
+
+const sections = [
+  { id: 'techniques-methods', title: 'Techniques & Methods', entries: techniques },
+  { id: 'measurement-terms', title: 'Measurement Terms', entries: measurements },
+  { id: 'flavour-tags', title: 'Flavour Tags', entries: flavourTags },
+  { id: 'ingredient-categories', title: 'Ingredient Categories', entries: ingredientCategories },
 ];
 ---
 
-<Layout
-  title="Glossary — Elixir Maven"
-  description="Cocktail technique glossary — definitions for every method used in the Elixir Maven recipe collection."
->
+<Layout title="Glossary — Elixir Maven" description="Cocktail technique glossary — definitions for every method used in the Elixir Maven recipe collection.">
   <div class="container">
     <section class="glossary-hero">
       <h1>Glossary</h1>
       <p class="glossary-sub">The terms behind the techniques</p>
     </section>
 
-    <section class="glossary-section" aria-labelledby="methods-heading">
-      <h2 class="glossary-section-title" id="methods-heading">Methods</h2>
-      <dl class="glossary-list">
-        {methods.map((method) => (
-          <div class="glossary-entry" id={method.id}>
-            <dt class="glossary-term">{method.term}</dt>
-            <dd class="glossary-body">
-              <p class="glossary-def">{method.definition}</p>
-              {method.tags.length > 0 && (
-                <div class="glossary-tags">
-                  {method.tags.map((tag) => (
-                    <span class="glossary-tag">{tag}</span>
-                  ))}
-                </div>
-              )}
-              <p class="glossary-used">Used for: {method.usedFor.join(' · ')}</p>
-            </dd>
-          </div>
-        ))}
-      </dl>
-    </section>
+    <nav class="glossary-anchor-nav" aria-label="Glossary sections">
+      {sections.map((section) => <a href={`#${section.id}`}>{section.title}</a>)}
+    </nav>
+
+    <div class="glossary-sections">
+      {sections.map((section) => (
+        <details class="glossary-section" id={section.id}>
+          <summary class="glossary-section-title">{section.title}</summary>
+          <dl class="glossary-list">
+            {section.entries.map((entry) => (
+              <div class="glossary-entry" id={entry.id}>
+                <dt class="glossary-term">{entry.term}</dt>
+                <dd class="glossary-body">
+                  <p class="glossary-def">{entry.definition}</p>
+                  {entry.tags && entry.tags.length > 0 && <div class="glossary-tags">{entry.tags.map((tag) => <span class="glossary-tag">{tag}</span>)}</div>}
+                  {entry.usedFor && entry.usedFor.length > 0 && (
+                    <p class="glossary-used">
+                      Used for:{' '}
+                      {entry.usedFor.map((name, index) => {
+                        const cocktail = cocktailByName.get(name);
+                        return <Fragment>{index > 0 && ' · '}{cocktail ? <a href={`/cocktails/${cocktail.id}`}>{name}</a> : name}</Fragment>;
+                      })}
+                    </p>
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </details>
+      ))}
+    </div>
   </div>
 </Layout>
+
+<script>
+  function openGlossaryTarget() {
+    const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+    target?.closest('details')?.setAttribute('open', '');
+  }
+
+  openGlossaryTarget();
+  window.addEventListener('hashchange', openGlossaryTarget);
+</script>
