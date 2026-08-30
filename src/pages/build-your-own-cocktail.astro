@@ -526,11 +526,19 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
       border: 1px solid var(--border);
       border-radius: 6px;
       background: var(--panel);
+      background-color: var(--panel);
       color: var(--cream);
+      -webkit-text-fill-color: var(--cream);
+      opacity: 1;
       padding: 9px 10px;
       font: 12px 'IBM Plex Mono', monospace;
-      /* Forces native dropdowns (datalist/select popups) to render light bg + dark text consistently across browsers. */
       color-scheme: light;
+    }
+
+    .byoc-freeform-field select option,
+    .byoc-freeform-meta select option {
+      background-color: var(--panel);
+      color: var(--cream);
     }
 
     .byoc-freeform-input-wrap {
@@ -610,7 +618,10 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
       border: 1px solid var(--border);
       border-radius: 6px;
       background: var(--panel);
+      background-color: var(--panel);
       color: var(--cream);
+      -webkit-text-fill-color: var(--cream);
+      opacity: 1;
       padding: 9px 10px;
       font: 12px 'IBM Plex Mono', monospace;
       color-scheme: light;
@@ -625,6 +636,7 @@ const suggestionCocktails = cocktailsData.cocktails.map((cocktail) => {
 
     @media (max-width: 600px) {
       .byoc-freeform-grid { grid-template-columns: 1fr; }
+      .byoc-freeform-meta { grid-template-columns: 1fr; }
     }
 
     .byoc-result-col {

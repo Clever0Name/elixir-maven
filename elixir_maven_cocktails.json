@@ -2342,7 +2342,7 @@
       "name": "Gimlet",
       "family": "Sour",
       "category": "Gin/Vodka",
-      "base_spirit": "Vodka/Gin",
+      "base_spirit": "Gin or Vodka",
       "spirit_type": "Single",
       "method": "Shake & Double Strain",
       "glassware": "Coupe",
