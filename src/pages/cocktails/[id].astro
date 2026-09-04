@@ -399,9 +399,18 @@ const specNoteLabel =
 
   // ─── Unit toggle (ml ↔ oz) ──────────────────────────────────────
   function toOz(ml: number): string {
-    const oz = ml / 29.5735;
-    const rounded = Math.round(oz * 4) / 4;
-    return (rounded % 1 === 0 ? rounded.toFixed(0) : rounded.toString()) + 'oz';
+    const decimal = ml.toString().split('.');
+    const scale = 10 ** (decimal[1]?.length ?? 0);
+    let numerator = Number(decimal.join(''));
+    let denominator = scale * 30;
+    const gcd = (a: number, b: number): number => b === 0 ? a : gcd(b, a % b);
+    const divisor = gcd(Math.abs(numerator), denominator);
+    numerator /= divisor;
+    denominator /= divisor;
+    const whole = Math.floor(numerator / denominator);
+    const remainder = numerator % denominator;
+    if (remainder === 0) return `${whole}oz`;
+    return `${whole > 0 ? whole : ''}<span class="oz-fraction"><sup>${remainder}</sup>/<sub>${denominator}</sub></span>oz`;
   }
 
   function setUnit(unit: string) {
@@ -413,7 +422,7 @@ const specNoteLabel =
     document.querySelectorAll<HTMLElement>('[data-ml]').forEach((el) => {
       const ml = parseFloat(el.dataset.ml ?? '');
       if (isNaN(ml)) return;
-      el.textContent = unit === 'oz' ? toOz(ml) : ml + 'ml';
+      el.innerHTML = unit === 'oz' ? toOz(ml) : `${ml}ml`;
     });
     try { localStorage.setItem(UNIT_KEY, unit); } catch {}
   }

@@ -16,7 +16,7 @@
       "glassware": "Nick & Nora",
       "ice": "None",
       "garnish": "None",
-      "notes": "Brandy Alexander: replace Gin with Hennessy VS.",
+      "notes": "Gin with Brandy to make a Brandy Alexander.",
       "ingredients": [
         {
           "name": "Gin",
@@ -56,7 +56,7 @@
       "glassware": "Nick & Nora",
       "ice": "None",
       "garnish": "None",
-      "notes": "Variant from Alexander: replace gin with Hennessy VS.",
+      "notes": "Brandy with Gin to make an Alexander.",
       "ingredients": [
         {
           "name": "Cognac",
@@ -471,7 +471,7 @@
       "glassware": "Rocks",
       "ice": "Cubed",
       "garnish": "2x Coffee Beans",
-      "notes": "White Russian: top with 30ml shaken double cream.",
+      "notes": "Top with 30ml of shaken double cream to make a White Russian.",
       "ingredients": [
         {
           "name": "Vodka",
@@ -507,7 +507,7 @@
       "glassware": "Rocks",
       "ice": "Cubed",
       "garnish": "2x Coffee Beans",
-      "notes": "Black Russian topped with shaken double cream.",
+      "notes": "Leave out the cream to make a Black Russian.",
       "ingredients": [
         {
           "name": "Vodka",
@@ -597,7 +597,7 @@
       "glassware": "Rocks",
       "ice": "Cubed & Crushed",
       "garnish": "Lemon Slice",
-      "notes": "Shake all ingredients. Top with mure.",
+      "notes": "Top with Crème de Mûre.",
       "ingredients": [
         {
           "name": "Gin",
@@ -645,7 +645,7 @@
       "glassware": "Flute",
       "ice": "None",
       "garnish": "Orange Peel",
-      "notes": "Soak sugar cube with Angostura and build.",
+      "notes": "Soak a sugar cube in Angostura Bitters and build on top.",
       "ingredients": [
         {
           "name": "Cognac",
@@ -693,7 +693,7 @@
       "glassware": "Highball",
       "ice": "Cubed",
       "garnish": "Lime Wedge",
-      "notes": "Muddle limes in glass. Add ice, rum and top with coke.",
+      "notes": "Muddle at least 3 lime wedges before building the rest of the drink.",
       "ingredients": [
         {
           "name": "White Rum",
@@ -732,7 +732,7 @@
       "glassware": "Highball",
       "ice": "Cubed",
       "garnish": "Cucumber Slice & Salt Rim",
-      "notes": "With Gin: Red Snapper. With Tequila: Bloody Maria.",
+      "notes": "Made with Gin, this becomes a Red Snapper. Made with Tequila, it becomes a Bloody Maria.",
       "ingredients": [
         {
           "name": "Vodka",
@@ -764,7 +764,7 @@
       "glassware": "Highball",
       "ice": "Cubed",
       "garnish": "Cucumber Slice & Salt Rim",
-      "notes": "Bloody Mary variation using tequila.",
+      "notes": "Replace Tequila with Vodka to make a Bloody Mary.",
       "ingredients": [
         {
           "name": "Blanco Tequila",
@@ -794,7 +794,7 @@
       "glassware": "Highball",
       "ice": "Cubed",
       "garnish": "Cucumber Slice & Salt Rim",
-      "notes": "Bloody Mary variation using gin.",
+      "notes": "Replace Gin with Vodka to make a Bloody Mary.",
       "ingredients": [
         {
           "name": "Gin",
@@ -873,7 +873,7 @@
       "glassware": "Rocks",
       "ice": "Crushed",
       "garnish": "Lime Wedge",
-      "notes": "Caipiroska uses vodka. Caipirissima uses white rum.",
+      "notes": "Replace Cachaça with Vodka to make a Caipiroska. Replace Cachaça with White Rum to make a Caipirissima.",
       "ingredients": [
         {
           "name": "Cachaça",
@@ -913,7 +913,7 @@
       "glassware": "Rocks",
       "ice": "Crushed",
       "garnish": "Lime Wedge",
-      "notes": "Caipirinha variation using vodka.",
+      "notes": "Replace Vodka with Cachaça to make a Caipirinha.",
       "ingredients": [
         {
           "name": "Vodka",
@@ -953,7 +953,7 @@
       "glassware": "Rocks",
       "ice": "Crushed",
       "garnish": "Lime Wedge",
-      "notes": "Caipirinha variation using white rum.",
+      "notes": "Replace White Rum with Cachaça to make a Caipirinha.",
       "ingredients": [
         {
           "name": "White Rum",
@@ -1166,7 +1166,7 @@
       "glassware": "Rocks",
       "ice": "Cubed",
       "garnish": "None",
-      "notes": "Godmother: replace whiskey with vodka.",
+      "notes": "Replace Whiskey with Vodka to make a Godmother.",
       "ingredients": [
         {
           "name": "Scotch Whisky",
@@ -1198,7 +1198,7 @@
       "glassware": "Rocks",
       "ice": "Cubed",
       "garnish": "None",
-      "notes": "Vodka variation of Godfather.",
+      "notes": "Replace Vodka with Whiskey to make a Godfather.",
       "ingredients": [
         {
           "name": "Vodka",
@@ -1378,7 +1378,7 @@
       "glassware": "Flute",
       "ice": "None",
       "garnish": "Lemon Peel",
-      "notes": "With Cazadores Blanco: Mexican 88.",
+      "notes": "Replace Gin with Blanco Tequila to make a Mexican 88.",
       "ingredients": [
         {
           "name": "Gin",
@@ -1509,7 +1509,7 @@
       "glassware": "Latte Glass",
       "ice": "None",
       "garnish": "3x Coffee Beans",
-      "notes": "Build the drink, float cream.",
+      "notes": "Float the double cream over the back of a spoon so it sits on top.",
       "ingredients": [
         {
           "name": "Irish Whiskey",
@@ -1557,7 +1557,7 @@
       "glassware": "Coupe",
       "ice": "None",
       "garnish": "Sugar Rim & Lemon Zest",
-      "notes": "Rim glass with sugar.",
+      "notes": "Rim the glass with sugar.",
       "ingredients": [
         {
           "name": "Cognac",
@@ -2436,7 +2436,7 @@
       "glassware": "Julep Cup",
       "ice": "Cubed & Crushed",
       "garnish": "Mint Sprig & Lime Wedge",
-      "notes": "With El Jimador Blanco Tequila: El Burro.",
+      "notes": "Replace Vodka with Tequila to make an El Burro.",
       "ingredients": [
         {
           "name": "Vodka",
@@ -2641,7 +2641,7 @@
       "glassware": "Coupe",
       "ice": "None",
       "garnish": "1/4 Passion Fruit",
-      "notes": "25ml Fiol on the side.",
+      "notes": "Add a shot of sparkling wine.",
       "ingredients": [
         {
           "name": "Vodka",
@@ -2779,7 +2779,7 @@
       "glassware": "Highball",
       "ice": "Cubed",
       "garnish": "Rock Salt Rim & Grapefruit Slice",
-      "notes": "Replace grapefruit soda with coke: Batanga.",
+      "notes": "Replace Grapefruit Soda with Cola to make a Batanga.",
       "ingredients": [
         {
           "name": "Blanco Tequila",
@@ -2940,7 +2940,7 @@
       "glassware": "Highball",
       "ice": "Crushed",
       "garnish": "Mint Sprig & Lemon Slice",
-      "notes": "Shake all, top with champagne.",
+      "notes": "Shake all the ingredients, then top with Sparkling Wine.",
       "ingredients": [
         {
           "name": "Vodka",
